@@ -10,7 +10,8 @@
     "export": "next export",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "next build && next start"
   },
   "dependencies": {
     "next": "^15.0.2-canary.2",

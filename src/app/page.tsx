@@ -1,16 +1,16 @@
+// app/page.tsx
 import { Suspense } from "react";
-import StaticComponent from "./StaticComponent";
-import DynamicComponent from "./DynamicComponent";
-import Fallback from "./Fallback";
+import Fallback from "./ui/Fallback";
+import StaticComponent from "./ui/StaticComponent";
 
 export const experimental_ppr = true;
 
 export default function Page() {
   return (
     <>
-      <StaticComponent />
+      <h2>Hello</h2>
       <Suspense fallback={<Fallback />}>
-        <DynamicComponent />
+        <StaticComponent />
       </Suspense>
     </>
   );
