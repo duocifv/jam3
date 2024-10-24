@@ -3,9 +3,7 @@ import React from "react";
 import { ItemType } from "../type";
 
 const StaticComponent = async () => {
-  const response = await fetch("https://6717b3deb910c6a6e0298d04.mockapi.io/blog", {
-    cache: "no-cache"
-  });
+  const response = await fetch("https://6717b3deb910c6a6e0298d04.mockapi.io/blog");
   const data = await response.json();
 
   return (

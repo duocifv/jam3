@@ -5,7 +5,7 @@ import StaticComponent from "./ui/StaticComponent";
 
 export const experimental_ppr = true;
 
-export default function Page() {
+export default async  function Page() {
   return (
     <>
       <h2>Hello</h2>
