@@ -1,9 +1,9 @@
 name: Deploy to Cloudflare Pages
 
 on:
-  push:
-    branches:
-      - main  # Hoặc tên nhánh bạn muốn theo dõi
+  schedule:
+    # Chạy mỗi 5 phút
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
