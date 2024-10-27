@@ -1,10 +1,17 @@
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'https://storeapp.x10.mx/wp/graphql',
-  }),
-  cache: new InMemoryCache(),
-});
+export function createApolloClient() {
+  return new ApolloClient({
+    uri: "http://localhost/graphql",
+    cache: new InMemoryCache(),
+  });
+}
 
-export default client;
+export async function fetchQuery(query, variables = {}) {
+  const client = createApolloClient();
+  const { data } = await client.query({
+    query,
+    variables,
+  });
+  return data;
+}
