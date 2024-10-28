@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCategories = () => {
+const ProductCategories = ({ categories }) => {
   return (
     <div className="w-[220px]">
       <h2 className="text-2xl">Product Categories</h2>

@@ -1,9 +1,8 @@
 import { fetchQuery } from "@/lib/apolloClient";
 import { gql } from "@apollo/client";
-import ProductList from "@/components/Products/ProductList";
-import ProductsClient from "@/components/Products/ProductsClient";
+import ProductsDynamic2 from "@/components/Products/ProductsDynamic2";
 
-const query = gql`
+export const query = gql`
   query Products {
     products {
       nodes {
@@ -27,13 +26,11 @@ const query = gql`
 `;
 
 export default async function HomePage() {
-  const result = (await fetchQuery(query)) || {};
-  const data = result.products?.nodes || [];
+  const data = (await fetchQuery(query)) || {};
+
   return (
     <div className="w-[2000px] mx-auto mb-4 justify-center flex flex-wrap">
-      <ProductsClient>
-        <ProductList items={data} />
-      </ProductsClient>
+      <ProductsDynamic2 initialProducts={data?.products?.nodes} initialCategories={data?.productCategories?.nodes} />
     </div>
   );
 }
