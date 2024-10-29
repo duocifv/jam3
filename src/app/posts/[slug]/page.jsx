@@ -1,47 +1,39 @@
 import { fetchQuery } from "@/lib/apolloClient";
-import { gql } from "@apollo/client";
+import { GET_POSTS, GET_POST } from "@/queries/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
-const GET_POSTS = gql`
-  query Posts {
-    posts(first: 1000) {
-      nodes {
-        id
-        slug
-      }
-    }
-  }
-`;
-
-export const GET_POST = gql`
-  query Post($ID: ID!) {
-    post(id: $ID, idType: SLUG) {
-      id
-      title
-      excerpt
-      date
-      content
-      isComment
-      status
-    }
-  }
-`;
-
 export async function generateStaticParams() {
-  const { posts } = await fetchQuery(GET_POSTS);
-  const data = posts?.nodes || [];
-  return data.map((item) => ({
-    slug: item.slug,
-    page: 1,
-  }));
+  const params = [];
+  let hasNextPage = true;
+  let cursor = null;
+
+  while (hasNextPage) {
+    const { posts } = await fetchQuery(GET_POSTS, {
+      after: cursor,
+      first: 100,
+    });
+    if (!posts) {
+      console.error("No posts data received"); // Thêm log để dễ theo dõi
+      break; // Thoát nếu không có dữ liệu
+    }
+    const data = posts?.edges || [];
+    data.forEach((item) => {
+      params.push({
+        slug: item.node.slug,
+      });
+    });
+    hasNextPage = posts.pageInfo.hasNextPage;
+    cursor = posts.pageInfo.endCursor;
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const { post } = await fetchQuery(GET_POST, { ID: slug });
-  if (!post || !slug) {
+  if (!post) {
     notFound();
   }
   return {

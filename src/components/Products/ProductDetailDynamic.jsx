@@ -53,10 +53,8 @@ const ProductDetailDynamic = ({ children }) => {
     skip: !productId, // Bỏ qua truy vấn nếu slug không có
   });
   const product = data?.product;
-  console.log("productId", productId)
   useEffect(() => {
     const slug = router.get("slug")
-      console.log("slug", slug)
       setProductId(slug);
   }, []);
 

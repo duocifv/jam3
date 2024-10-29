@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/graphql",
-        destination: "http://localhost:5900/graphql", 
+        destination: "http://localhost/graphql", 
       },
     ];
   },
