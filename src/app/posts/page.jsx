@@ -2,10 +2,11 @@ import PostList from "@/components/posts/PostList";
 import { fetchQuery } from "@/lib/apolloClient";
 import { gql } from "@apollo/client";
 
-export const query = gql`
+export const GET_POSTS = gql`
   query Posts {
     posts(first: 1000) {
       nodes {
+        id
         slug
         status
         title
@@ -17,7 +18,7 @@ export const query = gql`
   }
 `;
 
-export default async function HomePage() {
-  const { posts } = (await fetchQuery(query)) || [];
+export default async function PostsPage() {
+  const { posts } = (await fetchQuery(GET_POSTS)) || [];
   return <PostList initialData={posts?.nodes} />;
 }
