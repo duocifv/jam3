@@ -15,8 +15,8 @@ export async function generateStaticParams() {
       first: 100,
     });
     if (!posts) {
-      console.error("No posts data received"); // Thêm log để dễ theo dõi
-      break; // Thoát nếu không có dữ liệu
+      console.error("No posts data received");
+      break;
     }
     const data = posts?.edges || [];
     data.forEach((item) => {
