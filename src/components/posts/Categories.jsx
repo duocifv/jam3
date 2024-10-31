@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Categories = () => {
+const Categories = ({ initialData }) => {
   return (
     <div>
-      ádasds
+      <h3>Hello</h3>
+      {initialData.map((node) => (
+        <div key={node.categoryId}>{node.name}</div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

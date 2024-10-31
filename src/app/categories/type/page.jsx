@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Categories = () => {
+const page = () => {
   return (
     <div>
-      Hello
+      page type
     </div>
   )
 }
 
-export default Categories
+export default page
