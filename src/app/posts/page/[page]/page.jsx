@@ -3,6 +3,7 @@ import { fetchQuery } from "@/lib/apolloClient";
 import PostList from "@/components/posts/PostList";
 import { notFound } from "next/navigation";
 import { GET_TOTAL_POSTS, GET_POSTS_PAGE, } from "@/queries/posts";
+import Categories from "@/app/categories/page";
 
 
 const limit = 10;
@@ -57,7 +58,7 @@ export default async function PostsPage({ params }) {
   }
   return (
     <div>
-      dđ
+      <Categories />
       page: {page} : {data.length}
       {list.map((item, index) => <div key={index + item.cursor}>{item.cursor}</div>)}
       <PostList initialData={data} />
