@@ -9,7 +9,7 @@ export default function Layout({
   footer,
   user,
   admin,
-  auth,
+  slug,
 }) {
   const segmentFooter = useSelectedLayoutSegment("footer");
   const segmentHeader = useSelectedLayoutSegment("header");
@@ -20,16 +20,18 @@ export default function Layout({
     return <div>Bạn đang ở ! {header}</div>;
   }
 
-  const role = checkUserRole();
+  //const role = checkUserRole();
   return (
     <>
+      {/* {role === "admin" ? admin : user} */}
       {header}
       <nav>
         <Link href="/categories/login">Open modal</Link>
       </nav>
-      <div>auth:{auth}</div>
-      {role === "admin" ? admin : user}
+      <hr />
+      {slug}
       {children}
+      <hr />
       {footer}
     </>
   );

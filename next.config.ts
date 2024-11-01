@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
+const apiKey = `${process.env.NEXT_PUBLIC_API_URL}/graphql`;
+
 const nextConfig: NextConfig = {
-  output: "export",
+   output: "export",
   images: {
     unoptimized: true,
   },
@@ -9,7 +11,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/graphql",
-        destination: "http://localhost:3001/graphql", 
+        destination: apiKey,
       },
     ];
   },
