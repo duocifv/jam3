@@ -37,9 +37,12 @@ const fetchAllCursors = (() => {
 export async function generateStaticParams() {
   const data = await fetchAllCursors();
   const params = [];
-  data.forEach((item) => {
-    params.push({
-      slug: item?.node?.slug,
+  data.forEach(({ node }) => {
+    node?.categories?.nodes.forEach((item) => {
+      params.push({
+        categories: item.slug,
+        slug: node?.slug,
+      });
     });
   });
   return params;
@@ -61,11 +64,11 @@ const DetailPage = async ({ params }) => {
   const { node } = data.find(({ node }) => node.slug === slug);
 
   if (!node) {
-    notFound(); // Handle not found
+    notFound();
   }
 
   return (
-    <main className="w-[1200px] p-8 mx-auto bg-gray-200 m-6">
+    <main className="w-[800px] p-8 mx-auto bg-gray-200 m-6">
       <Link href="/posts/page/2">Back to Posts</Link>
       <h2 className="text-4xl mb-6">{node.title}</h2>
       <p className="mb-6">{node.date}</p>

@@ -1,23 +1,30 @@
 import { gql } from "@apollo/client";
 
 export const GET_CATEGORIES_AND_POSTS = gql`
-  query CategoriesAndPosts($categoriesFirst: Int, $categoriesAfter: String, $postsFirst: Int, $postsAfter: String) {
+  query CategoriesAndPosts(
+    $categoriesFirst: Int
+    $categoriesAfter: String
+    $postsFirst: Int
+    $postsAfter: String
+  ) {
     categories(first: $categoriesFirst, after: $categoriesAfter) {
-        pageInfo {
-            endCursor
-            hasNextPage
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        cursor
+        node {
+          id
+          name
+          slug
+          count
+          categoryId
         }
-        edges {
-            cursor
-            node {
-                name
-                count
-                categoryId
-            }
-        }
+      }
     }
     posts(first: $postsFirst, after: $postsAfter) {
-       pageInfo {
+      pageInfo {
         endCursor
         hasNextPage
       }
@@ -30,6 +37,11 @@ export const GET_CATEGORIES_AND_POSTS = gql`
           excerpt
           date
           content
+          categories {
+            nodes {
+              slug
+            }
+          }
         }
       }
     }
@@ -52,6 +64,11 @@ export const GET_POSTS_BY_SLUGS = gql`
           excerpt
           date
           content
+          categories {
+            nodes {
+              slug
+            }
+          }
         }
       }
     }
