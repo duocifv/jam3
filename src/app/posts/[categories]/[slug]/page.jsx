@@ -1,78 +1,54 @@
-import { fetchQuery } from "@/lib/apolloClient";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import React from "react";
-import { GET_POSTS_BY_SLUGS } from "@/queries/posts";
-
-// Đặt biến cursors ngoài hàm
-const fetchAllCursors = (() => {
-  let cursors = []; // Khai báo biến cursors
-  return async function () {
-    if (cursors.length > 0) return cursors;
-
-    let hasNextPage = true;
-    let cursor = null;
-
-    while (hasNextPage) {
-      const { posts } = await fetchQuery(GET_POSTS_BY_SLUGS, {
-        after: cursor,
-        first: 100,
-      });
-
-      if (!posts) {
-        break;
-      }
-
-      const data = posts?.edges || [];
-      cursors = cursors.concat(data);
-
-      hasNextPage = posts.pageInfo.hasNextPage;
-      cursor = posts.pageInfo.endCursor;
-    }
-
-    return cursors;
-  };
-})();
+import db from "@/lib/cache";
 
 export async function generateStaticParams() {
-  const data = await fetchAllCursors();
+  const data = await db.Posts();
+  if(!data) return []
   const params = [];
-  data.forEach(({ node }) => {
-    node?.categories?.nodes.forEach((item) => {
-      params.push({
-        categories: item.slug,
-        slug: node?.slug,
+
+  data.forEach((post) => {
+    const categories = post?.categories?.nodes;
+    if (categories) {
+      categories.forEach((item) => {
+        params.push({
+          categories: item.slug,
+          slug: post.slug,
+        });
       });
-    });
+    }
   });
+  
   return params;
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const data = await fetchAllCursors();
-  const { node } = data.find(({ node }) => node.slug === slug);
+  const { slug } = await params; // Không cần await ở đây
+  const post = await db.Posts(slug); // Gọi một lần duy nhất
+
+  if (!post) {
+    return {
+      title: "not title",
+      description: "not description",
+    };
+  }
+
   return {
-    title: node?.title || "not title",
-    description: node?.excerpt || "not description",
+    title: post.title,
+    description: post.excerpt,
   };
 }
 
 const DetailPage = async ({ params }) => {
-  const { slug } = await params;
-  const data = await fetchAllCursors();
-  const { node } = data.find(({ node }) => node.slug === slug);
-
-  if (!node) {
-    notFound();
-  }
+  const { slug } = await params; // Không cần await ở đây
+  const post = await db.Posts(slug); // Gọi một lần duy nhất
 
   return (
-    <main className="w-[800px] p-8 mx-auto bg-gray-200 m-6">
-      <Link href="/posts/page/2">Back to Posts</Link>
-      <h2 className="text-4xl mb-6">{node.title}</h2>
-      <p className="mb-6">{node.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: node.content }} />
+    <main className="w-[800px] p-8 mx-auto bg-gray-300 m-6">
+      <Link href="/posts/">Back to Posts</Link>
+      <h2 className="text-4xl mb-6">{post.title}</h2>
+      <p className="mb-6">{post.date}</p>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </main>
   );
 };

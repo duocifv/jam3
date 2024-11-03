@@ -1,5 +1,6 @@
 import Categories from "@/components/posts/Categories";
-import { fetchAllCursors } from "@/lib/fetchAllCursors";
+import Tags from "@/components/posts/Tags";
+import db from "@/lib/cache";
 
 export const metadata = {
   title: "Create Next App",
@@ -7,7 +8,8 @@ export const metadata = {
 };
 
 export default async function PostsLayout({ children }) {
-  const { categories } = await fetchAllCursors();
+  const categories = await db.PostsCategories();
+  const tags = await db.PostsTags();
   if (!categories) {
     notFound();
   }
@@ -15,6 +17,7 @@ export default async function PostsLayout({ children }) {
     <div className="flex max-w-[1300px] mx-auto">
       <Categories initialData={categories} />
       <div>{children}</div>
+      <Tags initialData={tags} />
     </div>
   );
 }

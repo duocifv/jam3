@@ -2,7 +2,9 @@
 import Link from "next/link";
 import React from "react";
 
-const Categories = ({ initialData }) => {
+const Tags = ({ initialData }) => {
+  console.log("initialData", initialData)
+  return initialData
   return (
     <div>
       <h3>Hello</h3>
@@ -15,4 +17,4 @@ const Categories = ({ initialData }) => {
   );
 };
 
-export default Categories;
+export default Tags;

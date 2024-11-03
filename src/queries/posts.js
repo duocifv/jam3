@@ -1,4 +1,17 @@
-import { gql } from "@apollo/client";
+import { gql  } from "graphql-request";
+
+export const GET_POPULAR_TAGS = gql`
+  query GetPopularTags {
+    tags(where: { hideEmpty: true, orderby: COUNT, order: DESC }) {
+      nodes {
+        id
+        name
+        count
+        slug
+      }
+    }
+  }
+`;
 
 export const GET_CATEGORIES_AND_POSTS = gql`
   query CategoriesAndPosts(
@@ -48,6 +61,27 @@ export const GET_CATEGORIES_AND_POSTS = gql`
   }
 `;
 
+export const GET_CATEGORIES_POSTS = gql`
+  query CategoriesPosts($first: Int, $after: String) {
+    categories(first: $first, after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      edges {
+        cursor
+        node {
+          id
+          name
+          slug
+          count
+          categoryId
+        }
+      }
+    }
+  }
+`;
+
 export const GET_POSTS_BY_SLUGS = gql`
   query Posts($first: Int, $after: String) {
     posts(first: $first, after: $after) {
@@ -85,24 +119,6 @@ export const GET_POST = gql`
       content
       isComment
       status
-    }
-  }
-`;
-
-export const GET_POSTS = gql`
-  query Posts($first: Int, $after: String) {
-    posts(first: $first, after: $after) {
-      pageInfo {
-        endCursor
-        hasNextPage
-      }
-      edges {
-        cursor
-        node {
-          id
-          slug
-        }
-      }
     }
   }
 `;

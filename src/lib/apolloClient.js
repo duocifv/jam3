@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export function createApolloClient() {
   return new ApolloClient({
-    uri: "http://localhost:3001/graphql",
+    uri: "http://localhost:3000/graphql",
     cache: new InMemoryCache(),
   });
 }
@@ -15,3 +15,4 @@ export async function fetchQuery(query, variables = {}) {
   });
   return data;
 }
+

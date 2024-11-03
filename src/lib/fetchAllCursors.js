@@ -1,11 +1,10 @@
 import { fetchQuery } from "@/lib/apolloClient";
 import { GET_CATEGORIES_AND_POSTS } from "@/queries/posts";
 
-export const fetchAllCursors = (() => {
-  let categories = [];
-  let posts = [];
+let categories = [];
+let posts = [];
 
-  return async function () {
+export const fetchAllCursors = async () => {
     // Nếu đã có dữ liệu, trả về ngay lập tức
     if (categories.length > 0 && posts.length > 0) {
       return { categories, posts };
@@ -45,4 +44,3 @@ export const fetchAllCursors = (() => {
 
     return { categories, posts };
   };
-})();
