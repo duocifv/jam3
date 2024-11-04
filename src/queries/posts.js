@@ -1,4 +1,4 @@
-import { gql  } from "graphql-request";
+import { gql } from "graphql-request";
 
 export const GET_POPULAR_TAGS = gql`
   query GetPopularTags {
@@ -99,6 +99,11 @@ export const GET_POSTS_BY_SLUGS = gql`
           date
           content
           categories {
+            nodes {
+              slug
+            }
+          }
+          tags {
             nodes {
               slug
             }

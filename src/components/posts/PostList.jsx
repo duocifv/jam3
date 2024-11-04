@@ -5,19 +5,27 @@ import React from "react";
 import { useStore } from "@/store/useStore";
 import { debounce } from "@/lib/utils";
 
-const Search = ({ initialData, categorieId }) => {
+const Search = ({ initialData, categorieId, categories }) => {
   const posts = useStore((state) => state.posts);
   const sortBy = useStore((state) => state.sortBy);
+  const page = useStore((state) => state.page);
   const searchQuery = useStore((state) => state.searchQuery);
   const setSearchQuery = useStore((state) => state.setSearchQuery);
-  const loadMoreProducts = useStore((state) => state.loadMoreProducts);
-  const visibleProducts = useStore((state) => state.visibleProducts);
+  const loadMore = useStore((state) => state.loadMore);
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
   }, 80);
 
+  /* List */
   const list = posts.length === 0 ? initialData : posts;
-  const listPage = visibleProducts.length === 0 ? initialData : visibleProducts;
+  const fillPosts = !categories
+    ? posts
+    : list.filter((post) =>
+        post?.categories?.nodes?.some((node) => node?.slug === categories)
+      );
+  const listPage = fillPosts.slice(0 , page * 10);
+
+  /* Search */
   const filteredPosts = list.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -25,20 +33,20 @@ const Search = ({ initialData, categorieId }) => {
   const observerRef = useRef();
 
   useEffect(() => {
-    loadMoreProducts(); // Load trang đầu tiên
+    loadMore();
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) loadMoreProducts();
+        if (entries[0].isIntersecting) loadMore();
       },
       { threshold: 1 }
     );
 
     if (observerRef.current) observer.observe(observerRef.current);
     return () => observer.disconnect();
-  }, [loadMoreProducts]);
+  }, [loadMore]);
 
   return (
     <div className="my-4">
@@ -102,14 +110,18 @@ const Search = ({ initialData, categorieId }) => {
   );
 };
 
-const PostList = ({ initialData, categorieId }) => {
+const PostList = ({ initialData, categorieId, categories }) => {
   const setPosts = useStore((state) => state.setPosts);
-  const perPage = 10;
-  const list = initialData.slice(0, perPage);
   useEffect(() => {
     setPosts(initialData);
   }, [setPosts, initialData]);
-  return <Search initialData={list} categorieId={categorieId} />;
+  return (
+    <Search
+      initialData={initialData}
+      categorieId={categorieId}
+      categories={categories}
+    />
+  );
 };
 
 export default PostList;

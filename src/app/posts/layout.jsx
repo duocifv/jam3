@@ -10,7 +10,7 @@ export const metadata = {
 export default async function PostsLayout({ children }) {
   const categories = await db.PostsCategories();
   const tags = await db.PostsTags();
-  if (!categories) {
+  if (!categories || !tags) {
     notFound();
   }
   return (

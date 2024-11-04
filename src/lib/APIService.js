@@ -9,9 +9,10 @@ const cachePaths = {
 };
 
 class APIService {
-  async put(query, variables = {}) {
+  async fetch(query, variables = {}) {
     const client = new GraphQLClient(endpoint);
     const result = await client.request(query, variables);
+    console.log("result", result)
     return result;
   }
   read(type) {

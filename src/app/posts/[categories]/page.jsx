@@ -5,8 +5,8 @@ import db from "@/lib/cache";
 export async function generateStaticParams() {
   const categories = await db.PostsCategories();
 
-  if (!categories) {
-    notFound();
+  if (!categories || categories.length === 0) {
+    return [{ categories: "other" }];
   }
 
   return categories.map((item) => ({
@@ -17,13 +17,13 @@ export async function generateStaticParams() {
 const pageCategories = async ({ params }) => {
   const { categories } = await params;
   const posts = await db.Posts();
-  const filteredPosts = posts.filter(
-    (post) =>
-      post?.categories?.nodes?.some((node) => node?.slug === categories)
-  );
   return (
     <div>
-      <PostList initialData={filteredPosts} categorieId={categories} />
+      <PostList
+        initialData={posts}
+        categorieId={categories}
+        categories={categories}
+      />
     </div>
   );
 };

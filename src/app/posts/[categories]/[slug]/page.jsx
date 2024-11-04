@@ -3,28 +3,30 @@ import React from "react";
 import db from "@/lib/cache";
 
 export async function generateStaticParams() {
-  const data = await db.Posts();
-  if(!data) return []
-  const params = [];
-
-  data.forEach((post) => {
-    const categories = post?.categories?.nodes;
-    if (categories) {
-      categories.forEach((item) => {
-        params.push({
-          categories: item.slug,
-          slug: post.slug,
-        });
+  const posts = await db.Posts();
+  if (!posts) return [];
+  const params = []
+  posts.forEach((items) => {
+    if (!items?.categories || items?.categories?.nodes.length === 0) {
+      return params.push({
+        categories: "orther",
+        slug: items.slug,
       });
     }
+    return items?.categories?.nodes.forEach((item) => {
+      return params.push({
+        categories: item.slug,
+        slug: items.slug,
+      })
+    });
   });
-  
+
   return params;
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params; // Không cần await ở đây
-  const post = await db.Posts(slug); // Gọi một lần duy nhất
+  const { slug } = await params;
+  const post = await db.Posts(slug);
 
   if (!post) {
     return {
@@ -40,8 +42,8 @@ export async function generateMetadata({ params }) {
 }
 
 const DetailPage = async ({ params }) => {
-  const { slug } = await params; // Không cần await ở đây
-  const post = await db.Posts(slug); // Gọi một lần duy nhất
+  const { slug } = await params;
+  const post = await db.Posts(slug);
 
   return (
     <main className="w-[800px] p-8 mx-auto bg-gray-300 m-6">

@@ -3,7 +3,8 @@ import { devtools } from "zustand/middleware";
 
 export const useStore = create(
   devtools((set) => ({
-    posts:[],
+    posts: [],
+    categories: "",
     setPosts: (newPosts) => set({ posts: newPosts }),
     sortBy: (sortBy = "date") =>
       set((state) => {
@@ -18,24 +19,13 @@ export const useStore = create(
         });
         return { posts: sortedPosts };
       }),
+    setCategories: (categories) => set({ categories }),
 
-      searchQuery: "",
-      setSearchQuery: (query) => set({ searchQuery: query }),
+    searchQuery: "",
+    setSearchQuery: (query) => set({ searchQuery: query }),
 
-      visibleProducts: [],
-      page: 1,
-      PRODUCTS_PER_PAGE: 10,
-      loadMoreProducts: () =>
-        set((state) => {
-          const newProducts = state.posts.slice(
-            state.visibleProducts.length,
-            state.visibleProducts.length + state.PRODUCTS_PER_PAGE
-          );
-    
-          return {
-            visibleProducts: [...state.visibleProducts, ...newProducts],
-            page: state.page + 1,
-          };
-        }),
+    page: 1,
+    PRODUCTS_PER_PAGE: 10,
+    loadMore: () => set((state) => ({ page: state.page + 1 })),
   }))
 );

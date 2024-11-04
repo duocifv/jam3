@@ -1,7 +1,7 @@
 import {
   GET_POSTS_BY_SLUGS,
   GET_CATEGORIES_POSTS,
-  GET_POPULAR_TAGS,
+  GET_POPULAR_TAGS
 } from "@/queries/posts";
 import APIService from "@/lib/APIService";
 
@@ -14,7 +14,7 @@ async function fetchDataWithPagination(query, type) {
 
   while (hasNextPage) {
     try {
-      const response = await cache.put(query, {
+      const response = await cache.fetch(query, {
         after: cursor,
         first: 100,
       });
@@ -36,6 +36,8 @@ async function fetchDataWithPagination(query, type) {
     return acc;
   }, {});
 }
+
+
 
 const db = {
   Posts: async (slug) => {
@@ -70,14 +72,13 @@ const db = {
 
   PostsTags: async () => {
     const cachedData = cache.read("tags");
-
-    if (cachedData) {
+    
+    if (cachedData && cachedData.length) {
       return cachedData;
     }
-
-    const { tags } = await cache.put(GET_POPULAR_TAGS);
-    console.log("|response", tags)
-    cache.write("tags", tags);
+    
+    const { tags } = await cache.fetch(GET_POPULAR_TAGS);
+    cache.write("tags", tags?.nodes);
 
     return tags?.nodes;
   },
