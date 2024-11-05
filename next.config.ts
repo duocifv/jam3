@@ -7,14 +7,14 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/graphql",
-  //       destination: apiKey,
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/graphql",
+        destination: apiKey,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

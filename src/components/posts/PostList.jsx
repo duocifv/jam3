@@ -92,7 +92,7 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
       <div className="flex flex-wrap max-w-[1200px] mx-auto m-6 min-h-[100vh]">
         {listPage.map((node, index) => {
           const categorySlug =
-            categorieId || node?.categories?.nodes[0]?.slug || "";
+            categorieId || node?.categories?.nodes[0]?.slug || "orther";
 
           return (
             <div key={index} className="bg-slate-400 border w-1/4 p-4">

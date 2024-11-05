@@ -1,10 +1,9 @@
 import React from "react";
 import PostList from "@/components/posts/PostList";
-import db from "@/lib/cache";
+import PostsCtrl from "@/controllers/PostsCtrl"
 
 export async function generateStaticParams() {
-  const categories = await db.PostsCategories();
-
+  const categories = await PostsCtrl.categories();
   if (!categories || categories.length === 0) {
     return [{ categories: "other" }];
   }
@@ -16,7 +15,7 @@ export async function generateStaticParams() {
 
 const pageCategories = async ({ params }) => {
   const { categories } = await params;
-  const posts = await db.Posts();
+  const posts = await PostsCtrl.list();
   return (
     <div>
       <PostList

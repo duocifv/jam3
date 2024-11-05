@@ -12,7 +12,7 @@ app.use(express.json()); // Thêm middleware để phân tích cú pháp JSON t�
 // Endpoint để lấy cursors
 
 app.post('/graphql', async (req, res) => {
-    const url = 'http://localhost/graphql'; // URL của server GraphQL gốc
+    const url = 'https://bc79-2402-800-629c-18c4-dd40-1987-8405-afe0.ngrok-free.app/graphql'; // URL của server GraphQL gốc
 
     // Phân tích cú pháp body từ yêu cầu
     const body = req.body; // Chỉnh sửa từ req.query thành req.body

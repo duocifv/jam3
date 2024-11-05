@@ -1,0 +1,74 @@
+[
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE5",
+    "node": {
+      "count": 33,
+      "id": "dGVybToxOQ==",
+      "name": "Accessories",
+      "slug": "accessories"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE2",
+    "node": {
+      "count": 1,
+      "id": "dGVybToxNg==",
+      "name": "Clothing",
+      "slug": "clothing"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjI3",
+    "node": {
+      "count": 1,
+      "id": "dGVybToyNw==",
+      "name": "Hoodies",
+      "slug": "hoodies"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjIw",
+    "node": {
+      "count": 1,
+      "id": "dGVybToyMA==",
+      "name": "Jackets",
+      "slug": "jackets"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE4",
+    "node": {
+      "count": 4,
+      "id": "dGVybToxOA==",
+      "name": "Shirts",
+      "slug": "shirts"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE3",
+    "node": {
+      "count": 1,
+      "id": "dGVybToxNw==",
+      "name": "Sweater",
+      "slug": "sweater"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjI2",
+    "node": {
+      "count": 3,
+      "id": "dGVybToyNg==",
+      "name": "Tshirts",
+      "slug": "tshirts"
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE1",
+    "node": {
+      "count": 62,
+      "id": "dGVybToxNQ==",
+      "name": "Uncategorized",
+      "slug": "uncategorized"
+    }
+  }
+]

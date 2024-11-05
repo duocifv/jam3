@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import db from "@/lib/cache";
+import PostsCtrl from "@/controllers/PostsCtrl"
 
 export async function generateStaticParams() {
-  const posts = await db.Posts();
+  const posts = await PostsCtrl.list();
   if (!posts) return [];
   const params = []
   posts.forEach((items) => {
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = await db.Posts(slug);
+  const post = await PostsCtrl.list(slug);
 
   if (!post) {
     return {
@@ -43,8 +43,7 @@ export async function generateMetadata({ params }) {
 
 const DetailPage = async ({ params }) => {
   const { slug } = await params;
-  const post = await db.Posts(slug);
-
+  const post = await PostsCtrl.list(slug);
   return (
     <main className="w-[800px] p-8 mx-auto bg-gray-300 m-6">
       <Link href="/posts/">Back to Posts</Link>

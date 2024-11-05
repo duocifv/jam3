@@ -1,5 +1,5 @@
 import { GraphQLClient } from "graphql-request";
-const endpoint = "http://localhost:3000/graphql";
+const endpoint = "http://localhost:3001/graphql";
 import fs from "fs";
 import path from "path";
 const cachePaths = {

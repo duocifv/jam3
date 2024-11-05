@@ -1,15 +1,15 @@
 import React from "react";
-import db from "@/lib/cache";
+import PostsCtrl from "@/controllers/PostsCtrl"
 import PostList from "@/components/posts/PostList";
 
 export async function generateStaticParams() {
-  const tags = await db.PostsTags();
+  const tags = await PostsCtrl.tags();
   return tags.map((item) => ({ tagId: item.slug }));
 }
 
 const page = async ({ params }) => {
   const { tagId } = await params;
-  const posts = await db.Posts();
+  const posts = await PostsCtrl.list();
   return (
     <div>
       <PostList
