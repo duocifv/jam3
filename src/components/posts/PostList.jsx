@@ -1,29 +1,40 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import React from "react";
 import { useStore } from "@/store/useStore";
 import { debounce } from "@/lib/utils";
+import PostController from "@/components/posts/controller/PostController"
 
-const Search = ({ initialData, categorieId, categories }) => {
+const Search = ({ initialData, categorieId, categories, tagId }) => {
+
   const posts = useStore((state) => state.posts);
   const sortBy = useStore((state) => state.sortBy);
-  const page = useStore((state) => state.page);
+  const [page, loadMore] = useState(1);
   const searchQuery = useStore((state) => state.searchQuery);
   const setSearchQuery = useStore((state) => state.setSearchQuery);
-  const loadMore = useStore((state) => state.loadMore);
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
   }, 80);
 
   /* List */
   const list = posts.length === 0 ? initialData : posts;
-  const fillPosts = !categories
-    ? posts
-    : list.filter((post) =>
-        post?.categories?.nodes?.some((node) => node?.slug === categories)
-      );
-  const listPage = fillPosts.slice(0 , page * 10);
+  let fillPosts = initialData;
+
+  if (categories) {
+    fillPosts = list.filter((item) =>
+      item?.categories?.nodes?.some((node) => node?.slug === categories)
+    );
+  }
+
+  if (tagId) {
+    fillPosts = list.filter((item) =>
+      item?.tags?.nodes?.some((node) => node?.slug === tagId)
+    );
+  }
+
+  const isScroll = fillPosts.length >= 10;
+  const listPage = isScroll ? fillPosts.slice(0, page * 10) : fillPosts;
 
   /* Search */
   const filteredPosts = list.filter((post) =>
@@ -33,20 +44,16 @@ const Search = ({ initialData, categorieId, categories }) => {
   const observerRef = useRef();
 
   useEffect(() => {
-    loadMore();
-  }, []);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) loadMore();
+        if (entries[0].isIntersecting) loadMore(page + 1);
       },
       { threshold: 1 }
     );
 
     if (observerRef.current) observer.observe(observerRef.current);
     return () => observer.disconnect();
-  }, [loadMore]);
+  }, [loadMore, isScroll]);
 
   return (
     <div className="my-4">
@@ -82,7 +89,7 @@ const Search = ({ initialData, categorieId, categories }) => {
           )}
         </div>
       </div>
-      <div className="flex flex-wrap max-w-[1200px] mx-auto m-6">
+      <div className="flex flex-wrap max-w-[1200px] mx-auto m-6 min-h-[100vh]">
         {listPage.map((node, index) => {
           const categorySlug =
             categorieId || node?.categories?.nodes[0]?.slug || "";
@@ -110,17 +117,16 @@ const Search = ({ initialData, categorieId, categories }) => {
   );
 };
 
-const PostList = ({ initialData, categorieId, categories }) => {
-  const setPosts = useStore((state) => state.setPosts);
-  useEffect(() => {
-    setPosts(initialData);
-  }, [setPosts, initialData]);
+const PostList = ({ initialData, categorieId, categories, tagId }) => {
   return (
-    <Search
-      initialData={initialData}
-      categorieId={categorieId}
-      categories={categories}
-    />
+    <PostController initialData={initialData}>
+      <Search
+        initialData={initialData}
+        categorieId={categorieId}
+        categories={categories}
+        tagId={tagId}
+      />
+    </PostController>
   );
 };
 

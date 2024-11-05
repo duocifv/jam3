@@ -23,9 +23,5 @@ export const useStore = create(
 
     searchQuery: "",
     setSearchQuery: (query) => set({ searchQuery: query }),
-
-    page: 1,
-    PRODUCTS_PER_PAGE: 10,
-    loadMore: () => set((state) => ({ page: state.page + 1 })),
   }))
 );
