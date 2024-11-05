@@ -1,8 +1,8 @@
 import ProductModel  from "@/models/ProductModel";
 
 class ProductCtrl  {
-  async list() {
-    const products = await ProductModel.getProducts();
+  async list(slug) {
+    const products = await ProductModel.getProducts(slug);
     return products;
   }
   async categories () {

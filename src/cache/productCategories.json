@@ -3,72 +3,259 @@
     "cursor": "YXJyYXljb25uZWN0aW9uOjE5",
     "node": {
       "count": 33,
-      "id": "dGVybToxOQ==",
       "name": "Accessories",
-      "slug": "accessories"
+      "slug": "accessories",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDoyODA="
+          },
+          {
+            "id": "cG9zdDozODE="
+          },
+          {
+            "id": "cG9zdDo5OQ=="
+          },
+          {
+            "id": "cG9zdDo2OA=="
+          },
+          {
+            "id": "cG9zdDoxOTM="
+          },
+          {
+            "id": "cG9zdDo3MA=="
+          },
+          {
+            "id": "cG9zdDoxNjc="
+          },
+          {
+            "id": "cG9zdDoxNDA="
+          },
+          {
+            "id": "cG9zdDoxNzE="
+          },
+          {
+            "id": "cG9zdDozNzU="
+          }
+        ]
+      }
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEyNw==",
+    "node": {
+      "count": 5,
+      "name": "Beauty",
+      "slug": "beauty",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo1ODE="
+          },
+          {
+            "id": "cG9zdDo1ODA="
+          },
+          {
+            "id": "cG9zdDo1Nzk="
+          },
+          {
+            "id": "cG9zdDo1Nzg="
+          },
+          {
+            "id": "cG9zdDo1Nzc="
+          }
+        ]
+      }
     }
   },
   {
     "cursor": "YXJyYXljb25uZWN0aW9uOjE2",
     "node": {
       "count": 1,
-      "id": "dGVybToxNg==",
       "name": "Clothing",
-      "slug": "clothing"
+      "slug": "clothing",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDoyODA="
+          },
+          {
+            "id": "cG9zdDozODE="
+          },
+          {
+            "id": "cG9zdDo4NA=="
+          },
+          {
+            "id": "cG9zdDo4MQ=="
+          },
+          {
+            "id": "cG9zdDo2MQ=="
+          },
+          {
+            "id": "cG9zdDo5OQ=="
+          },
+          {
+            "id": "cG9zdDo2OA=="
+          },
+          {
+            "id": "cG9zdDoxOTM="
+          },
+          {
+            "id": "cG9zdDo3MA=="
+          },
+          {
+            "id": "cG9zdDo3Ng=="
+          }
+        ]
+      }
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEyOA==",
+    "node": {
+      "count": 5,
+      "name": "Fragrances",
+      "slug": "fragrances",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo1ODY="
+          },
+          {
+            "id": "cG9zdDo1ODU="
+          },
+          {
+            "id": "cG9zdDo1ODQ="
+          },
+          {
+            "id": "cG9zdDo1ODM="
+          },
+          {
+            "id": "cG9zdDo1ODI="
+          }
+        ]
+      }
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEyOQ==",
+    "node": {
+      "count": 5,
+      "name": "Furniture",
+      "slug": "furniture",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo1OTE="
+          },
+          {
+            "id": "cG9zdDo1OTA="
+          },
+          {
+            "id": "cG9zdDo1ODk="
+          },
+          {
+            "id": "cG9zdDo1ODg="
+          },
+          {
+            "id": "cG9zdDo1ODc="
+          }
+        ]
+      }
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMA==",
+    "node": {
+      "count": 15,
+      "name": "Groceries",
+      "slug": "groceries",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo2MDY="
+          },
+          {
+            "id": "cG9zdDo2MDU="
+          },
+          {
+            "id": "cG9zdDo2MDQ="
+          },
+          {
+            "id": "cG9zdDo2MDM="
+          },
+          {
+            "id": "cG9zdDo2MDI="
+          },
+          {
+            "id": "cG9zdDo2MDE="
+          },
+          {
+            "id": "cG9zdDo2MDA="
+          },
+          {
+            "id": "cG9zdDo1OTk="
+          },
+          {
+            "id": "cG9zdDo1OTg="
+          },
+          {
+            "id": "cG9zdDo1OTc="
+          }
+        ]
+      }
+    }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMQ==",
+    "node": {
+      "count": null,
+      "name": "Home Decoration",
+      "slug": "home-decoration",
+      "products": {
+        "nodes": []
+      }
     }
   },
   {
     "cursor": "YXJyYXljb25uZWN0aW9uOjI3",
     "node": {
       "count": 1,
-      "id": "dGVybToyNw==",
       "name": "Hoodies",
-      "slug": "hoodies"
+      "slug": "hoodies",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo4OA=="
+          }
+        ]
+      }
     }
   },
   {
     "cursor": "YXJyYXljb25uZWN0aW9uOjIw",
     "node": {
       "count": 1,
-      "id": "dGVybToyMA==",
       "name": "Jackets",
-      "slug": "jackets"
+      "slug": "jackets",
+      "products": {
+        "nodes": [
+          {
+            "id": "cG9zdDo3NA=="
+          }
+        ]
+      }
     }
   },
   {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjE4",
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMg==",
     "node": {
-      "count": 4,
-      "id": "dGVybToxOA==",
-      "name": "Shirts",
-      "slug": "shirts"
-    }
-  },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjE3",
-    "node": {
-      "count": 1,
-      "id": "dGVybToxNw==",
-      "name": "Sweater",
-      "slug": "sweater"
-    }
-  },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjI2",
-    "node": {
-      "count": 3,
-      "id": "dGVybToyNg==",
-      "name": "Tshirts",
-      "slug": "tshirts"
-    }
-  },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjE1",
-    "node": {
-      "count": 62,
-      "id": "dGVybToxNQ==",
-      "name": "Uncategorized",
-      "slug": "uncategorized"
+      "count": null,
+      "name": "Kitchen Accessories",
+      "slug": "kitchen-accessories",
+      "products": {
+        "nodes": []
+      }
     }
   }
 ]

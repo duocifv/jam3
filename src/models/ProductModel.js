@@ -5,108 +5,111 @@ import { fetchDataWithPagination } from "@/lib/fetchDataWithPagination";
 
 class ProductModel {
   async fetchProducts() {
-    return await fetchDataWithPagination(gql`
-      query Products($first: Int, $after: String) {
-        products(first: $first, after: $after) {
-          edges {
-            cursor
-            node {
-              id
-              slug
-              name
-              description
-              onSale
-              reviewCount
-              shortDescription
-              image {
-                sourceUrl
-              }
-              sku
-              type
-              ... on VariableProduct {
-                comments {
-                  nodes {
-                    content
-                    date
-                    id
-                    isComment
+    return await fetchDataWithPagination(
+      gql`
+        query Products($first: Int, $after: String) {
+          products(first: $first, after: $after) {
+            edges {
+              cursor
+              node {
+                id
+                slug
+                name
+                description
+                onSale
+                reviewCount
+                shortDescription
+                image {
+                  sourceUrl
+                }
+                sku
+                type
+                ... on VariableProduct {
+                  comments {
+                    nodes {
+                      content
+                      date
+                      id
+                      isComment
+                    }
                   }
-                }
-                image {
-                  guid
-                }
-                price(format: FORMATTED)
-                reviews {
-                  averageRating
-                }
-                salePrice(format: FORMATTED)
-              }
-              ... on ExternalProduct {
-                comments {
-                  nodes {
-                    content
-                    date
-                    id
-                    isComment
+                  image {
+                    guid
                   }
-                }
-                image {
-                  guid
-                }
-                price(format: FORMATTED)
-                reviews {
-                  averageRating
-                }
-                salePrice(format: FORMATTED)
-              }
-              ... on GroupProduct {
-                comments {
-                  nodes {
-                    content
-                    date
-                    id
-                    isComment
+                  price(format: FORMATTED)
+                  reviews {
+                    averageRating
                   }
+                  salePrice(format: FORMATTED)
                 }
-                image {
-                  guid
-                }
-                price(format: FORMATTED)
-                reviews {
-                  averageRating
-                }
-                salePrice(format: FORMATTED)
-              }
-              ... on SimpleProduct {
-                comments {
-                  nodes {
-                    content
-                    date
-                    id
-                    isComment
+                ... on ExternalProduct {
+                  comments {
+                    nodes {
+                      content
+                      date
+                      id
+                      isComment
+                    }
                   }
+                  image {
+                    guid
+                  }
+                  price(format: FORMATTED)
+                  reviews {
+                    averageRating
+                  }
+                  salePrice(format: FORMATTED)
                 }
-                image {
-                  guid
+                ... on GroupProduct {
+                  comments {
+                    nodes {
+                      content
+                      date
+                      id
+                      isComment
+                    }
+                  }
+                  image {
+                    guid
+                  }
+                  price(format: FORMATTED)
+                  reviews {
+                    averageRating
+                  }
+                  salePrice(format: FORMATTED)
                 }
-                price(format: FORMATTED)
-                reviews {
-                  averageRating
+                ... on SimpleProduct {
+                  comments {
+                    nodes {
+                      content
+                      date
+                      id
+                      isComment
+                    }
+                  }
+                  image {
+                    guid
+                  }
+                  price(format: FORMATTED)
+                  reviews {
+                    averageRating
+                  }
+                  salePrice(format: FORMATTED)
                 }
-                salePrice(format: FORMATTED)
-              }
-              ... on SimpleProductVariation {
-                image {
-                  guid
+                ... on SimpleProductVariation {
+                  image {
+                    guid
+                  }
+                  price(format: FORMATTED)
+                  salePrice(format: FORMATTED)
                 }
-                price(format: FORMATTED)
-                salePrice(format: FORMATTED)
               }
             }
           }
         }
-      }
-    `, "products");
+      `,
+      "products"
+    );
   }
 
   async fetchProductCategories() {
@@ -117,9 +120,13 @@ class ProductModel {
             cursor
             node {
               count
-              id
               name
               slug
+              products {
+                nodes {
+                  id
+                }
+              }
             }
           }
         }
