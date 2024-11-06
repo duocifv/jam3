@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default async function HomePage() {
   return (
@@ -6,5 +6,5 @@ export default async function HomePage() {
       <h2>Hello Posts</h2>
       <Link href="/posts/"> Post </Link>
     </div>
-  );
+  )
 }

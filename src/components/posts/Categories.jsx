@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import React from "react";
+'use client'
+import Link from 'next/link'
+import React from 'react'
 
 const Categories = ({ initialData }) => {
   return (
@@ -9,11 +9,13 @@ const Categories = ({ initialData }) => {
       <hr />
       {initialData.map((item, index) => (
         <div key={index}>
-          <Link href={`/posts/${item.slug}`}>{item.name} ({item.count})</Link>
+          <Link href={`/posts/${item.slug}`}>
+            {item.name} ({item.count})
+          </Link>
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

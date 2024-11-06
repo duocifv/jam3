@@ -1,4 +1,3 @@
 export function checkUserRole() {
-  
-  return "admin";
+  return 'admin'
 }

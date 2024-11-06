@@ -1,16 +1,14 @@
-
-import { useStore } from "@/store/useStore";
-import { useEffect } from "react";
+import { useStore } from '@/store/useStore'
+import { useEffect } from 'react'
 
 const PostController = ({ children, initialData }) => {
-  const setPosts = useStore((state) => state.setPosts);
+  const setPosts = useStore((state) => state.setPosts)
 
   useEffect(() => {
-    setPosts(initialData);
-  }, [setPosts, initialData]);
+    setPosts(initialData)
+  }, [setPosts, initialData])
 
+  return children
+}
 
-  return children;
-};
-
-export default PostController;
+export default PostController

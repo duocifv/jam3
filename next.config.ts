@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
-const apiKey = `${process.env.NEXT_PUBLIC_API_URL}/graphql`;
+const apiKey = `${process.env.NEXT_PUBLIC_API_URL}/graphql`
 
 const nextConfig: NextConfig = {
-   output: "export",
+  output: 'export',
   images: {
     unoptimized: true,
   },
@@ -15,6 +15,6 @@ const nextConfig: NextConfig = {
   //     },
   //   ];
   // },
-};
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,65 +1,64 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import React from "react";
-import { useStore } from "@/store/useStore";
-import { debounce } from "@/lib/utils";
-import PostController from "@/components/posts/controller/PostController"
+'use client'
+import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import React from 'react'
+import { useStore } from '@/store/useStore'
+import { debounce } from '@/lib/utils'
+import PostController from '@/components/posts/controller/PostController'
 
 const Search = ({ initialData, categorieId, categories, tagId }) => {
-
-  const posts = useStore((state) => state.posts);
-  const sortBy = useStore((state) => state.sortBy);
-  const [page, loadMore] = useState(1);
-  const searchQuery = useStore((state) => state.searchQuery);
-  const setSearchQuery = useStore((state) => state.setSearchQuery);
+  const posts = useStore((state) => state.posts)
+  const sortBy = useStore((state) => state.sortBy)
+  const [page, loadMore] = useState(1)
+  const searchQuery = useStore((state) => state.searchQuery)
+  const setSearchQuery = useStore((state) => state.setSearchQuery)
   const handleSearch = debounce((value) => {
-    setSearchQuery(value);
-  }, 80);
+    setSearchQuery(value)
+  }, 80)
 
   /* List */
-  const list = posts.length === 0 ? initialData : posts;
-  let fillPosts = initialData;
+  const list = posts.length === 0 ? initialData : posts
+  let fillPosts = initialData
 
   if (categories) {
     fillPosts = list.filter((item) =>
       item?.categories?.nodes?.some((node) => node?.slug === categories)
-    );
+    )
   }
 
   if (tagId) {
     fillPosts = list.filter((item) =>
       item?.tags?.nodes?.some((node) => node?.slug === tagId)
-    );
+    )
   }
 
-  const isScroll = fillPosts.length >= 10;
-  const listPage = isScroll ? fillPosts.slice(0, page * 10) : fillPosts;
+  const isScroll = fillPosts.length >= 10
+  const listPage = isScroll ? fillPosts.slice(0, page * 10) : fillPosts
 
   /* Search */
   const filteredPosts = list.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  )
 
-  const observerRef = useRef();
+  const observerRef = useRef()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) loadMore(page + 1);
+        if (entries[0].isIntersecting) loadMore(page + 1)
       },
       { threshold: 1 }
-    );
+    )
 
-    if (observerRef.current) observer.observe(observerRef.current);
-    return () => observer.disconnect();
-  }, [loadMore, isScroll]);
+    if (observerRef.current) observer.observe(observerRef.current)
+    return () => observer.disconnect()
+  }, [loadMore, isScroll])
 
   return (
     <div className="my-4">
       <div>
-        <button onClick={() => sortBy("title")}>Sort Title</button> |
-        <button onClick={() => sortBy("date")}>Sort Date</button>
+        <button onClick={() => sortBy('title')}>Sort Title</button> |
+        <button onClick={() => sortBy('date')}>Sort Date</button>
       </div>
       <div>
         <div className="relative">
@@ -73,7 +72,7 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
             <div className="max-h-[500px] w-full bg-white overflow-auto absolute top-12 p-4">
               <button
                 className="bg-gray-300 ml-auto w-[120px] block"
-                onClick={() => handleSearch("")}
+                onClick={() => handleSearch('')}
               >
                 Close
               </button>
@@ -92,7 +91,7 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
       <div className="flex flex-wrap max-w-[1200px] mx-auto m-6 min-h-[100vh]">
         {listPage.map((node, index) => {
           const categorySlug =
-            categorieId || node?.categories?.nodes[0]?.slug || "orther";
+            categorieId || node?.categories?.nodes[0]?.slug || 'orther'
 
           return (
             <div key={index} className="bg-slate-400 border w-1/4 p-4">
@@ -109,13 +108,13 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
                 <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
               </Link>
             </div>
-          );
+          )
         })}
       </div>
-      <div ref={observerRef} style={{ height: "20px" }} />
+      <div ref={observerRef} style={{ height: '20px' }} />
     </div>
-  );
-};
+  )
+}
 
 const PostList = ({ initialData, categorieId, categories, tagId }) => {
   return (
@@ -127,7 +126,7 @@ const PostList = ({ initialData, categorieId, categories, tagId }) => {
         tagId={tagId}
       />
     </PostController>
-  );
-};
+  )
+}
 
-export default PostList;
+export default PostList

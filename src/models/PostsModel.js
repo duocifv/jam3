@@ -1,6 +1,6 @@
-import { gql } from "graphql-request";
-import Cache from "@/lib/cache";
-import { fetchDataWithPagination } from "@/lib/fetchDataWithPagination";
+import { gql } from 'graphql-request'
+import Cache from '@/lib/cache'
+import { fetchDataWithPagination } from '@/lib/fetchDataWithPagination'
 
 class PostsModel {
   async fetchPosts() {
@@ -36,8 +36,8 @@ class PostsModel {
           }
         }
       `,
-      "posts"
-    );
+      'posts'
+    )
   }
 
   async fetchCategoriesPosts() {
@@ -62,8 +62,8 @@ class PostsModel {
           }
         }
       `,
-      "categories"
-    );
+      'categories'
+    )
   }
 
   async fetchTagsPosts() {
@@ -87,49 +87,49 @@ class PostsModel {
           }
         }
       `,
-      "tags"
-    );
+      'tags'
+    )
   }
 
   // List Posts
   async getPosts(slug) {
-    const data = Cache.read("posts");
+    const data = Cache.read('posts')
     if (Object.keys(data).length) {
-      return slug ? data[slug] : Object.values(data);
+      return slug ? data[slug] : Object.values(data)
     }
 
-    const postsData = await this.fetchPosts();
-    Cache.write("posts", postsData);
+    const postsData = await this.fetchPosts()
+    Cache.write('posts', postsData)
 
-    return slug ? postsData[slug] : postsData;
+    return slug ? postsData[slug] : postsData
   }
 
   // Categories
   async getCategories(slug) {
-    const data = Cache.read("categories");
+    const data = Cache.read('categories')
     if (Object.keys(data).length) {
-      return slug ? data[slug] : Object.values(data);
+      return slug ? data[slug] : Object.values(data)
     }
 
-    const categories = await this.fetchCategoriesPosts();
-    Cache.write("categories", categories);
+    const categories = await this.fetchCategoriesPosts()
+    Cache.write('categories', categories)
 
-    return slug ? categories[slug] : Object.values(categories);
+    return slug ? categories[slug] : Object.values(categories)
   }
 
   // Tags
   async getTags() {
-    const data = Cache.read("tags");
+    const data = Cache.read('tags')
     if (Object.keys(data).length) {
-      return Object.values(data);
+      return Object.values(data)
     }
 
-    const tags = await this.fetchTagsPosts();
-    Cache.write("tags", tags);
+    const tags = await this.fetchTagsPosts()
+    Cache.write('tags', tags)
 
-    return Object.values(tags);
+    return Object.values(tags)
   }
 }
 
-const reulst = new PostsModel();
-export default reulst;
+const reulst = new PostsModel()
+export default reulst

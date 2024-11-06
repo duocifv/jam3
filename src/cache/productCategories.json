@@ -1,261 +1,194 @@
-[
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjE5",
-    "node": {
-      "count": 33,
-      "name": "Accessories",
-      "slug": "accessories",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDoyODA="
-          },
-          {
-            "id": "cG9zdDozODE="
-          },
-          {
-            "id": "cG9zdDo5OQ=="
-          },
-          {
-            "id": "cG9zdDo2OA=="
-          },
-          {
-            "id": "cG9zdDoxOTM="
-          },
-          {
-            "id": "cG9zdDo3MA=="
-          },
-          {
-            "id": "cG9zdDoxNjc="
-          },
-          {
-            "id": "cG9zdDoxNDA="
-          },
-          {
-            "id": "cG9zdDoxNzE="
-          },
-          {
-            "id": "cG9zdDozNzU="
-          }
-        ]
-      }
-    }
+{
+  "accessories": {
+    "productCategoryId": 19,
+    "count": 33,
+    "name": "Accessories",
+    "slug": "accessories"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEyNw==",
-    "node": {
-      "count": 5,
-      "name": "Beauty",
-      "slug": "beauty",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo1ODE="
-          },
-          {
-            "id": "cG9zdDo1ODA="
-          },
-          {
-            "id": "cG9zdDo1Nzk="
-          },
-          {
-            "id": "cG9zdDo1Nzg="
-          },
-          {
-            "id": "cG9zdDo1Nzc="
-          }
-        ]
-      }
-    }
+  "beauty": {
+    "productCategoryId": 127,
+    "count": 5,
+    "name": "Beauty",
+    "slug": "beauty"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjE2",
-    "node": {
-      "count": 1,
-      "name": "Clothing",
-      "slug": "clothing",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDoyODA="
-          },
-          {
-            "id": "cG9zdDozODE="
-          },
-          {
-            "id": "cG9zdDo4NA=="
-          },
-          {
-            "id": "cG9zdDo4MQ=="
-          },
-          {
-            "id": "cG9zdDo2MQ=="
-          },
-          {
-            "id": "cG9zdDo5OQ=="
-          },
-          {
-            "id": "cG9zdDo2OA=="
-          },
-          {
-            "id": "cG9zdDoxOTM="
-          },
-          {
-            "id": "cG9zdDo3MA=="
-          },
-          {
-            "id": "cG9zdDo3Ng=="
-          }
-        ]
-      }
-    }
+  "clothing": {
+    "productCategoryId": 16,
+    "count": 1,
+    "name": "Clothing",
+    "slug": "clothing"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEyOA==",
-    "node": {
-      "count": 5,
-      "name": "Fragrances",
-      "slug": "fragrances",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo1ODY="
-          },
-          {
-            "id": "cG9zdDo1ODU="
-          },
-          {
-            "id": "cG9zdDo1ODQ="
-          },
-          {
-            "id": "cG9zdDo1ODM="
-          },
-          {
-            "id": "cG9zdDo1ODI="
-          }
-        ]
-      }
-    }
+  "fragrances": {
+    "productCategoryId": 128,
+    "count": 5,
+    "name": "Fragrances",
+    "slug": "fragrances"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEyOQ==",
-    "node": {
-      "count": 5,
-      "name": "Furniture",
-      "slug": "furniture",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo1OTE="
-          },
-          {
-            "id": "cG9zdDo1OTA="
-          },
-          {
-            "id": "cG9zdDo1ODk="
-          },
-          {
-            "id": "cG9zdDo1ODg="
-          },
-          {
-            "id": "cG9zdDo1ODc="
-          }
-        ]
-      }
-    }
+  "furniture": {
+    "productCategoryId": 129,
+    "count": 5,
+    "name": "Furniture",
+    "slug": "furniture"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMA==",
-    "node": {
-      "count": 15,
-      "name": "Groceries",
-      "slug": "groceries",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo2MDY="
-          },
-          {
-            "id": "cG9zdDo2MDU="
-          },
-          {
-            "id": "cG9zdDo2MDQ="
-          },
-          {
-            "id": "cG9zdDo2MDM="
-          },
-          {
-            "id": "cG9zdDo2MDI="
-          },
-          {
-            "id": "cG9zdDo2MDE="
-          },
-          {
-            "id": "cG9zdDo2MDA="
-          },
-          {
-            "id": "cG9zdDo1OTk="
-          },
-          {
-            "id": "cG9zdDo1OTg="
-          },
-          {
-            "id": "cG9zdDo1OTc="
-          }
-        ]
-      }
-    }
+  "groceries": {
+    "productCategoryId": 130,
+    "count": 15,
+    "name": "Groceries",
+    "slug": "groceries"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMQ==",
-    "node": {
-      "count": null,
-      "name": "Home Decoration",
-      "slug": "home-decoration",
-      "products": {
-        "nodes": []
-      }
-    }
+  "home-decoration": {
+    "productCategoryId": 131,
+    "count": null,
+    "name": "Home Decoration",
+    "slug": "home-decoration"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjI3",
-    "node": {
-      "count": 1,
-      "name": "Hoodies",
-      "slug": "hoodies",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo4OA=="
-          }
-        ]
-      }
-    }
+  "hoodies": {
+    "productCategoryId": 27,
+    "count": 1,
+    "name": "Hoodies",
+    "slug": "hoodies"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjIw",
-    "node": {
-      "count": 1,
-      "name": "Jackets",
-      "slug": "jackets",
-      "products": {
-        "nodes": [
-          {
-            "id": "cG9zdDo3NA=="
-          }
-        ]
-      }
-    }
+  "jackets": {
+    "productCategoryId": 20,
+    "count": 1,
+    "name": "Jackets",
+    "slug": "jackets"
   },
-  {
-    "cursor": "YXJyYXljb25uZWN0aW9uOjEzMg==",
-    "node": {
-      "count": null,
-      "name": "Kitchen Accessories",
-      "slug": "kitchen-accessories",
-      "products": {
-        "nodes": []
-      }
-    }
+  "kitchen-accessories": {
+    "productCategoryId": 132,
+    "count": null,
+    "name": "Kitchen Accessories",
+    "slug": "kitchen-accessories"
+  },
+  "laptops": {
+    "productCategoryId": 133,
+    "count": null,
+    "name": "Laptops",
+    "slug": "laptops"
+  },
+  "mens-shirts": {
+    "productCategoryId": 134,
+    "count": null,
+    "name": "Mens Shirts",
+    "slug": "mens-shirts"
+  },
+  "mens-shoes": {
+    "productCategoryId": 135,
+    "count": null,
+    "name": "Mens Shoes",
+    "slug": "mens-shoes"
+  },
+  "mens-watches": {
+    "productCategoryId": 136,
+    "count": null,
+    "name": "Mens Watches",
+    "slug": "mens-watches"
+  },
+  "mobile-accessories": {
+    "productCategoryId": 137,
+    "count": null,
+    "name": "Mobile Accessories",
+    "slug": "mobile-accessories"
+  },
+  "motorcycle": {
+    "productCategoryId": 138,
+    "count": null,
+    "name": "Motorcycle",
+    "slug": "motorcycle"
+  },
+  "shirts": {
+    "productCategoryId": 18,
+    "count": 4,
+    "name": "Shirts",
+    "slug": "shirts"
+  },
+  "skin-care": {
+    "productCategoryId": 139,
+    "count": null,
+    "name": "Skin Care",
+    "slug": "skin-care"
+  },
+  "smartphones": {
+    "productCategoryId": 140,
+    "count": null,
+    "name": "Smartphones",
+    "slug": "smartphones"
+  },
+  "sports-accessories": {
+    "productCategoryId": 141,
+    "count": null,
+    "name": "Sports Accessories",
+    "slug": "sports-accessories"
+  },
+  "sunglasses": {
+    "productCategoryId": 142,
+    "count": null,
+    "name": "Sunglasses",
+    "slug": "sunglasses"
+  },
+  "sweater": {
+    "productCategoryId": 17,
+    "count": 1,
+    "name": "Sweater",
+    "slug": "sweater"
+  },
+  "tablets": {
+    "productCategoryId": 143,
+    "count": null,
+    "name": "Tablets",
+    "slug": "tablets"
+  },
+  "tops": {
+    "productCategoryId": 144,
+    "count": null,
+    "name": "Tops",
+    "slug": "tops"
+  },
+  "tshirts": {
+    "productCategoryId": 26,
+    "count": 3,
+    "name": "Tshirts",
+    "slug": "tshirts"
+  },
+  "uncategorized": {
+    "productCategoryId": 15,
+    "count": 62,
+    "name": "Uncategorized",
+    "slug": "uncategorized"
+  },
+  "vehicle": {
+    "productCategoryId": 145,
+    "count": null,
+    "name": "Vehicle",
+    "slug": "vehicle"
+  },
+  "womens-bags": {
+    "productCategoryId": 146,
+    "count": null,
+    "name": "Womens Bags",
+    "slug": "womens-bags"
+  },
+  "womens-dresses": {
+    "productCategoryId": 147,
+    "count": null,
+    "name": "Womens Dresses",
+    "slug": "womens-dresses"
+  },
+  "womens-jewellery": {
+    "productCategoryId": 148,
+    "count": null,
+    "name": "Womens Jewellery",
+    "slug": "womens-jewellery"
+  },
+  "womens-shoes": {
+    "productCategoryId": 149,
+    "count": null,
+    "name": "Womens Shoes",
+    "slug": "womens-shoes"
+  },
+  "womens-watches": {
+    "productCategoryId": 150,
+    "count": null,
+    "name": "Womens Watches",
+    "slug": "womens-watches"
   }
-]
+}
