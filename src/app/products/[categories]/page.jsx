@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCtrl from '@/controllers/ProductCtrl'
+import ProductWrapper from '@/components/Products/ProductWrapper'
 import ProductList from '@/components/Products/ProductList'
 
 export async function generateStaticParams() {
@@ -12,7 +13,10 @@ export async function generateStaticParams() {
 const page = async ({ params }) => {
   const { categories } = await params
   const listCategories = await ProductCtrl.listCategories(categories)
-  return <ProductList products={listCategories} />
+  return (
+    <ProductWrapper>
+      <ProductList innitData={listCategories} />
+    </ProductWrapper>
+  )
 }
-
 export default page

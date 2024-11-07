@@ -35,8 +35,11 @@ class ProductCtrl {
       }))
       result = result.concat(items)
     }
-    console.log('result', result)
     return result
+  }
+  async detail(slugCategory, slugPage) {
+    const product = await ProductModel.getProducts(slugCategory, slugPage)
+    return product
   }
 }
 

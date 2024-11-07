@@ -1,4 +1,5 @@
 import ProductCtrl from '@/controllers/ProductCtrl'
+import Cart from '@/components/Products/cart/Cart'
 import Link from 'next/link'
 
 export const metadata = {
@@ -19,7 +20,10 @@ export default async function ProductLayout({ children }) {
           </div>
         ))}
       </div>
-      <div className="w-[1100px]">{children}</div>
+      <div className="w-[1100px]">
+        <Cart />
+        {children}
+      </div>
     </div>
   )
 }

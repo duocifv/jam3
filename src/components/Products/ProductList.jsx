@@ -1,13 +1,31 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useProductsStore } from '@/store/useProductsStore'
+import Link from 'next/link'
 
-const ProductList = ({ products }) => {
+const ProductList = ({ innitData }) => {
+  const products = useProductsStore((state) => state.products)
+  const setProducts = useProductsStore((state) => state.setProducts)
+  const sortBy = useProductsStore((state) => state.sortBy)
+  const addToCart = useProductsStore((state) => state.addToCart)
+  const handleAddToCart = (productId) => {
+    addToCart(productId, 1)
+  }
+  const list = products && products.length > 0 ? products : innitData
+  useEffect(() => {
+    setProducts(innitData)
+  }, [innitData])
+
   return (
-    <div className="flex flex-wrap">
-      {products.map((product, index) => (
-        <div key={index} className="bg-slate-400 w-1/4 p-4 m-4">
-          <a href={`/products/${product?.categories?.slug}/${product?.slug}`}>
+    <>
+      <div>
+        <button onClick={() => sortBy('name')}>sort by name</button> |
+        <button onClick={() => sortBy('price')}>sort by price</button>
+      </div>
+      <div className="flex flex-wrap">
+        {list.map((product, index) => (
+          <div key={index} className="bg-slate-400 w-1/4 p-4 m-4">
             {product?.image?.sourceUrl ? (
               <Image
                 src={product.image.sourceUrl} // Lấy URL hình ảnh
@@ -26,12 +44,27 @@ const ProductList = ({ products }) => {
             <div>On Sale: {product?.onSale ? 'Yes' : 'No'}</div>
             <div>Review Count: {product?.reviewCount}</div>
             <div>Type: {product?.type}</div>
-            <div>Price: {product?.price}</div>
+            <div>
+              Price:
+              <span dangerouslySetInnerHTML={{ __html: product?.price }} />
+            </div>
             <div>Reviews: {product?.reviews?.averageRating}</div>
-          </a>
-        </div>
-      ))}
-    </div>
+            <button
+              className="bg-red-300"
+              onClick={() => handleAddToCart(product.productId)}
+            >
+              Add to Cart {product.productId}
+            </button>
+            |
+            <Link
+              href={`/products/${product?.categories?.slug}/${product?.slug}`}
+            >
+              View more
+            </Link>
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 

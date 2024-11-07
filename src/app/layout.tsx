@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
+import Header from '@/components/base/Header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+      </head>
       <body>
-        <ProviderClient>{children}</ProviderClient>
+        <ProviderClient>
+          <Header />
+          <div className="min-h-[100vh]">{children}</div>
+        </ProviderClient>
       </body>
     </html>
   )

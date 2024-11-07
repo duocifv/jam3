@@ -42,7 +42,6 @@ class ProductModel {
             edges {
               cursor
               node {
-                id
                 slug
                 name
                 description
@@ -55,6 +54,7 @@ class ProductModel {
                 }
                 type
                 ... on VariableProduct {
+                  productId
                   price(format: FORMATTED)
                   salePrice(format: FORMATTED)
                   reviews {
@@ -62,6 +62,7 @@ class ProductModel {
                   }
                 }
                 ... on ExternalProduct {
+                  productId
                   price(format: FORMATTED)
                   salePrice(format: FORMATTED)
                   reviews {
@@ -69,6 +70,7 @@ class ProductModel {
                   }
                 }
                 ... on GroupProduct {
+                  productId
                   price(format: FORMATTED)
                   salePrice(format: FORMATTED)
                   reviews {
@@ -76,6 +78,7 @@ class ProductModel {
                   }
                 }
                 ... on SimpleProduct {
+                  productId
                   price(format: FORMATTED)
                   salePrice(format: FORMATTED)
                   reviews {

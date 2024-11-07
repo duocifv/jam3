@@ -12,7 +12,7 @@ app.use(express.json()) // Thêm middleware để phân tích cú pháp JSON t�
 
 app.post('/graphql', async (req, res) => {
   const url =
-    'https://a06d-2402-800-629c-18c4-dd40-1987-8405-afe0.ngrok-free.app/graphql'
+    'https://c206-2402-800-629c-4036-64e5-2cff-6cd9-ea42.ngrok-free.app/graphql'
   //const url = 'http://localhost/graphql'
 
   // Phân tích cú pháp body từ yêu cầu
