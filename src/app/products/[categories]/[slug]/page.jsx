@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/ProductCtrl'
+import ProductCtrl from '@/controllers/server/ProductCtrl'
 import ProductDetail from '@/components/Products/ProductDetail'
 
 export async function generateStaticParams() {

@@ -11,8 +11,7 @@ app.use(express.json()) // Thêm middleware để phân tích cú pháp JSON t�
 // Endpoint để lấy cursors
 
 app.post('/graphql', async (req, res) => {
-  const url =
-    'http://localhost/graphql'
+  const url = 'http://jam.x10.bz/graphql'
   //const url = 'http://localhost/graphql'
 
   // Phân tích cú pháp body từ yêu cầu

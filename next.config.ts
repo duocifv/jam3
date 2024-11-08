@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
         source: '/graphql',
         destination: apiKey,
       },
+      {
+        source: '/wc/cart',
+        destination: 'http://jam.x10.bz/wp-json/graphql/cart',
+      },
     ]
   },
 }

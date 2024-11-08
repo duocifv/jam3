@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/ProductCtrl'
+import ProductCtrl from '@/controllers/server/ProductCtrl'
 import ProductWrapper from '@/components/Products/ProductWrapper'
 import ProductList from '@/components/Products/ProductList'
 

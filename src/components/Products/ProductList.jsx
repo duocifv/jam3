@@ -8,9 +8,9 @@ const ProductList = ({ innitData }) => {
   const products = useProductsStore((state) => state.products)
   const setProducts = useProductsStore((state) => state.setProducts)
   const sortBy = useProductsStore((state) => state.sortBy)
-  const addToCart = useProductsStore((state) => state.addToCart)
+  const setItemCart = useProductsStore((state) => state.setItemCart)
   const handleAddToCart = (productId) => {
-    addToCart(productId, 1)
+    setItemCart(productId, 1)
   }
   const list = products && products.length > 0 ? products : innitData
   useEffect(() => {
@@ -28,7 +28,7 @@ const ProductList = ({ innitData }) => {
           <div key={index} className="bg-slate-400 w-1/4 p-4 m-4">
             {product?.image?.sourceUrl ? (
               <Image
-                src={product.image.sourceUrl} // Lấy URL hình ảnh
+                src={product.image.sourceUrl}
                 width={500}
                 height={300}
                 alt={product.name || 'Product image'}

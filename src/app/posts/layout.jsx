@@ -1,6 +1,6 @@
 import Categories from '@/components/posts/Categories'
 import Tags from '@/components/posts/Tags'
-import PostsCtrl from '@/controllers/PostsCtrl'
+import PostsCtrl from '@/controllers/server/PostsCtrl'
 import { notFound } from 'next/navigation'
 export const metadata = {
   title: 'Create Next App',

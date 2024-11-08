@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request'
 
-const endpoint = 'http://localhost/graphql'
+const endpoint = 'http://localhost:3000/graphql'
 
 // Tạo một client GraphQL
 const client = new GraphQLClient(endpoint)

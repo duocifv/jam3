@@ -1,5 +1,5 @@
-import ProductCtrl from '@/controllers/ProductCtrl'
-import Cart from '@/components/Products/cart/Cart'
+import ProductCtrl from '@/controllers/server/ProductCtrl'
+import Cart from '@/components/Products/Cart'
 import Link from 'next/link'
 
 export const metadata = {
