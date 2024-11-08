@@ -7,3 +7,19 @@ https://cp1.biz.nf/start/
 Client ID: 4548990
 reviewcallback@napmails.com
 Khanh132!!
+
+
+
+
+http://jam.x10.bz/wp-admin/admin.php?page=wc-admin&path=%2Fcustomers
+
+
+
+Hosting Package: Free
+Domain: http://jam.x10.bz
+Username: kwdqlpwm
+Sign In: https://x10hosting.com/login
+Server: X12
+Server IP: 198.91.81.12
+
+nvduocfpt@gmail.com
