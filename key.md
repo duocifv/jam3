@@ -8,12 +8,7 @@ Client ID: 4548990
 reviewcallback@napmails.com
 Khanh132!!
 
-
-
-
 http://jam.x10.bz/wp-admin/admin.php?page=wc-admin&path=%2Fcustomers
-
-
 
 Hosting Package: Free
 Domain: http://jam.x10.bz
@@ -23,3 +18,9 @@ Server: X12
 Server IP: 198.91.81.12
 
 nvduocfpt@gmail.com
+
+
+ck_245c50964d2c8b2112fbcc434145d51cd0eef870
+cs_016e85f2cf5f461c6706da3c732815616936d989
+
+https://www.whatsmydns.net/#A/jam.x10.bz

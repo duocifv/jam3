@@ -94,7 +94,7 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
             categorieId || node?.categories?.nodes[0]?.slug || 'orther'
 
           return (
-            <div key={index} className="bg-slate-400 border w-1/4 p-4">
+            <div key={index} className="bg-slate-400 border w-1/2 p-4">
               <Link href={`/posts/${categorySlug}/${node.slug}`}>
                 <h2
                   className="text-3xl mb-2"

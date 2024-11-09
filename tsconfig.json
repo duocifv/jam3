@@ -34,7 +34,7 @@
     "src/components/Products/ProductsDetail.jsx",
     "src/components/posts/PostList.jsx",
     "src/app/posts/[categories]/[tags]/[slug]/page.jsx",
-    "src/components/commonI/Pagination.jsx",
+    "src/components/common/Pagination.jsx",
     "src/app/categories/page.jsx",
     "src/lib/auth.js",
     "src/app/categories/type/@pagination/[page]/page.jsx",

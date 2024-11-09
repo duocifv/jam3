@@ -15,7 +15,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/wc/cart',
-        destination: 'http://jam.x10.bz/wp-json/graphql/cart',
+        destination: 'https://test.jam.x10.bz/wp-json/graphql/cart',
+      },
+      {
+        source: '/wc/orders',
+        destination: 'https://test.jam.x10.bz/wp-json/wc/v3/orders',
       },
     ]
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import PostList from '@/components/posts/PostList'
-import PostsCtrl from '@/controllers/PostsCtrl'
+import PostsCtrl from '@/controllers/server/PostsCtrl'
 
 export async function generateStaticParams() {
   const categories = await PostsCtrl.categories()

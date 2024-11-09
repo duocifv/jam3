@@ -3,6 +3,7 @@ import './globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
 import Header from '@/components/base/Header'
+import Sidebar from '@/components/base/Sidebar'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,7 +26,10 @@ export default function RootLayout({
       <body>
         <ProviderClient>
           <Header />
-          <div className="min-h-[100vh]">{children}</div>
+          <div className="min-h-[100vh] max-w-[1200px] mx-auto flex">
+            <Sidebar />
+            <div className="bg-[#fff] p-8">{children}</div>
+          </div>
         </ProviderClient>
       </body>
     </html>

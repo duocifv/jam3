@@ -4,7 +4,7 @@ import React from 'react'
 
 const Categories = ({ initialData }) => {
   return (
-    <div className="w-[480px]">
+    <div>
       <h3 className="text-3xl">Categories</h3>
       <hr />
       {initialData.map((item, index) => (

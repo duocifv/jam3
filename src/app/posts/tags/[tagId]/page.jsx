@@ -1,5 +1,5 @@
 import React from 'react'
-import PostsCtrl from '@/controllers/PostsCtrl'
+import PostsCtrl from '@/controllers/server/PostsCtrl'
 import PostList from '@/components/posts/PostList'
 
 export async function generateStaticParams() {

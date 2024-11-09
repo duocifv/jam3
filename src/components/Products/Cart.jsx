@@ -127,7 +127,7 @@ const Cart = () => {
             </div>
           </div>
 
-          <button onClick={handleCheckout}>Thanh toán</button>
+          <Link href="/products/checkout">Thanh toán</Link>
         </div>
       ) : (
         'no cart'

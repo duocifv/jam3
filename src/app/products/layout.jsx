@@ -1,6 +1,4 @@
-import ProductCtrl from '@/controllers/server/ProductCtrl'
 import Cart from '@/components/Products/Cart'
-import Link from 'next/link'
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,19 +6,9 @@ export const metadata = {
 }
 
 export default async function ProductLayout({ children }) {
-  const categories = await ProductCtrl.categories()
   return (
     <div className="flex max-w-[1300px] mx-auto">
-      <div className="w-[200px]">
-        {categories.map((node, index) => (
-          <div key={index}>
-            <Link href={`/products/${node.slug}`}>
-              {node.name} ({node.count})
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div className="w-[1100px]">
+      <div className="w-[840px]">
         <Cart />
         {children}
       </div>

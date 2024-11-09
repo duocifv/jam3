@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import PostsCtrl from '@/controllers/PostsCtrl'
+import PostsCtrl from '@/controllers/server/PostsCtrl'
 
 export async function generateStaticParams() {
   const posts = await PostsCtrl.list()

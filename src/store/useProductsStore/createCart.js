@@ -3,6 +3,7 @@ import ShoppingCtrl from '@/controllers/client/ShoppingCtrl'
 export const createCart = (set, get) => ({
   cart: null,
   itemCart: [],
+  customer: {},
   setItemCart: (productId, quantity) => {
     const { itemCart } = get()
     const updatedItemCart = itemCart.map((item) =>
@@ -22,5 +23,21 @@ export const createCart = (set, get) => ({
       if (cart) set({ cart })
     })
     set({ cart: ['loadding'] })
+  },
+  addCustomer: (customer) => {
+    const { itemCart } = get()
+    if (itemCart.length === 0) return alert('chọn sản phẩm')
+    const productsCart = itemCart.map(({ productId, quantity }) => ({
+      product_id: productId,
+      quantity,
+    }))
+    customer.line_items = [...productsCart]
+    set({ customer })
+  },
+  checkout: () => {
+    const { customer } = get()
+    ShoppingCtrl.order(customer).then((item) => {
+      console.log('value item', item)
+    })
   },
 })
