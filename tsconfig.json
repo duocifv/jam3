@@ -39,7 +39,7 @@
     "src/lib/auth.js",
     "src/app/categories/type/@pagination/[page]/page.jsx",
     "src/app/categories/type/@category/page/[id]/page.jsx",
-    "src/store/useStore.js",
+    "src/stores/useStore.js",
     "src/app/products/[categories]/page.jsx"
   ],
   "exclude": ["node_modules"]

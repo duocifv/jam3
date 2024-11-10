@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCtrl from '@/controllers/server/ProductCtrl'
 import { notFound } from 'next/navigation'
-import ProductList from '@/components/Products/ProductList'
+import { ProductList } from '@/components/Products/'
 
 const Page = async () => {
   const products = await ProductCtrl.list()

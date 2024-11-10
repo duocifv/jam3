@@ -1,4 +1,4 @@
-import { useStore } from '@/store/useStore'
+import { useStore } from '@/stores/useStore'
 import { useEffect } from 'react'
 
 const PostController = ({ children, initialData }) => {

@@ -4,6 +4,7 @@ export const createCart = (set, get) => ({
   cart: null,
   itemCart: [],
   customer: {},
+  step: 1,
   setItemCart: (productId, quantity) => {
     const { itemCart } = get()
     const updatedItemCart = itemCart.map((item) =>
@@ -23,6 +24,7 @@ export const createCart = (set, get) => ({
       if (cart) set({ cart })
     })
     set({ cart: ['loadding'] })
+    set({ step: 2 })
   },
   addCustomer: (customer) => {
     const { itemCart } = get()
@@ -37,7 +39,8 @@ export const createCart = (set, get) => ({
   checkout: () => {
     const { customer } = get()
     ShoppingCtrl.order(customer).then((item) => {
-      console.log('value item', item)
+      set({ cart: item.data })
+      set({ step: 3 })
     })
   },
 })

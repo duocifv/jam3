@@ -1,5 +1,5 @@
 'use client'
-import { useProductsStore } from '@/store/useProductsStore'
+import { useProductsStore } from '@/stores/useProductsStore'
 import Image from 'next/image'
 import Link from 'next/link'
 

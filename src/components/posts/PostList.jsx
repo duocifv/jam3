@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import React from 'react'
-import { useStore } from '@/store/useStore'
+import { useStore } from '@/stores/useStore'
 import { debounce } from '@/lib/utils'
 import PostController from '@/components/posts/controller/PostController'
 

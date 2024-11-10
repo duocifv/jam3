@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import { useProductsStore } from '@/store/useProductsStore'
+import { useProductsStore } from '@/stores/useProductsStore'
 import Link from 'next/link'
 
 const ProductList = ({ innitData }) => {
@@ -25,7 +25,7 @@ const ProductList = ({ innitData }) => {
       </div>
       <div className="flex flex-wrap">
         {list.map((product, index) => (
-          <div key={index} className="bg-slate-400 w-1/4 p-4 m-4">
+          <div key={index} className="bg-slate-400 w-1/2 p-4 border-8">
             {product?.image?.sourceUrl ? (
               <Image
                 src={product.image.sourceUrl}

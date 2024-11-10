@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '@/styles/globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
 import Header from '@/components/base/Header'
@@ -28,7 +28,7 @@ export default function RootLayout({
           <Header />
           <div className="min-h-[100vh] max-w-[1200px] mx-auto flex">
             <Sidebar />
-            <div className="bg-[#fff] p-8">{children}</div>
+            <div className="bg-[#fff] p-8 min-w-[840px]">{children}</div>
           </div>
         </ProviderClient>
       </body>

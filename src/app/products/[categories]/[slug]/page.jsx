@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCtrl from '@/controllers/server/ProductCtrl'
-import ProductDetail from '@/components/Products/ProductDetail'
+import { ProductDetail } from '@/components/Products/'
 
 export async function generateStaticParams() {
   const params = await ProductCtrl.productcategories()
