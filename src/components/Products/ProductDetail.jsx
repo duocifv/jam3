@@ -1,7 +1,13 @@
+'use client'
+import { useProductsStore } from '@/stores/useProductsStore'
 import Image from 'next/image'
 import React from 'react'
 
 const ProductDetail = ({ product }) => {
+  const setItemCart = useProductsStore((state) => state.setItemCart)
+  const handleAddToCart = (productId) => {
+    setItemCart(productId, 1)
+  }
   return (
     <div>
       <h2 className="text-3xl">{product?.name}</h2>
@@ -17,6 +23,12 @@ const ProductDetail = ({ product }) => {
           No image available
         </div>
       )}
+      <button
+        className="bg-red-300"
+        onClick={() => handleAddToCart(product.productId)}
+      >
+        Add to Cart {product.productId}
+      </button>
       <div>categories: {product?.categories?.name}</div>
       <div>shortDescription: {product?.shortDescription}</div>
       <div>On Sale: {product?.onSale ? 'Yes' : 'No'}</div>

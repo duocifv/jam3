@@ -41,6 +41,6 @@
     "src/app/categories/type/@category/page/[id]/page.jsx",
     "src/stores/useStore.js",
     "src/app/products/[categories]/page.jsx"
-  ],
+, "src/components/Products/Checkout.jsx"  ],
   "exclude": ["node_modules"]
 }

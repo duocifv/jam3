@@ -1,4 +1,5 @@
 import { useProductsStore } from '@/stores/useProductsStore'
+import Image from 'next/image'
 
 import React from 'react'
 
@@ -66,7 +67,7 @@ const OrderSummary = () => {
           <h3 className="text-lg font-semibold">Order Items</h3>
           {order.line_items.map((item) => (
             <div key={item.id} className="flex items-center mb-4">
-              <img
+              <Image
                 src={item.image.src}
                 alt={item.name}
                 className="w-16 h-16 object-cover mr-4"
