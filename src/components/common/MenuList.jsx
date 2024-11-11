@@ -12,7 +12,7 @@ const MenuList = ({ initialData, path, children }) => {
           onClick={() => setOpen(!open)}
           className="bg-lime-600 p-2 text-gray-50"
         >
-          More
+          Module
         </button>
       </div>
       <hr className="bg-lime-700" />

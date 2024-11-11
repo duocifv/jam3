@@ -14,6 +14,9 @@ const Sidebar = async () => {
   return (
     <div className="min-w-[380px] border-l-[30px] p-4 bg-[#fff] border-lime-600 mr-5">
       <MenuList initialData={categories} path="/posts">
+        Pages Categories
+      </MenuList>
+      <MenuList initialData={categories} path="/posts">
         Posts Categories
       </MenuList>
       <MenuList initialData={tags} path="/posts/tags">

@@ -1,5 +1,5 @@
 import Column from './Column'
-import { Blocks } from '@/app/pages/about/page'
+import About from '@/components/pages/About'
 
 type Block = {
   name: string
@@ -24,7 +24,7 @@ const Columns = ({ isStackedOnMobile = true, blocks }: ColumnsProps) => {
         return (
           <Column key={index} width={attr?.width ?? '100%'}>
             {block.innerBlocks.map((block: Block, index: number) => {
-              return <Blocks key={index} block={block} />
+              return <About key={index} block={block} />
             })}
           </Column>
         )
