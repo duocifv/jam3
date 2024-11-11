@@ -40,7 +40,9 @@
     "src/app/categories/type/@pagination/[page]/page.jsx",
     "src/app/categories/type/@category/page/[id]/page.jsx",
     "src/stores/useStore.js",
-    "src/app/products/[categories]/page.jsx"
+    "src/app/products/[categories]/page.jsx",
+    "src/app/pages/about/page.jsx",
+    "src/components/common/Paragraph.jsx"
   ],
   "exclude": ["node_modules"]
 }
