@@ -24,7 +24,8 @@ const Text: React.FC<TextProps> = ({
   const Tag =
     level === 0
       ? 'p'
-      : (`h${Math.min(level, 6)}` as keyof JSX.IntrinsicElements)
+      : // eslint-disable-next-line no-undef
+        (`h${Math.min(level, 6)}` as keyof JSX.IntrinsicElements)
   return (
     <Tag
       className={font[size]}

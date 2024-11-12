@@ -7,45 +7,6 @@ const Cart = () => {
   const cart = useProductsStore((state) => state.cart)
   const addToCart = useProductsStore((state) => state.addToCart)
   const itemCart = useProductsStore((state) => state.itemCart)
-
-  const billingInfo = {
-    address1: '123 Main St',
-    address2: 'Apt 4B',
-    city: 'Hanoi',
-    company: 'My Company',
-    country: 'VN',
-    email: 'customer@example.com',
-    firstName: 'John',
-    lastName: 'Doe',
-    overwrite: true,
-    phone: '123456789',
-    postcode: '10000',
-    state: 'HN',
-  }
-
-  const shippingInfo = {
-    address1: '456 Another St',
-    address2: 'Apt 2A',
-    city: 'Hanoi',
-    company: 'Shipping Company',
-    country: 'VN',
-    email: 'customer@example.com',
-    firstName: 'John',
-    lastName: 'Doe',
-    overwrite: true,
-    phone: '123456789',
-    postcode: '10000',
-    state: 'HN',
-  }
-
-  const handleCheckout = async () => {
-    if (!cart || !cart.contents.nodes.length) {
-      console.error('Giỏ hàng trống')
-      return
-    }
-  }
-
-  console.log('cart', cart)
   return (
     <div className="bg-gray-200 p-2 m-2">
       <i className="fas fa-shopping-cart"></i> Cart

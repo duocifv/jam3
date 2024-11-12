@@ -52,7 +52,7 @@ const Search = ({ initialData, categorieId, categories, tagId }) => {
 
     if (observerRef.current) observer.observe(observerRef.current)
     return () => observer.disconnect()
-  }, [loadMore, isScroll])
+  }, [loadMore, isScroll, page])
 
   return (
     <div className="my-4">

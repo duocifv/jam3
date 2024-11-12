@@ -9,7 +9,7 @@
       "shortDescription": "<p>This is a variable product.</p>\n",
       "sku": "woo-fashion-socks",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113857-839785e4-d25a-45f0-b647-cd8d9be8bc2d.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113857-839785e4-d25a-45f0-b647-cd8d9be8bc2d.jpeg"
       },
       "type": "VARIABLE",
       "productId": 68,
@@ -32,7 +32,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-shoes",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113861-531ebbcd-f9b5-4c18-b5c7-a878d5017ca2.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113861-531ebbcd-f9b5-4c18-b5c7-a878d5017ca2.jpeg"
       },
       "type": "SIMPLE",
       "productId": 70,
@@ -55,7 +55,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-hat",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg"
       },
       "type": "SIMPLE",
       "productId": 78,
@@ -81,7 +81,7 @@
       "shortDescription": "<p>This is a variable product.</p>\n",
       "sku": "woo-fashion-sweater",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
       },
       "type": "VARIABLE",
       "productId": 61,
@@ -110,7 +110,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-jacket",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113817-0fd3751e-b81b-4def-be53-040d8fa049f2.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113817-0fd3751e-b81b-4def-be53-040d8fa049f2.jpeg"
       },
       "type": "SIMPLE",
       "productId": 74,
@@ -135,7 +135,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-shirt-green",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113801-fd8243b7-8465-4f82-86c1-2c54797fe296.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113801-fd8243b7-8465-4f82-86c1-2c54797fe296.jpeg"
       },
       "type": "SIMPLE",
       "productId": 76,
@@ -158,7 +158,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-shirt-cream",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113864-14d59cf5-1233-4053-8193-070413ea3434.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113864-14d59cf5-1233-4053-8193-070413ea3434.jpeg"
       },
       "type": "SIMPLE",
       "productId": 72,
@@ -181,7 +181,7 @@
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-shirt",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113854-b669deff-4c3e-4bb0-b00f-96cfbdc4087e.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113854-b669deff-4c3e-4bb0-b00f-96cfbdc4087e.jpeg"
       },
       "type": "SIMPLE",
       "productId": 66,
@@ -199,17 +199,17 @@
       "slug": "blouse",
       "name": "Blouse",
       "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
-      "onSale": false,
+      "onSale": true,
       "reviewCount": 0,
       "shortDescription": "<p>This is a simple product.</p>\n",
       "sku": "woo-fashion-blouse",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113836-efdbde32-7863-4a24-9d2d-979025b51260.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113836-efdbde32-7863-4a24-9d2d-979025b51260.jpeg"
       },
       "type": "SIMPLE",
       "productId": 64,
-      "price": null,
-      "salePrice": null,
+      "price": "12&nbsp;₫",
+      "salePrice": "12&nbsp;₫",
       "reviews": {
         "averageRating": 0
       },
@@ -229,7 +229,7 @@
       "shortDescription": "<p>This is a variable product.</p>\n",
       "sku": "woo-fashion-sweater",
       "image": {
-        "sourceUrl": "http://jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
       },
       "type": "VARIABLE",
       "productId": 61,

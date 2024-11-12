@@ -15,7 +15,7 @@ const ProductList = ({ innitData }) => {
   const list = products && products.length > 0 ? products : innitData
   useEffect(() => {
     setProducts(innitData)
-  }, [innitData])
+  }, [innitData, setProducts])
 
   return (
     <>
