@@ -35,6 +35,15 @@ const About = ({ block }) => {
         />
       )
     }
+
+    // case 'core/table': {
+    //   const { url, alt, width } = attributes
+    //   return (
+    //     <Table
+
+    //     />
+    //   )
+    // }
     case 'core/image': {
       const { url, alt, width } = attributes
       return (
@@ -46,6 +55,7 @@ const About = ({ block }) => {
         />
       )
     }
+
     case 'core/separator':
       return <hr className="border border-red-600" />
     default:

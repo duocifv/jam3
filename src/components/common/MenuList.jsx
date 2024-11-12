@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 const MenuList = ({ initialData, path, children }) => {
   const [open, setOpen] = useState(false)
+  if (initialData.length === 0) return
   return (
     <div>
       <div className="flex justify-between">
@@ -20,7 +21,7 @@ const MenuList = ({ initialData, path, children }) => {
         initialData.map((item, index) => (
           <div key={index}>
             <Link href={`${path}/${item.slug}`}>
-              {item.name} ({item.count})
+              {item.name} {item?.count && `(${item.count})`}
             </Link>
           </div>
         ))}

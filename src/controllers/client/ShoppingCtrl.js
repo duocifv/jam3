@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const endpoint = `'http://test.jam.x10.bz/wp-json`
+const endpoint = 'https://test.jam.x10.bz/wp-json'
 const consumerKey = 'ck_245c50964d2c8b2112fbcc434145d51cd0eef870'
 const consumerSecret = 'cs_016e85f2cf5f461c6706da3c732815616936d989'
 

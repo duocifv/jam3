@@ -1,46 +1,70 @@
 import { gql } from 'graphql-request'
-import { fetchData } from '@/lib/api'
+import { fetchDataWithPagination } from '@/lib/fetchDataWithPagination'
 import Cache from '@/lib/cache'
 
 class PagesModel {
-  async fetchPage(id) {
-    return await fetchData(
+  async fetchPages() {
+    return await fetchDataWithPagination(
       gql`
-        query Page($id: ID!) {
-          page(id: $id) {
-            slug
-            blocks {
-              name
-              attributesJSON
-              order
-              innerBlocks {
-                name
-                attributesJSON
-                order
-                innerBlocks {
+        query Pages($first: Int, $after: String) {
+          pages(first: $first, after: $after) {
+            pageInfo {
+              endCursor
+              hasNextPage
+            }
+            edges {
+              cursor
+              node {
+                id
+                pageId
+                status
+                slug
+                dateGmt
+                title
+                blocks {
                   name
                   attributesJSON
                   order
+                  innerBlocks {
+                    name
+                    attributesJSON
+                    order
+                    innerBlocks {
+                      name
+                      attributesJSON
+                      order
+                    }
+                  }
+                }
+                featuredImage {
+                  node {
+                    mediaDetails {
+                      sizes {
+                        sourceUrl
+                      }
+                    }
+                  }
                 }
               }
             }
           }
         }
       `,
-      { id }
+      'pages'
     )
   }
 
   // List Posts
-  async getPage(id) {
-    const data = Cache.read('page')
+  async getPages(slug) {
+    const data = Cache.read('pages')
     if (Object.keys(data).length) {
-      return id && data
+      return slug ? data[slug] : Object.values(data)
     }
-    const result = await this.fetchPage(id)
-    Cache.write('page', result.page)
 
-    return result || {}
+    const result = await this.fetchPages()
+    Cache.write('pages', result)
+
+    return slug ? result[slug] : Object.values(result)
   }
 }
 

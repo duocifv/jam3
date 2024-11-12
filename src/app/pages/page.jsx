@@ -3,11 +3,10 @@ import PagesCtrl from '@/controllers/server/PagesCtrl'
 import About from '@/components/pages/About'
 
 const page = async () => {
-  const data = await PagesCtrl.page('cG9zdDoxNjk=')
-
+  const pages = await PagesCtrl.all()
   return (
     <div>
-      {data.blocks.map((block, index) => (
+      {pages.map((block, index) => (
         <About key={index} block={block} />
       ))}
     </div>
