@@ -1,0 +1,179 @@
+{
+  "accessories": {
+    "shirt-green": {
+      "slug": "shirt-green",
+      "name": "Shirt - Green",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": true,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt-green",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113801-fd8243b7-8465-4f82-86c1-2c54797fe296.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 79,
+      "price": "20&nbsp;₫",
+      "salePrice": "20&nbsp;₫",
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    },
+    "shirt-cream": {
+      "slug": "shirt-cream",
+      "name": "Shirt - Cream",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt-cream",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113864-14d59cf5-1233-4053-8193-070413ea3434.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 75,
+      "price": "25&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    },
+    "shirt": {
+      "slug": "shirt",
+      "name": "Shirt",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": true,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113854-b669deff-4c3e-4bb0-b00f-96cfbdc4087e.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 69,
+      "price": "18&nbsp;₫",
+      "salePrice": "18&nbsp;₫",
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    },
+    "blouse": {
+      "slug": "blouse",
+      "name": "Blouse",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-blouse",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113836-efdbde32-7863-4a24-9d2d-979025b51260.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 67,
+      "price": null,
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    }
+  },
+  "beauty": {},
+  "clothing": {},
+  "fragrances": {},
+  "furniture": {},
+  "groceries": {},
+  "hoodies": {},
+  "jackets": {
+    "hat": {
+      "slug": "hat",
+      "name": "Hat",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-hat",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 81,
+      "price": "12&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "jackets",
+        "name": "Jackets"
+      }
+    }
+  },
+  "shirts": {
+    "sweater": {
+      "slug": "sweater",
+      "name": "Sweater",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a variable product.</p>\n",
+      "sku": "woo-fashion-sweater",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
+      },
+      "type": "VARIABLE",
+      "productId": 64,
+      "price": null,
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "shirts",
+        "name": "Shirts"
+      }
+    }
+  },
+  "sweater": {
+    "hat": {
+      "slug": "hat",
+      "name": "Hat",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-hat",
+      "image": {
+        "sourceUrl": "https://cms.duocnv.top/wp-content/uploads/2024/11/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 81,
+      "price": "12&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "sweater",
+        "name": "Sweater"
+      }
+    }
+  },
+  "tshirts": {},
+  "uncategorized": {}
+}
