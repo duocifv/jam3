@@ -1,0 +1,249 @@
+{
+  "accessories": {
+    "socks": {
+      "slug": "socks",
+      "name": "Socks",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a variable product.</p>\n",
+      "sku": "woo-fashion-socks",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113857-839785e4-d25a-45f0-b647-cd8d9be8bc2d.jpeg"
+      },
+      "type": "VARIABLE",
+      "productId": 68,
+      "price": null,
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    },
+    "shoes": {
+      "slug": "shoes",
+      "name": "Shoes",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shoes",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113861-531ebbcd-f9b5-4c18-b5c7-a878d5017ca2.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 70,
+      "price": "18&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    },
+    "hat": {
+      "slug": "hat",
+      "name": "Hat",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-hat",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 78,
+      "price": "12&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "accessories",
+        "name": "Accessories"
+      }
+    }
+  },
+  "beauty": {},
+  "clothing": {
+    "sweater": {
+      "slug": "sweater",
+      "name": "Sweater",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a variable product.</p>\n",
+      "sku": "woo-fashion-sweater",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
+      },
+      "type": "VARIABLE",
+      "productId": 61,
+      "price": null,
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "clothing",
+        "name": "Clothing"
+      }
+    }
+  },
+  "fragrances": {},
+  "furniture": {},
+  "groceries": {},
+  "hoodies": {},
+  "jackets": {
+    "jacket": {
+      "slug": "jacket",
+      "name": "Jacket",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-jacket",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113817-0fd3751e-b81b-4def-be53-040d8fa049f2.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 74,
+      "price": "25&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "jackets",
+        "name": "Jackets"
+      }
+    }
+  },
+  "shirts": {
+    "shirt-green": {
+      "slug": "shirt-green",
+      "name": "Shirt - Green",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": true,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt-green",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113801-fd8243b7-8465-4f82-86c1-2c54797fe296.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 76,
+      "price": "20&nbsp;₫",
+      "salePrice": "20&nbsp;₫",
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "shirts",
+        "name": "Shirts"
+      }
+    },
+    "shirt-cream": {
+      "slug": "shirt-cream",
+      "name": "Shirt - Cream",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt-cream",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113864-14d59cf5-1233-4053-8193-070413ea3434.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 72,
+      "price": "25&nbsp;₫",
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "shirts",
+        "name": "Shirts"
+      }
+    },
+    "shirt": {
+      "slug": "shirt",
+      "name": "Shirt",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": true,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-shirt",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113854-b669deff-4c3e-4bb0-b00f-96cfbdc4087e.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 66,
+      "price": "18&nbsp;₫",
+      "salePrice": "18&nbsp;₫",
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "shirts",
+        "name": "Shirts"
+      }
+    },
+    "blouse": {
+      "slug": "blouse",
+      "name": "Blouse",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": true,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a simple product.</p>\n",
+      "sku": "woo-fashion-blouse",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113836-efdbde32-7863-4a24-9d2d-979025b51260.jpeg"
+      },
+      "type": "SIMPLE",
+      "productId": 64,
+      "price": "12&nbsp;₫",
+      "salePrice": "12&nbsp;₫",
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "shirts",
+        "name": "Shirts"
+      }
+    }
+  },
+  "sweater": {
+    "sweater": {
+      "slug": "sweater",
+      "name": "Sweater",
+      "description": "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\n<p>Photography by @cottonbro.</p>\n",
+      "onSale": false,
+      "reviewCount": 0,
+      "shortDescription": "<p>This is a variable product.</p>\n",
+      "sku": "woo-fashion-sweater",
+      "image": {
+        "sourceUrl": "https://test.jam.x10.bz/wp-content/uploads/2024/11/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg"
+      },
+      "type": "VARIABLE",
+      "productId": 61,
+      "price": null,
+      "salePrice": null,
+      "reviews": {
+        "averageRating": 0
+      },
+      "categories": {
+        "slug": "sweater",
+        "name": "Sweater"
+      }
+    }
+  },
+  "tshirts": {},
+  "uncategorized": {}
+}

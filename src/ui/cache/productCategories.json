@@ -1,0 +1,194 @@
+{
+  "accessories": {
+    "productCategoryId": 19,
+    "count": 33,
+    "name": "Accessories",
+    "slug": "accessories"
+  },
+  "beauty": {
+    "productCategoryId": 127,
+    "count": 5,
+    "name": "Beauty",
+    "slug": "beauty"
+  },
+  "clothing": {
+    "productCategoryId": 16,
+    "count": 1,
+    "name": "Clothing",
+    "slug": "clothing"
+  },
+  "fragrances": {
+    "productCategoryId": 128,
+    "count": 5,
+    "name": "Fragrances",
+    "slug": "fragrances"
+  },
+  "furniture": {
+    "productCategoryId": 129,
+    "count": 5,
+    "name": "Furniture",
+    "slug": "furniture"
+  },
+  "groceries": {
+    "productCategoryId": 130,
+    "count": 15,
+    "name": "Groceries",
+    "slug": "groceries"
+  },
+  "home-decoration": {
+    "productCategoryId": 131,
+    "count": null,
+    "name": "Home Decoration",
+    "slug": "home-decoration"
+  },
+  "hoodies": {
+    "productCategoryId": 27,
+    "count": 1,
+    "name": "Hoodies",
+    "slug": "hoodies"
+  },
+  "jackets": {
+    "productCategoryId": 20,
+    "count": 1,
+    "name": "Jackets",
+    "slug": "jackets"
+  },
+  "kitchen-accessories": {
+    "productCategoryId": 132,
+    "count": null,
+    "name": "Kitchen Accessories",
+    "slug": "kitchen-accessories"
+  },
+  "laptops": {
+    "productCategoryId": 133,
+    "count": null,
+    "name": "Laptops",
+    "slug": "laptops"
+  },
+  "mens-shirts": {
+    "productCategoryId": 134,
+    "count": null,
+    "name": "Mens Shirts",
+    "slug": "mens-shirts"
+  },
+  "mens-shoes": {
+    "productCategoryId": 135,
+    "count": null,
+    "name": "Mens Shoes",
+    "slug": "mens-shoes"
+  },
+  "mens-watches": {
+    "productCategoryId": 136,
+    "count": null,
+    "name": "Mens Watches",
+    "slug": "mens-watches"
+  },
+  "mobile-accessories": {
+    "productCategoryId": 137,
+    "count": null,
+    "name": "Mobile Accessories",
+    "slug": "mobile-accessories"
+  },
+  "motorcycle": {
+    "productCategoryId": 138,
+    "count": null,
+    "name": "Motorcycle",
+    "slug": "motorcycle"
+  },
+  "shirts": {
+    "productCategoryId": 18,
+    "count": 4,
+    "name": "Shirts",
+    "slug": "shirts"
+  },
+  "skin-care": {
+    "productCategoryId": 139,
+    "count": null,
+    "name": "Skin Care",
+    "slug": "skin-care"
+  },
+  "smartphones": {
+    "productCategoryId": 140,
+    "count": null,
+    "name": "Smartphones",
+    "slug": "smartphones"
+  },
+  "sports-accessories": {
+    "productCategoryId": 141,
+    "count": null,
+    "name": "Sports Accessories",
+    "slug": "sports-accessories"
+  },
+  "sunglasses": {
+    "productCategoryId": 142,
+    "count": null,
+    "name": "Sunglasses",
+    "slug": "sunglasses"
+  },
+  "sweater": {
+    "productCategoryId": 17,
+    "count": 1,
+    "name": "Sweater",
+    "slug": "sweater"
+  },
+  "tablets": {
+    "productCategoryId": 143,
+    "count": null,
+    "name": "Tablets",
+    "slug": "tablets"
+  },
+  "tops": {
+    "productCategoryId": 144,
+    "count": null,
+    "name": "Tops",
+    "slug": "tops"
+  },
+  "tshirts": {
+    "productCategoryId": 26,
+    "count": 3,
+    "name": "Tshirts",
+    "slug": "tshirts"
+  },
+  "uncategorized": {
+    "productCategoryId": 15,
+    "count": 62,
+    "name": "Uncategorized",
+    "slug": "uncategorized"
+  },
+  "vehicle": {
+    "productCategoryId": 145,
+    "count": null,
+    "name": "Vehicle",
+    "slug": "vehicle"
+  },
+  "womens-bags": {
+    "productCategoryId": 146,
+    "count": null,
+    "name": "Womens Bags",
+    "slug": "womens-bags"
+  },
+  "womens-dresses": {
+    "productCategoryId": 147,
+    "count": null,
+    "name": "Womens Dresses",
+    "slug": "womens-dresses"
+  },
+  "womens-jewellery": {
+    "productCategoryId": 148,
+    "count": null,
+    "name": "Womens Jewellery",
+    "slug": "womens-jewellery"
+  },
+  "womens-shoes": {
+    "productCategoryId": 149,
+    "count": null,
+    "name": "Womens Shoes",
+    "slug": "womens-shoes"
+  },
+  "womens-watches": {
+    "productCategoryId": 150,
+    "count": null,
+    "name": "Womens Watches",
+    "slug": "womens-watches"
+  }
+}

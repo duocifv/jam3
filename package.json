@@ -7,14 +7,18 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
+    "ui": "next dev src/ui",
+    "api": "nodemon src/api/app.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "next build && npx serve@latest out",
-    "format": "prettier --write . && next lint"
+    "format": "prettier --write 'src/**/**/*.{js,ts,jsx,tsx}' && next lint src/ui",
+    "deploy": "node deploy-api.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
@@ -34,6 +38,7 @@
     "eslint-config-next": "15.0.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.7",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",

@@ -1,0 +1,45 @@
+/* styles/Input.module.css */
+
+.container {
+  @apply flex flex-col mb-4;
+}
+
+.label {
+  @apply text-sm font-medium text-gray-700 mb-1;
+}
+
+.base {
+  @apply px-4 py-2 border rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.variantOutline {
+  @apply border-gray-300 bg-white;
+}
+
+.variantFilled {
+  @apply bg-gray-100 border border-gray-200;
+}
+
+.variantUnderline {
+  @apply border-0 border-b border-gray-300 rounded-none;
+}
+
+.error {
+  @apply border-red-500;
+}
+
+.sizeSmall {
+  @apply px-3 py-1 text-sm;
+}
+
+.sizeMedium {
+  @apply px-4 py-2;
+}
+
+.sizeLarge {
+  @apply px-5 py-3 text-lg;
+}
+
+.errorText {
+  @apply text-sm text-red-500 mt-1;
+}

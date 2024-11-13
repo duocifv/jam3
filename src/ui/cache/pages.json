@@ -1,0 +1,468 @@
+{
+  "hello": {
+    "id": "cG9zdDoxNzY=",
+    "pageId": 176,
+    "status": "publish",
+    "slug": "hello",
+    "dateGmt": "2024-11-11T02:57:52",
+    "title": "Hello",
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"content\":\"1212\",\"dropCap\":false,\"anchor\":\"\"}",
+        "order": 0,
+        "innerBlocks": []
+      }
+    ],
+    "featuredImage": null
+  },
+  "about": {
+    "id": "cG9zdDoxNjk=",
+    "pageId": 169,
+    "status": "publish",
+    "slug": "about",
+    "dateGmt": "2024-11-11T02:38:34",
+    "title": "当財団の出版物",
+    "blocks": [
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "order": 0,
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"style\":{\"typography\":{\"fontStyle\":\"normal\",\"fontWeight\":\"400\"}},\"backgroundColor\":\"cyan-bluish-gray\"}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"content\":\"\\u5f53\\u8ca1\\u56e3\\u306e\\u51fa\\u7248\\u7269\\u3078\\u306e\\u5e83\\u544a\\u63b2\\u8f09\\u52df\\u96c6\",\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+                "order": 0
+              },
+              {
+                "name": "core/separator",
+                "attributesJSON": "{\"opacity\":\"alpha-channel\",\"anchor\":\"\",\"className\":\"is-style-wide\"}",
+                "order": 1
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u5f53\\u8ca1\\u56e3\\u306e\\u51fa\\u7248\\u7269\\u306b\\u5e83\\u544a\\u3092\\u63b2\\u8f09\\u3055\\u308c\\u308b\\u4f01\\u696d\\u69d8\\u30fb\\u5b66\\u6821\\u69d8\\u3092\\u52df\\u96c6\\u3057\\u3066\\u3044\\u307e\\u3059\\u3002<br>\\u63b2\\u8f09\\u8cbb\\u7528\\u7b49\\u306e\\u8a73\\u7d30\\u306b\\u3064\\u304d\\u307e\\u3057\\u3066\\u306f\\u3001\\u4e0b\\u8a18\\u307e\\u3067\\u304a\\u6c17\\u8efd\\u306b\\u304a\\u554f\\u3044\\u5408\\u308f\\u305b\\u304f\\u3060\\u3055\\u3044\\u3002\",\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+                "order": 2
+              },
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"content\":\"\\u5f53\\u8ca1\\u56e3\\u306e\\u51fa\\u7248\\u7269\\u3092\\u7121\\u6599\\u914d\\u5e03\",\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+                "order": 3
+              },
+              {
+                "name": "core/separator",
+                "attributesJSON": "{\"opacity\":\"alpha-channel\",\"anchor\":\"\"}",
+                "order": 4
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u3054\\u5e0c\\u671b\\u306e\\u2f45\\u306f\\u4e0b\\u8a18\\u307e\\u3067\\u304a\\u554f\\u3044\\u5408\\u308f\\u305b\\u304f\\u3060\\u3055\\u3044\\u3002<br>\\u203b\\u5728\\u5eab\\u5207\\u308c\\u3068\\u306a\\u308b\\u5834\\u5408\\u3082\\u3054\\u3056\\u3044\\u307e\\u3059\\u306e\\u3067\\u3001\\u3054\\u4e86\\u627f\\u304f\\u3060\\u3055\\u3044\\u3002\",\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+                "order": 5
+              },
+              {
+                "name": "core/columns",
+                "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+                "order": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"content\":\"2024\\u5e74\\u5ea6 \\u7d39\\u4ecb\\u30fb\\u60c5\\u5831\\u6848\\u5185 Vol.31\",\"level\":2,\"anchor\":\"\",\"fontSize\":\"medium\"}",
+        "order": 1,
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "order": 2,
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"33.33%\"}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/pamphlet31.jpg\",\"alt\":\"\",\"caption\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"width\":\"205px\",\"height\":\"auto\",\"sizeSlug\":\"large\"}",
+                "order": 0
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"66.66%\"}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u5f53\\u8ca1\\u56e3\\u306e\\u6982\\u8981\\uff08\\u7d44\\u7e54\\u3001\\u6cbf\\u9769\\u3001\\u4e8b\\u696d\\u3001\\u5404\\u7a2e\\u60c5\\u5831\\u6848\\u5185\\u306a\\u3069\\uff09\\u3092\\u63b2\\u8f09\\u3057\\u3066\\u3044\\u307e\\u3059\\u3002\\u3053\\u306e\\u30d1\\u30f3\\u30d5\\u30ec\\u30c3\\u30c81\\u518a\\u3067\\u8ca1\\u56e3\\u306e\\u4e8b\\u696d\\u5185\\u5bb9\\u304c\\u5206\\u304b\\u308a\\u307e\\u3059\\u3002\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 0
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"<strong>\\u3010\\u63b2\\u8f09\\u5185\\u5bb9\\u3011<\\/strong><br>1.\\u4e00\\u822c\\u8ca1\\u56e3\\u6cd5\\u4eba\\u5171\\u7acb\\u56fd\\u969b\\u4ea4\\u6d41\\u5968\\u5b66\\u8ca1\\u56e3 \\u7d39\\u4ecb<br>2.\\u5968\\u5b66\\u91d1\\u652f\\u7d66\\u4e8b\\u696d<br>3.\\u751f\\u6d3b\\u30fb\\u5b66\\u7fd2\\u60c5\\u5831\\u63d0\\u4f9b\\u4e8b\\u696d<br>4.\\u56fd\\u969b\\u4ea4\\u6d41\\u652f\\u63f4\\u4e8b\\u696d<br>5.\\u7559\\u5b66\\u751f\\u5bee\\u4e8b\\u696d\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "order": 2,
+            "innerBlocks": []
+          }
+        ]
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"content\":\"\\u60c5\\u5831\\u8a8c\\u300c\\u30a2\\u30b8\\u30a2\\u6587\\u6d41 Vol.55\\u300d\",\"level\":2,\"anchor\":\"\",\"fontSize\":\"medium\"}",
+        "order": 3,
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "order": 4,
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"33.33%\"}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/bunryu55.module__118.jpg\",\"alt\":\"\",\"caption\":\"\",\"title\":\"\",\"href\":\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/bunryu55.module__118.jpg\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"lightbox\":{\"enabled\":false},\"width\":\"206px\",\"height\":\"auto\",\"sizeSlug\":\"large\",\"linkDestination\":\"custom\"}",
+                "order": 0
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"66.66%\"}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u5f53\\u8ca1\\u56e3\\u306e\\u5968\\u5b66\\u751f\\u306e\\u4f5c\\u6587\\u3001\\u30a2\\u30b8\\u30a2\\u5404\\u56fd\\u3067\\u958b\\u50ac\\u3059\\u308b\\u30b3\\u30f3\\u30c6\\u30b9\\u30c8\\u7b49\\u306e\\u5831\\u544a\\u3084\\u30db\\u30fc\\u30e0\\u30b9\\u30c6\\u30a4\\u7814\\u4fee\\u4f1a\\u53c2\\u52a0\\u8005\\u306e\\u611f\\u60f3\\u6587\\u306a\\u3069\\u3092\\u7d39\\u4ecb\\u3057\\u3066\\u3044\\u307e\\u3059\\u3002<br>\\u30a4\\u30d9\\u30f3\\u30c8\\u3078\\u306e\\u53c2\\u52a0\\u52df\\u96c6\\u3084\\u56fd\\u969b\\u4ea4\\u6d41\\u6d3b\\u52d5\\u652f\\u63f4\\u60c5\\u5831\\u306a\\u3069\\u5f53\\u8ca1\\u56e3\\u306e\\u65b0\\u3057\\u3044\\u60c5\\u5831\\u3092\\u968f\\u6642\\u63b2\\u8f09\\u3057\\u307e\\u3059\\u3002\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 0
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"<strong>\\u3010\\u63b2\\u8f09\\u5185\\u5bb9\\uff082023\\u5e74\\u5ea6\\u4e0b\\u534a\\u671f\\uff09\\u3011<\\/strong><br>10\\u6708<br>\\u3000\\u7b2c21\\u56de\\u300c\\u65e5\\u672c\\u8a9e\\u4f53\\u9a13\\u30b3\\u30f3\\u30c6\\u30b9\\u30c8 in \\u6210\\u90fd\\u300d<br>\\u30002023\\u5e74\\u5ea6\\u300c\\u65e5\\u672c\\u8a9e\\u4f53\\u9a13\\u30b3\\u30f3\\u30c6\\u30b9\\u30c8\\u300d\\u4e88\\u9078\\u554f\\u984c\\u306b\\u3088\\u308b\\u65e5\\u672c\\u7406\\u89e3\\u5ea6\\u6bd4\\u8f03<br>\\u30002023\\u5e74\\u5ea6\\u300c\\u65e5\\u672c\\u8a9e\\u4f53\\u9a13\\u30b3\\u30f3\\u30c6\\u30b9\\u30c8\\u300d\\u672c\\u9078\\u4f1a\\uff0f\\u30b9\\u30d4\\u30fc\\u30c1\\u30c6\\u30fc\\u30de\\u9078\\u629e\\u6bd4\\u8f03<br>12\\u6708<br>\\u30002023\\u5e74\\u5ea6\\u300c\\u5922\\u30fb\\u65e5\\u672c\\u4f53\\u9a13\\u65c5\\u884c\\u300d<br>2\\u6708<br>\\u30002023\\u5e74\\u5ea6\\u5968\\u5b66\\u751f\\u300c\\u5968\\u5b66\\u91d1\\u306b\\u8a93\\u3046\\u5927\\u5fd7\\u300d\\u4f5c\\u6587<br>\\u3000\\u7b2c26\\u56de\\u300c\\u65e5\\u672c\\u8a9e\\u4f53\\u9a13\\u30b3\\u30f3\\u30c6\\u30b9\\u30c8 in \\u5317\\u6d77\\u9053\\uff08\\u97d3\\u56fd\\uff09\\u300d\\u5165\\u8cde\\u8005\\u5b9f\\u65bd\\u5831\\u544a<br>\\u30002024\\u5e742\\u6708\\u5317\\u6d77\\u9053\\u30fb\\u5c0f\\u6a3d\\u7814\\u4fee\\u4f1a<br>3\\u6708<br>\\u30002024\\u5e743\\u6708\\u6c96\\u7e04\\u30fb\\u4f0a\\u6c5f\\u5cf6\\u7814\\u4fee\\u4f1a<br>\\u3000\\u7559\\u5b66\\u751f\\u306e\\u305f\\u3081\\u306e\\u65e5\\u672c\\u751f\\u6d3b\\u6848\\u5185\\u300c\\u7559\\u5b66\\u751f\\u751f\\u6d3b\\u624b\\u5e33\\u300d\\u7b2c11\\u7248<br>\\u3000\\u7559\\u5b66\\u751f\\u306e\\u305f\\u3081\\u306e\\u5c31\\u8077\\u60c5\\u5831\\u8a8c\\u300c\\u5171\\u7acb\\u30fb\\u685c\\u300dVol.24\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "order": 2,
+            "innerBlocks": []
+          }
+        ]
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"content\":\"\\u7559\\u5b66\\u751f\\u306e\\u305f\\u3081\\u306e\\u5c31\\u8077\\u60c5\\u5831\\u8a8c\\u300c\\u5171\\u7acb\\u30fb\\u685c Vol.24\\u300d\",\"level\":2,\"anchor\":\"\",\"fontSize\":\"medium\"}",
+        "order": 5,
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "order": 6,
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"33.33%\"}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/thumb_publication_item_v31324.jpg\",\"alt\":\"\",\"caption\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"width\":\"205px\",\"height\":\"auto\",\"sizeSlug\":\"large\"}",
+                "order": 0
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"66.66%\"}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u65e5\\u672c\\u3067\\u306e\\u5c31\\u8077\\u3092\\u5e0c\\u671b\\u3059\\u308b\\u5916\\u56fd\\u4eba\\u7559\\u5b66\\u751f\\u306e\\u307f\\u306a\\u3055\\u3093\\u306e\\u305f\\u3081\\u306b\\u3001\\u65e5\\u672c\\u306b\\u304a\\u3051<br>\\u308b\\u5c31\\u8077\\u6d3b\\u52d5\\u306e\\u6d41\\u308c\\u3084\\u30dd\\u30a4\\u30f3\\u30c8\\u3092\\u30017\\u3064\\u306e\\u30b9\\u30c6\\u30c3\\u30d7\\u3067\\u308f\\u304b\\u308a\\u3084\\u3059\\u304f\\u89e3\\u8aac\\u3057<br>\\u305f\\u5c31\\u8077\\u30ac\\u30a4\\u30c9\\u30d6\\u30c3\\u30af\\u3067\\u3059\\u3002\\u3055\\u3089\\u306b\\u3001\\u5916\\u56fd\\u4eba\\u7559\\u5b66\\u751f\\u3092\\u7a4d\\u6975\\u7684\\u306b\\u63a1\\u7528\\u3057\\u3066\\u3044<br>\\u308b\\u4f01\\u696d\\u306e\\u6c42\\u4eba\\u60c5\\u5831\\u3084\\u3001\\u65e5\\u672c\\u4f01\\u696d\\u306b\\u63a1\\u7528\\u3055\\u308c\\u305f\\u5148\\u8f29\\u7559\\u5b66\\u751f\\u306e\\u5c31\\u6d3b\\u4f53\\u9a13\\u8ac7\\u306a<br>\\u3069\\u3082\\u63b2\\u8f09\\u3057\\u3066\\u3044\\u307e\\u3059\\u3002\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 0
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"<strong>\\u3010\\u63b2\\u8f09\\u5185\\u5bb9\\u3011<\\/strong><br>\\u7b2c 1 \\u7ae0 \\u7559\\u5b66\\u751f\\u306e\\u5c31\\u8077\\u6d3b\\u52d5<br>\\u3000\\u3010STEP1\\u3011\\u30b9\\u30b1\\u30b8\\u30e5\\u30fc\\u30eb\\u3092\\u7acb\\u3066\\u3088\\u3046<br>\\u3000\\u3010STEP2\\u3011\\u81ea\\u5df1\\u5206\\u6790\\u3092\\u3057\\u3088\\u3046<br>\\u3000\\u3010STEP3\\u3011\\u60c5\\u5831\\u53ce\\u96c6\\u3092\\u3057\\u3088\\u3046<br>\\u3000\\u3010STEP4\\u3011\\u30a8\\u30f3\\u30c8\\u30ea\\u30fc\\u30b7\\u30fc\\u30c8\\u30fb\\u5c65\\u6b74\\u66f8\\u3092\\u6e96\\u5099\\u3057\\u3088\\u3046<br>\\u3000\\u3010STEP5\\u3011\\u57fa\\u672c\\u7684\\u306a\\u30de\\u30ca\\u30fc\\u3092\\u5b66\\u307c\\u3046<br>\\u3000\\u3010STEP6\\u3011\\u9078\\u8003\\u8a66\\u9a13\\u30fb\\u9762\\u63a5\\u306b\\u5099\\u3048\\u3088\\u3046<br>\\u3000\\u3010STEP7\\u3011\\u5185\\u5b9a\\u5f8c\\u306b\\u3059\\u3079\\u304d\\u3053\\u3068\\u3092\\u7406\\u89e3\\u3057\\u3088\\u3046<br>\\u7b2c 2 \\u7ae0\\uff1a\\u7559\\u5b66\\u751f\\u306e\\u5c31\\u6d3b\\u4f53\\u9a13\\u8ac7<br>\\u7b2c 3 \\u7ae0\\uff1a\\u7559\\u5b66\\u751f\\u7a4d\\u6975\\u63a1\\u7528\\u4f01\\u696d \\u6c42\\u4eba\\u60c5\\u5831<br>\\u7b2c 4 \\u7ae0\\uff1a\\u7559\\u5b66\\u751f\\u306e\\u8d77\\u696d<br>\\u3000\\u65e5\\u672c\\u3067\\u8d77\\u696d\\u3059\\u308b\\u305f\\u3081\\u306e 4 \\u3064\\u306e\\u30b9\\u30c6\\u30c3\\u30d7<br>\\u3000\\u5968\\u5b66\\u751f\\u306e\\u8d77\\u696d\\u4f53\\u9a13\\u8ac7\",\"dropCap\":false,\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "order": 2,
+            "innerBlocks": []
+          }
+        ]
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"content\":\"\\u7559\\u5b66\\u751f\\u306e\\u305f\\u3081\\u306e\\u65e5\\u672c\\u751f\\u6d3b\\u6848\\u5185\\u300c\\u7559\\u5b66\\u751f\\u751f\\u6d3b\\u624b\\u5e33\\u300d\\u7b2c 11 \\u7248\",\"level\":2,\"anchor\":\"\"}",
+        "order": 7,
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "order": 8,
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"33.33%\"}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"<sub><sub><a href=\\\"https:\\/\\/www.kif-org.com\\/activity\\/pdf\\/seikatsu_new.pdf\\\" target=\\\"_blank\\\" rel=\\\"noreferrer noopener\\\"><img width=\\\"8\\\" height=\\\"6\\\" src=\\\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/publication_arrow.gif\\\" alt=\\\"\\\"><\\/a><strong>\\u672c\\u3092\\u30af\\u30ea\\u30c3\\u30af\\u3059\\u308b\\u3068\\u5185\\u5bb9\\u304c\\u898b<\\/strong><br><strong>\\u3089\\u308c\\u307e\\u3059\\u3002\\u3010\\u65e5\\u672c\\u8a9e\\u7248\\u3011<\\/strong><\\/sub><\\/sub>\",\"dropCap\":false,\"anchor\":\"\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"#1f9c6e\"}}},\"color\":{\"text\":\"#1f9c6e\"}}}",
+                "order": 0
+              },
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/www.kif-org.com\\/activity\\/img\\/thumb_publication_item_1324.jpg\",\"alt\":\"\",\"caption\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"width\":\"217px\",\"height\":\"auto\",\"sizeSlug\":\"large\"}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"66.66%\"}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"content\":\"\\u7559\\u5b66\\u751f\\u304c\\u65e5\\u672c\\u3067\\u751f\\u6d3b\\u3092\\u3059\\u308b\\u4e0a\\u3067\\u3001\\u5fc5\\u8981\\u3068\\u306a\\u308b\\u60c5\\u5831\\u30fb\\u77e5\\u3063\\u3066\\u304a\\u304f\\u3068\\u5f79\\u306b\\u7acb<br>\\u3064\\u60c5\\u5831\\u3092\\u63b2\\u8f09\\u3057\\u305f\\u30ac\\u30a4\\u30c9\\u30d6\\u30c3\\u30af\\u3067\\u3059\\u3002\\u6301\\u3061\\u904b\\u3073\\u306b\\u4fbf\\u5229\\u306aB6\\u30b5\\u30a4\\u30ba\\u306e\\u518a\\u5b50\\u3067\\u3059\\u3002\",\"dropCap\":false,\"anchor\":\"\"}",
+                "order": 0
+              },
+              {
+                "name": "core/table",
+                "attributesJSON": "{\"hasFixedLayout\":true,\"caption\":\"\",\"head\":[],\"body\":[{\"cells\":[{\"content\":\"<strong>\\u3010\\u63b2\\u8f09\\u5185\\u5bb9\\u3011<\\/strong><br>1.\\u5fc5\\u8981\\u624b\\u7d9a\\u304d<br>\\u3000\\u5165\\u56fd\\u6642\\u306e\\u624b\\u7d9a\\u304d\\uff0f\\u5728\\u7559\\u30ab\\u30fc\\u30c9\\uff0f\\u5728\\u7559\\u8cc7\\u683c\\u306b\\u95a2\\u3059\\u308b\\u624b\\u7d9a\\u304d\\uff0f<br>\\u3000\\u30de\\u30a4\\u30ca\\u30f3\\u30d0\\u30fc\\u5236\\u5ea6\\uff0f\\u7a0e\\u91d1\\uff0f\\u4e00\\u6642\\u5e30\\u56fd\\u30fb\\u6d77\\u5916\\u65c5\\u884c\\u6642\\u306e\\u624b\\u7d9a\\u304d\\uff0f<br>\\u3000\\u5e30\\u56fd\\u6642\\u306e\\u624b\\u7d9a\\u304d<br>2.\\u4f4f\\u5c45<br>\\u3000\\u4f4f\\u5c45\\u306e\\u7a2e\\u985e\\uff0f\\u6c11\\u9593\\u8cc3\\u8cb8\\u4f4f\\u5b85\\u306e\\u5951\\u7d04\\uff0f\\u5165\\u5c45\\u4e2d\\u306e\\u30eb\\u30fc\\u30eb\\uff0f\\u9000\\u53bb\\u624b\\u7d9a\\u304d\\uff0f<br>\\u3000\\u5171\\u7acb\\u8ca1\\u56e3 \\u4f4f\\u5c45\\u60c5\\u5831\\uff0f(\\u682a)\\u5171\\u7acb\\u30e1\\u30f3\\u30c6\\u30ca\\u30f3\\u30b9 \\u4f4f\\u5c45\\u60c5\\u5831<br>3.\\u751f\\u6d3b\\u57fa\\u76e4\\u3065\\u304f\\u308a<br>\\u3000\\u9280\\u884c\\u53e3\\u5ea7\\uff0f\\u643a\\u5e2f\\u96fb\\u8a71\\uff0f\\u30a4\\u30f3\\u30bf\\u30fc\\u30cd\\u30c3\\u30c8\\uff0f\\u90f5\\u4fbf\\uff0f\\u516c\\u5171\\u4ea4\\u901a\\u6a5f\\u95a2\\uff0f<br>\\u3000\\u81ea\\u8ee2\\u8eca\\uff0f\\u81ea\\u52d5\\u8eca\\u904b\\u8ee2\\u514d\\u8a31<br>4.\\u5b66\\u751f\\u751f\\u6d3b<br>\\u3000\\u691c\\u5b9a\\u8a66\\u9a13\\uff0f\\u5968\\u5b66\\u91d1\\uff0f\\u30a2\\u30eb\\u30d0\\u30a4\\u30c8\\uff0f\\u4ea4\\u6d41\\u6d3b\\u52d5\\uff0f\\u5c31\\u8077\\u6d3b\\u52d5\\uff0f<br>\\u3000\\u5c31\\u8077\\u306e\\u305f\\u3081\\u306e\\u5728\\u7559\\u8cc7\\u683c\\u5909\\u66f4\\uff0f\\u4f11\\u5b66\\u30fb\\u5fa9\\u5b66\\u30fb\\u518d\\u5165\\u5b66\\u306e\\u624b\\u7d9a\\u304d\\uff0f<br>\\u3000\\u5b66\\u751f\\u751f\\u6d3b\\u306b\\u95a2\\u3059\\u308b\\u76f8\\u8ac7\\u7a93\\u53e3<br>5.\\u7dca\\u6025\\u6642\\u306e\\u5bfe\\u5fdc<br>\\u3000\\u6025\\u75c5\\u30fb\\u4e8b\\u6545\\u30fb\\u706b\\u707d\\uff0f\\u72af\\u7f6a\\u88ab\\u5bb3\",\"tag\":\"td\",\"scope\":\"\",\"align\":\"\",\"colspan\":\"\",\"rowspan\":\"\"}]}],\"foot\":[],\"anchor\":\"\",\"fontSize\":\"small\"}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "order": 2,
+            "innerBlocks": []
+          }
+        ]
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"content\":\"\",\"dropCap\":false,\"anchor\":\"\"}",
+        "order": 9,
+        "innerBlocks": []
+      }
+    ],
+    "featuredImage": null
+  },
+  "tai-khoan": {
+    "id": "cG9zdDoxMA==",
+    "pageId": 10,
+    "status": "publish",
+    "slug": "tai-khoan",
+    "dateGmt": "2024-11-08T03:38:51",
+    "title": "Tài khoản",
+    "blocks": [
+      {
+        "name": "core/shortcode",
+        "attributesJSON": "{\"text\":\"[woocommerce_my_account]\"}",
+        "order": 0,
+        "innerBlocks": []
+      }
+    ],
+    "featuredImage": null
+  },
+  "thanh-toan": {
+    "id": "cG9zdDo5",
+    "pageId": 9,
+    "status": "publish",
+    "slug": "thanh-toan",
+    "dateGmt": "2024-11-08T03:38:51",
+    "title": "Thanh toán",
+    "blocks": [
+      {
+        "name": "woocommerce/checkout",
+        "attributesJSON": "{\"isPreview\":false,\"showCompanyField\":false,\"requireCompanyField\":false,\"showApartmentField\":true,\"requireApartmentField\":false,\"showPhoneField\":true,\"requirePhoneField\":false,\"align\":\"wide\",\"showFormStepNumbers\":false,\"hasDarkControls\":false,\"showRateAfterTaxName\":false,\"showOrderNotes\":true,\"showPolicyLinks\":true,\"showReturnToCart\":true,\"cartPageId\":0}",
+        "order": 0,
+        "innerBlocks": [
+          {
+            "name": "woocommerce/checkout-fields-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "woocommerce/checkout-express-payment-block",
+                "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+                "order": 0
+              },
+              {
+                "name": "woocommerce/checkout-contact-information-block",
+                "attributesJSON": "{\"title\":\"Th\\u00f4ng tin li\\u00ean l\\u1ea1c\",\"description\":\"Ch\\u00fang t\\u00f4i s\\u1ebd s\\u1eed d\\u1ee5ng email n\\u00e0y \\u0111\\u1ec3 g\\u1eedi cho b\\u1ea1n chi ti\\u1ebft v\\u00e0 c\\u1eadp nh\\u1eadt v\\u1ec1 \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a b\\u1ea1n.\",\"showStepNumber\":true,\"lock\":{\"remove\":true,\"move\":true}}",
+                "order": 1
+              },
+              {
+                "name": "woocommerce/checkout-shipping-method-block",
+                "attributesJSON": "{\"title\":\"Chuy\\u1ec3n \\u0111\\u1ebfn\",\"description\":\"Ch\\u1ecdn c\\u00e1ch b\\u1ea1n mu\\u1ed1n nh\\u1eadn \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a m\\u00ecnh.\",\"showStepNumber\":true,\"showIcon\":true,\"showPrice\":false,\"localPickupText\":\"Nh\\u1eadn h\\u00e0ng\",\"shippingText\":\"Giao h\\u00e0ng\",\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 2
+              },
+              {
+                "name": "woocommerce/checkout-pickup-options-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba \\u0111i\\u1ec3m l\\u1ea5y h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 3
+              },
+              {
+                "name": "woocommerce/checkout-shipping-address-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba ch\\u1ec9 giao h\\u00e0ng\",\"description\":\"Nh\\u1eadp \\u0111\\u1ecba ch\\u1ec9 n\\u01a1i b\\u1ea1n mu\\u1ed1n \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a m\\u00ecnh \\u0111\\u01b0\\u1ee3c giao.\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 4
+              },
+              {
+                "name": "woocommerce/checkout-billing-address-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba ch\\u1ec9 thanh to\\u00e1n\",\"description\":\"Nh\\u1eadp \\u0111\\u1ecba ch\\u1ec9 thanh to\\u00e1n kh\\u1edbp v\\u1edbi ph\\u01b0\\u01a1ng th\\u1ee9c thanh to\\u00e1n c\\u1ee7a b\\u1ea1n.\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 5
+              },
+              {
+                "name": "woocommerce/checkout-shipping-methods-block",
+                "attributesJSON": "{\"title\":\"T\\u00f9y ch\\u1ecdn giao h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 6
+              },
+              {
+                "name": "woocommerce/checkout-payment-block",
+                "attributesJSON": "{\"title\":\"T\\u00f9y ch\\u1ecdn thanh to\\u00e1n\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 7
+              },
+              {
+                "name": "woocommerce/checkout-additional-information-block",
+                "attributesJSON": "{\"title\":\"Th\\u00f4ng tin b\\u1ed5 sung v\\u1ec1 \\u0111\\u01a1n h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":false,\"remove\":true}}",
+                "order": 8
+              },
+              {
+                "name": "woocommerce/checkout-order-note-block",
+                "attributesJSON": "{\"lock\":{\"remove\":false,\"move\":true}}",
+                "order": 9
+              },
+              {
+                "name": "woocommerce/checkout-terms-block",
+                "attributesJSON": "{\"checkbox\":false,\"showSeparator\":true}",
+                "order": 10
+              },
+              {
+                "name": "woocommerce/checkout-actions-block",
+                "attributesJSON": "{\"cartPageId\":0,\"showReturnToCart\":false,\"lock\":{\"move\":true,\"remove\":true},\"placeOrderButtonLabel\":\"\\u0110\\u1eb7t h\\u00e0ng\"}",
+                "order": 11
+              }
+            ]
+          },
+          {
+            "name": "woocommerce/checkout-totals-block",
+            "attributesJSON": "{\"checkbox\":false}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "woocommerce/checkout-order-summary-block",
+                "attributesJSON": "{\"lock\":{\"move\":true,\"remove\":true}}",
+                "order": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "featuredImage": null
+  },
+  "gio-hang": {
+    "id": "cG9zdDo4",
+    "pageId": 8,
+    "status": "publish",
+    "slug": "gio-hang",
+    "dateGmt": "2024-11-08T03:38:51",
+    "title": "Giỏ hàng",
+    "blocks": [
+      {
+        "name": "woocommerce/cart",
+        "attributesJSON": "{\"isPreview\":false,\"currentView\":\"woocommerce\\/filled-cart-block\",\"editorViews\":[{\"view\":\"woocommerce\\/filled-cart-block\",\"label\":\"Gi\\u1ecf h\\u00e0ng \\u0111\\u00e3 th\\u00eam\",\"icon\":{\"type\":[],\"key\":null,\"ref\":null,\"props\":{\"icon\":{\"type\":{\"displayName\":\"SVG\"},\"key\":null,\"ref\":null,\"props\":{\"xmlns\":\"http:\\/\\/www.w3.org\\/2000\\/svg\",\"viewBox\":\"0 0 24 24\",\"children\":[{\"type\":\"g\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"none\",\"fillRule\":\"evenodd\",\"children\":[{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"d\":\"M0 0h24v24H0z\"},\"_owner\":null},{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"currentColor\",\"fillRule\":\"nonzero\",\"d\":\"M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 20.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45ZM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2Z\"},\"_owner\":null}]},\"_owner\":null},\" \"]},\"_owner\":null}},\"_owner\":null}},{\"view\":\"woocommerce\\/empty-cart-block\",\"label\":\"Gi\\u1ecf h\\u00e0ng tr\\u1ed1ng\",\"icon\":{\"type\":[],\"key\":null,\"ref\":null,\"props\":{\"icon\":{\"type\":{\"displayName\":\"SVG\"},\"key\":null,\"ref\":null,\"props\":{\"xmlns\":\"http:\\/\\/www.w3.org\\/2000\\/svg\",\"viewBox\":\"0 0 24 24\",\"children\":[{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"d\":\"M22.7 22.7l-20-20L2 2l-.7-.7L0 2.5 4.4 7l2.2 4.7L5.2 14A2 2 0 007 17h7.5l1.3 1.4a2 2 0 102.8 2.8l2.9 2.8 1.2-1.3zM7.4 15a.2.2 0 01-.2-.3l.9-1.7h2.4l2 2h-5zm8.2-2a2 2 0 001.7-1l3.6-6.5.1-.5c0-.6-.4-1-1-1H6.5l9 9zM7 18a2 2 0 100 4 2 2 0 000-4z\"},\"_owner\":null},{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"none\",\"d\":\"M0 0h24v24H0z\"},\"_owner\":null}]},\"_owner\":null}},\"_owner\":null}}],\"hasDarkControls\":false,\"isShippingCalculatorEnabled\":true,\"checkoutPageId\":0,\"showRateAfterTaxName\":true,\"align\":\"wide\"}",
+        "order": 0,
+        "innerBlocks": [
+          {
+            "name": "woocommerce/filled-cart-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "order": 0,
+            "innerBlocks": [
+              {
+                "name": "woocommerce/cart-items-block",
+                "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+                "order": 0
+              },
+              {
+                "name": "woocommerce/cart-totals-block",
+                "attributesJSON": "{\"checkbox\":false,\"lock\":{\"remove\":true}}",
+                "order": 1
+              }
+            ]
+          },
+          {
+            "name": "woocommerce/empty-cart-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "order": 1,
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"content\":\"Gi\\u1ecf h\\u00e0ng hi\\u1ec7n t\\u1ea1i ch\\u01b0a c\\u00f3 s\\u1ea3n ph\\u1ea9m n\\u00e0o!\",\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\",\"className\":\"with-empty-cart-icon wc-block-cart__empty-cart__title\"}",
+                "order": 0
+              },
+              {
+                "name": "core/separator",
+                "attributesJSON": "{\"opacity\":\"alpha-channel\",\"anchor\":\"\",\"className\":\"is-style-dots\"}",
+                "order": 1
+              },
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"content\":\"M\\u1edbi trong c\\u1eeda h\\u00e0ng\",\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+                "order": 2
+              },
+              {
+                "name": "woocommerce/product-new",
+                "attributesJSON": "{\"columns\":4,\"rows\":1,\"alignButtons\":false,\"categories\":[],\"catOperator\":\"any\",\"contentVisibility\":{\"image\":true,\"title\":true,\"price\":true,\"rating\":true,\"button\":true},\"isPreview\":false,\"editMode\":true,\"orderby\":\"date\"}",
+                "order": 3
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "featuredImage": null
+  },
+  "cua-hang": {
+    "id": "cG9zdDo3",
+    "pageId": 7,
+    "status": "publish",
+    "slug": "cua-hang",
+    "dateGmt": "2024-11-08T03:38:51",
+    "title": "Cửa hàng",
+    "blocks": [],
+    "featuredImage": null
+  }
+}
