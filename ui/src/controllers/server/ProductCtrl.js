@@ -1,4 +1,4 @@
-import ProductModel from '@/models/ProductModel'
+import ProductModel from '@/services/ProductModel'
 
 class ProductCtrl {
   async list() {

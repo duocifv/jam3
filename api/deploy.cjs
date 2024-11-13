@@ -19,7 +19,7 @@ async function deploy() {
     console.log('Đã kết nối đến FTP server')
 
     // Đăng nhập thành công, bây giờ upload thư mục src/api lên server
-    const localDir = path.join(process.cwd(), 'src/api') // Đường dẫn đến thư mục src/api trong dự án
+    const localDir = path.join(process.cwd(), 'src') // Đường dẫn đến thư mục src/api trong dự án
     const remoteDir = 'api.duocnv.top' // Đường dẫn đến thư mục trên server
 
     // Upload thư mục src/api lên server

@@ -1,4 +1,4 @@
-import PostsModel from '@/models/PostsModel'
+import PostsModel from '@/services/PostsModel'
 
 class PostsCtrl {
   async list(slug) {

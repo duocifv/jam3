@@ -1,4 +1,4 @@
-import PagesModel from '@/models/PagesModel'
+import PagesModel from '@/services/PagesModel'
 
 class PagesCtrl {
   async all(slug) {
