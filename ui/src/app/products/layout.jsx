@@ -1,4 +1,4 @@
-import { Cart } from '@/components/Products/'
+import { Cart } from '@/components/products/'
 
 export const metadata = {
   title: 'Create Next App',

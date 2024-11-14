@@ -1,5 +1,5 @@
-import Text from '@/components/common/Text'
-import Columns from '@/components/common/Columns'
+import Text from '@/components/core/Text'
+import Columns from '@/components/core/Columns'
 import Image from 'next/image'
 
 const About = ({ block }) => {

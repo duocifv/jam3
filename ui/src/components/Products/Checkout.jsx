@@ -1,7 +1,7 @@
 import React from 'react'
 import { productStore } from '@/stores/product/product.store'
-import Input from '@/components/common/Input'
-import Button from '@/components/common/Button'
+import Input from '@/components/core/Input'
+import Button from '@/components/core/Button'
 
 let values = {}
 

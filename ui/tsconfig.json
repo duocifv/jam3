@@ -24,7 +24,7 @@
       "server/*": ["./src/services/server/*"],
       "stores/*": ["./src/stores/*"],
       "repositories/*": ["./src/repositories/*"],
-      "styles/*": ["./src/styles/*"],
+      "styles/*": ["./src/styles/*"]
     }
   },
   "include": [

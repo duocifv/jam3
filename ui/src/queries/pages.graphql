@@ -1,0 +1,38 @@
+# Truy vấn 1: Lấy thông tin cơ bản của các trang
+query GetPages($first: Int, $after: String) {
+  pages(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        pageId
+        status
+        slug
+        dateGmt
+        title
+      }
+    }
+  }
+}
+
+# Truy vấn 2: Lấy thông tin chi tiết của các block và hình ảnh nổi bật
+query GetPageDetails($pageId: ID!) {
+  page(id: $pageId) {
+    blocks {
+      name
+      attributesJSON
+      innerBlocks {
+        name
+        attributesJSON
+        innerBlocks {
+          name
+          attributesJSON
+        }
+      }
+    }
+  }
+}

@@ -11,10 +11,15 @@
     "start": "next start",
     "lint": "next lint",
     "test": "next build && npx serve@latest out",
-    "format": "prettier --write . && next lint"
+    "format": "prettier --write . && next lint",
+    "generate": "graphql-codegen",
+    "codegen": "graphql-codegen --config codegen.ts --watch",
+    "gen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@parcel/watcher": "^2.5.0",
     "axios": "^1.7.7",
+    "d": "^1.0.2",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "next": "15.0.1",
@@ -24,6 +29,7 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -35,6 +41,8 @@
     "postcss": "^8",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.6.3",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@graphql-codegen/client-preset": "4.5.0"
   }
 }

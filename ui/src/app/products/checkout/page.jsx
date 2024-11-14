@@ -1,6 +1,6 @@
 'use client'
 import { productStore } from 'stores/product/product.store'
-import { Checkout, OrderSummary } from '@/components/Products/'
+import { Checkout, OrderSummary } from '@/components/products/'
 
 const Page = () => {
   const step = productStore((state) => state.step)

@@ -1,6 +1,6 @@
 import React from 'react'
 import * as productService from 'server/product.service'
-import { ProductWrapper, ProductList } from '@/components/Products/'
+import { ProductWrapper, ProductList } from '@/components/products/'
 
 export async function generateStaticParams() {
   const productCategories = await productService.categories()

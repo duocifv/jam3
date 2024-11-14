@@ -1,0 +1,18 @@
+
+query ProductCategories($first: Int, $after: String) {
+  productCategories(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        productCategoryId
+        count
+        name
+        slug
+      }
+    }
+  }
+}

@@ -17,6 +17,8 @@ ui/node_modules
 # next.js
 ui/.next/
 ui/out/
+ui/src/gql
+
 
 # production
 ui/build
