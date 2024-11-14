@@ -1,10 +1,10 @@
 'use client'
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from '@/stores/product/product.store'
 import Image from 'next/image'
 import React from 'react'
 
 const ProductDetail = ({ product }) => {
-  const setItemCart = useProductsStore((state) => state.setItemCart)
+  const setItemCart = productStore((state) => state.setItemCart)
   const handleAddToCart = (productId) => {
     setItemCart(productId, 1)
   }

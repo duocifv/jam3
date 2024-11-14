@@ -1,13 +1,13 @@
 import React from 'react'
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from '@/stores/product/product.store'
 import Input from '@/components/common/Input'
 import Button from '@/components/common/Button'
 
 let values = {}
 
 const Checkout = () => {
-  const customer = useProductsStore((state) => state.customer)
-  const addCustomer = useProductsStore((state) => state.addCustomer)
+  const customer = productStore((state) => state.customer)
+  const addCustomer = productStore((state) => state.addCustomer)
 
   const handleChange = (e, tab) => {
     const { name, value } = e.target
@@ -21,7 +21,7 @@ const Checkout = () => {
     }
     addCustomer(values)
   }
-  const checkout = useProductsStore((state) => state.checkout)
+  const checkout = productStore((state) => state.checkout)
   return (
     <div>
       <Input

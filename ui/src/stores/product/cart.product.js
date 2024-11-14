@@ -1,6 +1,6 @@
-import ShoppingCtrl from '@/controllers/client/ShoppingCtrl'
+import * as shoppingService from '@/services/client/shopping.service'
 
-export const createCart = (set, get) => ({
+export const cart = (set, get) => ({
   cart: null,
   itemCart: [],
   customer: {},
@@ -19,7 +19,7 @@ export const createCart = (set, get) => ({
   },
   addToCart: () => {
     const { itemCart } = get()
-    ShoppingCtrl.addCart(itemCart).then(({ data }) => {
+    shoppingService.addCart(itemCart).then(({ data }) => {
       const cart = data.addCartItems.cart
       if (cart) set({ cart })
     })
@@ -38,7 +38,7 @@ export const createCart = (set, get) => ({
   },
   checkout: () => {
     const { customer } = get()
-    ShoppingCtrl.order(customer).then((item) => {
+    shoppingService.order(customer).then((item) => {
       set({ cart: item.data })
       set({ step: 3 })
     })

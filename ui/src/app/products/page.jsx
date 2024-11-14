@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/server/ProductCtrl'
+import productService from 'server/product.service'
 import { notFound } from 'next/navigation'
 import { ProductList } from '@/components/Products/'
 
 const Page = async () => {
-  const products = await ProductCtrl.list()
+  const products = await productService.list()
   if (!products || products.length === 0) notFound()
 
   return (

@@ -1,4 +1,4 @@
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from '@/stores/product/product.store'
 import Image from 'next/image'
 
 import React from 'react'
@@ -29,8 +29,8 @@ interface OrderDetailsProps {
 }
 
 const OrderSummary = () => {
-  const step = useProductsStore((state) => state.step)
-  const order: OrderDetailsProps = useProductsStore((state) => state.cart)
+  const step = productStore((state) => state.step)
+  const order: OrderDetailsProps = productStore((state) => state.cart)
   return (
     step === 3 && (
       <div className="max-w-4xl mx-auto p-6 bg-white border rounded-md">

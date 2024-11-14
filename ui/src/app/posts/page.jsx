@@ -1,10 +1,9 @@
-// /app/posts/page-[page]/page.js
 import PostList from '@/components/posts/PostList'
 import { notFound } from 'next/navigation'
-import PostsCtrl from '@/controllers/server/PostsCtrl'
+import * as postsService from 'server/posts.service'
 
 export default async function PostsPage() {
-  const posts = await PostsCtrl.list()
+  const posts = await postsService.list()
   if (!posts) {
     notFound()
   }

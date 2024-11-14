@@ -1,12 +1,12 @@
 'use client'
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from '@/stores/product/product.store'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const Cart = () => {
-  const cart = useProductsStore((state) => state.cart)
-  const addToCart = useProductsStore((state) => state.addToCart)
-  const itemCart = useProductsStore((state) => state.itemCart)
+  const cart = productStore((state) => state.cart)
+  const addToCart = productStore((state) => state.addToCart)
+  const itemCart = productStore((state) => state.itemCart)
   return (
     <div className="bg-gray-200 p-2 m-2">
       <i className="fas fa-shopping-cart"></i> Cart

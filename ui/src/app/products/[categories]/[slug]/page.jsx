@@ -1,15 +1,15 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/server/ProductCtrl'
+import productService from 'server/product.service'
 import { ProductDetail } from '@/components/Products/'
 
 export async function generateStaticParams() {
-  const params = await ProductCtrl.productcategories()
+  const params = await productService.productcategories()
   return params
 }
 
 const page = async ({ params }) => {
   const { categories, slug } = await params
-  const product = await ProductCtrl.detail(categories, slug)
+  const product = await productService.detail(categories, slug)
   return (
     <div>
       <ProductDetail product={product} />

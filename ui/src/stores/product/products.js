@@ -1,4 +1,4 @@
-export const createProducts = (set) => ({
+export const products = (set) => ({
   products: [],
   sortBy: (sortBy = 'name') =>
     set((state) => {

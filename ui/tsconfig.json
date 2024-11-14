@@ -19,7 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "client/*": ["./src/services/client/*"],
+      "server/*": ["./src/services/server/*"],
+      "stores/*": ["./src/stores/*"],
+      "repositories/*": ["./src/repositories/*"],
+      "styles/*": ["./src/styles/*"],
     }
   },
   "include": [
@@ -28,7 +33,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.mjs",
-    "../../tailwind.config.ts"
-, "src/app/pages/page.jsx"  ],
+    "../../tailwind.config.ts",
+    "src/app/pages/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/server/ProductCtrl'
+import * as productService from 'server/product.service'
 import { ProductWrapper, ProductList } from '@/components/Products/'
 
 export async function generateStaticParams() {
-  const productCategories = await ProductCtrl.categories()
+  const productCategories = await productService.categories()
   return productCategories.map((node) => ({
     categories: node.slug,
   }))
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 const page = async ({ params }) => {
   const { categories } = await params
-  const listCategories = await ProductCtrl.listCategories(categories)
+  const listCategories = await productService.listCategories(categories)
   return (
     <ProductWrapper>
       <ProductList innitData={listCategories} />

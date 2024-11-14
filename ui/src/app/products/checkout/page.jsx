@@ -1,9 +1,9 @@
 'use client'
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from 'stores/product/product.store'
 import { Checkout, OrderSummary } from '@/components/Products/'
 
 const Page = () => {
-  const step = useProductsStore((state) => state.step)
+  const step = productStore((state) => state.step)
 
   return step === 2 ? <Checkout /> : step === 3 ? <OrderSummary /> : null
 }

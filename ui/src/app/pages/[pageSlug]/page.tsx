@@ -1,10 +1,10 @@
 import React from 'react'
-import PagesCtrl from '@/controllers/server/PagesCtrl'
+import * as pagesService from 'server/pages.service'
 import About from '@/components/pages/About'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  return await PagesCtrl.path()
+  return await pagesService.path()
 }
 
 type PageProps = {
@@ -20,7 +20,7 @@ const page = async ({ params }: PageProps) => {
   const { pageSlug } = await params
   if (!pageSlug) notFound()
 
-  const detail = await PagesCtrl.detail(pageSlug)
+  const detail = await pagesService.detail(pageSlug)
   return (
     <div>
       <h2>{detail?.title}</h2>

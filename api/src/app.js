@@ -1,11 +1,14 @@
-import express from 'express'
-import contentRoutes from './routes/contentRoutes.js'
+const express = require('express');
+const cors = require('cors');
+const postRouters = require('./routers/post.routes.js');
 
-const app = express()
-const port = process.env.PORT || 4000
+const app = express();
 
-app.use('/services', contentRoutes)
+app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
-})
+// app.use(express.json({ limit: '30mb' }));
+// app.use(express.urlencoded({ limit: '30mb', extended: true }));
+app.use("/services", postRouters);
+app.use(cors());
+
+module.exports = app;

@@ -1,18 +1,17 @@
 import React from 'react'
-import ProductCtrl from '@/controllers/server/ProductCtrl'
-import PostsCtrl from '@/controllers/server/PostsCtrl'
-import PagesCtrl from '@/controllers/server/PagesCtrl'
+import * as pagesService from '@/services/server/pages.service'
+import * as postsService from '@/services/server/posts.service'
+import * as productService from '@/services/server/product.service'
 import MenuList from '@/components/common/MenuList'
 
 const Sidebar = async () => {
   const [productsCategories, postsCategories, PostsTags, PagesList] =
     await Promise.all([
-      ProductCtrl.categories(),
-      PostsCtrl.categories(),
-      PostsCtrl.tags(),
-      PagesCtrl.list(),
+      productService.categories(),
+      postsService.categories(),
+      postsService.tags(),
+      pagesService.list(),
     ])
-
   return (
     <div className="min-w-[380px] border-l-[30px] p-4 bg-[#fff] border-lime-600 mr-5">
       <MenuList initialData={PagesList} path="/pages">

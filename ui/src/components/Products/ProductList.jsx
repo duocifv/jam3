@@ -1,14 +1,14 @@
 'use client'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import { useProductsStore } from '@/stores/useProductsStore'
+import { productStore } from '@/stores/product/product.store'
 import Link from 'next/link'
 
 const ProductList = ({ innitData }) => {
-  const products = useProductsStore((state) => state.products)
-  const setProducts = useProductsStore((state) => state.setProducts)
-  const sortBy = useProductsStore((state) => state.sortBy)
-  const setItemCart = useProductsStore((state) => state.setItemCart)
+  const products = productStore((state) => state.products)
+  const setProducts = productStore((state) => state.setProducts)
+  const sortBy = productStore((state) => state.sortBy)
+  const setItemCart = productStore((state) => state.setItemCart)
   const handleAddToCart = (productId) => {
     setItemCart(productId, 1)
   }

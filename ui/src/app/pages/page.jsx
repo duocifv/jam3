@@ -1,12 +1,12 @@
 import React from 'react'
-import PagesCtrl from '@/controllers/server/PagesCtrl'
+import * as pagesService from 'server/pages.service'
 import About from '@/components/pages/About'
 
 const page = async () => {
-  const pages = await PagesCtrl.all()
+  const data = await pagesService.all()
   return (
     <div>
-      {pages.map((block, index) => (
+      {data.map((block, index) => (
         <About key={index} block={block} />
       ))}
     </div>

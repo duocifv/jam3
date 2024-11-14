@@ -20,7 +20,7 @@ async function deploy() {
 
     // Đăng nhập thành công, bây giờ upload thư mục src/api lên server
     const localDir = path.join(process.cwd(), 'src') // Đường dẫn đến thư mục src/api trong dự án
-    const remoteDir = 'api.duocnv.top' // Đường dẫn đến thư mục trên server
+    const remoteDir = 'api.duocnv.top/src' // Đường dẫn đến thư mục trên server
 
     // Upload thư mục src/api lên server
     await client.uploadFromDir(localDir, remoteDir)
