@@ -1,4 +1,3 @@
-
 query ProductCategories($first: Int, $after: String) {
   productCategories(first: $first, after: $after) {
     pageInfo {

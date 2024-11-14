@@ -1,66 +1,48 @@
-import { gql } from 'graphql-request'
 import { fetchDataWithPagination } from '@/lib/fetchDataWithPagination'
+import { GetPagesDocument, GetPageDetailsDocument, GetPagesQuery } from '../gql/graphql';
 import Cache from '@/lib/cache'
+import { fetchData } from '@/lib/api'
 
 const fetchPages = async () => {
   return await fetchDataWithPagination(
-    gql`
-      query Pages($first: Int, $after: String) {
-        pages(first: $first, after: $after) {
-          pageInfo {
-            endCursor
-            hasNextPage
-          }
-          edges {
-            cursor
-            node {
-              id
-              pageId
-              status
-              slug
-              dateGmt
-              title
-              blocks {
-                name
-                attributesJSON
-                order
-                innerBlocks {
-                  name
-                  attributesJSON
-                  order
-                  innerBlocks {
-                    name
-                    attributesJSON
-                    order
-                  }
-                }
-              }
-              featuredImage {
-                node {
-                  mediaDetails {
-                    sizes {
-                      sourceUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
+    GetPagesDocument,
     'pages'
   )
 }
 
-export const getPages = async (slug) => {
+const fetchDetailPage = async (pageId: string) => {
+  const result = await fetchData(GetPageDetailsDocument,
+    { pageId }
+  )
+  return result.page.blocks || {}
+}
+
+const getPages = async () => {
   const data = Cache.read('pages')
   if (Object.keys(data).length) {
-    return slug ? data[slug] : Object.values(data)
+    return Object.values(data)
   }
 
   const result = await fetchPages()
-  Cache.write('pages', result)
+  Cache.write(result, 'pages')
 
-  return slug ? result[slug] : Object.values(result)
+  for (const page of Object.values(result)) {
+    const { id, slug, title }: any = page;
+    const blocks = await fetchDetailPage(id)
+    const data = { id, slug, title, blocks }
+
+    if (blocks) {
+      Cache.write(data, 'pages', `${slug}`)
+    } else {
+      console.warn(`No data returned for page with ID: ${id}`)
+    }
+  }
+  return Object.values(result)
 }
+
+const getPageDetail = async (slug: string) => {
+  const data = Cache.read('pages', slug)
+  return data
+}
+
+export { getPages, getPageDetail }

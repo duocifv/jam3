@@ -1,0 +1,12 @@
+query GetPageDetails($pageId: ID!) {
+  page(id: $pageId) {
+    blocks {
+      name
+      attributesJSON
+      innerBlocks {
+        name
+        attributesJSON
+      }
+    }
+  }
+}

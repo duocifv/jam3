@@ -110,7 +110,7 @@ const getProductCategories = async () => {
   }
 
   const productCategories = fetchProductCategories()
-  Cache.write('productCategories', productCategories)
+  Cache.write(productCategories, 'productCategories')
   return Object.values(productCategories) || []
 }
 
@@ -151,7 +151,7 @@ const getProducts = async (categorySlug: string, pageSlug: string) => {
       console.log(`No products found for category: ${item.slug}`)
     }
   }
-  Cache.write('products', result)
+  Cache.write(result, 'products')
 
   if (categorySlug && result[categorySlug]) {
     if (pageSlug && result[categorySlug][pageSlug])

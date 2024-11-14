@@ -90,23 +90,23 @@ const fetchTagsPosts = async () => {
   )
 }
 
-const getPosts = async (slug) => {
+const getPosts = async (slug: string) => {
   const data = Cache.read('posts')
   if (Object.keys(data).length) {
     return slug ? data[slug] : Object.values(data)
   }
   const postsData = await fetchPosts()
-  Cache.write('posts', postsData)
+  Cache.write(postsData, 'posts')
   return slug ? postsData[slug] : postsData
 }
 
-const getCategories = async (slug) => {
+const getCategories = async (slug: string) => {
   const data = Cache.read('categories')
   if (Object.keys(data).length) {
     return slug ? data[slug] : Object.values(data)
   }
   const categories = await fetchCategoriesPosts()
-  Cache.write('categories', categories)
+  Cache.write(categories, 'categories')
   return slug ? categories[slug] : Object.values(categories)
 }
 
@@ -116,7 +116,7 @@ const getTags = async () => {
     return Object.values(data)
   }
   const tags = await fetchTagsPosts()
-  Cache.write('tags', tags)
+  Cache.write(tags, 'tags')
   return Object.values(tags)
 }
 

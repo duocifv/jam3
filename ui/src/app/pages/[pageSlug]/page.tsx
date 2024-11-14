@@ -19,7 +19,6 @@ type Block = {
 const page = async ({ params }: PageProps) => {
   const { pageSlug } = await params
   if (!pageSlug) notFound()
-
   const detail = await pagesService.detail(pageSlug)
   return (
     <div>

@@ -1,6 +1,6 @@
 import Text from '@/components/core/Text'
 import Columns from '@/components/core/Columns'
-import Image from 'next/image'
+import Picture from '../core/Picture'
 
 const About = ({ block }) => {
   if (!block?.attributesJSON) return null
@@ -47,11 +47,11 @@ const About = ({ block }) => {
     case 'core/image': {
       const { url, alt, width } = attributes
       return (
-        <Image
+        <Picture
           src={url}
           alt={alt}
-          width={parseInt(width, 10) || '100%'}
-          height={parseInt(width, 10) || '100%'}
+          width={parseInt(width, 10) || 800}
+          height={parseInt(width, 10) || 800}
         />
       )
     }

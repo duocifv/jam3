@@ -6,12 +6,20 @@ class Cache {
     this.cacheDir = path.join(process.cwd(), 'src', 'cache')
   }
 
-  getCacheFileName(type) {
-    return path.join(this.cacheDir, `${type}.json`)
+  getCacheFileName(type, subtype) {
+    const dirPath = subtype ? path.join(this.cacheDir, type) : this.cacheDir
+
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true })
+    }
+
+    return subtype
+      ? path.join(dirPath, `${subtype}.json`)
+      : path.join(this.cacheDir, `${type}.json`)
   }
 
-  read(type) {
-    const filePath = this.getCacheFileName(type)
+  read(type, subtype) {
+    const filePath = this.getCacheFileName(type, subtype)
     if (fs.existsSync(filePath)) {
       const fileData = fs.readFileSync(filePath, 'utf-8')
       return JSON.parse(fileData)
@@ -19,8 +27,11 @@ class Cache {
     return []
   }
 
-  write(type, data) {
-    const filePath = this.getCacheFileName(type)
+  write(data, type, subtype) {
+    if (data === undefined) {
+      throw new Error('Data to write is undefined')
+    }
+    const filePath = this.getCacheFileName(type, subtype)
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
   }
 }

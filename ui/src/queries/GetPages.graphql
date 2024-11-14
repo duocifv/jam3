@@ -1,0 +1,20 @@
+query GetPages($first: Int, $after: String) {
+  pages(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        pageId
+        status
+        slug
+        dateGmt
+        title
+      }
+    }
+  }
+}
+
