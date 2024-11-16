@@ -1,19 +1,18 @@
 import { fetchDataWithPagination } from '@/lib/fetchDataWithPagination'
-import { GetPagesDocument, GetPageDetailsDocument, GetPagesQuery } from '../gql/graphql';
+import {
+  GetPagesDocument,
+  GetPageDetailsDocument,
+  GetPagesQuery,
+} from '../gql/graphql'
 import Cache from '@/lib/cache'
 import { fetchData } from '@/lib/api'
 
 const fetchPages = async () => {
-  return await fetchDataWithPagination(
-    GetPagesDocument,
-    'pages'
-  )
+  return await fetchDataWithPagination(GetPagesDocument, 'pages')
 }
 
 const fetchDetailPage = async (pageId: string) => {
-  const result = await fetchData(GetPageDetailsDocument,
-    { pageId }
-  )
+  const result = await fetchData(GetPageDetailsDocument, { pageId })
   return result.page.blocks || {}
 }
 
@@ -27,7 +26,7 @@ const getPages = async () => {
   Cache.write(result, 'pages')
 
   for (const page of Object.values(result)) {
-    const { id, slug, title }: any = page;
+    const { id, slug, title }: any = page
     const blocks = await fetchDetailPage(id)
     const data = { id, slug, title, blocks }
 

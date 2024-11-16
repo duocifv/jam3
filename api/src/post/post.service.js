@@ -1,7 +1,7 @@
 // src/repositories/post.repository.js
-const axios = require('axios'); // Import axios
+const axios = require('axios');
 
-const endpoint = 'https://cms.duocnv.top/graphql'; // Địa chỉ endpoint WPGraphQL
+const endpoint = 'https://cms.duocnv.top/graphql';
 
 const query = `
   query {
@@ -15,7 +15,7 @@ const query = `
   }
 `;
 
-const getAllPosts = async () => {
+exports.getAllPosts = async () => {
   try {
     const response = await axios.post(endpoint, {
       query: query
@@ -27,4 +27,3 @@ const getAllPosts = async () => {
   }
 };
 
-module.exports = { getAllPosts }; // Export hàm

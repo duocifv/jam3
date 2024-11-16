@@ -2,11 +2,15 @@
   "id": "cG9zdDoxMQ==",
   "slug": "tai-khoan",
   "title": "Tài khoản",
-  "blocks": [
-    {
-      "name": "core/shortcode",
-      "attributesJSON": "[]",
-      "innerBlocks": []
+  "blocks": {
+    "page": {
+      "blocks": [
+        {
+          "name": "core/shortcode",
+          "attributesJSON": "[]",
+          "innerBlocks": []
+        }
+      ]
     }
-  ]
+  }
 }

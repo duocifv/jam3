@@ -1,0 +1,66 @@
+query GetPosts2($first: Int, $after: String) {
+  posts(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        slug
+        title
+        excerpt
+        date
+        content
+        categories {
+          nodes {
+            slug
+          }
+        }
+        tags {
+          nodes {
+            slug
+          }
+        }
+      }
+    }
+  }
+}
+
+query CategoriesPosts($first: Int, $after: String) {
+  categories(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        name
+        slug
+        count
+        categoryId
+      }
+    }
+  }
+}
+
+query TagsPosts {
+  tags(where: { hideEmpty: true, orderby: COUNT, order: DESC }) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        name
+        count
+        slug
+      }
+    }
+  }
+}

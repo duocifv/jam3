@@ -36,6 +36,5 @@ class Cache {
   }
 }
 
-const result = new Cache()
-
-export default result
+const cache = new Cache()
+export default cache

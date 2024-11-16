@@ -1,5 +1,5 @@
-{
-  "hello-world": {
+[
+  {
     "id": "cG9zdDox",
     "slug": "hello-world",
     "title": "Hello world!",
@@ -17,7 +17,7 @@
       "nodes": []
     }
   },
-  "qui-ut-non-ullam-nostrum": {
+  {
     "id": "cG9zdDo5NA==",
     "slug": "qui-ut-non-ullam-nostrum",
     "title": "Qui ut non ullam nostrum",
@@ -35,7 +35,7 @@
       "nodes": []
     }
   },
-  "omnis-voluptas-aperiam-enim-inventore-quo-minus": {
+  {
     "id": "cG9zdDo5NQ==",
     "slug": "omnis-voluptas-aperiam-enim-inventore-quo-minus",
     "title": "Omnis voluptas aperiam enim inventore quo minus",
@@ -53,7 +53,7 @@
       "nodes": []
     }
   },
-  "sequi-aut-ducimus-et": {
+  {
     "id": "cG9zdDo5MA==",
     "slug": "sequi-aut-ducimus-et",
     "title": "Sequi aut ducimus et",
@@ -67,7 +67,7 @@
       "nodes": []
     }
   },
-  "est-veniam-ut-repellendus-exercitationem": {
+  {
     "id": "cG9zdDo5Mg==",
     "slug": "est-veniam-ut-repellendus-exercitationem",
     "title": "Est veniam ut repellendus exercitationem",
@@ -85,4 +85,4 @@
       "nodes": []
     }
   }
-}
+]

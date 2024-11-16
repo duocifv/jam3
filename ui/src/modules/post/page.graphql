@@ -1,4 +1,4 @@
-query GetPages($first: Int, $after: String) {
+query PagesList ($first: Int, $after: String) {
   pages(first: $first, after: $after) {
     pageInfo {
       endCursor
@@ -13,6 +13,19 @@ query GetPages($first: Int, $after: String) {
         slug
         dateGmt
         title
+      }
+    }
+  }
+}
+
+query PageDetails ($pageId: ID!) {
+  page(id: $pageId) {
+    blocks {
+      name
+      attributesJSON
+      innerBlocks {
+        name
+        attributesJSON
       }
     }
   }

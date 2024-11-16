@@ -2,5 +2,9 @@
   "id": "cG9zdDo4",
   "slug": "cua-hang",
   "title": "Cửa hàng",
-  "blocks": []
+  "blocks": {
+    "page": {
+      "blocks": []
+    }
+  }
 }

@@ -1,0 +1,78 @@
+query ProductCategories($first: Int, $after: String) {
+  productCategories(first: $first, after: $after) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        productCategoryId
+        count
+        name
+        slug
+      }
+    }
+  }
+}
+
+query Products($first: Int, $categoryId: Int) {
+  products(first: $first, where: { categoryId: $categoryId }) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        slug
+        name
+        description
+        onSale
+        reviewCount
+        shortDescription
+        sku
+        image {
+          sourceUrl
+        }
+        type
+        ... on VariableProduct {
+          productId
+          price(format: FORMATTED)
+          salePrice(format: FORMATTED)
+          reviews {
+            averageRating
+          }
+        }
+        ... on ExternalProduct {
+          productId
+          price(format: FORMATTED)
+          salePrice(format: FORMATTED)
+          reviews {
+            averageRating
+          }
+        }
+        ... on GroupProduct {
+          productId
+          price(format: FORMATTED)
+          salePrice(format: FORMATTED)
+          reviews {
+            averageRating
+          }
+        }
+        ... on SimpleProduct {
+          productId
+          price(format: FORMATTED)
+          salePrice(format: FORMATTED)
+          reviews {
+            averageRating
+          }
+        }
+        ... on SimpleProductVariation {
+          price(format: FORMATTED)
+          salePrice(format: FORMATTED)
+        }
+      }
+    }
+  }
+}
