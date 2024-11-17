@@ -1,29 +1,10 @@
-// src/repositories/post.repository.js
-const axios = require('axios');
+const { getdAllPosts } = require("./post.repository.js");
 
-const endpoint = 'https://cms.duocnv.top/graphql';
-
-const query = `
-  query {
-    posts {
-      nodes {
-        title
-        content
-        date
-      }
-    }
-  }
-`;
-
-exports.getAllPosts = async () => {
+exports.allPosts = async () => {
   try {
-    const response = await axios.post(endpoint, {
-      query: query
-    });
-    return response.data.data.posts.nodes;
+    const posts = await getdAllPosts();  // Gọi repository để lấy danh sách bài viết
+    return posts;
   } catch (error) {
-    console.error('Error fetching posts:', error);
-    throw new Error('Error fetching posts');
+    throw new Error('Error in service: ' + error.message);
   }
 };
-

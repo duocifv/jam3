@@ -1,5 +1,5 @@
 import React from 'react'
-import * as productService from '@/modules/post/product.service'
+import * as productService from '@/modules/product/product.service'
 import { notFound } from 'next/navigation'
 import { ProductList } from '@/components/products/'
 

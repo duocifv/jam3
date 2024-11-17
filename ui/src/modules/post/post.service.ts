@@ -1,94 +1,26 @@
-import {
-  CategoriesPostsDocument,
-  CategoriesPostsQuery,
-  GetPosts2Document,
-  GetPosts2Query,
-  TagsPostsDocument,
-  TagsPostsQuery,
-} from '@/gql/graphql'
-import { cache } from '@/lib/cache'
-import { paginate } from '@/lib/grapql'
+import { queryPostList, queryPostDetail, queryPostCategories, queryPostTags } from './post.repository'
 
-export type TypePost = GetPosts2Query['posts']['edges'][0]['node']
-export type TypePostList = TypePost
+export const getPostList = async () => await queryPostList()
 
-export const getPostList = async (): Promise<TypePostList[]> => {
-  const result = cache.list<TypePostList>('posts4')
-  if (result?.length) {
-    return result
-  }
+export const getPostDetail = async (slug?: string) => queryPostDetail(slug)
 
-  try {
-    const data = await paginate(GetPosts2Document)
-    if (data?.length) {
-      console.log('error getPosts', data)
-      return []
-    }
-    cache.put(data, 'posts4')
-    return data as []
-  } catch (error) {
-    console.error('Error fetching posts:', error)
-    return []
-  }
-}
+export const getPostCategories = async () => queryPostCategories()
 
-export const getPostDetail = async (slug?: string): Promise<TypePost> => {
-  const result = cache.get<TypePost>(slug, 'posts4')
-  if (!result) {
-    return null
-  }
-  return result
-}
+export const getPostTags = async () => queryPostTags()
 
-type TypeCategories = CategoriesPostsQuery["categories"]["edges"][0]["node"]
-export const getPostCategories = async (): Promise<TypeCategories[]> => {
-  const result = cache.list<TypeCategories>('categories2')
-  if (result?.length) return result
-
-  try {
-    const data = await paginate<CategoriesPostsQuery>(CategoriesPostsDocument)
-    if (!data?.length) {
-      console.log(' error getCategories', data)
-      return []
-    }
-    cache.put(data, 'categories2')
-  } catch (error) {
-    console.error('Error get Categories:', error)
-    return []
-  }
-}
-
-type TypeTags = TagsPostsQuery["tags"]["edges"][0]["node"]
-export const getPostTags = async (): Promise<TypeTags[]> => {
-  const result = cache.list<TypeTags>('tags2')
-  if (result?.length) return result
-
-  try {
-    const data = await paginate<TagsPostsQuery>(TagsPostsDocument)
-    if (!data?.length) {
-      console.log(' Tags Posts data', data)
-      return []
-    }
-    cache.put(data, 'tags2')
-    return result as []
-  } catch (error) {
-    console.error('Error get Tags Posts:', error)
-    return []
-  }
-}
-
-export const getPostListCategory = async (slug: string): Promise<TypePost[]> => {
-  const result = await getPostList(slug)
+export const getPostListCategory = async (slug: string) => {
+  const result = await queryPostList()
   if (!result) {
     return []
   }
   return result.filter(item => item.categories.nodes.find(item => item.slug === slug))
 }
 
-export const getPostListCategoryTags = async (slug: string): Promise<TypePost[]> => {
-  const result = await getPostList(slug)
+export const getPostListCategoryTags = async (slug: string) => {
+  const result = await getPostList()
   if (!result) {
     return []
   }
   return result.filter(item => item.tags.nodes.find(item => item.slug === slug))
 }
+

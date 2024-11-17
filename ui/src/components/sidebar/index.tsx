@@ -1,7 +1,7 @@
 import React from 'react'
-import * as pageService from '@/modules/post/page.service'
+import * as pageService from '@/modules/page/page.service'
 import * as postService from '@/modules/post/post.service'
-import * as productService from '@/modules/post/product.service'
+import * as productService from '@/modules/product/product.service'
 
 import MenuList from '@/components/core/MenuList'
 

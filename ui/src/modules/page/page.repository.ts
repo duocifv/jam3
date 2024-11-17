@@ -1,10 +1,10 @@
-import { PageDetailsDocument, PageDetailsQuery, PagesListDocument, PagesListQuery } from '@/gql/graphql'
+import { PageDetailsDocument, PagesListDocument, PagesListQuery, PageDetailsQuery } from '@/gql/graphql'
 import { cache } from '@/lib/cache'
 import { paginate, query } from '@/lib/grapql'
 
 export type TypePages = PagesListQuery['pages']['edges'][0]['node']
 
-export const getPagesList = async (): Promise<TypePages[]> => {
+export const queryPagesList = async (): Promise<TypePages[]> => {
   const result = cache.list<TypePages>('pages')
   if (result?.length) return result
 
@@ -44,7 +44,7 @@ type TypePageDetail = {
   blocks: PageDetailsQuery
 }
 
-export const getPageDetail = async (slug: string): Promise<TypePageDetail> => {
+export const queryPageDetail = async (slug: string): Promise<TypePageDetail> => {
   if (!slug) {
     console.log('slug không có')
     return null
@@ -54,34 +54,3 @@ export const getPageDetail = async (slug: string): Promise<TypePageDetail> => {
   return result
 }
 
-export const getPagePath = async () => {
-  try {
-    const path = await getPagesList()
-    if (!path.length) {
-      console.log('not data getPath')
-      return [{ pageSlug: 'home' }]
-    }
-    return path.map(({ slug }) => ({ pageSlug: slug }))
-  } catch (error) {
-    console.log('error data getPath')
-    return [{ pageSlug: 'home' }]
-  }
-}
-
-export const getPageCategories = async () => {
-  try {
-    const result: any[] = await getPagesList()
-    if (!result.length) {
-      console.log('not data getCategories')
-      return [{ pageSlug: 'home' }]
-    }
-    return result.map(({ title, slug, pageId }) => ({
-      name: title,
-      slug,
-      pageId,
-    }))
-  } catch (error) {
-    console.log('error data getPath')
-    return [{ pageSlug: 'home' }]
-  }
-}
