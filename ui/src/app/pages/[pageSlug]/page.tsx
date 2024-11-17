@@ -1,10 +1,11 @@
 import React from 'react'
-import * as pagesService from 'server/pages.service'
+import * as pageService from '@/modules/post/page.service'
 import About from '@/components/pages/About'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  return await pagesService.path()
+  const data = await pageService.getPagePath()
+  return data || []
 }
 
 type PageProps = {
@@ -16,14 +17,17 @@ type Block = {
   order?: number
   innerBlocks?: []
 }
+
 const page = async ({ params }: PageProps) => {
   const { pageSlug } = await params
   if (!pageSlug) notFound()
-  const detail = await pagesService.detail(pageSlug)
+  const pageDetail = await pageService.getPageDetail(pageSlug)
+
+  if (!pageDetail) notFound()
   return (
     <div>
-      <h2>{detail?.title}</h2>
-      {detail.blocks.map((block: Block, index: number) => (
+      <h2>{pageDetail?.title}</h2>
+      {pageDetail.blocks.page.blocks.map((block: Block, index: number) => (
         <About key={index} block={block} />
       ))}
     </div>

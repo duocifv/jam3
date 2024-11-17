@@ -21,6 +21,8 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-any": false,
     "react/jsx-uses-react": "off",
     "no-unused-vars": "warn",
     "react/prop-types": "off",

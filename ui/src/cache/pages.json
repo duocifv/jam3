@@ -1,5 +1,5 @@
-[
-  {
+{
+  "hello": {
     "id": "cG9zdDoxMDU=",
     "pageId": 105,
     "status": "publish",
@@ -7,7 +7,7 @@
     "dateGmt": "2024-11-14T12:15:31",
     "title": "Hello"
   },
-  {
+  "tai-khoan": {
     "id": "cG9zdDoxMQ==",
     "pageId": 11,
     "status": "publish",
@@ -15,7 +15,7 @@
     "dateGmt": "2024-11-12T13:19:01",
     "title": "Tài khoản"
   },
-  {
+  "thanh-toan": {
     "id": "cG9zdDoxMA==",
     "pageId": 10,
     "status": "publish",
@@ -23,7 +23,7 @@
     "dateGmt": "2024-11-12T13:19:00",
     "title": "Thanh toán"
   },
-  {
+  "gio-hang": {
     "id": "cG9zdDo5",
     "pageId": 9,
     "status": "publish",
@@ -31,7 +31,7 @@
     "dateGmt": "2024-11-12T13:19:00",
     "title": "Giỏ hàng"
   },
-  {
+  "cua-hang": {
     "id": "cG9zdDo4",
     "pageId": 8,
     "status": "publish",
@@ -39,7 +39,7 @@
     "dateGmt": "2024-11-12T13:19:00",
     "title": "Cửa hàng"
   },
-  {
+  "sample-page": {
     "id": "cG9zdDoy",
     "pageId": 2,
     "status": "publish",
@@ -47,4 +47,4 @@
     "dateGmt": "2024-11-12T13:13:45",
     "title": "Sample Page"
   }
-]
+}

@@ -3,7 +3,11 @@ import { GraphQLClient, Variables, RequestDocument } from 'graphql-request'
 const endpoint = 'https://cms.duocnv.top/graphql'
 const client = new GraphQLClient(endpoint)
 
-export const query = async <T>(document: RequestDocument, variables: Variables = {}, headers = {}): Promise<T> => {
+export const query = async <T>(
+  document: RequestDocument,
+  variables: Variables = {},
+  headers = {}
+): Promise<T> => {
   try {
     const allHeaders = {
       'Content-Type': 'application/json',
@@ -18,58 +22,45 @@ export const query = async <T>(document: RequestDocument, variables: Variables =
   }
 }
 
-export const paginate = async(document: RequestDocument, limit = 100): Promise<string[]> => {
-  let hasNextPage = true;
-  let cursor: string | null = null;
-  let result:any = {}
-  let data:any = {};
+export const paginate = async <T>(
+  document: RequestDocument,
+  limit = 100
+): Promise<T[]> => {
+  let hasNextPage = true
+  let cursor: string | null = null
+  let result: any = {}
+  let data: any = {}
 
   while (hasNextPage) {
     try {
       const response: any = await query(document, {
         after: cursor,
         first: limit,
-      });
+      })
 
-      if (!response) break;
+      if (!response) break
 
       for (const key in response) {
         if (response.hasOwnProperty(key)) {
           result = response[key]
-          console.log(`${key}: 121212`);
+          console.log(`${key}: 121212`)
         }
       }
-      
-      const edges = result?.edges;
-      if (!edges) break;
+
+      const edges = result?.edges
+      if (!edges) break
 
       edges.forEach((edge: any) => {
-        data[edge.node.slug] = edge.node;
-      });
+        data[edge.node.slug] = edge.node
+      })
 
-      hasNextPage = result.pageInfo.hasNextPage;
-      cursor = result.pageInfo.endCursor;
-     
+      hasNextPage = result.pageInfo.hasNextPage
+      cursor = result.pageInfo.endCursor
     } catch (error) {
-      console.error(`Error fetching :`, error);
-      break;
+      console.error(`Error fetching :`, error)
+      break
     }
   }
-  return Object.values(data);
+  return data
 }
 
-
-interface PageInfo {
-  endCursor: string | null;
-  hasNextPage: boolean;
-}
-
-interface Edge<T> {
-  cursor: string;
-  node: T;
-}
-
-interface PaginateResponse<T> {
-  pageInfo: PageInfo;
-  edges: Edge<T>[];
-}

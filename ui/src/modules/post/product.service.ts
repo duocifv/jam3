@@ -1,36 +1,45 @@
-import { ProductCategoriesDocument, ProductsDocument, ProductsQuery } from '@/gql/graphql';
-import { cache } from '@/lib/cache';
-import { paginate, query } from '@/lib/grapql';
+import {
+  ProductCategoriesDocument,
+  ProductsDocument,
+  ProductsQuery,
+  ProductCategoriesQuery
+} from '@/gql/graphql'
+import { cache } from '@/lib/cache'
+import { paginate, query } from '@/lib/grapql'
 
-export const getProductCategories = async () => {
-  const result = cache.read('productCategories2')
-  if (result?.length) return result;
+type TypeProductCategories = ProductCategoriesQuery["productCategories"]["edges"][0]["node"]
+export const getProductCategories = async (): Promise<TypeProductCategories[]> => {
+  const result = cache.list<TypeProductCategories>('productCategories2')
+  if (result?.length) return result
 
   try {
-    const data = await paginate(ProductCategoriesDocument);
-    if (!data?.length) {
-      console.log("error getPosts", data)
+    const data = await paginate<TypeProductCategories>(ProductCategoriesDocument)
+    if (data?.length) {
+      console.log('error getProductCategories', data)
       return []
     }
-    cache.write(data, 'productCategories2');
-    return data;
+    cache.put(data, 'productCategories2')
+    return data
   } catch (error) {
-    console.error('Error fetching posts:', error);
-    return [];
+    console.error('Error fetching posts:', error)
+    return []
   }
 }
 
-export const getProducts = async (categorySlug: string, pageSlug: string) => {
+
+export type TypeProductsQuery = ProductsQuery["products"]["edges"][0]["node"]
+export const getProducts = async (categorySlug: string, pageSlug?: string): Promise<TypeProductsQuery[]> => {
+
   if (!categorySlug && !pageSlug) return []
 
-  const data = cache.read('products2')
+  const data = cache.list<TypeProductsQuery>('products2')
   if (categorySlug && data[categorySlug]) {
     if (pageSlug && data[categorySlug][pageSlug])
       return data[categorySlug][pageSlug]
     return data[categorySlug]
   }
 
-  const categories: any[] = await getProductCategories()
+  const categories = await getProductCategories()
 
   const result = {}
   for (const item of categories) {
@@ -60,7 +69,7 @@ export const getProducts = async (categorySlug: string, pageSlug: string) => {
       console.log(`No products found for category: ${item.slug}`)
     }
   }
-  cache.write(Object.keys(result), 'products2')
+  cache.put(result, 'products2')
 
   if (categorySlug && result[categorySlug]) {
     if (pageSlug && result[categorySlug][pageSlug])
@@ -71,18 +80,29 @@ export const getProducts = async (categorySlug: string, pageSlug: string) => {
   return []
 }
 
+export const getProductDetail = async (categorieSlug: string, slug: string) => {
+  const data = cache.get(categorieSlug, 'products2')
+  console.log("data", data)
+  return {}
+}
 
-export const getProductPath = async () => {
+type ProductPath = { categories: string, slug: string }
+export const getProductPath = async (): Promise<ProductPath[]> => {
   let result = []
   try {
-    const categories: any[] = await getProductCategories()
+    const categories = await getProductCategories()
+
     if (!categories?.length) {
-      console.log("not array productPath")
-      return []
+      console.log('not array productPath')
+      return [{
+        categories: '',
+        slug: ''
+      }]
     }
+
     for (const item of categories) {
       if (item?.count === null) continue
-      const res = await getProducts(item.productCategoryId, item.slug)
+      const res = Object.values(await getProducts(item.slug))
       if (!res?.length) break
       const items = res.map((product) => ({
         categories: item.slug,
@@ -91,25 +111,64 @@ export const getProductPath = async () => {
       result = result.concat(items)
     }
   } catch (error) {
-    console.log("error api getProductCategories")
+    console.log('error api getProductCategories')
+  }
+  return result
+}
+
+export const getProductCategoriesPath = async (): Promise<{
+  categories: string
+}[]> => {
+  try {
+    const data = await getProductCategories()
+    if (!data?.length) {
+      console.log("error: not data getProductCategoriesPath", data)
+      return [{
+        categories: ''
+      }]
+    }
+    const params = data.map(item => ({
+      categories: item.slug
+    }))
+    return params
+  } catch (error) {
+    console.log(`error: api getProductCategoriesPath ${error}`)
+    return []
   }
 
-  return result
 }
 
 
 export const getProductList = async () => {
-  const categories: any[] = await getProductCategories()
-  let result = []
-  for (const item of categories) {
-    if (item?.count === null) continue
-    const res = await getProducts(item.productCategoryId, item.slug)
-    result = result.concat(res)
+  try {
+    const categories = await getProductCategories()
+    if (!categories?.length) {
+      console.log("error: not data getProductList", categories)
+      return []
+    }
+    let result:TypeProductsQuery[] = []
+    for (const item of categories) {
+      if (item?.count === null) continue
+      const res = await getProducts(item.slug)
+      result = result.concat(res)
+    }
+    return result
+  } catch (error) {
+    console.log(`error: api getProductList ${error}`)
+    return []
   }
-  return result
 }
 
-
 export const getProductListCategory = async (categories) => {
-  return await getProducts(categories, undefined)
+  try {
+    const data = Object.values(await getProducts(categories, undefined))
+    if (!data?.length) {
+      console.log("error: not data getProductListCategory", data)
+      return []
+    }
+    return data
+  } catch (error) {
+    console.log(`error: api getProductListCategory ${error}`)
+    return []
+  }
 }

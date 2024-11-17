@@ -1,4 +1,4 @@
-import * as shoppingService from '@/services/client/shopping.service'
+import * as shoppingService from '@/hooks/shopping.service'
 
 export const cart = (set, get) => ({
   cart: null,

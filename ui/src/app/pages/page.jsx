@@ -1,13 +1,18 @@
 import React from 'react'
-import * as pagesService from 'server/pages.service'
-import About from '@/components/pages/About'
+import * as pageService from '@/modules/post/page.service'
+import { notFound } from 'next/navigation'
 
 const page = async () => {
-  const data = await pagesService.all()
+  const pagesList = await pageService.getPagesList()
+  if (!pagesList?.length) notFound()
   return (
     <div>
-      {data.map((block, index) => (
-        <About key={index} block={block} />
+      {pagesList.map((item) => (
+        <div key={item.pageId}>
+          <h2>
+            {item.title} | {item.slug}
+          </h2>
+        </div>
       ))}
     </div>
   )

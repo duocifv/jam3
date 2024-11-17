@@ -1,9 +1,10 @@
 import * as postService from '@/modules/post/post.service'
 import * as pageService from '@/modules/post/page.service'
 import * as productService from '@/modules/post/product.service'
+import Layout from '@/components/layout/Layout'
+import PostsClientPage from './client.page'
 
-const page = async () => {
-
+const PostsPage = async () => {
   const postList = await postService.getPostList()
   const postTags = await postService.getPostTags()
   const postCategories = await postService.getPostCategories()
@@ -15,11 +16,21 @@ const page = async () => {
 
   const productCategories = await productService.getProductCategories()
   const productList = await productService.getProductList()
-  const productListCategory = await productService.getProductListCategory("ok")
+  const productListCategory = await productService.getProductListCategory('ok')
   const productPath = await productService.getProductPath()
-  const getProducts = await productService.getProducts("12","12")
+  const getProducts = await productService.getProducts('12', '12')
 
-  return <div>Hello</div>
+  const data = {
+    post: {
+      name: 'duoc',
+      body: 'duoc helllo',
+    },
+  }
+  return (
+    <Layout>
+      <PostsClientPage {...data} />
+    </Layout>
+  )
 }
 
-export default page
+export default PostsPage
