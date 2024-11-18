@@ -45,12 +45,15 @@ type TypePageDetail = {
 }
 
 export const queryPageDetail = async (slug: string): Promise<TypePageDetail> => {
-  if (!slug) {
-    console.log('slug không có')
+  
+
+  const result = cache.get<TypePageDetail>(null,'pages', `${slug}`)
+
+  console.log("queryPageDetail pageSlug pageSlug", result)
+  if (!result) {
+    console.log("No data queryPageDetail", result)
     return null
   }
-  const result = cache.get<TypePageDetail>(slug, 'pages', `${slug}`)
-  if (!result) return null
   return result
 }
 

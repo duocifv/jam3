@@ -34,12 +34,13 @@ class Cache {
 
   // Phương thức đọc dữ liệu từ file cache
   get<T>(key: string ,type: string, subtype?: string) : T {
-    if(!key) return null
+    
     const filePath = this.getCacheFileName(type, subtype)
     if (fs.existsSync(filePath)) {
       const fileData = fs.readFileSync(filePath, 'utf-8')
       const data = JSON.parse(fileData)
-      return data[key] || {}
+      if(key) return data[key] || {}
+      return data
     }
     return null
   }

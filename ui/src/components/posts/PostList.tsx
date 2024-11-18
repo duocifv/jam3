@@ -5,7 +5,7 @@ import React from 'react'
 import { useStore } from '@/stores/useStore'
 import { debounce } from '@/lib/utils'
 import PostController from '@/components/posts/controller/PostController'
-import { TypePostList } from '@/modules/post/post.service'
+import { TypePostList } from '@/modules/post/post.repository'
 
 const Search = ({ initialData, categorieId, categories, tagId }) => {
   const posts = useStore((state) => state.posts)

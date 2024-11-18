@@ -6,7 +6,13 @@ export const getPostDetail = async (slug?: string) => queryPostDetail(slug)
 
 export const getPostCategories = async () => queryPostCategories()
 
-export const getPostTags = async () => queryPostTags()
+export const getPostTags = async () => {
+  const data = await queryPostTags()
+  if (!data) {
+    return []
+  }
+  return data
+}
 
 export const getPostListCategory = async (slug: string) => {
   const result = await queryPostList()

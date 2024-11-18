@@ -33,4 +33,10 @@ export const getPageCategories = async () => {
   }
 }
 
-export const getPageDetail = async (slug: string) => queryPageDetail(slug)
+export const getPageDetail = async (slug: string) => {
+  if (!slug) {
+    console.log('slug No data')
+    return null
+  }
+  return queryPageDetail(slug)
+}

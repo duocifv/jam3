@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { productStore } from '@/stores/product/product.store'
 import Link from 'next/link'
-import { TypeProductsQuery } from '@/modules/post/product.service'
+import { TypeProductsQuery } from '@/modules/product/product.repository'
 
 const ProductList = ({ innitData }: { innitData: TypeProductsQuery[] }) => {
   const products = productStore((state) => state.products)

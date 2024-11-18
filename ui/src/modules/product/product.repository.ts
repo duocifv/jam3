@@ -2,18 +2,23 @@ import {
   ProductCategoriesDocument,
   ProductsDocument,
   ProductsQuery,
-  ProductCategoriesQuery
+  ProductCategoriesQuery,
 } from '@/gql/graphql'
 import { cache } from '@/lib/cache'
 import { paginate, query } from '@/lib/grapql'
 
-type TypeProductCategories = ProductCategoriesQuery["productCategories"]["edges"][0]["node"]
-export const queryProductCategories = async (): Promise<TypeProductCategories[]> => {
+type TypeProductCategories =
+  ProductCategoriesQuery['productCategories']['edges'][0]['node']
+export const queryProductCategories = async (): Promise<
+  TypeProductCategories[]
+> => {
   const result = cache.list<TypeProductCategories>('productCategories2')
   if (result?.length) return result
 
   try {
-    const data = await paginate<TypeProductCategories>(ProductCategoriesDocument)
+    const data = await paginate<TypeProductCategories>(
+      ProductCategoriesDocument
+    )
     if (data?.length) {
       console.log('error getProductCategories', data)
       return []
@@ -26,17 +31,19 @@ export const queryProductCategories = async (): Promise<TypeProductCategories[]>
   }
 }
 
-
-export type TypeProductsQuery = ProductsQuery["products"]["edges"][0]["node"]
-export const queryProducts = async (categorySlug: string, pageSlug?: string): Promise<TypeProductsQuery[]> => {
-
-  if (!categorySlug && !pageSlug) return []
-
-  const data = cache.list<TypeProductsQuery>('products2')
-  if (categorySlug && data[categorySlug]) {
-    if (pageSlug && data[categorySlug][pageSlug])
-      return data[categorySlug][pageSlug]
-    return data[categorySlug]
+export type TypeProductsQuery = ProductsQuery['products']['edges'][0]['node']
+export const queryProducts = async (
+  categorySlug?: string,
+  pageSlug?: string
+): Promise<TypeProductsQuery[]> => {
+  if (!categorySlug && !pageSlug) {
+    const data = cache.list<TypeProductsQuery>('products2')
+    if (data) return data
+  }
+  const category = cache.get<TypeProductsQuery>(categorySlug, 'products2')
+  if (category) {
+    if (category[pageSlug]) return category[pageSlug]
+    return Object.values(category) as []
   }
 
   const categories = await queryProductCategories()
@@ -80,9 +87,11 @@ export const queryProducts = async (categorySlug: string, pageSlug?: string): Pr
   return []
 }
 
-
-
-export const queryProductDetail = async (categorieSlug: string) => {
-  const data = cache.get(categorieSlug, 'products2')
-  return {}
+export const queryProductDetail = async (categorieSlug, slug) => {
+  const data = await queryProducts(categorieSlug, slug)
+  if (!data) {
+    console.log(data, 'error no db', categorieSlug, slug)
+    return {}
+  }
+  return data
 }

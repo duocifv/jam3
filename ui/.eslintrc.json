@@ -43,5 +43,14 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/gql/**/*"],
+      "rules": {
+        "no-any": 0
+      }
+    }
+  ],
+  "ignorePatterns": ["src/gql/graphql.ts"]
 }

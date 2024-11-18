@@ -1,14 +1,19 @@
-import { cache } from '@/lib/cache'
-import { queryProductCategories, queryProducts, queryProductDetail, TypeProductsQuery } from './product.repository'
-
+import {
+  queryProductCategories,
+  queryProducts,
+  queryProductDetail,
+  TypeProductsQuery,
+} from './product.repository'
 
 export const getProductCategories = async () => queryProductCategories()
 
-export const getProducts = async (categorySlug: string) => queryProducts(categorySlug)
+export const getProducts = async (categorySlug: string) =>
+  queryProducts(categorySlug, undefined)
 
-export const getProductDetail = async (categorieSlug: string) => queryProductDetail(categorieSlug)
+export const getProductDetail = async (categorieSlug: string, slug: string) =>
+  queryProductDetail(categorieSlug, slug)
 
-type ProductPath = { categories: string, slug: string }
+type ProductPath = { categories: string; slug: string }
 export const getProductPath = async (): Promise<ProductPath[]> => {
   let result = []
   try {
@@ -16,10 +21,12 @@ export const getProductPath = async (): Promise<ProductPath[]> => {
 
     if (!categories?.length) {
       console.log('not array productPath')
-      return [{
-        categories: '',
-        slug: ''
-      }]
+      return [
+        {
+          categories: '',
+          slug: '',
+        },
+      ]
     }
 
     for (const item of categories) {
@@ -38,34 +45,36 @@ export const getProductPath = async (): Promise<ProductPath[]> => {
   return result
 }
 
-export const getProductCategoriesPath = async (): Promise<{
-  categories: string
-}[]> => {
+export const getProductCategoriesPath = async (): Promise<
+  {
+    categories: string
+  }[]
+> => {
   try {
     const data = await getProductCategories()
     if (!data?.length) {
-      console.log("error: not data getProductCategoriesPath", data)
-      return [{
-        categories: ''
-      }]
+      console.log('error: not data getProductCategoriesPath', data)
+      return [
+        {
+          categories: '',
+        },
+      ]
     }
-    const params = data.map(item => ({
-      categories: item.slug
+    const params = data.map((item) => ({
+      categories: item.slug,
     }))
     return params
   } catch (error) {
     console.log(`error: api getProductCategoriesPath ${error}`)
     return []
   }
-
 }
-
 
 export const getProductList = async () => {
   try {
     const categories = await getProductCategories()
     if (!categories?.length) {
-      console.log("error: not data getProductList", categories)
+      console.log('error: not data getProductList', categories)
       return []
     }
     let result: TypeProductsQuery[] = []
@@ -83,9 +92,10 @@ export const getProductList = async () => {
 
 export const getProductListCategory = async (categories) => {
   try {
-    const data = Object.values(await getProducts(categories))
+    const data = await getProducts(categories)
+
     if (!data?.length) {
-      console.log("error: not data getProductListCategory", data)
+      console.log('error: not data getProductListCategory', data)
       return []
     }
     return data

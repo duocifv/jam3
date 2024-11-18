@@ -11,27 +11,21 @@ export async function generateStaticParams() {
 type PageProps = {
   params: Promise<{ pageSlug: string }>
 }
-type Block = {
-  name: string
-  attributesJSON?: string
-  order?: number
-  innerBlocks?: []
-}
 
-const page = async ({ params }: PageProps) => {
-  const { pageSlug } = await params
+const SamplePage = async (props: PageProps) => {
+  const { pageSlug } = await props.params
+  
   if (!pageSlug) notFound()
   const pageDetail = await pageService.getPageDetail(pageSlug)
-
   if (!pageDetail) notFound()
   return (
     <div>
       <h2>{pageDetail?.title}</h2>
-      {pageDetail.blocks.page.blocks.map((block: Block, index: number) => (
+      {pageDetail?.blocks?.page?.blocks?.map((block, index: number) => (
         <About key={index} block={block} />
       ))}
     </div>
   )
 }
 
-export default page
+export default SamplePage

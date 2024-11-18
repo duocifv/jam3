@@ -1,6 +1,7 @@
 import React from 'react'
 import * as productService from '@/modules/product/product.service'
 import { ProductWrapper, ProductList } from '@/components/products/'
+import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
   return await productService.getProductCategoriesPath()
@@ -8,10 +9,12 @@ export async function generateStaticParams() {
 
 const ProductCategoryPage = async ({ params }) => {
   const { categories } = await params
-  const listCategories = await productService.getProductListCategory(categories)
+  const productListCategory = await productService.getProductListCategory(categories)
+  if (!productListCategory?.length) notFound()
+  
   return (
     <ProductWrapper>
-      <ProductList innitData={listCategories} />
+      <ProductList innitData={productListCategory} />
     </ProductWrapper>
   )
 }
