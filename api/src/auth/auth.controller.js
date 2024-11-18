@@ -3,9 +3,9 @@ const { userLogin, userLogout, userRegister, forgotPassword, resetPassword } = r
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = userLogin(username, password);
+    const user = await userLogin(username, password);
     req.session.user = user;
-    res.json({ message: "Login successful", user });
+    res.json({ message: "Login successful",user });
   } catch (error) {
     res.status(401).json({ message: error.message });
   }

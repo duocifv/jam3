@@ -1,0 +1,43 @@
+mutation RegisterUser {
+    registerUser(
+        input: {
+            email: "duoc@gmail.com"
+            displayName: "duoc"
+            firstName: "duoc"
+            lastName: "duoc"
+            password: "duoc"
+            username: "duoc"
+        }
+    ) {
+        clientMutationId
+        user {
+            capKey
+            capabilities
+            databaseId
+            description
+            email
+            extraCapabilities
+            firstName
+            id
+            isComment
+            isContentNode
+            isFrontPage
+            isPostsPage
+            isRestricted
+            isTermNode
+            lastName
+            locale
+            name
+            nicename
+            nickname
+            registeredDate
+            shouldShowAdminToolbar
+            slug
+            uri
+            url
+            userId
+            username
+            wooSessionToken
+        }
+    }
+}

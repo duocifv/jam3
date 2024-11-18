@@ -15,9 +15,9 @@ const sendResetEmail = (email, token) => {
 };
 
 // Hàm xử lý đăng nhập
-exports.userLogin = (username, password) => {
-  const user = findByUsername(username);
-  if (!user || user.password !== password) {
+exports.userLogin = async (username, password) => {
+  const user = await findByUsername(username, password);
+  if (!user) {
     throw new Error("Invalid credentials");
   }
   return user; // Trả về thông tin người dùng

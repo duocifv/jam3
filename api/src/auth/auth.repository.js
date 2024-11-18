@@ -1,12 +1,34 @@
-// Giả lập dữ liệu người dùng
-const users = [
-  { id: 1, username: 'admin', password: 'admin', email: 'admin@example.com' },
-  { id: 2, username: 'user', password: 'user', email: 'user@example.com' },
-];
+const axios = require('axios');
 
-// Hàm tìm người dùng theo username
-exports.findByUsername = (username) => {
-  return users.find((user) => user.username === username);
+exports.findByUsername = async (username, password) => {
+  try {
+    const response = await axios.post('https://cms.duocnv.top/graphql', {
+      query: `
+        mutation LoginUser {
+          loginUser(input: { username: "${username}", password: "${password}" }) {
+            user {
+              userId
+              username
+              email
+            }
+          }
+        }
+      `
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    // Kiểm tra xem mutation có trả về thông tin người dùng hay không
+    if (response?.data?.data?.loginUser?.user) {
+      return response.data.data.loginUser.user; // Trả về thông tin người dùng
+    } else {
+      return null; // Trường hợp thông tin đăng nhập không hợp lệ
+    }
+  } catch (error) {
+    console.error('Lỗi khi gọi GraphQL API:', error);
+    throw new Error('Không thể xác thực người dùng.');
+  }
 };
 
 // Lưu người dùng mới
