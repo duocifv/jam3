@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react'
 import styles from '@/styles/module/Input.module.css'
-import { capitalize } from '@/utils/stringUtils'
+import { capitalize } from '@/types/stringUtils'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string

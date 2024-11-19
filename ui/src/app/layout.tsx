@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
-import Sidebar from '@/components/sidebar'
-import Header from '@/components/header'
+import Sidebar from 'components/sidebar'
+import Header from 'components/header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

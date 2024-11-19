@@ -1,7 +1,7 @@
 import React from 'react'
-import * as productService from '@/modules/product/product.service'
+import * as productService from 'modules/product/product.service'
 import { notFound } from 'next/navigation'
-import { ProductList } from '@/components/products/'
+import { ProductList } from 'components/products'
 
 const ProductPage = async () => {
   const productList = await productService.getProductList()

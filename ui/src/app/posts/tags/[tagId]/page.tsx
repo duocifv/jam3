@@ -1,6 +1,6 @@
 import React from 'react'
-import * as postService from '@/modules/post/post.service'
-import PostList from '@/components/posts/PostList'
+import * as postService from 'modules/post/post.service'
+import PostList from 'components/posts/PostList'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {

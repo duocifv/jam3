@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import styles from '@/styles/module/Button.module.css'
-import { capitalize } from '@/utils/stringUtils'
+import { capitalize } from '@/types/stringUtils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger'

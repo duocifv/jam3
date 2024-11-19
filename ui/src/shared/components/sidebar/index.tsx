@@ -1,9 +1,8 @@
 import React from 'react'
-import * as pageService from '@/modules/page/page.service'
-import * as postService from '@/modules/post/post.service'
-import * as productService from '@/modules/product/product.service'
-
-import MenuList from '@/components/core/MenuList'
+import * as pageService from 'modules/page/page.service'
+import * as postService from 'modules/post/post.service'
+import * as productService from 'modules/product/product.service'
+import MenuList from 'components/MenuList'
 
 const Sidebar = async () => {
   const [productCategories, postCategories, postTags, pageCategories] =

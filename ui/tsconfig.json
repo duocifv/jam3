@@ -20,8 +20,12 @@
       }
     ],
     "paths": {
-       "@/*": ["src/*"],
-      "stores/*": ["./src/stores/*"],
+      "@/*": ["./src/*"],
+      "modules/*": ["./src/modules/*"],
+      "store/*": ["./src/shared/store/*"],
+      "components/*": ["./src/shared/components/*"],
+      "hooks/*": ["./src/shared/hooks/*"],
+      "utils/*": ["./src/shared/utils/*"],
       "styles/*": ["./src/styles/*"]
     }
   },
