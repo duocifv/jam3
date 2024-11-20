@@ -3,15 +3,11 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className="bg-gray-400">
-      <menu className="flex justify-center">
-        <li className="m-4">
-          <Link href="/posts/">POSTS</Link>
-        </li>
-        <li className="m-4">
-          <Link href="/products/">PRODUCTS</Link>
-        </li>
-      </menu>
+    <div className="">
+      <div className='mb-3 h-4 pattern-header' />
+      <div className="min-h-24 bg-gray-50 justify-center items-center flex mb-3">
+        hello world
+      </div>
     </div>
   )
 }

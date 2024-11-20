@@ -13,7 +13,7 @@ const Sidebar = async () => {
       pageService.getPageCategories(),
     ])
   return (
-    <div className="min-w-[380px] border-l-[30px] p-4 bg-[#fff] border-lime-600 mr-5">
+    <div className="min-w-[380px] p-4 pl-14 mr-6 bg-[#fff] pattern-green">
       <MenuList initialData={pageCategories} path="/pages">
         Pages Categories
       </MenuList>

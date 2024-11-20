@@ -2,7 +2,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from './login.module.css'
-import cn from  '@/styles/module/Button.module.css'
+import cn from '@/styles/module/Button.module.css'
 const FormLogin = () => {
   const { t } = useTranslation()
   return (
