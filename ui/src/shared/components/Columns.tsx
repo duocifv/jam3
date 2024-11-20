@@ -1,5 +1,5 @@
 import Column from './Column'
-import About from '@/components/pages/About'
+import About from 'components/pages/About'
 
 type Block = {
   name: string

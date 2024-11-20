@@ -4,8 +4,8 @@ import {
   ProductsQuery,
   ProductCategoriesQuery,
 } from '@/gql/graphql'
-import { cache } from '@/lib/cache'
-import { paginate, query } from '@/lib/grapql'
+import { cache } from '@/shared/utils/cache'
+import { paginate, query } from '@/shared/utils/httpGraphql'
 
 type TypeProductCategories =
   ProductCategoriesQuery['productCategories']['edges'][0]['node']

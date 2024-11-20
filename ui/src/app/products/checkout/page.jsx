@@ -1,5 +1,5 @@
 'use client'
-import { productStore } from 'stores/product/product.store'
+import { productStore } from '@/stores/product/product.store'
 import { Checkout, OrderSummary } from 'components/products'
 
 const Page = () => {

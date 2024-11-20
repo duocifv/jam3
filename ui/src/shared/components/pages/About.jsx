@@ -1,6 +1,6 @@
-import Text from '@/components/core/Text'
-import Columns from '@/components/core/Columns'
-import Picture from '../core/Picture'
+import Text from 'components/Text'
+import Columns from 'components/Columns'
+import Picture from '../Picture'
 
 const About = ({ block }) => {
   if (!block?.attributesJSON) return null

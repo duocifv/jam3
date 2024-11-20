@@ -1,6 +1,6 @@
 import { PageDetailsDocument, PagesListDocument, PagesListQuery, PageDetailsQuery } from '@/gql/graphql'
-import { cache } from '@/lib/cache'
-import { paginate, query } from '@/lib/grapql'
+import { cache } from '@/shared/utils/cache'
+import { paginate, query } from '@/shared/utils/httpGraphql'
 
 export type TypePages = PagesListQuery['pages']['edges'][0]['node']
 
