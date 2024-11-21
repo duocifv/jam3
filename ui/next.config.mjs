@@ -3,6 +3,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-}
+  productionBrowserSourceMaps: false, 
+};
 
-export default nextConfig
+export default nextConfig;

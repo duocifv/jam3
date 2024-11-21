@@ -1,13 +1,8 @@
+import LoginPage from '@/modules/auth/login'
 import React from 'react'
-import FormLogin from './library/FormLogin'
 
-const LoginPage = () => {
-  return (
-    <div>
-      Hello login Page
-      <FormLogin />
-    </div>
-  )
+const Login = async () => {
+  return <LoginPage />
 }
 
-export default LoginPage
+export default Login

@@ -1,14 +1,13 @@
 import React from 'react'
-import FormRegister from './form.register'
-import cn from  './register.module.css'
+import RegisterPage from '@/modules/auth/register'
 
-const RegisterPage = () => {
+const page = () => {
   return (
-    <div className={cn.register}>
-      Register Page
-      <FormRegister />
+    <div>
+      Hello Register Page
+      <RegisterPage />
     </div>
   )
 }
 
-export default RegisterPage
+export default page

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
-import Sidebar from 'components/sidebar'
-import Header from 'components/header'
+import Sidebar from '@/modules/home/library/Sidebar'
+import HeaderLayout from '@/modules/home/library/Header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,7 +25,7 @@ export default function RootLayout({
       </head> */}
       <body>
         <ProviderClient>
-          <Header />
+          <HeaderLayout />
           <div className="min-h-[100vh] max-w-[1200px] mx-auto flex">
             <Sidebar />
             <div className="bg-[#fff] p-8 min-w-[840px]">{children}</div>

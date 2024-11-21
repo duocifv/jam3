@@ -1,5 +1,8 @@
 {
-    "welcome": "Welcome to React",
-    "description": "This is a simple example using react-i18next"
-  }
-  
+  "login": {
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "button": "Đăng nhập"
+  },
+  "description": "This is a simple example using react-i18next"
+}

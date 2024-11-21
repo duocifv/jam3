@@ -1,7 +1,7 @@
 import React from 'react'
 import * as pageService from 'modules/page/page.service'
-import About from 'components/pages/About'
 import { notFound } from 'next/navigation'
+import About from '@/modules/pages/library/About'
 
 export async function generateStaticParams() {
   const data = await pageService.getPagePath()

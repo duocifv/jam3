@@ -1,13 +1,13 @@
+import ProfilePage from '@/modules/auth/profile'
 import React from 'react'
-import LayoutProfile from './components/LayoutProfile'
 
-const ProfilePage = () => {
+const page = () => {
   return (
     <div>
-      hello Profile Page
-      <LayoutProfile>Hello</LayoutProfile>
+      Hello Profile Page
+      <ProfilePage />
     </div>
   )
 }
 
-export default ProfilePage
+export default page

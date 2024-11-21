@@ -1,5 +1,5 @@
+import About from '@/modules/pages/library/About'
 import Column from './Column'
-import About from 'components/pages/About'
 
 type Block = {
   name: string
