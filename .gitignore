@@ -17,7 +17,8 @@ ui/node_modules
 # next.js
 ui/.next/
 ui/out/
-ui/src/gql
+ui/src/gql/fragment-masking.ts
+ui/src/gql/gql.ts
 
 
 # production
