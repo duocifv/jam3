@@ -45,7 +45,6 @@ export async function generateMetadata({ params }) {
 const DetailPage = async ({ params }) => {
   const { slug } = await params
   const post = await postService.getPostDetail(slug)
-  console.log("|post", post)
   return (
     <main className="w-[800px] p-8 mx-auto bg-gray-300 m-6">
       <Link href="/posts/">Back to Posts</Link>

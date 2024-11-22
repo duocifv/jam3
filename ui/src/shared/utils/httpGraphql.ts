@@ -43,7 +43,6 @@ export const paginate = async <T>(
       for (const key in response) {
         if (response.hasOwnProperty(key)) {
           result = response[key]
-          console.log(`${key}: 121212`)
         }
       }
 

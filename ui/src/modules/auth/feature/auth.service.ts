@@ -1,6 +1,8 @@
+"use client"
 import { useAppStore } from '@/shared/store/app.store'
-import { loginApi, profileApi, logoutApi, registerApi } from './auth.api'
+import { loginApi, logoutApi, profileApi, registerApi } from './auth.api'
 import { useMutation, useQuery } from '@tanstack/react-query'
+
 // Hàm xử Service (login)
 export const loginService = () => {
   return useMutation({
@@ -24,14 +26,14 @@ export const profileService = () => {
 export const registerService = () => {
   return useMutation({
     mutationFn: registerApi,
-    // onSuccess: (data) => {
-    //   alert('Registration successful')
-    //   console.log('registerService', data.message)
-    // },
-    // onError: (error) => {
-    //   alert('Registration failed')
-    //   console.log('Error during registration:', error.message)
-    // },
+    onSuccess: (data) => {
+      alert('Registration successful')
+      console.log('registerService', data.message)
+    },
+    onError: (error) => {
+      alert('Registration failed')
+      console.log('Error during registration:', error.message)
+    },
   })
 }
 
@@ -44,25 +46,4 @@ export const logoutService = async () => {
   return null
 }
 
-// Hàm xử Service (login)
-export const getAuthCategories = () => {
-  const data = [
-    {
-      slug: 'login',
-      name: 'login',
-    },
-    {
-      slug: 'profile',
-      name: 'profile',
-    },
-    {
-      slug: 'register',
-      name: 'register',
-    },
-    {
-      slug: 'forgot',
-      name: 'forgot',
-    },
-  ]
-  return data
-}
+

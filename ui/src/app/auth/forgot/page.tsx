@@ -1,3 +1,4 @@
+"use client"
 import ForgotPage from '@/modules/auth/forgot'
 import React from 'react'
 

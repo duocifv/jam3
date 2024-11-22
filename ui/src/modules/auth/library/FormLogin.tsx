@@ -1,7 +1,6 @@
-'use client'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import cn from './FormLogin.module.css'
+import cn from '../style/FormLogin.module.css'
 import { loginService } from '../feature/auth.service'
 
 const FormLogin = () => {

@@ -20,7 +20,6 @@ const addCart = async (items) => {
 const order = async (data) => {
   if (!data) return {}
   try {
-    console.log('data data', data)
     const res = await axios.post(`${endpoint}/wc/v3/orders`, data, {
       auth: {
         username: consumerKey,

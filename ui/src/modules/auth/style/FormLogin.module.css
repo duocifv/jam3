@@ -1,0 +1,20 @@
+.login {
+    width: 480px;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    background-color: green;
+    color: #fff;
+    border: 2px solid gray;
+}
+.cols {
+    border: 1px solid #dcdcdc;
+}
+.cols label {
+    width: 120px;
+    background-color: #dcdcdc;
+}
+.cols input {
+    margin: 2px 0;
+}

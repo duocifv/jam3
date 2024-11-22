@@ -37,6 +37,6 @@
     "next.config.mjs",
     "../../tailwind.config.ts",
     "src/app/pages/page.jsx"
-  ],
+, "src/modules/auth/library/RegisterForm.tsx"  ],
   "exclude": ["node_modules", "src/gql"]
 }

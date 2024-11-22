@@ -1,6 +1,8 @@
-import { PageDetailsDocument, PagesListDocument, PagesListQuery, PageDetailsQuery } from '@/gql/graphql'
+
 import { cache } from '@/shared/utils/cache'
 import { paginate, query } from '@/shared/utils/httpGraphql'
+import { PageDetails, PageDetailsQuery, PagesList, PagesListQuery } from './page.type'
+
 
 export type TypePages = PagesListQuery['pages']['edges'][0]['node']
 
@@ -9,7 +11,7 @@ export const queryPagesList = async (): Promise<TypePages[]> => {
   if (result?.length) return result
 
   try {
-    const list = await paginate(PagesListDocument)
+    const list = await paginate(PagesList)
     if (list?.length) {
       console.log('error getPosts', list)
       return []
@@ -18,7 +20,7 @@ export const queryPagesList = async (): Promise<TypePages[]> => {
 
     for (const item of list) {
       const { id, slug, title }: any = item
-      const blocks = await query(PageDetailsDocument, {
+      const blocks = await query(PageDetails, {
         pageId: id,
       })
       const data = { id, slug, title, blocks }
@@ -45,11 +47,8 @@ type TypePageDetail = {
 }
 
 export const queryPageDetail = async (slug: string): Promise<TypePageDetail> => {
-  
 
   const result = cache.get<TypePageDetail>(null,'pages', `${slug}`)
-
-  console.log("queryPageDetail pageSlug pageSlug", result)
   if (!result) {
     console.log("No data queryPageDetail", result)
     return null

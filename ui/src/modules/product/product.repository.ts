@@ -1,11 +1,7 @@
-import {
-  ProductCategoriesDocument,
-  ProductsDocument,
-  ProductsQuery,
-  ProductCategoriesQuery,
-} from '@/gql/graphql'
+
 import { cache } from '@/shared/utils/cache'
 import { paginate, query } from '@/shared/utils/httpGraphql'
+import { ProductCategories, ProductCategoriesQuery, Products, ProductsQuery } from './product.type'
 
 type TypeProductCategories =
   ProductCategoriesQuery['productCategories']['edges'][0]['node']
@@ -13,17 +9,24 @@ export const queryProductCategories = async (): Promise<
   TypeProductCategories[]
 > => {
   const result = cache.list<TypeProductCategories>('productCategories2')
+ 
   if (result?.length) return result
 
   try {
     const data = await paginate<TypeProductCategories>(
-      ProductCategoriesDocument
+      ProductCategories
     )
+    
     if (data?.length) {
-      console.log('error getProductCategories', data)
+      console.log('error getProductCategories 555', data)
       return []
     }
-    cache.put(data, 'productCategories2')
+    
+    const filteredData = Object.fromEntries(
+      Object.entries(data).filter(([_, { count }]) => count !== null)
+    );
+    
+    cache.put(filteredData, 'productCategories2')
     return data
   } catch (error) {
     console.error('Error fetching posts:', error)
@@ -52,7 +55,7 @@ export const queryProducts = async (
   for (const item of categories) {
     if (item?.count === null) continue
 
-    const { products } = await query<ProductsQuery>(ProductsDocument, {
+    const { products } = await query<ProductsQuery>(Products, {
       first: Number(item.count),
       categoryId: Number(item.productCategoryId),
     })

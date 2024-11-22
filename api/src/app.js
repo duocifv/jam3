@@ -4,12 +4,12 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const postRouters = require("./post/post.routes.js");
 const authRouters = require("./auth/auth.routes.js");
-const session = require("../config/session.config");
+const session = require("./config.js");
 
 const app = express();
 
 // Log requests
-app.use(morgan("dev"));
+//app.use(morgan("dev"));
 
 // Parse JSON
 app.use(express.json());
@@ -20,16 +20,19 @@ app.use(
     origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
-    maxAge: 86400, // Cache preflight requests for 24 hours
+    maxAge: 86400, 
   })
 );
+
 app.options("*", (req, res) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.header("Access-Control-Allow-Credentials", "true");
   res.sendStatus(204);
 });
-// Security headers
+
+
+//Security headers
 app.use(helmet());
 
 // Session handling

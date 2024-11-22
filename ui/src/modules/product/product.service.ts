@@ -7,8 +7,11 @@ import {
 
 export const getProductCategories = async () => queryProductCategories()
 
-export const getProducts = async (categorySlug: string) =>
-  queryProducts(categorySlug, undefined)
+export const getProducts = async (categorySlug: string) => {
+  const result = await queryProducts(categorySlug, undefined)
+  return result || []
+}
+  
 
 export const getProductDetail = async (categorieSlug: string, slug: string) =>
   queryProductDetail(categorieSlug, slug)
@@ -91,9 +94,9 @@ export const getProductList = async () => {
 }
 
 export const getProductListCategory = async (categories) => {
+  if(!categories) return null
   try {
     const data = await getProducts(categories)
-
     if (!data?.length) {
       console.log('error: not data getProductListCategory', data)
       return []

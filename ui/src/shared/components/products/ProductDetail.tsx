@@ -5,7 +5,6 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 
 const ProductDetail: FC<{ product: TypeProductsQuery }> = ({ product }) => {
-  console.log("product", product)
   if (!product) return null
   const setItemCart = productStore((state) => state.setItemCart)
   const handleAddToCart = (productId) => {

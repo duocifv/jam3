@@ -23,8 +23,9 @@ export const getPostListCategory = async (slug: string) => {
 }
 
 export const getPostListCategoryTags = async (slug: string) => {
-  const result = await getPostList()
-  if (!result) {
+  const result = await queryPostList()
+ 
+  if (!result?.length) {
     return []
   }
   return result.filter(item => item.tags.nodes.find(item => item.slug === slug))

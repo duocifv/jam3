@@ -1,8 +1,8 @@
-import LoginPage from '@/modules/auth/login'
+import Login from '@/modules/auth/login'
 import React from 'react'
 
-const Login = async () => {
-  return <LoginPage />
+const LoginPage = () => {
+  return <Login />
 }
 
-export default Login
+export default LoginPage

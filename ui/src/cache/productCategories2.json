@@ -1,36 +1,24 @@
 {
   "accessories": {
-    "productCategoryId": 20,
+    "productCategoryId": 24,
     "count": 3,
     "name": "Accessories",
     "slug": "accessories"
   },
-  "chua-phan-loai": {
-    "productCategoryId": 15,
-    "count": null,
-    "name": "Chưa phân loại",
-    "slug": "chua-phan-loai"
-  },
-  "clothing": {
-    "productCategoryId": 17,
-    "count": null,
-    "name": "Clothing",
-    "slug": "clothing"
-  },
   "jackets": {
-    "productCategoryId": 21,
+    "productCategoryId": 25,
     "count": 1,
     "name": "Jackets",
     "slug": "jackets"
   },
   "shirts": {
-    "productCategoryId": 19,
+    "productCategoryId": 23,
     "count": 4,
     "name": "Shirts",
     "slug": "shirts"
   },
   "sweater": {
-    "productCategoryId": 18,
+    "productCategoryId": 17,
     "count": 1,
     "name": "Sweater",
     "slug": "sweater"

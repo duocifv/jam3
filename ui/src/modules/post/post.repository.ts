@@ -1,13 +1,8 @@
-import {
-  CategoriesPostsDocument,
-  CategoriesPostsQuery,
-  GetPosts2Document,
-  GetPosts2Query,
-  TagsPostsDocument,
-  TagsPostsQuery,
-} from '@/gql/graphql'
+
 import { cache } from '@/shared/utils/cache'
 import { paginate } from '@/shared/utils/httpGraphql'
+import { CategoriesPosts, CategoriesPostsQuery, GetPosts2, GetPosts2Query, TagsPosts, TagsPostsQuery } from './post.type'
+
 
 export type TypePost = GetPosts2Query['posts']['edges'][0]['node']
 export type TypePostList = TypePost
@@ -19,8 +14,8 @@ export const queryPostList = async (): Promise<TypePostList[]> => {
   }
 
   try {
-    const data = await paginate(GetPosts2Document)
-    if (data?.length) {
+    const data = await paginate(GetPosts2)
+    if (!data?.length) {
       console.log('error getPosts', data)
       return []
     }
@@ -46,8 +41,8 @@ export const queryPostCategories = async (): Promise<TypeCategories[]> => {
   if (result?.length) return result
 
   try {
-    const data = await paginate<CategoriesPostsQuery>(CategoriesPostsDocument)
-    if (!data?.length) {
+    const data = await paginate<CategoriesPostsQuery>(CategoriesPosts)
+    if (data?.length) {
       console.log(' error getCategories', data)
       return []
     }
@@ -60,16 +55,16 @@ export const queryPostCategories = async (): Promise<TypeCategories[]> => {
 
 type TypeTags = TagsPostsQuery["tags"]["edges"][0]["node"]
 export const queryPostTags = async (): Promise<TypeTags[]> => {
-  const result = cache.list<TypeTags>('tags2')
+  const result = cache.list<TypeTags>('tags3')
   if (result?.length) return result
 
   try {
-    const data = await paginate<TagsPostsQuery>(TagsPostsDocument)
-    if (!data?.length) {
+    const data = await paginate<TagsPostsQuery>(TagsPosts)
+    if (data?.length) {
       console.log(' Tags Posts data', data)
       return []
     }
-    cache.put(data, 'tags2')
+    cache.put(data, 'tags3')
     return result as []
   } catch (error) {
     console.error('Error get Tags Posts:', error)
