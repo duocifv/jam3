@@ -1,20 +1,20 @@
 import { useAppStore } from '@/shared/store/app.store'
 import { loginService, profileService } from './auth.service'
-import { AuthLogin } from './auth.types'
 import { useRouter } from 'next/navigation'
+import { useQuery } from '@tanstack/react-query'
 
 //Hàm xử State (login)
 export const useLogin = async () => {
   const router = useRouter()
   const addUser = useAppStore((state) => state.setUser)
 
-  const mutate = async (field: AuthLogin) => {
-    const user = await loginService(field)
+  const mutate = async () => {
+    const user = await loginService()
     if (!user) {
       return null
     }
-    addUser(user)
     router.push('/auth/profile')
+    addUser(user)
     return
   }
   return {
@@ -22,10 +22,10 @@ export const useLogin = async () => {
   }
 }
 
-export const useProfile = async () => {
-  const profile = await profileService()
-  if(profile) {
-    useAppStore.setState({ profile })
-
-  }
+export const useProfile = () => {
+  return useQuery({
+    queryKey: ['profile'],
+    queryFn: profileService,
+    staleTime: 60000,
+  })
 }

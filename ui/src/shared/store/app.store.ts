@@ -1,13 +1,24 @@
 import { create } from 'zustand'
-import { devtools } from 'zustand/middleware'
+import { devtools, persist } from 'zustand/middleware'
 
-export const useAppStore = create(
+interface AppState {
+  user: string | null | any
+  profile: string | null
+  loggedIn: boolean
+  setUser: (user: any) => void
+  setProfile: (profile: string) => void
+  logout: () => void
+}
+
+export const useAppStore = create<AppState>()(
   devtools((set) => ({
     user: '',
     profile: '',
-    setUser: (user: object) => set({ user }),
-    setProfile: (profile: object) => set({ profile }),
     loggedIn: false,
-    logout: () => set({ user: null, loggedIn: false }),
+    setUser: (user:any) => set({ user, loggedIn: true }),
+    setProfile: (profile) => set({ profile }),
+    logout: () => {
+      set({ user: null, loggedIn: false })
+    },
   }))
 )

@@ -6,7 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger'
   size?: 'small' | 'medium' | 'large'
   isLoading?: boolean
-  disabled: boolean
+  disabled?: boolean
   iconLeft?: React.ReactNode
   iconRight?: React.ReactNode
 }

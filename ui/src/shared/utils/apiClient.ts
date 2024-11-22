@@ -1,3 +1,5 @@
+import { useAppStore } from "../store/app.store"
+
 const endpoint = 'http://localhost:3001'
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH'
 
@@ -17,26 +19,20 @@ export const apiClient = async (
     })
 
     if (!res.ok) {
-      const result: TError = {
-        error: {
-          status: res.status,
-          message: res.statusText,
-        },
+      if (res.status === 401) {
+        window.location.href = '/auth/login'
+        useAppStore.setState({user: null, loggedIn: false})
+        return
       }
-      return result
+      const errorData = await res.json()
+      throw new Error(errorData.message || 'API error with status: ' + res.status)
     }
     const data = await res.json()
     return data
   } catch (error) {
-    throw new Error('Login failed: ' + error.message)
+    throw new Error(error.message || 'API request failed')
   }
 }
 
 type Options = object
 type Payload = string
-type TError = {
-  error: {
-    status: number
-    message: string
-  }
-}

@@ -5,6 +5,7 @@ const {
   addUser,
   findByEmail,
   updatePassword,
+  RegisterUser
 } = require("./auth.repository.js");
 
 const resetTokens = new Map(); // email => token
@@ -33,16 +34,28 @@ exports.userLogout = (req) => {
   });
 };
 
-exports.userRegister = (username, password) => {
+exports.userRegister = async (email, username, password, firstName,lastName) => {
+  let result
   // Kiểm tra xem username đã tồn tại chưa
-  const existingUser = findByUsername(username);
-  if (existingUser) {
-    throw new Error("Username already exists");
+  const existingUser = await RegisterUser(email, username, password, firstName,lastName);
+  
+  if(existingUser?.user) {
+    result = {
+      ok: true,
+      message: "Đăng ký thành công",
+      user: existingUser?.user || {}
+    }
   }
 
-  // Lưu người dùng mới
-  const newUser = addUser(username, password);
-  return newUser;
+  if(existingUser?.message) {
+    result = {
+      ok: false,
+      message: existingUser?.message,
+      user: {}
+    }
+  }
+  
+  return  result
 };
 
 // Yêu cầu quên mật khẩu

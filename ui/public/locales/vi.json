@@ -1,8 +1,10 @@
 {
-  "login": {
+  "form": {
     "username": "Tài khoản",
     "password": "Mật khẩu",
-    "button": "Đăng nhập"
+    "button": "Đăng nhập",
+    "email": "Email",
+    "register": "Đăng ký"
   },
   "description": "This is a simple example using react-i18next"
 }

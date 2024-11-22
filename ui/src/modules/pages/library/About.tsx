@@ -13,8 +13,7 @@ const About = ({ block }) => {
           level={level}
           size={fontSize}
           content={content}
-          className="font-bold"
-        />
+          className="font-bold" />
       )
     }
     case 'core/paragraph': {

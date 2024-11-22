@@ -1,13 +1,8 @@
-import ProfilePage from '@/modules/auth/profile'
+import Profile from '@/modules/auth/profile'
 import React from 'react'
 
-const page = () => {
-  return (
-    <div>
-      Hello Profile Page
-      <ProfilePage />
-    </div>
-  )
+const ProfilePage = () => {
+  return <Profile />
 }
 
-export default page
+export default ProfilePage

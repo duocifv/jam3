@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useProfile } from '../../../app/auth/profile/hooks/useProfile'
+import { useProfile } from '../feature/auth.store'
 
 const LayoutProfile = ({ children }) => {
   const { data } = useProfile()

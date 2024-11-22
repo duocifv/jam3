@@ -20,7 +20,8 @@
     "express-session": "^1.18.1",
     "helmet": "^8.0.0",
     "http-errors": "^2.0.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "basic-ftp": "^5.0.5",

@@ -2,10 +2,11 @@ import React, { ReactElement } from 'react'
 import InnerHTML from './InnerHTML'
 
 interface TextProps {
-  level: number
+  level?: number
   size: 'small' | 'medium' | 'large'
   content: ReactElement | string
-  dropCap: boolean
+  dropCap?: boolean
+  className?: string
 }
 
 const font = {
