@@ -12,14 +12,17 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>()(
-  devtools((set) => ({
+  devtools(persist((set) => ({
     user: '',
     profile: '',
     loggedIn: false,
-    setUser: (user:any) => set({ user, loggedIn: true }),
+    setUser: (user: any) => set({ user, loggedIn: true }),
     setProfile: (profile) => set({ profile }),
     logout: () => {
       set({ user: null, loggedIn: false })
     },
-  }))
+  }), {
+    name: "store-profile"
+  })
+  )
 )

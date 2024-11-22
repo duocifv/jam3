@@ -17,7 +17,7 @@ app.use(express.json());
 // Handle CORS with cache and direct preflight handling
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://duocnv.top",
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
     maxAge: 86400, 
@@ -25,7 +25,7 @@ app.use(
 );
 
 app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "https://duocnv.top");
   res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.header("Access-Control-Allow-Credentials", "true");
   res.sendStatus(204);
