@@ -1,6 +1,6 @@
 import { useAppStore } from "../store/app.store"
 
-const endpoint = 'http://localhost:3001'
+const endpoint = 'https://cms.duocnv.top/'
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH'
 
 export const apiClient = async (
