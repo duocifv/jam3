@@ -16,7 +16,7 @@ const SamplePage = async (props: PageProps) => {
   const { pageSlug } = await props.params
   
   if (!pageSlug) notFound()
-  const pageDetail = await pageService.getPageDetail(pageSlug)
+  const pageDetail:any = await pageService.getPageDetail(pageSlug)
   console.log("pageDetail", pageDetail)
   if (!pageDetail) notFound()
   return (

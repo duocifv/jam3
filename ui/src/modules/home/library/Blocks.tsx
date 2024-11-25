@@ -1,30 +1,34 @@
 import Text from 'components/Text'
 import Columns from 'components/Columns'
 import Picture from '@/shared/components/Picture'
+import Gallery from '@/shared/components/Gallery'
 
-const Blocks  = ({ block }) => {
-  console.log("block 1", block)
-
+const Blocks = ({ block }) => {
   if (!block?.attributesJSON) return null
   const attributes = JSON.parse(block.attributesJSON)
+
   switch (block.name) {
     case 'core/heading': {
-      const { level, fontSize, content } = attributes
+      const { fontSize, textColor, textAlign } = attributes
       return (
         <Text
-          level={level}
           size={fontSize}
+          color={textColor}
+          align={textAlign}
           content={block.saveContent}
-          className="font-bold" />
+          className="font-bold"
+        />
       )
     }
     case 'core/paragraph': {
-      const paragraph = attributes
+      const { dropCap, fontSize, textColor, align } = attributes
       return (
         <Text
-          dropCap={paragraph?.dropCap}
-          size={paragraph?.fontSize || 'small'}
-          content={paragraph?.content}
+          dropCap={dropCap}
+          color={textColor}
+          align={align}
+          size={fontSize || 'small'}
+          content={block.saveContent}
         />
       )
     }
@@ -36,7 +40,11 @@ const Blocks  = ({ block }) => {
         />
       )
     }
-
+    case 'core/gallery': {
+      return (
+        <Gallery innerBlocks={block.innerBlocks} />
+      )
+    }
     // case 'core/table': {
     //   const { url, alt, width } = attributes
     //   return (
@@ -47,6 +55,7 @@ const Blocks  = ({ block }) => {
     // }
     case 'core/image': {
       const { url, alt, width } = attributes
+
       return (
         <Picture
           src={url}

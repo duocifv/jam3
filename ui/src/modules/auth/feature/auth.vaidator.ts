@@ -7,8 +7,9 @@ export const loginSchema = z.object({
   password: z
     .string()
     .min(6, 'Mật khẩu phải có ít nhất 6 ký tự')
-    .nonempty('Mật khẩu là bắt buộc'),
 })
+
+loginSchema.parse({ username: "Ludwig", password: "121212" });
 
 // Định nghĩa kiểu dữ liệu dựa trên schema
 export type LoginSchema = z.infer<typeof loginSchema>

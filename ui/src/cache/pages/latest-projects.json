@@ -1,0 +1,175 @@
+{
+  "id": "cG9zdDoxMzk=",
+  "slug": "latest-projects",
+  "title": "Latest Projects",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\",\"fontSize\":\"medium\"}",
+        "saveContent": "<p class=\"has-text-align-center has-medium-font-size\">Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":3,\"anchor\":\"\",\"textAlign\":\"center\",\"fontSize\":\"large\"}",
+        "saveContent": "<h3 class=\"wp-block-heading has-text-align-center has-large-font-size\">How We work</h3>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+        "saveContent": "<p class=\"has-text-align-center\">Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Concept</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div><div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Design</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div><div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-vivid-red-color has-text-color has-link-color has-large-font-size\">Development</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Concept</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|vivid-red\"}}}},\"textColor\":\"vivid-red\",\"fontSize\":\"large\"}",
+                "saveContent": "<h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Concept</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+                "saveContent": "<p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Design</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|vivid-red\"}}}},\"textColor\":\"vivid-red\",\"fontSize\":\"large\"}",
+                "saveContent": "<h2 class=\"wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-large-font-size\">Design</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+                "saveContent": "<p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2 class=\"wp-block-heading has-vivid-red-color has-text-color has-link-color has-large-font-size\">Development</h2><p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|vivid-red\"}}}},\"textColor\":\"vivid-red\",\"fontSize\":\"large\"}",
+                "saveContent": "<h2 class=\"wp-block-heading has-vivid-red-color has-text-color has-link-color has-large-font-size\">Development</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+                "saveContent": "<p class=\"has-text-align-center\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://templatekit.jegtheme.com/inner/wp-content/uploads/sites/15/2020/10/modern-style-interior-design-3d-rendering-3-e1604306997729.jpg\" alt=\"\"/></figure></div><div class=\"wp-block-column\"><h2 class=\"wp-block-heading\">Testimonials</h2><p>Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.</p><p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://templatekit.jegtheme.com/inner/wp-content/uploads/sites/15/2020/10/modern-style-interior-design-3d-rendering-3-e1604306997729.jpg\" alt=\"\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/templatekit.jegtheme.com\\/inner\\/wp-content\\/uploads\\/sites\\/15\\/2020\\/10\\/modern-style-interior-design-3d-rendering-3-e1604306997729.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"sizeSlug\":\"large\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://templatekit.jegtheme.com/inner/wp-content/uploads/sites/15/2020/10/modern-style-interior-design-3d-rendering-3-e1604306997729.jpg\" alt=\"\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2 class=\"wp-block-heading\">Testimonials</h2><p>Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.</p><p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h2 class=\"wp-block-heading\">Testimonials</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Far far away behind the word mountains far from the countries Vokalia and Consonantia there live the blind texts.</p>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/gallery",
+        "attributesJSON": "{\"images\":[],\"ids\":[],\"shortCodeTransforms\":[],\"imageCrop\":true,\"randomOrder\":false,\"fixedHeight\":true,\"sizeSlug\":\"large\",\"allowResize\":false,\"anchor\":\"\",\"linkTo\":\"none\"}",
+        "saveContent": "<figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/564ded5d-d986-3975-a9e7-542bf8282820-1024x683.jpg\" alt=\"\" class=\"wp-image-113\"/></figure><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/a0be37af-3e33-390a-aef0-b0d58af11eb0-1024x682.jpg\" alt=\"\" class=\"wp-image-112\"/></figure><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/245eb69a-b249-35c4-a613-9144843bbedb-1024x683.jpg\" alt=\"\" class=\"wp-image-110\"/></figure><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/17194964-e9de-3308-8170-0791540cbb72-1024x683.jpg\" alt=\"\" class=\"wp-image-89\"/></figure><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/fddbe018-7448-3cc0-bd4f-4e00ddcb01f7-1024x683.jpg\" alt=\"\" class=\"wp-image-88\"/></figure><figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/67bdd98d-bdee-30e2-b54f-a690c0633669-1024x683.jpg\" alt=\"\" class=\"wp-image-84\"/></figure></figure>",
+        "innerBlocks": [
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/564ded5d-d986-3975-a9e7-542bf8282820-1024x683.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":113,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/564ded5d-d986-3975-a9e7-542bf8282820-1024x683.jpg\" alt=\"\" class=\"wp-image-113\"/></figure>",
+            "innerBlocks": []
+          },
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/a0be37af-3e33-390a-aef0-b0d58af11eb0-1024x682.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":112,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/a0be37af-3e33-390a-aef0-b0d58af11eb0-1024x682.jpg\" alt=\"\" class=\"wp-image-112\"/></figure>",
+            "innerBlocks": []
+          },
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/245eb69a-b249-35c4-a613-9144843bbedb-1024x683.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":110,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/245eb69a-b249-35c4-a613-9144843bbedb-1024x683.jpg\" alt=\"\" class=\"wp-image-110\"/></figure>",
+            "innerBlocks": []
+          },
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/17194964-e9de-3308-8170-0791540cbb72-1024x683.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":89,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/17194964-e9de-3308-8170-0791540cbb72-1024x683.jpg\" alt=\"\" class=\"wp-image-89\"/></figure>",
+            "innerBlocks": []
+          },
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/fddbe018-7448-3cc0-bd4f-4e00ddcb01f7-1024x683.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":88,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/fddbe018-7448-3cc0-bd4f-4e00ddcb01f7-1024x683.jpg\" alt=\"\" class=\"wp-image-88\"/></figure>",
+            "innerBlocks": []
+          },
+          {
+            "name": "core/image",
+            "attributesJSON": "{\"url\":\"https:\\/\\/cms.duocnv.top\\/wp-content\\/uploads\\/2024\\/11\\/67bdd98d-bdee-30e2-b54f-a690c0633669-1024x683.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":84,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+            "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://cms.duocnv.top/wp-content/uploads/2024/11/67bdd98d-bdee-30e2-b54f-a690c0633669-1024x683.jpg\" alt=\"\" class=\"wp-image-84\"/></figure>",
+            "innerBlocks": []
+          }
+        ]
+      },
+      {
+        "name": "core/navigation",
+        "attributesJSON": "{\"showSubmenuIcon\":true,\"openSubmenusOnClick\":false,\"overlayMenu\":\"mobile\",\"icon\":\"handle\",\"hasIcon\":true,\"maxNestingLevel\":5,\"ariaLabel\":\"\",\"ref\":143}",
+        "saveContent": "",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

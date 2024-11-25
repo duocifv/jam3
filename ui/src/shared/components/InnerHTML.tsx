@@ -5,6 +5,7 @@ import { IOptions } from 'sanitize-html'
 
 interface SafeHTMLRendererProps {
   node: string
+  className: string
 }
 
 const sanitizeOptions: IOptions = {
@@ -52,12 +53,12 @@ const sanitizeOptions: IOptions = {
   ],
 }
 
-const InnerHTML = ({ node }: SafeHTMLRendererProps) => {
+const InnerHTML = ({ node, className }: SafeHTMLRendererProps) => {
   const sanitizedContent = useMemo(() => {
     return sanitizeHtml(node, sanitizeOptions)
   }, [node])
 
-  return <span dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+  return <div className={className} dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
 }
 
 export default InnerHTML
