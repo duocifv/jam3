@@ -1,4 +1,4 @@
-import About from '@/modules/pages/library/About'
+import About from '@/modules/home/library/Blocks'
 import Column from './Column'
 
 type Block = {
@@ -13,14 +13,15 @@ interface ColumnsProps {
 }
 
 const Columns = ({ isStackedOnMobile = true, blocks }: ColumnsProps) => {
-  if (!blocks) return null
+
+  if (!blocks?.length) return null
+
   return (
     <div
       className={`flex ${isStackedOnMobile ? 'flex-col md:flex-row' : 'flex-row'}`}
     >
       {blocks.map((block: Block, index) => {
         const attr = JSON.parse(block?.attributesJSON)
-        if (!attr?.width) return
         return (
           <Column key={index} width={attr?.width ?? '100%'}>
             {block.innerBlocks.map((block: Block, index: number) => {

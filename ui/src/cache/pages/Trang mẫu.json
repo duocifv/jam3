@@ -1,0 +1,39 @@
+{
+  "id": "cG9zdDoy",
+  "slug": "Trang mẫu",
+  "title": "Trang mẫu",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+        "saveContent": "<p>Đây là trang mẫu. Nó khác với bài viết bởi vì nó thường cố định và hiển thị trong menu của bạn. Nhiều người bắt đầu với trang Giới thiệu nơi bạn chia sẻ thông tin cho những ai ghé thăm. Nó có thể bắt đầu như thế này:</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/quote",
+        "attributesJSON": "{\"value\":\"<p>Ch\\u00e0o b\\u1ea1n! T\\u00f4i l\\u00e0 m\\u1ed9t ng\\u01b0\\u1eddi b\\u00e1n h\\u00e0ng, v\\u00e0 \\u0111\\u00e2y l\\u00e0 website c\\u1ee7a t\\u00f4i. T\\u00f4i s\\u1ed1ng \\u1edf H\\u00e0 N\\u1ed9i, c\\u00f3 m\\u1ed9t gia \\u0111\\u00ecnh nh\\u1ecf, v\\u00e0 t\\u00f4i th\\u1ea5y c\\u00e1ch s\\u1eed d\\u1ee5ng WordPress r\\u1ea5t th\\u00fa v\\u1ecb.<\\/p>\",\"anchor\":\"\"}",
+        "saveContent": "<blockquote class=\"wp-block-quote\"><p>Chào bạn! Tôi là một người bán hàng, và đây là website của tôi. Tôi sống ở Hà Nội, có một gia đình nhỏ, và tôi thấy cách sử dụng WordPress rất thú vị.</p></blockquote>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+        "saveContent": "<p>... hoặc cái gì đó như thế này:</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/quote",
+        "attributesJSON": "{\"value\":\"<p>C\\u00f4ng ty ch\\u00fang t\\u00f4i \\u0111\\u01b0\\u1ee3c th\\u00e0nh l\\u1eadp n\\u0103m 2010, v\\u00e0 cung c\\u1ea5p d\\u1ecbch v\\u1ee5 ch\\u1ea5t l\\u01b0\\u1ee3ng cho r\\u1ea5t nhi\\u1ec1u s\\u1ef1 ki\\u1ec7n t\\u1ea1i kh\\u1eafp Vi\\u1ec7t Nam. V\\u1edbi v\\u0103n ph\\u00f2ng \\u0111\\u1eb7t t\\u1ea1i H\\u00e0 N\\u1ed9i, TP. H\\u1ed3 Ch\\u00ed Minh c\\u00f9ng h\\u01a1n 40 nh\\u00e2n s\\u1ef1, ch\\u00fang t\\u00f4i l\\u00e0 n\\u01a1i nhi\\u1ec1u \\u0111\\u1ed1i t\\u00e1c tin t\\u01b0\\u1edfng giao cho t\\u1ed5 ch\\u1ee9c c\\u00e1c s\\u1ef1 ki\\u1ec7n l\\u1edbn.<\\/p>\",\"anchor\":\"\"}",
+        "saveContent": "<blockquote class=\"wp-block-quote\"><p>Công ty chúng tôi được thành lập năm 2010, và cung cấp dịch vụ chất lượng cho rất nhiều sự kiện tại khắp Việt Nam. Với văn phòng đặt tại Hà Nội, TP. Hồ Chí Minh cùng hơn 40 nhân sự, chúng tôi là nơi nhiều đối tác tin tưởng giao cho tổ chức các sự kiện lớn.</p></blockquote>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+        "saveContent": "<p>Là một người dùng WordPress mới, bạn nên ghé thăm <a href=\"https://cms.duocnv.top/wp-admin/\">bảng tin</a> để xóa trang này và tạo trang mới cho nội dung của chính bạn. Chúc bạn vui vẻ!</p>",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

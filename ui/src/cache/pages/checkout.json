@@ -1,0 +1,95 @@
+{
+  "id": "cG9zdDo4",
+  "slug": "checkout",
+  "title": "Checkout",
+  "page": {
+    "blocks": [
+      {
+        "name": "woocommerce/checkout",
+        "attributesJSON": "{\"isPreview\":false,\"showCompanyField\":false,\"requireCompanyField\":false,\"showApartmentField\":true,\"requireApartmentField\":false,\"showPhoneField\":true,\"requirePhoneField\":false,\"align\":\"wide\",\"showFormStepNumbers\":false,\"hasDarkControls\":false,\"showRateAfterTaxName\":false,\"showOrderNotes\":true,\"showPolicyLinks\":true,\"showReturnToCart\":true,\"cartPageId\":0}",
+        "saveContent": "<div class=\"wp-block-woocommerce-checkout alignwide wc-block-checkout is-loading\"><div class=\"wp-block-woocommerce-checkout-fields-block\"><div class=\"wp-block-woocommerce-checkout-express-payment-block\"></div><div class=\"wp-block-woocommerce-checkout-contact-information-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-method-block\"></div><div class=\"wp-block-woocommerce-checkout-pickup-options-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-address-block\"></div><div class=\"wp-block-woocommerce-checkout-billing-address-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-methods-block\"></div><div class=\"wp-block-woocommerce-checkout-payment-block\"></div><div class=\"wp-block-woocommerce-checkout-additional-information-block\"></div><div class=\"wp-block-woocommerce-checkout-order-note-block\"></div><div class=\"wp-block-woocommerce-checkout-terms-block\"></div><div class=\"wp-block-woocommerce-checkout-actions-block\"></div></div><div class=\"wp-block-woocommerce-checkout-totals-block\"><div class=\"wp-block-woocommerce-checkout-order-summary-block\"><div class=\"wp-block-woocommerce-checkout-order-summary-cart-items-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-taxes-block\"></div></div></div></div>",
+        "innerBlocks": [
+          {
+            "name": "woocommerce/checkout-fields-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "saveContent": "<div class=\"wp-block-woocommerce-checkout-fields-block\"><div class=\"wp-block-woocommerce-checkout-express-payment-block\"></div><div class=\"wp-block-woocommerce-checkout-contact-information-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-method-block\"></div><div class=\"wp-block-woocommerce-checkout-pickup-options-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-address-block\"></div><div class=\"wp-block-woocommerce-checkout-billing-address-block\"></div><div class=\"wp-block-woocommerce-checkout-shipping-methods-block\"></div><div class=\"wp-block-woocommerce-checkout-payment-block\"></div><div class=\"wp-block-woocommerce-checkout-additional-information-block\"></div><div class=\"wp-block-woocommerce-checkout-order-note-block\"></div><div class=\"wp-block-woocommerce-checkout-terms-block\"></div><div class=\"wp-block-woocommerce-checkout-actions-block\"></div></div>",
+            "innerBlocks": [
+              {
+                "name": "woocommerce/checkout-express-payment-block",
+                "attributesJSON": "{\"showButtonStyles\":false,\"buttonHeight\":\"48\",\"buttonBorderRadius\":\"4\",\"lock\":{\"remove\":true,\"move\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-express-payment-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-contact-information-block",
+                "attributesJSON": "{\"title\":\"Th\\u00f4ng tin li\\u00ean l\\u1ea1c\",\"description\":\"Ch\\u00fang t\\u00f4i s\\u1ebd s\\u1eed d\\u1ee5ng email n\\u00e0y \\u0111\\u1ec3 g\\u1eedi cho b\\u1ea1n chi ti\\u1ebft v\\u00e0 c\\u1eadp nh\\u1eadt v\\u1ec1 \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a b\\u1ea1n.\",\"showStepNumber\":true,\"lock\":{\"remove\":true,\"move\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-contact-information-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-shipping-method-block",
+                "attributesJSON": "{\"title\":\"Chuy\\u1ec3n \\u0111\\u1ebfn\",\"description\":\"Ch\\u1ecdn c\\u00e1ch b\\u1ea1n mu\\u1ed1n nh\\u1eadn \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a m\\u00ecnh.\",\"showStepNumber\":true,\"showIcon\":true,\"showPrice\":false,\"localPickupText\":\"Nh\\u1eadn h\\u00e0ng\",\"shippingText\":\"Giao h\\u00e0ng\",\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-shipping-method-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-pickup-options-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba \\u0111i\\u1ec3m l\\u1ea5y h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-pickup-options-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-shipping-address-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba ch\\u1ec9 giao h\\u00e0ng\",\"description\":\"Nh\\u1eadp \\u0111\\u1ecba ch\\u1ec9 n\\u01a1i b\\u1ea1n mu\\u1ed1n \\u0111\\u01a1n h\\u00e0ng c\\u1ee7a m\\u00ecnh \\u0111\\u01b0\\u1ee3c giao.\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-shipping-address-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-billing-address-block",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ecba ch\\u1ec9 thanh to\\u00e1n\",\"description\":\"Nh\\u1eadp \\u0111\\u1ecba ch\\u1ec9 thanh to\\u00e1n kh\\u1edbp v\\u1edbi ph\\u01b0\\u01a1ng th\\u1ee9c thanh to\\u00e1n c\\u1ee7a b\\u1ea1n.\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-billing-address-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-shipping-methods-block",
+                "attributesJSON": "{\"title\":\"T\\u00f9y ch\\u1ecdn giao h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-shipping-methods-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-payment-block",
+                "attributesJSON": "{\"title\":\"T\\u00f9y ch\\u1ecdn thanh to\\u00e1n\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-payment-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-additional-information-block",
+                "attributesJSON": "{\"title\":\"Th\\u00f4ng tin b\\u1ed5 sung v\\u1ec1 \\u0111\\u01a1n h\\u00e0ng\",\"description\":\"\",\"showStepNumber\":true,\"lock\":{\"move\":false,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-additional-information-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-order-note-block",
+                "attributesJSON": "{\"lock\":{\"remove\":false,\"move\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-order-note-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-terms-block",
+                "attributesJSON": "{\"checkbox\":false,\"showSeparator\":true}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-terms-block\"></div>"
+              },
+              {
+                "name": "woocommerce/checkout-actions-block",
+                "attributesJSON": "{\"cartPageId\":0,\"showReturnToCart\":false,\"lock\":{\"move\":true,\"remove\":true},\"placeOrderButtonLabel\":\"\\u0110\\u1eb7t h\\u00e0ng\"}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-actions-block\"></div>"
+              }
+            ]
+          },
+          {
+            "name": "woocommerce/checkout-totals-block",
+            "attributesJSON": "{\"checkbox\":false}",
+            "saveContent": "<div class=\"wp-block-woocommerce-checkout-totals-block\"><div class=\"wp-block-woocommerce-checkout-order-summary-block\"><div class=\"wp-block-woocommerce-checkout-order-summary-cart-items-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-taxes-block\"></div></div></div>",
+            "innerBlocks": [
+              {
+                "name": "woocommerce/checkout-order-summary-block",
+                "attributesJSON": "{\"lock\":{\"move\":true,\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-checkout-order-summary-block\"><div class=\"wp-block-woocommerce-checkout-order-summary-cart-items-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-checkout-order-summary-taxes-block\"></div></div>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

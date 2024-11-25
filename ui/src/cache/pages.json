@@ -1,50 +1,74 @@
 {
-  "hello": {
-    "id": "cG9zdDoxMDU=",
-    "pageId": 105,
+  "dich-vu": {
+    "id": "cG9zdDoxMjc=",
+    "pageId": 127,
     "status": "publish",
-    "slug": "hello",
-    "dateGmt": "2024-11-14T12:15:31",
-    "title": "Hello"
+    "slug": "dich-vu",
+    "dateGmt": "2024-11-25T03:49:34",
+    "title": "Dịch vụ"
   },
-  "tai-khoan": {
-    "id": "cG9zdDoxMQ==",
-    "pageId": 11,
+  "shop-quan-ao-nam": {
+    "id": "cG9zdDoxMjU=",
+    "pageId": 125,
     "status": "publish",
-    "slug": "tai-khoan",
-    "dateGmt": "2024-11-12T13:19:01",
-    "title": "Tài khoản"
+    "slug": "shop-quan-ao-nam",
+    "dateGmt": "2024-11-25T03:29:53",
+    "title": "Shop Quần Áo Nam"
   },
-  "thanh-toan": {
-    "id": "cG9zdDoxMA==",
-    "pageId": 10,
+  "shop-quan-ao": {
+    "id": "cG9zdDoxMjM=",
+    "pageId": 123,
     "status": "publish",
-    "slug": "thanh-toan",
-    "dateGmt": "2024-11-12T13:19:00",
-    "title": "Thanh toán"
+    "slug": "shop-quan-ao",
+    "dateGmt": "2024-11-25T03:29:04",
+    "title": "Shop Quần Áo"
   },
-  "gio-hang": {
+  "gioi-thieu": {
+    "id": "cG9zdDoxMjA=",
+    "pageId": 120,
+    "status": "publish",
+    "slug": "gioi-thieu",
+    "dateGmt": "2024-11-25T03:22:35",
+    "title": "Giới thiệu"
+  },
+  "my-account": {
     "id": "cG9zdDo5",
     "pageId": 9,
     "status": "publish",
-    "slug": "gio-hang",
-    "dateGmt": "2024-11-12T13:19:00",
-    "title": "Giỏ hàng"
+    "slug": "my-account",
+    "dateGmt": "2024-11-18T14:32:58",
+    "title": "My account"
   },
-  "cua-hang": {
+  "checkout": {
     "id": "cG9zdDo4",
     "pageId": 8,
     "status": "publish",
-    "slug": "cua-hang",
-    "dateGmt": "2024-11-12T13:19:00",
-    "title": "Cửa hàng"
+    "slug": "checkout",
+    "dateGmt": "2024-11-18T14:32:58",
+    "title": "Checkout"
   },
-  "sample-page": {
+  "cart": {
+    "id": "cG9zdDo3",
+    "pageId": 7,
+    "status": "publish",
+    "slug": "cart",
+    "dateGmt": "2024-11-18T14:32:58",
+    "title": "Cart"
+  },
+  "shop": {
+    "id": "cG9zdDo2",
+    "pageId": 6,
+    "status": "publish",
+    "slug": "shop",
+    "dateGmt": "2024-11-18T14:32:58",
+    "title": "Shop"
+  },
+  "Trang mẫu": {
     "id": "cG9zdDoy",
     "pageId": 2,
     "status": "publish",
-    "slug": "sample-page",
-    "dateGmt": "2024-11-12T13:13:45",
-    "title": "Sample Page"
+    "slug": "Trang mẫu",
+    "dateGmt": "2024-11-18T14:29:43",
+    "title": "Trang mẫu"
   }
 }

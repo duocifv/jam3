@@ -1,0 +1,60 @@
+{
+  "id": "cG9zdDo3",
+  "slug": "cart",
+  "title": "Cart",
+  "page": {
+    "blocks": [
+      {
+        "name": "woocommerce/cart",
+        "attributesJSON": "{\"isPreview\":false,\"currentView\":\"woocommerce\\/filled-cart-block\",\"editorViews\":[{\"view\":\"woocommerce\\/filled-cart-block\",\"label\":\"Gi\\u1ecf h\\u00e0ng \\u0111\\u00e3 th\\u00eam\",\"icon\":{\"type\":[],\"key\":null,\"ref\":null,\"props\":{\"icon\":{\"type\":{\"displayName\":\"SVG\"},\"key\":null,\"ref\":null,\"props\":{\"xmlns\":\"http:\\/\\/www.w3.org\\/2000\\/svg\",\"viewBox\":\"0 0 24 24\",\"children\":[{\"type\":\"g\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"none\",\"fillRule\":\"evenodd\",\"children\":[{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"d\":\"M0 0h24v24H0z\"},\"_owner\":null},{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"currentColor\",\"fillRule\":\"nonzero\",\"d\":\"M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 20.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45ZM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2Z\"},\"_owner\":null}]},\"_owner\":null},\" \"]},\"_owner\":null}},\"_owner\":null}},{\"view\":\"woocommerce\\/empty-cart-block\",\"label\":\"Gi\\u1ecf h\\u00e0ng tr\\u1ed1ng\",\"icon\":{\"type\":[],\"key\":null,\"ref\":null,\"props\":{\"icon\":{\"type\":{\"displayName\":\"SVG\"},\"key\":null,\"ref\":null,\"props\":{\"xmlns\":\"http:\\/\\/www.w3.org\\/2000\\/svg\",\"viewBox\":\"0 0 24 24\",\"children\":[{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"d\":\"M22.7 22.7l-20-20L2 2l-.7-.7L0 2.5 4.4 7l2.2 4.7L5.2 14A2 2 0 007 17h7.5l1.3 1.4a2 2 0 102.8 2.8l2.9 2.8 1.2-1.3zM7.4 15a.2.2 0 01-.2-.3l.9-1.7h2.4l2 2h-5zm8.2-2a2 2 0 001.7-1l3.6-6.5.1-.5c0-.6-.4-1-1-1H6.5l9 9zM7 18a2 2 0 100 4 2 2 0 000-4z\"},\"_owner\":null},{\"type\":\"path\",\"key\":null,\"ref\":null,\"props\":{\"fill\":\"none\",\"d\":\"M0 0h24v24H0z\"},\"_owner\":null}]},\"_owner\":null}},\"_owner\":null}}],\"hasDarkControls\":false,\"isShippingCalculatorEnabled\":true,\"checkoutPageId\":0,\"showRateAfterTaxName\":true,\"align\":\"wide\"}",
+        "saveContent": "<div class=\"wp-block-woocommerce-cart alignwide is-loading\"><div class=\"wp-block-woocommerce-filled-cart-block\"><div class=\"wp-block-woocommerce-cart-items-block\"><div class=\"wp-block-woocommerce-cart-line-items-block\"></div><div class=\"wp-block-woocommerce-cart-cross-sells-block\"><h2 class=\"wp-block-heading has-large-font-size\">You may be interested in…</h2><div class=\"wp-block-woocommerce-cart-cross-sells-products-block\"></div></div></div><div class=\"wp-block-woocommerce-cart-totals-block\"><div class=\"wp-block-woocommerce-cart-order-summary-block\"><div class=\"wp-block-woocommerce-cart-order-summary-heading-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-taxes-block\"></div></div><div class=\"wp-block-woocommerce-cart-express-payment-block\"></div><div class=\"wp-block-woocommerce-proceed-to-checkout-block\"></div><div class=\"wp-block-woocommerce-cart-accepted-payment-methods-block\"></div></div></div><div class=\"wp-block-woocommerce-empty-cart-block\"><h2 class=\"wp-block-heading has-text-align-center with-empty-cart-icon wc-block-cart__empty-cart__title\">Your cart is currently empty!</h2><hr class=\"wp-block-separator has-alpha-channel-opacity is-style-dots\"/><h2 class=\"wp-block-heading has-text-align-center\">New in store</h2></div></div>",
+        "innerBlocks": [
+          {
+            "name": "woocommerce/filled-cart-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "saveContent": "<div class=\"wp-block-woocommerce-filled-cart-block\"><div class=\"wp-block-woocommerce-cart-items-block\"><div class=\"wp-block-woocommerce-cart-line-items-block\"></div><div class=\"wp-block-woocommerce-cart-cross-sells-block\"><h2 class=\"wp-block-heading has-large-font-size\">You may be interested in…</h2><div class=\"wp-block-woocommerce-cart-cross-sells-products-block\"></div></div></div><div class=\"wp-block-woocommerce-cart-totals-block\"><div class=\"wp-block-woocommerce-cart-order-summary-block\"><div class=\"wp-block-woocommerce-cart-order-summary-heading-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-taxes-block\"></div></div><div class=\"wp-block-woocommerce-cart-express-payment-block\"></div><div class=\"wp-block-woocommerce-proceed-to-checkout-block\"></div><div class=\"wp-block-woocommerce-cart-accepted-payment-methods-block\"></div></div></div>",
+            "innerBlocks": [
+              {
+                "name": "woocommerce/cart-items-block",
+                "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-cart-items-block\"><div class=\"wp-block-woocommerce-cart-line-items-block\"></div><div class=\"wp-block-woocommerce-cart-cross-sells-block\"><h2 class=\"wp-block-heading has-large-font-size\">You may be interested in…</h2><div class=\"wp-block-woocommerce-cart-cross-sells-products-block\"></div></div></div>"
+              },
+              {
+                "name": "woocommerce/cart-totals-block",
+                "attributesJSON": "{\"checkbox\":false,\"lock\":{\"remove\":true}}",
+                "saveContent": "<div class=\"wp-block-woocommerce-cart-totals-block\"><div class=\"wp-block-woocommerce-cart-order-summary-block\"><div class=\"wp-block-woocommerce-cart-order-summary-heading-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-coupon-form-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-subtotal-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-fee-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-discount-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-shipping-block\"></div><div class=\"wp-block-woocommerce-cart-order-summary-taxes-block\"></div></div><div class=\"wp-block-woocommerce-cart-express-payment-block\"></div><div class=\"wp-block-woocommerce-proceed-to-checkout-block\"></div><div class=\"wp-block-woocommerce-cart-accepted-payment-methods-block\"></div></div>"
+              }
+            ]
+          },
+          {
+            "name": "woocommerce/empty-cart-block",
+            "attributesJSON": "{\"lock\":{\"remove\":true,\"move\":true}}",
+            "saveContent": "<div class=\"wp-block-woocommerce-empty-cart-block\"><h2 class=\"wp-block-heading has-text-align-center with-empty-cart-icon wc-block-cart__empty-cart__title\">Your cart is currently empty!</h2><hr class=\"wp-block-separator has-alpha-channel-opacity is-style-dots\"/><h2 class=\"wp-block-heading has-text-align-center\">New in store</h2></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\",\"className\":\"with-empty-cart-icon wc-block-cart__empty-cart__title\"}",
+                "saveContent": "<h2 class=\"wp-block-heading has-text-align-center with-empty-cart-icon wc-block-cart__empty-cart__title\">Your cart is currently empty!</h2>"
+              },
+              {
+                "name": "core/separator",
+                "attributesJSON": "{\"opacity\":\"alpha-channel\",\"anchor\":\"\",\"className\":\"is-style-dots\"}",
+                "saveContent": "<hr class=\"wp-block-separator has-alpha-channel-opacity is-style-dots\"/>"
+              },
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+                "saveContent": "<h2 class=\"wp-block-heading has-text-align-center\">New in store</h2>"
+              },
+              {
+                "name": "woocommerce/product-new",
+                "attributesJSON": "{\"columns\":4,\"rows\":1,\"alignButtons\":false,\"categories\":[],\"catOperator\":\"any\",\"contentVisibility\":{\"image\":true,\"title\":true,\"price\":true,\"rating\":true,\"button\":true},\"isPreview\":false,\"editMode\":true,\"orderby\":\"date\"}",
+                "saveContent": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

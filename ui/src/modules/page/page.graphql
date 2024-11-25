@@ -18,15 +18,3 @@ query PagesList($first: Int, $after: String) {
   }
 }
 
-query PageDetails($pageId: ID!) {
-  page(id: $pageId) {
-    blocks {
-      name
-      attributesJSON
-      innerBlocks {
-        name
-        attributesJSON
-      }
-    }
-  }
-}

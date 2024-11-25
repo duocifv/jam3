@@ -1,0 +1,83 @@
+{
+  "id": "cG9zdDoxMjc=",
+  "slug": "dich-vu",
+  "title": "Dịch vụ",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|vivid-red\"}}}},\"textColor\":\"vivid-red\",\"fontSize\":\"large\"}",
+        "saveContent": "<h2 class=\"wp-block-heading has-vivid-red-color has-text-color has-link-color has-large-font-size\">本部</h2>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_01.jpg\" alt=\"\"/></figure></div><div class=\"wp-block-column\" style=\"flex-basis:500px\"><p class=\"has-pale-pink-color has-text-color has-link-color\">〒101-0021 東京都千代田区外神田 2-17-3 アヤベビル 4F<br>TEL：03-5295-0205　FAX：03-5295-0206</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_01.jpg\" alt=\"\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/zaidan.if-vietnam.com\\/profile\\/img\\/map_01.jpg\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"sizeSlug\":\"large\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_01.jpg\" alt=\"\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\",\"width\":\"500px\"}",
+            "saveContent": "<div class=\"wp-block-column\" style=\"flex-basis:500px\"><p class=\"has-pale-pink-color has-text-color has-link-color\">〒101-0021 東京都千代田区外神田 2-17-3 アヤベビル 4F<br>TEL：03-5295-0205　FAX：03-5295-0206</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|pale-pink\"}}}},\"textColor\":\"pale-pink\"}",
+                "saveContent": "<p class=\"has-pale-pink-color has-text-color has-link-color\">〒101-0021 東京都千代田区外神田 2-17-3 アヤベビル 4F<br>TEL：03-5295-0205　FAX：03-5295-0206</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_02.gif\" alt=\"\"/></figure></div><div class=\"wp-block-column\"><p>〒100-191　ソウル特別市中区乙支路 16　白南ビル8F<br>TEL：02-757-2343・2344　FAX：03-775-9997</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_02.gif\" alt=\"\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/zaidan.if-vietnam.com\\/profile\\/img\\/map_02.gif\",\"alt\":\"\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"sizeSlug\":\"large\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://zaidan.if-vietnam.com/profile/img/map_02.gif\" alt=\"\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><p>〒100-191　ソウル特別市中区乙支路 16　白南ビル8F<br>TEL：02-757-2343・2344　FAX：03-775-9997</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>〒100-191　ソウル特別市中区乙支路 16　白南ビル8F<br>TEL：02-757-2343・2344　FAX：03-775-9997</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+        "saveContent": "<p></p>",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "cG9zdDoxMjU=",
+  "slug": "shop-quan-ao-nam",
+  "title": "Shop Quần Áo Nam",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/cover",
+        "attributesJSON": "{\"useFeaturedImage\":false,\"alt\":\"\",\"hasParallax\":false,\"isRepeated\":false,\"dimRatio\":50,\"backgroundType\":\"image\",\"isDark\":false,\"tagName\":\"div\",\"anchor\":\"\",\"url\":\"https:\\/\\/picsum.photos\\/1200\\/400\",\"minHeight\":400,\"minHeightUnit\":\"px\"}",
+        "saveContent": "<div class=\"wp-block-cover\" style=\"min-height:400px\"><span aria-hidden=\"true\" class=\"has-background-dim-50 wp-block-cover__gradient-background\"></span><img class=\"wp-block-cover__image-background\" alt=\"\" src=\"https://picsum.photos/1200/400\" data-object-fit=\"cover\"/><div class=\"wp-block-cover__inner-container\"><h1 class=\"has-text-align-center has-large-font-size\" style=\"color:#ffffff\">Shop Quần Áo Nam</h1></div></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=5\" alt=\"Sản phẩm quần áo nam\"/></figure></div><div class=\"wp-block-column\"><h2>Sản phẩm quần áo nam chất lượng</h2><p>Shop chúng tôi cung cấp các mẫu quần áo nam từ áo sơ mi, quần tây, áo khoác đến các bộ trang phục thể thao. Tất cả đều được làm từ chất liệu cao cấp, mang lại sự thoải mái và phong cách.</p><a class=\"wp-block-button__link\" href=\"#\">Mua ngay</a></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=5\" alt=\"Sản phẩm quần áo nam\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/picsum.photos\\/800\\/600?random=5\",\"alt\":\"S\\u1ea3n ph\\u1ea9m qu\\u1ea7n \\u00e1o nam\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":4,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=5\" alt=\"Sản phẩm quần áo nam\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2>Sản phẩm quần áo nam chất lượng</h2><p>Shop chúng tôi cung cấp các mẫu quần áo nam từ áo sơ mi, quần tây, áo khoác đến các bộ trang phục thể thao. Tất cả đều được làm từ chất liệu cao cấp, mang lại sự thoải mái và phong cách.</p><a class=\"wp-block-button__link\" href=\"#\">Mua ngay</a></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h2>Sản phẩm quần áo nam chất lượng</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Shop chúng tôi cung cấp các mẫu quần áo nam từ áo sơ mi, quần tây, áo khoác đến các bộ trang phục thể thao. Tất cả đều được làm từ chất liệu cao cấp, mang lại sự thoải mái và phong cách.</p>"
+              },
+              {
+                "name": "core/button",
+                "attributesJSON": "{\"tagName\":\"a\",\"type\":\"button\",\"url\":\"#\",\"title\":\"\",\"linkTarget\":\"\",\"rel\":\"\",\"anchor\":\"\"}",
+                "saveContent": "<a class=\"wp-block-button__link\" href=\"#\">Mua ngay</a>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/freeform",
+        "attributesJSON": "[]",
+        "saveContent": "",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

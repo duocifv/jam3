@@ -1,0 +1,135 @@
+{
+  "id": "cG9zdDoxMjA=",
+  "slug": "gioi-thieu",
+  "title": "Giới thiệu",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/cover",
+        "attributesJSON": "{\"useFeaturedImage\":false,\"alt\":\"\",\"hasParallax\":false,\"isRepeated\":false,\"dimRatio\":50,\"backgroundType\":\"image\",\"isDark\":false,\"tagName\":\"div\",\"anchor\":\"\",\"url\":\"https:\\/\\/picsum.photos\\/1200\\/400\",\"minHeight\":400,\"minHeightUnit\":\"px\"}",
+        "saveContent": "<div class=\"wp-block-cover\" style=\"min-height:400px\"><span aria-hidden=\"true\" class=\"has-background-dim-50 wp-block-cover__gradient-background\"></span><img class=\"wp-block-cover__image-background\" alt=\"\" src=\"https://picsum.photos/1200/400\" data-object-fit=\"cover\"/><div class=\"wp-block-cover__inner-container\"><h1 class=\"has-text-align-center has-large-font-size\" style=\"color:#ffffff\">Chào mừng bạn đến với công ty ABC</h1></div></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=1\" alt=\"Về chúng tôi\"/></figure></div><div class=\"wp-block-column\"><h2>Về chúng tôi</h2><p>Công ty ABC được thành lập với mục tiêu mang lại giá trị tốt nhất cho khách hàng. Chúng tôi luôn cam kết cung cấp dịch vụ chất lượng cao và trải nghiệm tuyệt vời.</p><p>Chúng tôi tự hào có đội ngũ nhân sự giàu kinh nghiệm, sẵn sàng hỗ trợ và đáp ứng mọi nhu cầu của bạn.</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=1\" alt=\"Về chúng tôi\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/picsum.photos\\/800\\/600?random=1\",\"alt\":\"V\\u1ec1 ch\\u00fang t\\u00f4i\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":1,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=1\" alt=\"Về chúng tôi\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2>Về chúng tôi</h2><p>Công ty ABC được thành lập với mục tiêu mang lại giá trị tốt nhất cho khách hàng. Chúng tôi luôn cam kết cung cấp dịch vụ chất lượng cao và trải nghiệm tuyệt vời.</p><p>Chúng tôi tự hào có đội ngũ nhân sự giàu kinh nghiệm, sẵn sàng hỗ trợ và đáp ứng mọi nhu cầu của bạn.</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h2>Về chúng tôi</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Công ty ABC được thành lập với mục tiêu mang lại giá trị tốt nhất cho khách hàng. Chúng tôi luôn cam kết cung cấp dịch vụ chất lượng cao và trải nghiệm tuyệt vời.</p>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Chúng tôi tự hào có đội ngũ nhân sự giàu kinh nghiệm, sẵn sàng hỗ trợ và đáp ứng mọi nhu cầu của bạn.</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/spacer",
+        "attributesJSON": "{\"height\":40}",
+        "saveContent": "<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+        "saveContent": "<h2 class=\"has-text-align-center\">Giá trị cốt lõi</h2>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F4C8;</span><h3>Chất lượng</h3><p>Chúng tôi không ngừng cải tiến để mang đến dịch vụ tốt nhất cho khách hàng.</p></div></div><div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F512;</span><h3>Uy tín</h3><p>Luôn đảm bảo sự tin cậy và tôn trọng các cam kết với đối tác và khách hàng.</p></div></div><div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F680;</span><h3>Đổi mới</h3><p>Đội ngũ của chúng tôi luôn sáng tạo và tìm kiếm giải pháp mới để mang lại giá trị.</p></div></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F4C8;</span><h3>Chất lượng</h3><p>Chúng tôi không ngừng cải tiến để mang đến dịch vụ tốt nhất cho khách hàng.</p></div></div>",
+            "innerBlocks": [
+              {
+                "name": "core/icon-box",
+                "attributesJSON": "{\"title\":\"Ch\\u1ea5t l\\u01b0\\u1ee3ng\",\"icon\":\"&#x1F4C8;\"}",
+                "saveContent": "<div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F4C8;</span><h3>Chất lượng</h3><p>Chúng tôi không ngừng cải tiến để mang đến dịch vụ tốt nhất cho khách hàng.</p></div>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F512;</span><h3>Uy tín</h3><p>Luôn đảm bảo sự tin cậy và tôn trọng các cam kết với đối tác và khách hàng.</p></div></div>",
+            "innerBlocks": [
+              {
+                "name": "core/icon-box",
+                "attributesJSON": "{\"title\":\"Uy t\\u00edn\",\"icon\":\"&#x1F512;\"}",
+                "saveContent": "<div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F512;</span><h3>Uy tín</h3><p>Luôn đảm bảo sự tin cậy và tôn trọng các cam kết với đối tác và khách hàng.</p></div>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F680;</span><h3>Đổi mới</h3><p>Đội ngũ của chúng tôi luôn sáng tạo và tìm kiếm giải pháp mới để mang lại giá trị.</p></div></div>",
+            "innerBlocks": [
+              {
+                "name": "core/icon-box",
+                "attributesJSON": "{\"title\":\"\\u0110\\u1ed5i m\\u1edbi\",\"icon\":\"&#x1F680;\"}",
+                "saveContent": "<div class=\"wp-block-icon-box\"><span class=\"icon\">&#x1F680;</span><h3>Đổi mới</h3><p>Đội ngũ của chúng tôi luôn sáng tạo và tìm kiếm giải pháp mới để mang lại giá trị.</p></div>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/spacer",
+        "attributesJSON": "{\"height\":40}",
+        "saveContent": "<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+        "saveContent": "<h2 class=\"has-text-align-center\">Liên hệ với chúng tôi</h2>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+        "saveContent": "<p class=\"has-text-align-center\">Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM<br>Số điện thoại: 0123 456 789<br>Email: contact@abc.com</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/freeform",
+        "attributesJSON": "[]",
+        "saveContent": "",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

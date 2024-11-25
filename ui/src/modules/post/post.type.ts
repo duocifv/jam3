@@ -75,21 +75,21 @@ export const CategoriesPosts = gql`
 }
     `;
 export const TagsPosts = gql`
-    query TagsPosts($first: Int, $after: String) {
-      tags(first: $first, after: $after) {
-        pageInfo {
-          endCursor
-          hasNextPage
-        }
-        edges {
-          cursor
-          node {
-            id
-            name
-            count
-            slug
-          }
-        }
+    query TagsPosts {
+  tags(where: {hideEmpty: true, orderby: COUNT, order: DESC}) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      cursor
+      node {
+        id
+        name
+        count
+        slug
       }
     }
+  }
+}
     `;

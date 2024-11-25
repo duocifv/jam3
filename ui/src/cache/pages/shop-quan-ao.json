@@ -1,0 +1,167 @@
+{
+  "id": "cG9zdDoxMjM=",
+  "slug": "shop-quan-ao",
+  "title": "Shop Quần Áo",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/cover",
+        "attributesJSON": "{\"useFeaturedImage\":false,\"alt\":\"\",\"hasParallax\":false,\"isRepeated\":false,\"dimRatio\":50,\"backgroundType\":\"image\",\"isDark\":false,\"tagName\":\"div\",\"anchor\":\"\",\"url\":\"https:\\/\\/picsum.photos\\/1200\\/400\",\"minHeight\":400,\"minHeightUnit\":\"px\"}",
+        "saveContent": "<div class=\"wp-block-cover\" style=\"min-height:400px\"><span aria-hidden=\"true\" class=\"has-background-dim-50 wp-block-cover__gradient-background\"></span><img class=\"wp-block-cover__image-background\" alt=\"\" src=\"https://picsum.photos/1200/400\" data-object-fit=\"cover\"/><div class=\"wp-block-cover__inner-container\"><h1 class=\"has-text-align-center has-large-font-size\" style=\"color:#ffffff\">Chào mừng đến với Shop Quần Áo ABC</h1></div></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=2\" alt=\"Sản phẩm quần áo nữ\"/></figure></div><div class=\"wp-block-column\"><h2>Sản phẩm mới nhất</h2><p>Khám phá bộ sưu tập mới nhất với các mẫu quần áo thời trang cho cả nam và nữ. Chúng tôi luôn cập nhật các xu hướng mới để bạn luôn nổi bật.</p><p>Đến ngay cửa hàng của chúng tôi để sở hữu các mẫu thiết kế độc đáo và chất lượng nhất!</p></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=2\" alt=\"Sản phẩm quần áo nữ\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/picsum.photos\\/800\\/600?random=2\",\"alt\":\"S\\u1ea3n ph\\u1ea9m qu\\u1ea7n \\u00e1o n\\u1eef\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":1,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=2\" alt=\"Sản phẩm quần áo nữ\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h2>Sản phẩm mới nhất</h2><p>Khám phá bộ sưu tập mới nhất với các mẫu quần áo thời trang cho cả nam và nữ. Chúng tôi luôn cập nhật các xu hướng mới để bạn luôn nổi bật.</p><p>Đến ngay cửa hàng của chúng tôi để sở hữu các mẫu thiết kế độc đáo và chất lượng nhất!</p></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h2>Sản phẩm mới nhất</h2>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Khám phá bộ sưu tập mới nhất với các mẫu quần áo thời trang cho cả nam và nữ. Chúng tôi luôn cập nhật các xu hướng mới để bạn luôn nổi bật.</p>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Đến ngay cửa hàng của chúng tôi để sở hữu các mẫu thiết kế độc đáo và chất lượng nhất!</p>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/spacer",
+        "attributesJSON": "{\"height\":40}",
+        "saveContent": "<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+        "saveContent": "<h2 class=\"has-text-align-center\">Bộ Sưu Tập Mới</h2>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/columns",
+        "attributesJSON": "{\"isStackedOnMobile\":true,\"anchor\":\"\"}",
+        "saveContent": "<div class=\"wp-block-columns\"><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=3\" alt=\"Bộ sưu tập thời trang nam\"/></figure></div><div class=\"wp-block-column\"><h3>Thời Trang Nam</h3><p>Khám phá bộ sưu tập thời trang nam mới nhất với những thiết kế độc đáo, thoải mái và thanh lịch.</p><a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a></div><div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=4\" alt=\"Bộ sưu tập thời trang nữ\"/></figure></div><div class=\"wp-block-column\"><h3>Thời Trang Nữ</h3><p>Với nhiều lựa chọn từ váy, áo, cho đến phụ kiện, bộ sưu tập thời trang nữ của chúng tôi mang đến phong cách thời thượng và quyến rũ.</p><a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a></div></div>",
+        "innerBlocks": [
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=3\" alt=\"Bộ sưu tập thời trang nam\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/picsum.photos\\/800\\/600?random=3\",\"alt\":\"B\\u1ed9 s\\u01b0u t\\u1eadp th\\u1eddi trang nam\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":2,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=3\" alt=\"Bộ sưu tập thời trang nam\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h3>Thời Trang Nam</h3><p>Khám phá bộ sưu tập thời trang nam mới nhất với những thiết kế độc đáo, thoải mái và thanh lịch.</p><a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h3>Thời Trang Nam</h3>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Khám phá bộ sưu tập thời trang nam mới nhất với những thiết kế độc đáo, thoải mái và thanh lịch.</p>"
+              },
+              {
+                "name": "core/button",
+                "attributesJSON": "{\"tagName\":\"a\",\"type\":\"button\",\"url\":\"#\",\"title\":\"\",\"linkTarget\":\"\",\"rel\":\"\",\"anchor\":\"\"}",
+                "saveContent": "<a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=4\" alt=\"Bộ sưu tập thời trang nữ\"/></figure></div>",
+            "innerBlocks": [
+              {
+                "name": "core/image",
+                "attributesJSON": "{\"url\":\"https:\\/\\/picsum.photos\\/800\\/600?random=4\",\"alt\":\"B\\u1ed9 s\\u01b0u t\\u1eadp th\\u1eddi trang n\\u1eef\",\"title\":\"\",\"href\":\"\",\"rel\":\"\",\"linkClass\":\"\",\"linkTarget\":\"\",\"anchor\":\"\",\"id\":3,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"}",
+                "saveContent": "<figure class=\"wp-block-image size-large\"><img src=\"https://picsum.photos/800/600?random=4\" alt=\"Bộ sưu tập thời trang nữ\"/></figure>"
+              }
+            ]
+          },
+          {
+            "name": "core/column",
+            "attributesJSON": "{\"anchor\":\"\"}",
+            "saveContent": "<div class=\"wp-block-column\"><h3>Thời Trang Nữ</h3><p>Với nhiều lựa chọn từ váy, áo, cho đến phụ kiện, bộ sưu tập thời trang nữ của chúng tôi mang đến phong cách thời thượng và quyến rũ.</p><a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a></div>",
+            "innerBlocks": [
+              {
+                "name": "core/heading",
+                "attributesJSON": "{\"level\":2,\"anchor\":\"\"}",
+                "saveContent": "<h3>Thời Trang Nữ</h3>"
+              },
+              {
+                "name": "core/paragraph",
+                "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\"}",
+                "saveContent": "<p>Với nhiều lựa chọn từ váy, áo, cho đến phụ kiện, bộ sưu tập thời trang nữ của chúng tôi mang đến phong cách thời thượng và quyến rũ.</p>"
+              },
+              {
+                "name": "core/button",
+                "attributesJSON": "{\"tagName\":\"a\",\"type\":\"button\",\"url\":\"#\",\"title\":\"\",\"linkTarget\":\"\",\"rel\":\"\",\"anchor\":\"\"}",
+                "saveContent": "<a class=\"wp-block-button__link\" href=\"#\">Xem ngay</a>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "core/spacer",
+        "attributesJSON": "{\"height\":40}",
+        "saveContent": "<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/heading",
+        "attributesJSON": "{\"level\":2,\"anchor\":\"\",\"textAlign\":\"center\"}",
+        "saveContent": "<h2 class=\"has-text-align-center\">Liên Hệ Với Chúng Tôi</h2>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/paragraph",
+        "attributesJSON": "{\"dropCap\":false,\"anchor\":\"\",\"align\":\"center\"}",
+        "saveContent": "<p class=\"has-text-align-center\">Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM<br>Số điện thoại: 0123 456 789<br>Email: contact@shopabc.com</p>",
+        "innerBlocks": []
+      },
+      {
+        "name": "core/freeform",
+        "attributesJSON": "[]",
+        "saveContent": "",
+        "innerBlocks": []
+      }
+    ]
+  }
+}

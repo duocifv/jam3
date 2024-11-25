@@ -1,7 +1,7 @@
 import React from 'react'
 import * as pageService from 'modules/page/page.service'
 import { notFound } from 'next/navigation'
-import About from '@/modules/pages/library/About'
+import Blocks from '@/modules/home/library/Blocks'
 
 export async function generateStaticParams() {
   const data = await pageService.getPagePath()
@@ -17,12 +17,13 @@ const SamplePage = async (props: PageProps) => {
   
   if (!pageSlug) notFound()
   const pageDetail = await pageService.getPageDetail(pageSlug)
+  console.log("pageDetail", pageDetail)
   if (!pageDetail) notFound()
   return (
     <div>
       <h2>{pageDetail?.title}</h2>
-      {pageDetail?.blocks?.page?.blocks?.map((block, index: number) => (
-        <About key={index} block={block} />
+      {pageDetail?.page?.blocks?.map((block, index: number) => (
+        <Blocks key={index} block={block} />
       ))}
     </div>
   )

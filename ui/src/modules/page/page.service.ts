@@ -8,7 +8,8 @@ export const getPagePath = async () => {
       console.log('not data getPath')
       return [{ pageSlug: 'home' }]
     }
-    return path.map(({ slug }) => ({ pageSlug: slug }))
+    const results = path.map(({ slug }) => ({ pageSlug: slug }))
+    return results
   } catch (error) {
     console.log('error data getPath')
     return [{ pageSlug: 'home' }]

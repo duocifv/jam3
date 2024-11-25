@@ -1,0 +1,15 @@
+{
+  "id": "cG9zdDo5",
+  "slug": "my-account",
+  "title": "My account",
+  "page": {
+    "blocks": [
+      {
+        "name": "core/shortcode",
+        "attributesJSON": "[]",
+        "saveContent": "[woocommerce_my_account]",
+        "innerBlocks": []
+      }
+    ]
+  }
+}
