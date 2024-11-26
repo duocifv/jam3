@@ -15,7 +15,7 @@ const ProductDetail: FC<{ product: TypeProductsQuery }> = ({ product }) => {
       <h2 className="text-3xl">{product?.name}</h2>
       {product?.image?.sourceUrl ? (
         <Image
-          src={product.image.sourceUrl} // Lấy URL hình ảnh
+          src={product.image.sourceUrl} 
           width={500}
           height={300}
           alt={product.name || 'Product image'}
