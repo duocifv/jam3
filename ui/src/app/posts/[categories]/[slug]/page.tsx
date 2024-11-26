@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import * as postService from 'modules/post/post.service'
+import * as postService from 'modules/post/feature/post.service'
 
 export async function generateStaticParams() {
   const postList = await postService.getPostList()

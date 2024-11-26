@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import cn from '../style/FormLogin.module.css'
+import cn from '../stylesheet/FormLogin.module.css'
 import { loginService } from '../feature/auth.service'
 import { useForm } from 'react-hook-form'
 import { loginSchema, LoginSchema } from '../feature/auth.vaidator';

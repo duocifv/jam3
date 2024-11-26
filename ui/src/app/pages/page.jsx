@@ -1,5 +1,5 @@
 import React from 'react'
-import * as pageService from 'modules/page/page.service'
+import * as pageService from '@/modules/page/feature/page.service'
 import { notFound } from 'next/navigation'
 
 const page = async () => {

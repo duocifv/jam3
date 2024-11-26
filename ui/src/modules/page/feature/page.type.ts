@@ -1,4 +1,4 @@
-import * as Types from '../../types/types';
+import * as Types from '../../../types/types';
 
 import gql from 'graphql-tag';
 export type PagesListQueryVariables = Types.Exact<{

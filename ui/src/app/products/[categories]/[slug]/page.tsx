@@ -1,6 +1,6 @@
 import React from 'react'
-import * as productService from 'modules/product/product.service'
-import { ProductDetail } from 'components/products'
+import * as productService from 'modules/product/feature/product.service'
+import { ProductDetail } from '@/modules/product/library'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {

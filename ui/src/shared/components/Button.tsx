@@ -5,6 +5,7 @@ import { capitalize } from '@/types/stringUtils'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger'
   size?: 'small' | 'medium' | 'large'
+  full?: boolean
   isLoading?: boolean
   disabled?: boolean
   iconLeft?: React.ReactNode
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'medium',
   isLoading = false,
+  full = false,
   iconLeft,
   iconRight,
   disabled = false,
@@ -24,7 +26,11 @@ const Button: React.FC<ButtonProps> = ({
   const buttonClass = getButtonClass(variant, size, isLoading, disabled)
 
   return (
-    <button {...props} disabled={disabled || isLoading} className={buttonClass}>
+    <button
+      {...props}
+      disabled={disabled || isLoading}
+      className={`${buttonClass} ${full ? 'w-full' : ''}`}
+    >
       {isLoading ? (
         <span className="loader"></span> // Loader khi đang tải
       ) : (

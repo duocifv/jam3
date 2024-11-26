@@ -1,6 +1,6 @@
 import React from 'react'
-import PostList from 'components/posts/PostList'
-import * as postService from 'modules/post/post.service'
+import PostList from 'modules/post/library/PostList'
+import * as postService from 'modules/post/feature/post.service'
 
 export async function generateStaticParams() {
   const categories = await postService.getPostCategories()

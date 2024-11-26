@@ -24,6 +24,7 @@
     "@tanstack/react-query-devtools": "^5.61.0",
     "axios": "^1.7.7",
     "d": "^1.0.2",
+    "flat-cache": "^6.1.2",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "i18next": "^23.16.6",

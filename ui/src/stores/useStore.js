@@ -1,8 +1,8 @@
 import { create } from 'zustand'
-import { devtools } from 'zustand/middleware'
+//import { devtools } from 'zustand/middleware'
 
 export const useStore = create(
-  devtools((set) => ({
+  (set) => ({
     posts: [],
     categories: '',
     setPosts: (newPosts) => set({ posts: newPosts }),
@@ -23,5 +23,5 @@ export const useStore = create(
 
     searchQuery: '',
     setSearchQuery: (query) => set({ searchQuery: query }),
-  }))
+  })
 )

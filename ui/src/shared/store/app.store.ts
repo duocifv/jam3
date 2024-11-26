@@ -1,28 +1,15 @@
-"use client"
+'use client'
+import { authStore, IAuthStore } from '@/modules/auth/feature/auth.store'
+import {
+  IProductStore,
+  productsStore,
+} from '@/modules/product/feature/product.store'
 import { create } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import { devtools } from 'zustand/middleware'
 
-interface AppState {
-  user: string | null | any
-  profile: string | null
-  loggedIn: boolean
-  setUser: (user: any) => void
-  setProfile: (profile: string) => void
-  logout: () => void
-}
-
-export const useAppStore = create<AppState>()(
-  devtools(persist((set) => ({
-    user: '',
-    profile: '',
-    loggedIn: false,
-    setUser: (user: any) => set({ user, loggedIn: true }),
-    setProfile: (profile) => set({ profile }),
-    logout: () => {
-      set({ user: null, loggedIn: false })
-    },
-  }), {
-    name: "store-profile"
-  })
-  )
+export const useAppStore = create<IProductStore & IAuthStore>()(
+  devtools((set, get) => ({
+    ...productsStore(set, get),
+    ...authStore(set, get),
+  }))
 )

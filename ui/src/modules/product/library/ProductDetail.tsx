@@ -1,5 +1,5 @@
 'use client'
-import { TypeProductsQuery } from '@/modules/product/product.repository'
+import { TypeProductsQuery } from '@/modules/product/feature/product.repository'
 import { productStore } from '@/stores/product/product.store'
 import Image from 'next/image'
 import React, { FC } from 'react'

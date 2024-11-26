@@ -1,4 +1,4 @@
-import { queryPostTags } from '@/modules/post/post.repository'
+import { queryPostTags } from '@/modules/post/feature/post.repository'
 import Link from 'next/link'
 import React from 'react'
 

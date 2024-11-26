@@ -1,7 +1,7 @@
 import Button from '@/shared/components/Button'
 import Input from '@/shared/components/Input'
 import { useForm } from 'react-hook-form'
-import cn from '../style/FormRegister.module.css'
+import cn from '../stylesheet/FormRegister.module.css'
 import { useTranslation } from 'react-i18next'
 import { registerService } from '../feature/auth.service'
 import { AuthRegister } from '../feature/auth.types'

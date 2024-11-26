@@ -1,0 +1,36 @@
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 380px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #dcdcdc;
+    padding: 10px;
+}
+.list {
+    background-color: #fff;
+    height: 74vh;
+    overflow-y: scroll;
+}
+.item {
+    display: flex;
+    border-bottom: 2px solid #f0efef;
+}
+.info {
+    border-top: 2px solid #757575;
+    padding: 20px 0;
+}
+.open {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+.close {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: all 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}

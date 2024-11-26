@@ -3,21 +3,30 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { productStore } from '@/stores/product/product.store'
 import Link from 'next/link'
-import { TypeProductsQuery } from '@/modules/product/product.repository'
+import { TypeProductsQuery } from 'modules/product/feature/product.repository'
+import { useAppStore } from '@/shared/store/app.store'
 
 const ProductList = ({ innitData }: { innitData: TypeProductsQuery[] }) => {
+  const addCart = useAppStore((state) => state.addCart)
   const products = productStore((state) => state.products)
   const setProducts = productStore((state) => state.setProducts)
   const sortBy = productStore((state) => state.sortBy)
-  const setItemCart = productStore((state) => state.setItemCart)
-  const handleAddToCart = (productId) => {
-    setItemCart(productId, 1)
+  //const setItemCart = productStore((state) => state.setItemCart)
+  const handleAddToCart = (productSlug) => {
+    // setItemCart(productId, 1)
+    const result = products.filter((item) => item.slug === productSlug)
+
+    console.log('result productSlug', result, productSlug)
+    addCart(result)
   }
   const list = products && products.length > 0 ? products : innitData
   useEffect(() => {
     setProducts(innitData)
   }, [innitData, setProducts])
 
+ 
+ 
+ 
   return (
     <>
       <div>
@@ -52,7 +61,7 @@ const ProductList = ({ innitData }: { innitData: TypeProductsQuery[] }) => {
             <div>Reviews: {product?.reviews?.averageRating}</div>
             <button
               className="bg-red-300"
-              onClick={() => handleAddToCart(product.productId)}
+              onClick={() => handleAddToCart(product.slug)}
             >
               Add to Cart {product.productId}
             </button>

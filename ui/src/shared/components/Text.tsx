@@ -35,7 +35,6 @@ const Text: React.FC<TextProps> = ({
   dropCap = false,
   ...props
 }) => {
-  console.log("align align 1", textAlign[align])
   const Tag =
     level === 0
       ? 'div'

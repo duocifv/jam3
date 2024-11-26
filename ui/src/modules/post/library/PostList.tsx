@@ -4,8 +4,8 @@ import Link from 'next/link'
 import React from 'react'
 import { useStore } from '@/stores/useStore'
 import { debounce } from 'utils/debounce'
-import PostController from 'components/posts/controller/PostController'
-import { TypePostList } from 'modules/post/post.repository'
+import PostController from 'modules/post/library/controller/PostController'
+import { TypePostList } from 'modules/post/feature/post.repository'
 
 const Search = ({ initialData, categorieId, categories, tagId }) => {
   const posts = useStore((state) => state.posts)
