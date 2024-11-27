@@ -1,4 +1,4 @@
-import { queryPagesList, queryPageDetail } from './page.repository'
+import { queryPagesList, findPageMany } from './page.repository'
 
 export const getPagesList = async () => queryPagesList()
 export const getPagePath = async () => {
@@ -39,5 +39,7 @@ export const getPageDetail = async (slug: string) => {
     console.log('slug No data')
     return null
   }
-  return queryPageDetail(slug)
+  const data = await findPageMany()
+  const result = data.find(item => item.slug === slug)
+  return result || null
 }

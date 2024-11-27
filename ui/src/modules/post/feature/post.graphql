@@ -15,11 +15,18 @@ query GetPosts2($first: Int, $after: String) {
         content
         categories {
           nodes {
+            id
+            name
             slug
+            count
           }
         }
         tags {
           nodes {
+            id
+            slug
+            name
+            count
             slug
           }
         }
@@ -27,6 +34,7 @@ query GetPosts2($first: Int, $after: String) {
     }
   }
 }
+
 
 query CategoriesPosts($first: Int, $after: String) {
   categories(first: $first, after: $after) {

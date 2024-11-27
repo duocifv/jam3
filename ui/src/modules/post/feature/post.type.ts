@@ -7,7 +7,7 @@ export type GetPosts2QueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPosts2Query = { __typename?: 'RootQuery', posts?: { __typename?: 'RootQueryToPostConnection', pageInfo: { __typename?: 'RootQueryToPostConnectionPageInfo', endCursor?: string | null, hasNextPage: boolean }, edges: Array<{ __typename?: 'RootQueryToPostConnectionEdge', cursor?: string | null, node: { __typename?: 'Post', id: string, slug?: string | null, title?: string | null, excerpt?: string | null, date?: string | null, content?: string | null, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<{ __typename?: 'Category', slug?: string | null }> } | null, tags?: { __typename?: 'PostToTagConnection', nodes: Array<{ __typename?: 'Tag', slug?: string | null }> } | null } }> } | null };
+export type GetPosts2Query = { __typename?: 'RootQuery', posts?: { __typename?: 'RootQueryToPostConnection', pageInfo: { __typename?: 'RootQueryToPostConnectionPageInfo', endCursor?: string | null, hasNextPage: boolean }, edges: Array<{ __typename?: 'RootQueryToPostConnectionEdge', cursor?: string | null, node: { __typename?: 'Post', id: string, slug?: string | null, title?: string | null, excerpt?: string | null, date?: string | null, content?: string | null, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<{ __typename?: 'Category', id: string, name?: string | null, slug?: string | null, count?: number | null }> } | null, tags?: { __typename?: 'PostToTagConnection', nodes: Array<{ __typename?: 'Tag', id: string, slug?: string | null, name?: string | null, count?: number | null }> } | null } }> } | null };
 
 export type CategoriesPostsQueryVariables = Types.Exact<{
   first?: Types.InputMaybe<Types.Scalars['Int']['input']>;
@@ -41,11 +41,18 @@ export const GetPosts2 = gql`
         content
         categories {
           nodes {
+            id
+            name
             slug
+            count
           }
         }
         tags {
           nodes {
+            id
+            slug
+            name
+            count
             slug
           }
         }

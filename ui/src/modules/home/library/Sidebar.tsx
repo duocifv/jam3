@@ -36,7 +36,7 @@ const Sidebar = async () => {
     categoriesAuth,
   ] = await Promise.all([
     productService.getProductCategories(),
-    postService.getPostCategories(),
+    postService.getCategories(),
     postService.getPostTags(),
     pageService.getPageCategories(),
     getAuthCategories(),

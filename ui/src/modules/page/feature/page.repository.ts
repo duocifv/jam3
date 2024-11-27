@@ -1,14 +1,16 @@
-
-import { cache } from '@/shared/utils/cache'
 import { paginate, query } from '@/shared/utils/httpGraphql'
 import { PagesList, PagesListQuery } from './page.type'
-import { gql } from 'graphql-request';
-
+import { gql } from 'graphql-request'
+import * as dbStore from '@/shared/utils/db'
 
 export const PageDetailQuery = gql`
-    query PageDetails($pageId: ID!) {
-      page(id: $pageId) {
-        blocks {
+  query PageDetails($pageId: ID!) {
+    page(id: $pageId) {
+      blocks {
+        name
+        attributesJSON
+        saveContent
+        innerBlocks {
           name
           attributesJSON
           saveContent
@@ -16,68 +18,70 @@ export const PageDetailQuery = gql`
             name
             attributesJSON
             saveContent
-            innerBlocks {
-              name
-              attributesJSON
-              saveContent
-            }
           }
         }
       }
     }
-`;
+  }
+`
 
-
-export type TypePages = PagesListQuery['pages']['edges'][0]['node']
+const db = await dbStore.create<Data>('page', {
+  pages: [],
+  blocks: [],
+})
 
 export const queryPagesList = async (): Promise<TypePages[]> => {
-  const result = cache.list<TypePages>('pages')
-  if (result?.length) return result
-
+  const { pages } = db.data
+  if (pages?.length) return pages
   try {
-    const listData = await paginate(PagesList)
-
-    if (!listData) {
-      console.log('error getPosts', listData)
+    const data = await paginate(PagesList)
+    const newData = Object.values(data)
+    if (!newData?.length) {
+      console.log('error getPosts')
       return []
     }
-    cache.put(listData, 'pages')
+    dbStore.put(db, 'pages', newData)
 
-    for (const item of Object.values(listData)) {
-      const { id, slug, title }: any = item
-      const { page } = await query<any>(PageDetailQuery, {
-        pageId: id,
-      })
-      const data = { id, slug, title, page }
-      console.log("blocks blocks", page?.blocks)
-      if (page?.blocks) {
-        cache.put(data, 'pages', `${slug}`)
-      } else {
-        console.warn(`No data returned for page with ID: ${id}`)
-      }
-    }
-
-    return listData as []
+    return data as []
   } catch (error) {
     console.error('Error fetching posts:', error)
     return []
   }
 }
 
+export const findPageMany = async (): Promise<TypePageDetail[]> => {
+  const { blocks } = db.data
+  if(blocks?.length) return blocks
+
+  let data = db.data.pages
+  if(!data) {
+    data = await queryPagesList()
+  }
+  for (const item of Object.values(data)) {
+    const { id, slug, title }: any = item
+    const { page } = await query<any>(PageDetailQuery, {
+      pageId: id,
+    })
+    const block = { id, slug, title, page }
+    if (page?.blocks) {
+      await db.update(({ blocks }) => blocks.push(block))
+    } else {
+      console.warn(`No data returned for page with ID 1: ${id}`)
+      return []
+    }
+  }
+  return blocks
+}
+
+export type TypePages = PagesListQuery['pages']['edges'][0]['node']
 type TypePageDetail = {
   id: string
   slug: string
   title: string
-  blocks: any
+  page: any
 }
 
-export const queryPageDetail = async (slug: string): Promise<TypePageDetail> => {
-
-  const result = cache.get<TypePageDetail>(null,'pages', `${slug}`)
-  if (!result) {
-    console.log("No data queryPageDetail", result)
-    return null
-  }
-  return result
+type Data = {
+  pages: TypePages[]
+  blocks: TypePageDetail[]
 }
-

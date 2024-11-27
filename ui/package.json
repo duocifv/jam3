@@ -17,18 +17,16 @@
     "gen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
-    "@graphql-codegen/typescript-document-nodes": "^4.0.11",
     "@hookform/resolvers": "^3.9.1",
     "@parcel/watcher": "^2.5.0",
     "@tanstack/react-query": "^5.60.6",
     "@tanstack/react-query-devtools": "^5.61.0",
     "axios": "^1.7.7",
-    "d": "^1.0.2",
-    "flat-cache": "^6.1.2",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "i18next": "^23.16.6",
     "i18next-http-backend": "^2.6.2",
+    "lowdb": "^7.0.1",
     "next": "15.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -39,6 +37,7 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/typescript-document-nodes": "^4.0.11",
     "@graphql-codegen/cli": "^5.0.3",
     "@graphql-codegen/client-preset": "4.5.0",
     "@graphql-codegen/introspection": "4.0.3",
