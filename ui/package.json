@@ -14,7 +14,9 @@
     "format": "prettier --write . && next lint",
     "generate": "graphql-codegen",
     "codegen": "graphql-codegen --config codegen.ts --watch",
-    "gen": "graphql-codegen --config codegen.ts"
+    "gen": "graphql-codegen --config codegen.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -22,6 +24,7 @@
     "@tanstack/react-query": "^5.60.6",
     "@tanstack/react-query-devtools": "^5.61.0",
     "axios": "^1.7.7",
+    "clsx": "^2.1.1",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
     "i18next": "^23.16.6",
@@ -37,14 +40,22 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
-    "@graphql-codegen/typescript-document-nodes": "^4.0.11",
+    "@chromatic-com/storybook": "^3.2.2",
     "@graphql-codegen/cli": "^5.0.3",
     "@graphql-codegen/client-preset": "4.5.0",
     "@graphql-codegen/introspection": "4.0.3",
     "@graphql-codegen/near-operation-file-preset": "^3.0.0",
     "@graphql-codegen/typescript": "^4.1.1",
+    "@graphql-codegen/typescript-document-nodes": "^4.0.11",
     "@graphql-codegen/typescript-operations": "^4.3.1",
     "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "@storybook/addon-essentials": "^8.4.5",
+    "@storybook/addon-interactions": "^8.4.5",
+    "@storybook/addon-onboarding": "^8.4.5",
+    "@storybook/blocks": "^8.4.5",
+    "@storybook/nextjs": "^8.4.5",
+    "@storybook/react": "^8.4.5",
+    "@storybook/test": "^8.4.5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -53,8 +64,10 @@
     "eslint-config-next": "15.0.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-storybook": "^0.11.1",
     "postcss": "^8",
     "prettier": "^3.3.3",
+    "storybook": "^8.4.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.6.3"
   }
