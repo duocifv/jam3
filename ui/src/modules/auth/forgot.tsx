@@ -1,11 +1,14 @@
-"use client"
+'use client'
 
 import React from 'react'
+import PanelAuth from './library/PanelAuth'
 
 const ForgotPage = () => {
-  return <div>
-    ok Page
-  </div>
+  return (
+    <div>
+      <PanelAuth />
+    </div>
+  )
 }
 
 export default ForgotPage

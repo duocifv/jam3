@@ -23,3 +23,7 @@ body {
   background-image: url("/img/head_b1.gif");
   background-repeat: repeat-x;
 }
+
+.align-center {
+  @apply flex justify-center items-center h-screen;
+}

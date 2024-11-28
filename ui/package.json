@@ -16,7 +16,8 @@
     "codegen": "graphql-codegen --config codegen.ts --watch",
     "gen": "graphql-codegen --config codegen.ts",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "svg": "npx @svgr/cli .svgrrc --typescript --out-dir ./src/stories/icons ./src/stories/assets/icons"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -36,6 +37,7 @@
     "react-hook-form": "^7.53.2",
     "react-i18next": "^15.1.1",
     "sanitize-html": "^2.13.1",
+    "sass": "^1.81.0",
     "zod": "^3.23.8",
     "zustand": "^5.0.1"
   },
@@ -56,6 +58,7 @@
     "@storybook/nextjs": "^8.4.5",
     "@storybook/react": "^8.4.5",
     "@storybook/test": "^8.4.5",
+    "@svgr/cli": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -21,12 +21,13 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "icons": ["./src/shared/components/icons"],
       "modules/*": ["./src/modules/*"],
       "store/*": ["./src/shared/store/*"],
       "components/*": ["./src/shared/components/*"],
       "hooks/*": ["./src/shared/hooks/*"],
       "utils/*": ["./src/shared/utils/*"],
-      "styles/*": ["./src/styles/*"]
+      "styles/*": ["./src/styles/*"],
     }
   },
   "include": [

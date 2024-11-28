@@ -1,29 +1,35 @@
-import React from 'react'
-import clsx from 'clsx';
-
-import './button.css'
+import React, { FC, ReactElement, ReactNode } from 'react'
+import clsx from 'clsx'
+import cn from './button.module.css'
 
 export interface ButtonProps {
   primary?: boolean
   backgroundColor?: string
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'normal' | 'medium' | 'large'
   color?: 'primary' | 'secondary'
-  circular?: boolean
+  rounded?: boolean
   active?: boolean
   label: string
+  outlined?: boolean
   loading?: boolean
   disabled?: boolean
+  iconStart?: ReactElement
+  iconEnd?: ReactElement
   className?: string
   onClick?: () => void
 }
 
 export const Button = ({
   color = 'secondary',
-  size = 'medium',
-  circular = false,
+  size = 'normal',
+  rounded = false,
   active = false,
   disabled = false,
+  outlined = false,
+  loading = false,
   backgroundColor,
+  iconStart,
+  iconEnd,
   className,
   label,
   ...props
@@ -31,26 +37,51 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={clsx(cnBase, cnSize[size], cnColor[color], { [cnState.disabled]: disabled }, className)}
+      className={clsx(
+        cn.button,
+        cnSize[size],
+        outlined ? cnOutlined[color] : cnColor[color],
+        rounded && '!rounded-full',
+        loading && cn.loading,
+        disabled && 'opacity-60',
+        className
+      )}
+      disabled={disabled}
       {...props}
     >
-      {label}
+      {iconStart && <span className={cn.icon}>{iconStart}</span>}
+      <span>{label}</span>
+      {iconEnd && <span className={cn.icon}>{iconEnd}</span>}
     </button>
   )
 }
 
-const cnBase = 'cursor-pointer transition duration-150 ease-in-out'
-const cnSize = {
-  small: 'text-sm rounded-sm py-2 px-4 border',
-  medium: 'text-base rounded-md py-3 px-6 border-2',
-  large: 'text-lg rounded-lg py-4 px-8 border-4',
-}
 const cnColor = {
-  primary:
-    'bg-primary text-white border-white hover:text-primary hover:bg-white',
-  secondary:
-    'bg-secondary text-white border-white hover:text-secondary hover:bg-white',
+  primary: 'bg-primary text-white',
+  secondary: 'bg-secondary text-white',
 }
-const cnState = {
-  disabled: `cursor-default opacity-60 !bg-gray-400`,
+const cnOutlined = {
+  primary: 'border border-primary text-primary bg-white',
+  secondary: 'border border-secondary text-secondary bg-white',
+}
+const cnSize = {
+  small: 'text-sm',
+  normal: 'text-base',
+  medium: 'text-md',
+  large: 'text-lg',
+}
+
+export const ButtonGroup: FC<{
+  children: ReactNode
+  align: 'start' | 'center' | 'end'
+  gap: number
+}> = (props) => {
+  return (
+    <div
+      className={`flex gap-2 justify-${props.align}`}
+      style={{ gap: props.gap }}
+    >
+      {props.children}
+    </div>
+  )
 }
