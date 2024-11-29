@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -5,14 +6,18 @@ const morgan = require("morgan");
 const postRouters = require("./post/post.routes.js");
 const authRouters = require("./auth/auth.routes.js");
 const session = require("./config.js");
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 // Log requests
-//app.use(morgan("dev"));
+app.use(morgan("dev"));
+
 
 // Parse JSON
 app.use(express.json());
+
+app.use(cookieParser());
 
 // Handle CORS with cache and direct preflight handling
 app.use(

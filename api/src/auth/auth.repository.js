@@ -90,6 +90,7 @@ exports.RegisterUser = async (
   }
 };
 
+
 // Lưu người dùng mới
 exports.addUser = (username, password) => {
   const newUser = {
@@ -113,4 +114,20 @@ exports.updatePassword = (email, newPassword) => {
     user.password = newPassword;
   }
   return user;
+};
+
+
+
+
+
+const users = [
+  {
+    id: 1,
+    username: 'user1',
+    password: '$2b$12$THVzL9wDJbLCVPRDxs2ff.HZmnUrmRpuKA4P6yqCD7ou2hKZCMxxG'
+  }
+];
+
+exports.getUserByUsername = (username) => {
+  return users.find(user => user.username === username);
 };

@@ -1,33 +1,76 @@
 const {
   userLogin,
+  authenticateUser,
+  createAccessToken,
+  createRefreshToken,
+  refreshAccessToken,
   userLogout,
   userRegister,
   forgotPassword,
   resetPassword,
 } = require("./auth.service.js");
-const errors = require('http-errors');
+
+const err = require('http-errors');
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   try {
-    const user = await userLogin(username, password);
-    console.log(user);
-    if(!user) {
-     return next(errors(400, 'Thông tin đăng nhập sai!'));
-    }
-    req.session.user = user;
-    res.json({ message: "Đăng nhập thành công", user });
+    const user = await authenticateUser(username, password);
+  
+     // Tạo Access Token và Refresh Token
+     const accessToken = createAccessToken(user);
+     const refreshToken = createRefreshToken(user);
+
+      // Lưu refresh token vào cookie (HTTPOnly cookie để tránh bị client JavaScript truy cập)
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // Chỉ bật secure ở môi trường sản xuất
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
+    });
+
+   res.json({
+      message: 'Đăng nhập thành công',
+      accessToken: accessToken, // Gửi Access Token cho client
+    });
+
   } catch (error) {
-   return next(errors(401, 'Bạn chưa đăng nhập!'));
+   return next(err(400, 'Thông tin đăng nhập sai!'));
   }
 };
 
-exports.profile = async (req, res) => {
-  if (req.session.user) {
-    res.json({ message: "Welcome!", user: req.session.user });
-  } else {
-    res.status(401).json({ message: "Unauthorized" });
+// Refresh Token
+exports.refreshToken = async (req, res, next) => {
+  const refreshToken = req.cookies.refreshToken; // Lấy refresh token từ cookie
+
+  if (!refreshToken) {
+    return next(err(401, 'Không có refresh token'));
   }
+
+  try {
+    const accessToken = await refreshAccessToken(refreshToken); // Tạo access token mới từ refresh token
+    res.json({
+      accessToken: accessToken, // Gửi access token mới
+    });
+  } catch (err) {
+    return next(err); // Trả về lỗi nếu có
+  }
+};
+
+exports.profile = (req, res) => {
+  // req.user được xác định trong middleware authenticate, chứa thông tin người dùng
+  if (!req.user) {
+    return res.status(401).json({ message: 'Không tìm thấy người dùng' });
+  }
+
+  // Trả về thông tin người dùng
+  res.json({
+    message: 'Thông tin người dùng',
+    user: {
+      id: req.user.id,
+      username: req.user.username,
+      // Thêm các trường khác nếu cần
+    },
+  });
 };
 
 exports.logout = async (req, res) => {
@@ -44,12 +87,12 @@ exports.register = async (req, res, next) => {
   try {
     const result = await userRegister( email, username, password, firstName, lastName);
     if(!result?.ok) {
-      return next(errors(409, result.message));
+      return next(err(409, result.message));
     }else {
       return res.status(201).json(result);
     }
   } catch (error) {
-    return next(errors(400, error.message || 'Đã có lỗi xảy ra'));
+    return next(err(400, error.message || 'Đã có lỗi xảy ra'));
   }
 };
 

@@ -1,8 +1,12 @@
 // Import hàm từ repository
 const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 const {
   findByUsername,
   addUser,
+  getUserByUsername,
   findByEmail,
   updatePassword,
   RegisterUser
@@ -85,4 +89,60 @@ exports.resetPassword = (email, token, newPassword) => {
   const updatedUser = updatePassword(email, newPassword);
   resetTokens.delete(email); // Xóa token sau khi sử dụng
   return updatedUser;
+};
+
+
+
+
+// Tạo Access Token
+exports.createAccessToken = (user) => {
+  return jwt.sign(
+    { id: user.id, username: user.username }, 
+    process.env.ACCESS_TOKEN_SECRET, 
+    { expiresIn: '1h' } // Thời gian sống của Access Token (1 giờ)
+  );
+};
+
+// Tạo Refresh Token
+exports.createRefreshToken = (user) => {
+  return jwt.sign(
+    { id: user.id, username: user.username },
+    process.env.REFRESH_TOKEN_SECRET,
+    { expiresIn: '7d' } // Thời gian sống của Refresh Token (7 ngày)
+  );
+};
+
+
+
+exports.authenticateUser = async (username, password) => {
+  // Lấy người dùng từ cơ sở dữ liệu
+  const user = await getUserByUsername(username);
+  
+  if (!user) {
+    throw new Error('Username or password is incorrect');  // Nếu không tìm thấy người dùng, ném lỗi
+  }
+
+  // So sánh mật khẩu người dùng nhập với mật khẩu đã mã hóa
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    throw new Error('Username or password is incorrect');  // Nếu mật khẩu không khớp, ném lỗi
+  }
+
+  return user;  // Trả về token
+};
+
+
+// Refresh Token: Tạo lại Access Token từ Refresh Token
+exports.refreshAccessToken = (refreshToken) => {
+  return new Promise((resolve, reject) => {
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+      if (err) {
+        return reject(createError(403, 'Refresh token không hợp lệ'));
+      }
+
+      const accessToken = createAccessToken({ id: decoded.id, username: decoded.username });
+      resolve(accessToken);
+    });
+  });
 };
