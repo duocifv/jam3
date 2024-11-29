@@ -1,6 +1,5 @@
 import { Button, ButtonGroup } from '@/stories/Button'
 import SvgArrowLeftCircle from '@/stories/icons/ArrowLeftCircle'
-import SvgSearch from '@/stories/icons/Search'
 import SvgSettings from '@/stories/icons/Settings'
 import SvgTool from '@/stories/icons/Tool'
 
