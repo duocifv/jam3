@@ -1,13 +1,11 @@
 import React, { FC, ReactElement, ReactNode } from 'react'
 import clsx from 'clsx'
-import cn from './button.module.css'
+import './Button.css'
 
 export interface ButtonProps {
   primary?: boolean
-  backgroundColor?: string
-  size?: 'small' | 'normal' | 'medium' | 'large'
+  media?: 'small' | 'medium' | 'large' 
   color?: 'primary' | 'secondary'
-  rounded?: boolean
   active?: boolean
   label: string
   outlined?: boolean
@@ -21,13 +19,11 @@ export interface ButtonProps {
 
 export const Button = ({
   color = 'secondary',
-  size = 'normal',
-  rounded = false,
   active = false,
+  media= 'small',
   disabled = false,
   outlined = false,
   loading = false,
-  backgroundColor,
   iconStart,
   iconEnd,
   className,
@@ -38,37 +34,34 @@ export const Button = ({
     <button
       type="button"
       className={clsx(
-        cn.button,
-        cnSize[size],
-        outlined ? cnOutlined[color] : cnColor[color],
-        rounded && '!rounded-full',
-        loading && cn.loading,
+        'button',
+        outlined ? outlines[color] : colors[color],
+        loading && 'loading',
         disabled && 'opacity-60',
+        medias[media],
         className
       )}
       disabled={disabled}
       {...props}
     >
-      {iconStart && <span className={cn.icon}>{iconStart}</span>}
+      {iconStart && <span className="icon">{iconStart}</span>}
       <span>{label}</span>
-      {iconEnd && <span className={cn.icon}>{iconEnd}</span>}
+      {iconEnd && <span className="icon">{iconEnd}</span>}
     </button>
   )
 }
-
-const cnColor = {
+const medias = {
+  small: "text-sm",
+  medium: "text-base",
+  large: "text-lg",
+}
+const colors = {
   primary: 'bg-primary text-white',
   secondary: 'bg-secondary text-white',
 }
-const cnOutlined = {
+const outlines = {
   primary: 'border border-primary text-primary bg-white',
   secondary: 'border border-secondary text-secondary bg-white',
-}
-const cnSize = {
-  small: 'text-sm',
-  normal: 'text-base',
-  medium: 'text-md',
-  large: 'text-lg',
 }
 
 export const ButtonGroup: FC<{

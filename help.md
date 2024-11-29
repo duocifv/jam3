@@ -4,3 +4,8 @@ Cấu hình script build cho frontend trong Cloudflare như sau:
 npm install && npm run build --prefix src/frontend
 
 Cấu hình này sẽ chỉ build và deploy phần Next.js trên Cloudflare.
+
+
+https://flowbite.com/docs/components/tabs/
+https://github.com/themesberg/flowbite/blob/main/content/components/alerts.md
+https://tailgrids.com/react/components/accordions

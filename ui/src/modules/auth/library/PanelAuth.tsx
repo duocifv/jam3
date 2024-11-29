@@ -10,8 +10,8 @@ const PanelAuth = () => {
         <Button
           label="コンテスト"
           color="primary"
-          size="small"
-          className="w-36 min-h-24"
+          media="small"
+          className="w-36 min-h-24 text-2xl"
           iconStart={
             <SvgArrowLeftCircle
               width={32}
@@ -22,23 +22,26 @@ const PanelAuth = () => {
           }
         />
         <Button
+          active
+          className="text-lg p-4 border-1 w-40"
+          color="secondary"
           label="コンテスト"
-          color="primary"
-          size="small"
-          className="w-36 min-h-24"
+          media="large"
+          onClick={() => {}}
           iconStart={
-            <SvgSettings
+            <SvgArrowLeftCircle
               width={32}
               height={32}
               color="#fff"
-              className="text-primary"
+              className="text-secondary"
             />
           }
+          outlined
         />
         <Button
           label="コンテスト"
           color="primary"
-          size="small"
+          media="small"
           className="w-36 min-h-24"
           iconStart={
             <SvgTool
@@ -52,7 +55,7 @@ const PanelAuth = () => {
         <Button
           label="コンテスト"
           color="primary"
-          size="small"
+          media="small"
           className="w-36 min-h-24"
           iconStart={
             <SvgArrowLeftCircle
@@ -66,7 +69,7 @@ const PanelAuth = () => {
         <Button
           label="コンテスト"
           color="primary"
-          size="small"
+          media="small"
           className="w-36 min-h-24"
           iconStart={
             <SvgSettings
