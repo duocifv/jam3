@@ -13,7 +13,6 @@ const app = express();
 // Log requests
 app.use(morgan("dev"));
 
-
 // Parse JSON
 app.use(express.json());
 
