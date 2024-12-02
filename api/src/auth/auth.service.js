@@ -2,6 +2,7 @@
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const err = require('http-errors');
 
 const {
   findByUsername,
@@ -134,14 +135,24 @@ exports.authenticateUser = async (username, password) => {
 
 
 // Refresh Token: Tạo lại Access Token từ Refresh Token
-exports.refreshAccessToken = (refreshToken) => {
+exports.refreshAccessToken = async (refreshToken) => {
+ 
   return new Promise((resolve, reject) => {
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
       if (err) {
-        return reject(createError(403, 'Refresh token không hợp lệ'));
+        return reject(err); // Token không hợp lệ
       }
-
-      const accessToken = createAccessToken({ id: decoded.id, username: decoded.username });
+      
+       // Kiểm tra dữ liệu decoded
+       if (!decoded.id || !decoded.username) {
+        return reject(new Error('Invalid token payload'));
+      }
+     
+      const accessToken = jwt.sign(
+        { id: decoded.id, username: decoded.username }, 
+        process.env.ACCESS_TOKEN_SECRET, 
+        { expiresIn: '1h' } 
+      );
       resolve(accessToken);
     });
   });

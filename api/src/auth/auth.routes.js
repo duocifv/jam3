@@ -12,7 +12,7 @@ const authenticate = require('./auth.middleware.js');
 const router = express.Router();
 
 router.post("/login", login);
-router.post('/refresh-token', refreshToken);
+router.post('/refresh', refreshToken);
 router.get("/profile", authenticate, profile);
 router.post("/logout", logout);
 router.post("/register", register);

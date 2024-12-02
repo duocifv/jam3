@@ -24,7 +24,6 @@ exports.login = async (req, res, next) => {
       // Lưu refresh token vào cookie (HTTPOnly cookie để tránh bị client JavaScript truy cập)
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Chỉ bật secure ở môi trường sản xuất
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
     });
 

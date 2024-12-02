@@ -40,9 +40,6 @@ app.options("*", (req, res) => {
 //Security headers
 app.use(helmet());
 
-// Session handling
-app.use(session);
-
 // Define routes
 app.use("/posts", postRouters);
 app.use("/auth", authRouters);
