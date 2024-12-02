@@ -1,7 +1,6 @@
 'use client'
 import { useAppStore } from '../store/app.store'
 
-//const endpoint = 'https://api.duocnv.top'
 const endpoint = 'https://api.duocnv.top'
 
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH'
