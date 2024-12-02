@@ -1,11 +1,11 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { cleanPrice } from '@/shared/utils/cleanPrice'
-import { useAppStore } from '@/shared/store/app.store'
+import { cleanPrice } from '@/utils/cleanPrice'
+import { useAppStore } from '@/store/app.store'
 import cn from '../stylesheet/cart.module.css'
-import Text from '@/shared/components/Text'
-import Button from '@/shared/components/Button'
+import Text from '@/components/Text'
+import Button from '@/components/Button'
 
 const Cart = () => {
   const cartOpen = useAppStore((state) => state.cartOpen)

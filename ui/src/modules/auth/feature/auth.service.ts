@@ -1,6 +1,6 @@
-"use client"
-import { useAppStore } from '@/shared/store/app.store'
-import { loginApi, logoutApi, profileApi, registerApi } from './auth.api'
+'use client'
+import { useAppStore } from '@/store/app.store'
+import { loginApi, logoutApi, profileApi, refreshToken, registerApi } from './auth.api'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
 // Hàm xử Service (login)
@@ -8,7 +8,7 @@ export const loginService = () => {
   return useMutation({
     mutationFn: loginApi,
     onSuccess: (data) => {
-      alert("đăng nhập thành công")
+      alert('đăng nhập thành công')
       useAppStore.setState({ user: data.user, loggedIn: true })
     },
   })
@@ -46,4 +46,8 @@ export const logoutService = async () => {
   return null
 }
 
-
+export const refreshTokenService = async () => {
+  const refresh = await refreshToken()
+  console.log('Refreshing token')
+  return refresh
+}

@@ -1,11 +1,11 @@
-import { paginate } from '@/shared/utils/httpGraphql'
+import { paginate } from '@/utils/httpGraphql'
 import {
   CategoriesPostsQuery,
   GetPosts2,
   GetPosts2Query,
   TagsPostsQuery,
 } from './post.type'
-import * as dbStore from '@/shared/utils/db'
+import * as dbStore from '@/utils/db'
 
 const db = await dbStore.create<Data>('post', {
   posts: [],

@@ -1,6 +1,6 @@
 
-import { cache } from '@/shared/utils/cache'
-import { paginate, query } from '@/shared/utils/httpGraphql'
+import { cache } from '@/utils/cache'
+import { paginate, query } from '@/utils/httpGraphql'
 import { ProductCategories, ProductCategoriesQuery, Products, ProductsQuery } from './product.type'
 
 type TypeProductCategories =

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import ProviderClient from './ProviderClient'
 import { ReactNode } from 'react'
-import Sidebar from '@/modules/home/library/Sidebar'
-import HeaderLayout from '@/modules/home/library/Header'
+import Sidebar from '@/modules/shared/library/Sidebar'
+import HeaderLayout from '@/modules/shared/library/Header'
 
 
 import '@/styles/tailwind.css'

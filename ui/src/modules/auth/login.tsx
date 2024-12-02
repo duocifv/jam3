@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import FormLogin from './library/FormLogin'
-import { useAppStore } from '@/shared/store/app.store'
+import { useAppStore } from '@/store/app.store'
 import Welcome from './library/Welcome'
 
 const Login = () => {

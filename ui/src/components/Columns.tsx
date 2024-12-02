@@ -1,4 +1,4 @@
-import About from '@/modules/home/library/Blocks'
+import About from '@/modules/shared/library/Blocks'
 import Column from './Column'
 
 type Block = {

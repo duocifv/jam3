@@ -21,12 +21,12 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "icons": ["./src/shared/components/icons"],
+      "icons": ["src/components/icons"],
       "modules/*": ["./src/modules/*"],
-      "store/*": ["./src/shared/store/*"],
-      "components/*": ["./src/shared/components/*"],
-      "hooks/*": ["./src/shared/hooks/*"],
-      "utils/*": ["./src/shared/utils/*"],
+      "store/*": ["src/store/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "utils/*": ["src/utils/*"],
       "styles/*": ["./src/styles/*"],
     }
   },

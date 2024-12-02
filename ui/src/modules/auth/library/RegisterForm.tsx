@@ -1,11 +1,11 @@
-import Button from '@/shared/components/Button'
-import Input from '@/shared/components/Input'
+import Button from '@/components/Button'
+import Input from '@/components/Input'
 import { useForm } from 'react-hook-form'
 import cn from '../stylesheet/FormRegister.module.css'
 import { useTranslation } from 'react-i18next'
 import { registerService } from '../feature/auth.service'
 import { AuthRegister } from '../feature/auth.types'
-import { decodeHtml } from '@/shared/utils/decodeHtml'
+import { decodeHtml } from '@/utils/decodeHtml'
 
 
 const RegisterForm = () => {

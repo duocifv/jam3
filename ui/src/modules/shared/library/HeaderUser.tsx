@@ -1,6 +1,6 @@
 'use client'
 import { logoutService } from '@/modules/auth/feature/auth.service'
-import { useAppStore } from '@/shared/store/app.store'
+import { useAppStore } from '@/store/app.store'
 
 const HeaderUser = () => {
   const user = useAppStore((state) => state.user)

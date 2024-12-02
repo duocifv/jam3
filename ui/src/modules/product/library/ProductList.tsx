@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { productStore } from '@/stores/product/product.store'
 import Link from 'next/link'
 import { TypeProductsQuery } from 'modules/product/feature/product.repository'
-import { useAppStore } from '@/shared/store/app.store'
+import { useAppStore } from '@/store/app.store'
 
 const ProductList = ({ innitData }: { innitData: TypeProductsQuery[] }) => {
   const addCart = useAppStore((state) => state.addCart)
