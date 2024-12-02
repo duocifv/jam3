@@ -24,7 +24,7 @@ const Private = ({ children }: { children: ReactNode }) => {
     } else {
       useAppStore.setState({ loggedIn: true })
     }
-  }, [accessToken])
+  }, [accessToken, loggedIn])
   return loggedIn ? children : <FormLogin />
 }
 

@@ -38,6 +38,7 @@ export const client = {
   // Helper function for error handling
   handleError: async (res: Response) => {
     if (res.status === 401) {
+    
       useAppStore.setState({ accessToken: "" })
       return res.status
     }
