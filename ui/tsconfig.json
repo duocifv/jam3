@@ -21,13 +21,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "icons": ["src/components/icons"],
-      "modules/*": ["./src/modules/*"],
-      "store/*": ["src/store/*"],
-      "components/*": ["src/components/*"],
-      "hooks/*": ["src/hooks/*"],
-      "utils/*": ["src/utils/*"],
-      "styles/*": ["./src/styles/*"],
+      "modules/*": ["./src/modules/*"]
     }
   },
   "include": [
