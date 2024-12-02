@@ -21,7 +21,7 @@ app.use(cookieParser());
 // Handle CORS with cache and direct preflight handling
 app.use(
   cors({
-    origin: "https://duocnv.top",
+    origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
     maxAge: 86400, 

@@ -10,30 +10,26 @@ const {
   resetPassword,
 } = require("./auth.service.js");
 
-const err = require('http-errors');
+const { cookieConfig } = require("../config.js");
+
+const err = require("http-errors");
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const user = await authenticateUser(username, password);
-  
-     // Tạo Access Token và Refresh Token
-     const accessToken = createAccessToken(user);
-     const refreshToken = createRefreshToken(user);
 
-      // Lưu refresh token vào cookie (HTTPOnly cookie để tránh bị client JavaScript truy cập)
-    res.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
-    });
+    // Tạo Access Token và Refresh Token
+    const accessToken = createAccessToken(user);
+    const refreshToken = createRefreshToken(user);
+    res.cookie("refreshToken", refreshToken, cookieConfig);
 
-   res.json({
-      message: 'Đăng nhập thành công',
+    res.json({
+      message: "Đăng nhập thành công",
       accessToken: accessToken, // Gửi Access Token cho client
     });
-
   } catch (error) {
-   return next(err(400, 'Thông tin đăng nhập sai!'));
+    return next(err(400, "Thông tin đăng nhập sai!"));
   }
 };
 
@@ -42,7 +38,7 @@ exports.refreshToken = async (req, res, next) => {
   const refreshToken = req.cookies.refreshToken; // Lấy refresh token từ cookie
 
   if (!refreshToken) {
-    return next(err(401, 'Không có refresh token'));
+    return next(err(401, "Không có refresh token"));
   }
 
   try {
@@ -58,12 +54,12 @@ exports.refreshToken = async (req, res, next) => {
 exports.profile = (req, res) => {
   // req.user được xác định trong middleware authenticate, chứa thông tin người dùng
   if (!req.user) {
-    return res.status(401).json({ message: 'Không tìm thấy người dùng' });
+    return res.status(401).json({ message: "Không tìm thấy người dùng" });
   }
 
   // Trả về thông tin người dùng
   res.json({
-    message: 'Thông tin người dùng',
+    message: "Thông tin người dùng",
     user: {
       id: req.user.id,
       username: req.user.username,
@@ -84,14 +80,20 @@ exports.logout = async (req, res) => {
 exports.register = async (req, res, next) => {
   const { email, username, password, firstName, lastName } = req.body;
   try {
-    const result = await userRegister( email, username, password, firstName, lastName);
-    if(!result?.ok) {
+    const result = await userRegister(
+      email,
+      username,
+      password,
+      firstName,
+      lastName
+    );
+    if (!result?.ok) {
       return next(err(409, result.message));
-    }else {
+    } else {
       return res.status(201).json(result);
     }
   } catch (error) {
-    return next(err(400, error.message || 'Đã có lỗi xảy ra'));
+    return next(err(400, error.message || "Đã có lỗi xảy ra"));
   }
 };
 

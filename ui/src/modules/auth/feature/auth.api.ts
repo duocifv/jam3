@@ -3,10 +3,11 @@ import { client } from '@/utils/apiClient'
 import { AuthLogin, AuthRegister } from './auth.types'
 
 export const loginApi = (options: AuthLogin) => {
-  return client.post('auth/login', { options })
+  return client.post('auth/login', { options, credentials: true })
 }
 
 export const profileApi = () => {
+  console.log('res payload')
   try {
     const res = client.get('auth/profile')
     return res
@@ -35,12 +36,11 @@ export const logoutApi = () => {
 }
 
 export const refreshToken = async () => {
-  try {
-    const res = await client.post('auth/refresh', {
-      headers: { credentials: 'include' },
-    })
-    if (!res) return await res
-  } catch (error) {
-    console.error('Lỗi làm mới Access Token', error)
+  const status = await client.post('auth/refresh', {
+    credentials: true,
+  })
+  if (!status) {
+    throw new Error('Login failed: refreshToken not available')
   }
+  return status
 }
