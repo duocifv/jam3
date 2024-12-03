@@ -2,7 +2,7 @@ import React from 'react'
 import * as pageService from '@/modules/page/feature/page.service'
 import * as postService from 'modules/post/feature/post.service'
 import * as productService from 'modules/product/feature/product.service'
-import MenuList from 'components/MenuList'
+import MenuList from '@/components/MenuList'
 
 // Hàm xử Service (login)
 export const getAuthCategories = () => {

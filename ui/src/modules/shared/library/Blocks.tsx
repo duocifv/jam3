@@ -1,7 +1,7 @@
-import Text from 'components/Text'
-import Columns from 'components/Columns'
-import Picture from '@/shared/components/Picture'
-import Gallery from '@/shared/components/Gallery'
+import Text from '@/components/Text'
+import Columns from '@/components/Columns'
+import Picture from '@/components/Picture'
+import Gallery from '@/components/Gallery'
 
 const Blocks = ({ block }) => {
   if (!block?.attributesJSON) return null

@@ -6,10 +6,13 @@ import {
 } from '@/modules/product/feature/product.store'
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
+import { subscribeWithSelector } from 'zustand/middleware'
 
 export const useAppStore = create<IProductStore & IAuthStore>()(
-  devtools((set, get) => ({
-    ...productsStore(set, get),
-    ...authStore(set, get),
-  }))
+  devtools(
+    subscribeWithSelector((set, get) => ({
+      ...productsStore(set, get),
+      ...authStore(set, get),
+    }))
+  )
 )

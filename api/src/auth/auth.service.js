@@ -100,7 +100,7 @@ exports.createAccessToken = (user) => {
   return jwt.sign(
     { id: user.id, username: user.username }, 
     process.env.ACCESS_TOKEN_SECRET, 
-    { expiresIn: '1h' } // Thời gian sống của Access Token (1 giờ)
+    { expiresIn: '10s' } // Thời gian sống của Access Token (1 giờ)
   );
 };
 

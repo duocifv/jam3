@@ -1,7 +1,7 @@
-import { paginate, query } from '@/shared/utils/httpGraphql'
+import { paginate, query } from '@/utils/httpGraphql'
 import { PagesList, PagesListQuery } from './page.type'
 import { gql } from 'graphql-request'
-import * as dbStore from '@/shared/utils/db'
+import * as dbStore from '@/utils/db'
 
 export const PageDetailQuery = gql`
   query PageDetails($pageId: ID!) {
