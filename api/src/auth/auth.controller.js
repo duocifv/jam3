@@ -1,6 +1,5 @@
 const {
   userLogin,
-  authenticateUser,
   createAccessToken,
   createRefreshToken,
   refreshAccessToken,
@@ -12,12 +11,12 @@ const {
 
 const { cookieConfig } = require("../config.js");
 
-const err = require("http-errors");
+const message = require("http-errors");
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   try {
-    const user = await authenticateUser(username, password);
+    const user = await userLogin(username, password);
 
     // Tạo Access Token và Refresh Token
     const accessToken = createAccessToken(user);
@@ -29,7 +28,23 @@ exports.login = async (req, res, next) => {
       accessToken: accessToken, // Gửi Access Token cho client
     });
   } catch (error) {
-    return next(err(400, "Thông tin đăng nhập sai!"));
+    return next(message(400, "Thông tin đăng nhập sai!"));
+  }
+};
+
+exports.register = async (req, res, next) => {
+  const { user_login, user_email, user_pass } =
+    req.body;
+  try {
+    const result = await userRegister({
+      user_login,
+      user_pass,
+      user_email
+    });
+    if(!result) return next(message(400, "Đăng ký thất bại!"));
+    res.json({ message: "Đăng ký thành công", result });
+  } catch (error) {
+    return next(message(400, error.message || "Đã có lỗi xảy ra"));
   }
 };
 
@@ -38,7 +53,7 @@ exports.refreshToken = async (req, res, next) => {
   const refreshToken = req.cookies.refreshToken; // Lấy refresh token từ cookie
 
   if (!refreshToken) {
-    return next(err(401, "Không có refresh token"));
+    return next(message(401, "Không có refresh token"));
   }
 
   try {
@@ -52,9 +67,8 @@ exports.refreshToken = async (req, res, next) => {
 };
 
 exports.profile = (req, res) => {
-  // req.user được xác định trong middleware authenticate, chứa thông tin người dùng
   if (!req.user) {
-    return res.status(401).json({ message: "Không tìm thấy người dùng" });
+    return ext(message(401, "Không tìm thấy người dùng"));
   }
 
   // Trả về thông tin người dùng
@@ -74,26 +88,6 @@ exports.logout = async (req, res) => {
     res.json({ message: "Logout successful" });
   } catch (error) {
     res.status(500).json({ message: "Error logging out" });
-  }
-};
-
-exports.register = async (req, res, next) => {
-  const { email, username, password, firstName, lastName } = req.body;
-  try {
-    const result = await userRegister(
-      email,
-      username,
-      password,
-      firstName,
-      lastName
-    );
-    if (!result?.ok) {
-      return next(err(409, result.message));
-    } else {
-      return res.status(201).json(result);
-    }
-  } catch (error) {
-    return next(err(400, error.message || "Đã có lỗi xảy ra"));
   }
 };
 

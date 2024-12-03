@@ -1,16 +1,15 @@
 // Import hàm từ repository
-const crypto = require('crypto');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const err = require('http-errors');
+const crypto = require("crypto");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const err = require("http-errors");
 
 const {
   findByUsername,
-  addUser,
-  getUserByUsername,
   findByEmail,
+  findByUserAndEmail,
   updatePassword,
-  RegisterUser
+  createUser,
 } = require("./auth.repository.js");
 
 const resetTokens = new Map(); // email => token
@@ -26,7 +25,11 @@ exports.userLogin = async (username, password) => {
   if (!user) {
     throw new Error("Invalid credentials");
   }
-  return user; // Trả về thông tin người dùng
+  const isMatch = await bcrypt.compare(password, user.user_pass);
+  if (!isMatch) {
+    throw new Error("Username or password is incorrect");
+  }
+  return user;
 };
 
 // Hàm xử lý đăng xuất
@@ -39,28 +42,17 @@ exports.userLogout = (req) => {
   });
 };
 
-exports.userRegister = async (email, username, password, firstName,lastName) => {
-  let result
-  // Kiểm tra xem username đã tồn tại chưa
-  const existingUser = await RegisterUser(email, username, password, firstName,lastName);
-  
-  if(existingUser?.user) {
-    result = {
-      ok: true,
-      message: "Đăng ký thành công",
-      user: existingUser?.user || {}
-    }
+exports.userRegister = async (body) => {
+  const checkUser = await findByUserAndEmail(body)
+  if (checkUser) {
+    throw new Error("Tên người dùng hoặc email đã tồn tại!")
   }
-
-  if(existingUser?.message) {
-    result = {
-      ok: false,
-      message: existingUser?.message,
-      user: {}
-    }
+  const hashedPassword = await bcrypt.hash(body.user_pass, 10);
+  const newUser = await createUser({...body, hashedPassword})
+  if (!newUser) {
+    throw new Error("Không thể đăng ký");
   }
-  
-  return  result
+  return newUser;
 };
 
 // Yêu cầu quên mật khẩu
@@ -92,15 +84,12 @@ exports.resetPassword = (email, token, newPassword) => {
   return updatedUser;
 };
 
-
-
-
 // Tạo Access Token
 exports.createAccessToken = (user) => {
   return jwt.sign(
-    { id: user.id, username: user.username }, 
-    process.env.ACCESS_TOKEN_SECRET, 
-    { expiresIn: '10s' } // Thời gian sống của Access Token (1 giờ)
+    { id: user.id, username: user.username },
+    process.env.ACCESS_TOKEN_SECRET,
+    { expiresIn: "10s" } // Thời gian sống của Access Token (1 giờ)
   );
 };
 
@@ -109,51 +98,34 @@ exports.createRefreshToken = (user) => {
   return jwt.sign(
     { id: user.id, username: user.username },
     process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: '7d' } // Thời gian sống của Refresh Token (7 ngày)
+    { expiresIn: "7d" } // Thời gian sống của Refresh Token (7 ngày)
   );
-};
-
-
-
-exports.authenticateUser = async (username, password) => {
-  // Lấy người dùng từ cơ sở dữ liệu
-  const user = await getUserByUsername(username);
-  
-  if (!user) {
-    throw new Error('Username or password is incorrect');  // Nếu không tìm thấy người dùng, ném lỗi
-  }
-
-  // So sánh mật khẩu người dùng nhập với mật khẩu đã mã hóa
-  const isMatch = await bcrypt.compare(password, user.password);
-
-  if (!isMatch) {
-    throw new Error('Username or password is incorrect');  // Nếu mật khẩu không khớp, ném lỗi
-  }
-
-  return user;  // Trả về token
 };
 
 
 // Refresh Token: Tạo lại Access Token từ Refresh Token
 exports.refreshAccessToken = async (refreshToken) => {
- 
   return new Promise((resolve, reject) => {
-    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
-      if (err) {
-        return reject(err); // Token không hợp lệ
+    jwt.verify(
+      refreshToken,
+      process.env.REFRESH_TOKEN_SECRET,
+      (err, decoded) => {
+        if (err) {
+          return reject(err); // Token không hợp lệ
+        }
+
+        // Kiểm tra dữ liệu decoded
+        if (!decoded.id || !decoded.username) {
+          return reject(new Error("Invalid token payload"));
+        }
+
+        const accessToken = jwt.sign(
+          { id: decoded.id, username: decoded.username },
+          process.env.ACCESS_TOKEN_SECRET,
+          { expiresIn: "1h" }
+        );
+        resolve(accessToken);
       }
-      
-       // Kiểm tra dữ liệu decoded
-       if (!decoded.id || !decoded.username) {
-        return reject(new Error('Invalid token payload'));
-      }
-     
-      const accessToken = jwt.sign(
-        { id: decoded.id, username: decoded.username }, 
-        process.env.ACCESS_TOKEN_SECRET, 
-        { expiresIn: '1h' } 
-      );
-      resolve(accessToken);
-    });
+    );
   });
 };
