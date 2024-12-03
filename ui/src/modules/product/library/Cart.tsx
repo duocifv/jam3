@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { cleanPrice } from '@/utils/cleanPrice'
-import { useAppStore } from '@/store/app.store'
+import { useAppStore } from '@/modules/shared/store/app.store'
 import cn from '../stylesheet/cart.module.css'
 import Text from '@/components/Text'
 import Button from '@/components/Button'

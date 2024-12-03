@@ -1,7 +1,7 @@
 'use client'
 import { refreshTokenService } from '@/modules/auth/feature/auth.service'
 import FormLogin from '@/modules/auth/library/FormLogin'
-import { useAppStore } from '@/store/app.store'
+import { useAppStore } from '@/modules/shared/store/app.store'
 import { ReactNode, useEffect } from 'react'
 
 const Private = ({ children }: { children: ReactNode }) => {

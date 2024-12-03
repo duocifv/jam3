@@ -1,5 +1,5 @@
 'use client'
-import { useAppStore } from '../store/app.store'
+import { useAppStore } from '../modules/shared/store/app.store'
 
 // const endpoint = 'https://api.duocnv.top'
 const endpoint = `http://localhost:3001`

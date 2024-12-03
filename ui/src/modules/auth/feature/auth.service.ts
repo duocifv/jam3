@@ -1,5 +1,5 @@
 'use client'
-import { useAppStore } from '@/store/app.store'
+import { useAppStore } from '@/modules/shared/store/app.store'
 import { loginApi, logoutApi, profileApi, refreshToken, registerApi } from './auth.api'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
