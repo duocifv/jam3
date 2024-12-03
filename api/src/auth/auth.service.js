@@ -1,23 +1,33 @@
-// Import hàm từ repository
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const err = require("http-errors");
+const mailer = require("../config.js");
+const nodemailer = require("nodemailer");
+
 
 const {
   findByUsername,
   findByEmail,
   findByUserAndEmail,
-  updatePassword,
+  findByUserKey,
   createUser,
 } = require("./auth.repository.js");
 
-const resetTokens = new Map(); // email => token
 
-// Gửi mã xác nhận qua email (mock)
-const sendResetEmail = (email, token) => {
-  console.log(`Gửi email đến ${email} với mã xác nhận: ${token}`);
-};
+
+const transporter = nodemailer.createTransport({
+  host: 'uhf41-22158.azdigihost.com', // Máy chủ gửi email
+  port: 465, // Cổng SMTP
+  secure: true,
+  tls: {
+    rejectUnauthorized: false // Đảm bảo không có vấn đề về chứng chỉ
+  },
+  auth: {
+    user: "admin@duocnv.top", // Email của bạn
+    pass: "Khanh132!!", // Mật khẩu email
+  },
+});
 
 // Hàm xử lý đăng nhập
 exports.userLogin = async (username, password) => {
@@ -32,23 +42,23 @@ exports.userLogin = async (username, password) => {
   return user;
 };
 
-// Hàm xử lý đăng xuất
-exports.userLogout = (req) => {
-  return new Promise((resolve, reject) => {
-    req.session.destroy((err) => {
-      if (err) return reject(err);
-      resolve();
-    });
-  });
+exports.userProfile = async (token) => {
+  const decoded = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET);
+  console.log("decoded decoded", decoded);
+  if (!decoded?.username) {
+    throw new Error("username not initialized");
+  }
+  const user = await findByUsername(decoded.username);
+  return user;
 };
 
 exports.userRegister = async (body) => {
-  const checkUser = await findByUserAndEmail(body)
+  const checkUser = await findByUserAndEmail(body);
   if (checkUser) {
-    throw new Error("Tên người dùng hoặc email đã tồn tại!")
+    throw new Error("Tên người dùng hoặc email đã tồn tại!");
   }
   const hashedPassword = await bcrypt.hash(body.user_pass, 10);
-  const newUser = await createUser({...body, hashedPassword})
+  const newUser = await createUser({ ...body, hashedPassword });
   if (!newUser) {
     throw new Error("Không thể đăng ký");
   }
@@ -56,41 +66,54 @@ exports.userRegister = async (body) => {
 };
 
 // Yêu cầu quên mật khẩu
-exports.forgotPassword = (email) => {
-  const user = findByEmail(email);
+exports.forgotPassword = async (user_email) => {
+  const user = await findByEmail(user_email);
+  
   if (!user) {
     throw new Error("Email not found");
   }
-
-  // Tạo token ngẫu nhiên
-  const token = crypto.randomBytes(20).toString("hex");
-  resetTokens.set(email, token);
-
-  // Gửi email với token
-  sendResetEmail(email, token);
+  const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
+  
+  const resetLink = `http://localhost:3000/reset-password/${token}`;
+  const mailOptions = {
+    from: "admin@duocnv.top",
+    to: user.dataValues.user_email,
+    subject: "Reset Mật Khẩu",
+    text: `Vui lòng nhấp vào liên kết sau để reset mật khẩu của bạn: ${resetLink}`,
+    html: "<b>Hello world?</b>", // html body
+  };
+  try {
+    await transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.error("Email sending failed:", err);
+        return;
+      }
+      console.log("Email sent successfully:", info.response);
+    });
+  } catch (error) {
+    console.error("Nodemailer Error:", error);
+    throw new Error("Đã xảy ra lỗi khi gửi email");
+  }
   return { message: "Password reset email sent" };
 };
 
 // Đặt lại mật khẩu
-exports.resetPassword = (email, token, newPassword) => {
-  const validToken = resetTokens.get(email);
-  if (!validToken || validToken !== token) {
-    throw new Error("Invalid or expired token");
+exports.resetPassword = async (token, password) => {
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await findByUserKey(decoded.userId);
+    if(!user) {
+      throw new Error("Không tìm thấy User");
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    user.user_pass = hashedPassword;
+    await user.save();
+    return user
+  } catch (error) {
+    throw new Error("Lỗi server Reset Password");
   }
-
-  // Cập nhật mật khẩu mới
-  const updatedUser = updatePassword(email, newPassword);
-  resetTokens.delete(email); // Xóa token sau khi sử dụng
-  return updatedUser;
-};
-
-// Tạo Access Token
-exports.createAccessToken = (user) => {
-  return jwt.sign(
-    { id: user.id, username: user.username },
-    process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "10s" } // Thời gian sống của Access Token (1 giờ)
-  );
 };
 
 // Tạo Refresh Token
@@ -101,7 +124,6 @@ exports.createRefreshToken = (user) => {
     { expiresIn: "7d" } // Thời gian sống của Refresh Token (7 ngày)
   );
 };
-
 
 // Refresh Token: Tạo lại Access Token từ Refresh Token
 exports.refreshAccessToken = async (refreshToken) => {

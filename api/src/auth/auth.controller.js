@@ -3,15 +3,14 @@ const {
   createAccessToken,
   createRefreshToken,
   refreshAccessToken,
-  userLogout,
   userRegister,
   forgotPassword,
   resetPassword,
 } = require("./auth.service.js");
-
 const { cookieConfig } = require("../config.js");
-
 const message = require("http-errors");
+
+
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
@@ -39,7 +38,8 @@ exports.register = async (req, res, next) => {
     const result = await userRegister({
       user_login,
       user_pass,
-      user_email
+      user_email,
+      display_name
     });
     if(!result) return next(message(400, "Đăng ký thất bại!"));
     res.json({ message: "Đăng ký thành công", result });
@@ -50,7 +50,7 @@ exports.register = async (req, res, next) => {
 
 // Refresh Token
 exports.refreshToken = async (req, res, next) => {
-  const refreshToken = req.cookies.refreshToken; // Lấy refresh token từ cookie
+  const refreshToken = req.cookies.refreshToken;
 
   if (!refreshToken) {
     return next(message(401, "Không có refresh token"));
@@ -82,21 +82,12 @@ exports.profile = (req, res) => {
   });
 };
 
-exports.logout = async (req, res) => {
-  try {
-    await userLogout(req);
-    res.json({ message: "Logout successful" });
-  } catch (error) {
-    res.status(500).json({ message: "Error logging out" });
-  }
-};
-
 // Yêu cầu quên mật khẩu
 exports.forgot = (req, res) => {
-  const { email } = req.body;
+  const { user_email } = req.body;
   try {
-    const response = forgotPassword(email);
-    res.status(200).json(response);
+    const result = forgotPassword(user_email);
+    res.status(200).json(result);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -104,10 +95,10 @@ exports.forgot = (req, res) => {
 
 // Đặt lại mật khẩu
 exports.reset = (req, res) => {
-  const { email, token, newPassword } = req.body;
-
+  const { token } = req.params;
+  const { password } = req.body;
   try {
-    const user = resetPassword(email, token, newPassword);
+    const user = resetPassword(token, password);
     res.status(200).json({ message: "Password reset successful", user });
   } catch (error) {
     res.status(400).json({ message: error.message });
