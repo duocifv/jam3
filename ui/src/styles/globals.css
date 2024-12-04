@@ -19,3 +19,26 @@ body {
   background-image: url("/img/head_b1.gif");
   background-repeat: repeat-x;
 }
+
+
+
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px; /* Kích thước của thanh cuộn dọc */
+  height: 8px; /* Kích thước thanh cuộn ngang */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* Màu nền của track */
+  border-radius: 10px; /* Bo tròn track */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #68aee7; /* Màu của thumb */
+  border-radius: 10px; /* Bo tròn thumb */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #68aee7; /* Màu của thumb khi hover */
+}

@@ -1,0 +1,7 @@
+{
+  "auth_change": {
+    "old": "Mật khẩu cũ",
+    "new": "Mật khẩu mới",
+    "confirm": "Xác nhận mật khẩu"
+  }
+}
