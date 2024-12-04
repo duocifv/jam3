@@ -49,11 +49,22 @@ exports.findByEmail = async (user_email) => {
   }
 };
 
-exports.findByUserKey = async (decoded) => {
-  try {
-    const user = await User.findByPk(decoded.userId);
-    return user;
-  } catch (error) {
-    throw new Error("Không thể kiểm tra Email");
-  }
+exports.changeUserPass = async (userId, hashedPassword) => {
+  const user = await User.findByPk(userId);
+    if(!user) return null
+    user.user_pass = hashedPassword;
+    await user.save();
+    return user.dataValues || null;
+};
+
+
+exports.updatePassword = async (userId, hashedNewPassword) => {
+  return await User.update(
+    { user_pass: hashedNewPassword },
+    { where: { ID: userId } }
+  );
+};
+
+exports.findUserById = async (id) => {
+  return await User.findByPk(id);
 };

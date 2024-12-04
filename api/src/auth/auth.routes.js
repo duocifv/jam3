@@ -5,6 +5,7 @@ const {
   register,
   forgot,
   reset,
+  change,
   refreshToken,
 } = require("./auth.controller.js");
 const authenticate = require("../middleware/auth.middleware.js");
@@ -58,14 +59,42 @@ router.post(
   forgot
 );
 router.post(
-  "/reset",
-  body("user_email")
+  "/reset/:token",
+  body("user_pass")
     .notEmpty()
-    .withMessage("Email không được để trống.")
-    .isEmail()
-    .withMessage("Email không hợp lệ."),
+    .withMessage("Mật khẩu không được để trống.")
+    .isLength({ min: 6 })
+    .withMessage("Mật khẩu phải có ít nhất 6 ký tự.")
+    .matches(/[a-z]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một chữ cái.")
+    .matches(/[0-9]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một số.")
+    .matches(/[\W_]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một ký tự đặc biệt."),
   validate,
   reset
+);
+router.post(
+  "/change",
+  authenticate,
+  body('oldPassword')
+    .notEmpty()
+    .withMessage('Mật khẩu cũ không được để trống.')
+    .isLength({ min: 6 })
+    .withMessage('Mật khẩu cũ phải có ít nhất 6 ký tự.'),
+  body("newPassword")
+    .notEmpty()
+    .withMessage("Mật khẩu không được để trống.")
+    .isLength({ min: 6 })
+    .withMessage("Mật khẩu phải có ít nhất 6 ký tự.")
+    .matches(/[a-z]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một chữ cái.")
+    .matches(/[0-9]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một số.")
+    .matches(/[\W_]/)
+    .withMessage("Mật khẩu phải chứa ít nhất một ký tự đặc biệt."),
+  validate,
+  change
 );
 
 module.exports = router;

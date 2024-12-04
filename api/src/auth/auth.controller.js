@@ -6,17 +6,15 @@ const {
   userRegister,
   forgotPassword,
   resetPassword,
+  changePassword,
 } = require("./auth.service.js");
 const { cookieConfig } = require("../config.js");
 const message = require("http-errors");
-
-
 
 exports.login = async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const user = await userLogin(username, password);
-
     // Tạo Access Token và Refresh Token
     const accessToken = createAccessToken(user);
     const refreshToken = createRefreshToken(user);
@@ -32,16 +30,15 @@ exports.login = async (req, res, next) => {
 };
 
 exports.register = async (req, res, next) => {
-  const { user_login, user_email, user_pass } =
-    req.body;
+  const { user_login, user_email, user_pass } = req.body;
   try {
     const result = await userRegister({
       user_login,
       user_pass,
       user_email,
-      display_name
+      display_name,
     });
-    if(!result) return next(message(400, "Đăng ký thất bại!"));
+    if (!result) return next(message(400, "Đăng ký thất bại!"));
     res.json({ message: "Đăng ký thành công", result });
   } catch (error) {
     return next(message(400, error.message || "Đã có lỗi xảy ra"));
@@ -68,7 +65,7 @@ exports.refreshToken = async (req, res, next) => {
 
 exports.profile = (req, res) => {
   if (!req.user) {
-    return ext(message(401, "Không tìm thấy người dùng"));
+    return next(message(401, "Không tìm thấy người dùng"));
   }
 
   // Trả về thông tin người dùng
@@ -83,24 +80,35 @@ exports.profile = (req, res) => {
 };
 
 // Yêu cầu quên mật khẩu
-exports.forgot = (req, res) => {
+exports.forgot = async (req, res, next) => {
   const { user_email } = req.body;
   try {
-    const result = forgotPassword(user_email);
+    const result = await forgotPassword(user_email);
     res.status(200).json(result);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return next(message(400, error.message));
   }
 };
 
 // Đặt lại mật khẩu
 exports.reset = (req, res) => {
   const { token } = req.params;
-  const { password } = req.body;
+  const { user_pass } = req.body;
   try {
-    const user = resetPassword(token, password);
-    res.status(200).json({ message: "Password reset successful", user });
+    const { message } = resetPassword(token, user_pass);
+    res.status(200).json({ message});
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return next(message(400, error.message));
+  }
+};
+
+exports.change = async (req, res, next) => {
+  const { oldPassword, newPassword } = req.body;
+  const userId = req.user.id;
+  try {
+    const { message } = await changePassword(userId, oldPassword, newPassword);
+    return res.status(200).json({ message });
+  } catch (error) {
+    return next(message(400, error.message));
   }
 };
