@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const postRouters = require("./post/post.routes.js");
 const authRouters = require("./auth/auth.routes.js");
-const session = require("./config.js");
+const sequelize = require('./config.js');
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -42,6 +42,11 @@ app.use(helmet());
 // Define routes
 app.use("/posts", postRouters);
 app.use("/auth", authRouters);
+
+// Khởi tạo cơ sở dữ liệu
+sequelize.sync()
+  .then(() => console.log('Database connected successfully'))
+  .catch(err => console.log('Error connecting to the database:', err));
 
 // Middleware xử lý lỗi
 app.use((err, req, res, next) => {
