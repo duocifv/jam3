@@ -1,6 +1,6 @@
 'use client'
 import { client } from '@/utils/apiClient'
-import { AuthLogin, AuthRegister } from './auth.types'
+import { AuthForgot, AuthLogin, AuthRegister } from './auth.types'
 
 export const loginApi = (options: AuthLogin) => {
   return client.post('auth/login', { options, credentials: true })
@@ -43,4 +43,13 @@ export const refreshToken = async () => {
     throw new Error('Login failed: refreshToken not available')
   }
   return status
+}
+
+export const forgotApi = async (options: AuthForgot) => {
+  try {
+    return await client.post('auth/forgot', { options })
+  } catch (error) {
+    console.log('error', error)
+    throw error
+  }
 }

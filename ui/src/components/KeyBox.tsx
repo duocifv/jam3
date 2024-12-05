@@ -14,11 +14,19 @@ const KeyBox = () => {
   const [refresh, setRefresh] = useState(false)
   const [editKey, setEditKey] = useState<string>('')
   const [editValue, setEditValue] = useState<string>('')
-
+  const [edit, setEdit] = useState(false)
+  const [image, setImage] = useState(null)
+  const [preview, setPreview] = useState(null)
+  const [select, setSelect] = useState()
   const pathname = usePathname()
   const segments = pathname.replace(/^\/|\/$/g, '').replaceAll('/', '_')
 
-  // Fetch dữ liệu khi component mount hoặc refresh thay đổi
+  const handleChange = (e) => {
+    if(e.target.value === "text") {
+      setImage(null)
+    }
+    setSelect(e.target.value)
+  }
   useEffect(() => {
     fetch(endpoint, {
       method: 'GET',
@@ -27,17 +35,17 @@ const KeyBox = () => {
       .then(async (response) => {
         if (response.ok) {
           const data = await response?.json()
-          if (!data?.[segments]) return
+          if (!data?.[segments]) return setItems([])
           const result = Object.keys(data?.[segments]).map((key) => ({
             [key]: data?.[segments][key],
           }))
-          setItems(result || [])
+          setItems(result)
         } else {
           console.error(`Error: ${response.status} - ${await response.text()}`)
         }
       })
       .catch((error) => console.error('Error fetching data:', error))
-  }, [refresh])
+  }, [segments, refresh])
 
   // Xử lý thay đổi input để loại bỏ dấu và ký tự đặc biệt
   const inputChange = (e: React.ChangeEvent<HTMLInputElement>): string => {
@@ -48,16 +56,30 @@ const KeyBox = () => {
   }
 
   // Tạo key-value mới
-  const handleCreate = () => {
-    if (!key || !value) return alert('Điền key và value')
-    const newItem = { [key]: value }
-   const newItems =  [...items, newItem]
-   
-   const data = newItems.reduce((acc, obj) => {
-     const [key, value] = Object.entries(obj)[0];
-     acc[key] = value;
-     return acc;
-    }, {});
+  const handleCreate = async () => {
+    
+    let dataInput
+    if (key && image) {
+      dataInput = await handleUpload()
+    } 
+
+    if (key && value) {
+      dataInput = value
+    }
+    console.log(dataInput, key,image, value)
+
+    if(!dataInput) {
+      return alert("Vui lòng nhập key và value")
+    }
+
+    const newItem = { [key]: dataInput }
+    const newItems = [...items, newItem]
+
+    const data = newItems.reduce((acc, obj) => {
+      const [key, value] = Object.entries(obj)[0]
+      acc[key] = value
+      return acc
+    }, {})
 
     fetch(endpoint, {
       method: 'POST',
@@ -103,84 +125,171 @@ const KeyBox = () => {
       .catch((error) => console.error('Error updating data:', error))
   }
 
+
+
+  const handleUpload = async () => {
+   console.log("calll api")
+    const formData = new FormData()
+    formData.append('image', image)
+    try {
+      const response = await fetch('http://localhost:3002/upload', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await response.json()
+      console.log("calll api", data)
+      if (data?.file) {
+        const fileString = JSON.stringify(data.file, null, 2);
+        console.log(fileString)
+        return fileString
+      } else {
+        alert('Upload failed!')
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error)
+      alert('An error occurred while uploading the image.')
+    }
+  }
+
   return (
-    <div className="fixed top-0 left-0 w-80 min-h-full bg-gray-200 p-4">
-      {view && (
-        <div className="absolute inset-0 bg-gray-200 z-50 p-4">
-          <button
-            className="ml-auto block px-4 py-1 text-blue-500"
-            onClick={() => setView(null)}
-          >
-            Close
-          </button>
-          <label htmlFor="editKey">Key</label>
+    <div
+      className={`fixed top-0 left-0 w-80 min-h-full bg-gray-200 p-0  ${edit && '!w-0'}`}
+    >
+      <button
+        onClick={() => setEdit(!edit)}
+        className="absolute top-0 w-14 h-14 bg-red-400 right-[-56px]"
+      >
+        Edit
+      </button>
+      <div className={`p-4 min-h-full ${edit && 'hidden'}`}>
+        {view && (
+          <div className="absolute inset-0 bg-gray-200 z-50 p-4">
+            <button
+              className="ml-auto block px-4 py-1 text-blue-500"
+              onClick={() => setView(null)}
+            >
+              Close
+            </button>
+            <label htmlFor="editKey">Key</label>
+            <input
+              type="text"
+              className="border border-gray-600 rounded-md block w-full px-3 mb-2"
+              defaultValue={view.key}
+              onChange={(e) => setEditKey(inputChange(e))}
+            />
+            <label htmlFor="editValue">Value</label>
+            <textarea
+              rows={5}
+              className="border border-gray-600 rounded-md block w-full px-3 mb-4"
+              defaultValue={view.value}
+              onChange={(e) => setEditValue(e.target.value)}
+            />
+            <button
+              className="bg-blue-500 text-white px-4 py-2"
+              onClick={handleUpdate}
+            >
+              Update
+            </button>
+          </div>
+        )}
+
+        <div>
+          <label htmlFor="key">Key</label>
           <input
             type="text"
-            className="border border-gray-600 rounded-md block w-full px-3 mb-2"
-            defaultValue={view.key}
-            onChange={(e) => setEditKey(inputChange(e))}
+            className="border border-gray-600 rounded-md h-8 mb-2 block w-full px-3"
+            value={key}
+            onChange={(e) => setKey(inputChange(e))}
           />
-          <label htmlFor="editValue">Value</label>
-          <textarea
-            rows={5}
-            className="border border-gray-600 rounded-md block w-full px-3 mb-4"
-            defaultValue={view.value}
-            onChange={(e) => setEditValue(e.target.value)}
-          />
-          <button
-            className="bg-blue-500 text-white px-4 py-2"
-            onClick={handleUpdate}
-          >
-            Update
-          </button>
-        </div>
-      )}
-
-      <div>
-        <label htmlFor="key">Key</label>
-        <input
-          type="text"
-          className="border border-gray-600 rounded-md h-8 mb-2 block w-full px-3"
-          value={key}
-          onChange={(e) => setKey(inputChange(e))}
-        />
-        <label htmlFor="value">Value</label>
-        <input
-          type="text"
-          className="border border-gray-600 rounded-md h-8 mb-4 block w-full px-3"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button
-          className="bg-blue-500 text-white px-4 py-2"
-          onClick={handleCreate}
-        >
-          Add Entry
-        </button>
-      </div>
-
-      <div className="max-h-[74vh] overflow-y-auto scrollbar">
-        {items.map((item, index) => {
-          const key = Object.keys(item)[0]
-          const value = item[key]
-          return (
-            <div
-              key={index}
-              className="border-b border-gray-700 mt-2 flex justify-between"
+           <label htmlFor="value">Value</label>
+          <div className="flex justify-between mb-2">
+            <select onChange={handleChange} value={select}>
+              <option value="text">Text</option>
+              <option value="image">Image</option>
+            </select>
+            <button
+              className="bg-blue-500 text-white px-4 py-2"
+              onClick={handleCreate}
             >
-              <div>
-                <div className="text-sm">{key}</div>
-                <div className="text-md">{value}</div>
-              </div>
-              <button
-                className="text-blue-500 underline"
-                onClick={() => setView({ key, value })}
-              >
-                Edit
-              </button>
+              Add
+            </button>
+            {/* <button
+              className="bg-blue-500 text-white px-4 py-2"
+              onClick={handleUpload}
+            >
+              Upload
+            </button> */}
+          </div>
+        <div className='mb-4'>
+        {select === 'text' && (
+            <input
+              type="text"
+              className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          )}
+          {select === 'image' && (
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files[0]
+                if (file) {
+                  console.log('File selected:', file)
+                  setImage(file)
+                } else {
+                  console.error('No file selected!')
+                }
+              }}
+            />
+          )}
+        </div>
+          {preview && (
+            <div>
+              <h3>Preview:</h3>
+              <img
+                src={preview}
+                alt="Image Preview"
+                style={{ width: '200px', height: 'auto' }}
+              />
             </div>
-          )
-        })}
+          )}
+
+          <div className="flex justify-between">
+            <button
+              className="bg-blue-500 text-white px-4 py-2 w-full"
+              onClick={handleCreate}
+            >
+              Done
+            </button>
+           
+          </div>
+        </div>
+
+        <div className="max-h-[74vh] overflow-y-auto scrollbar">
+          {items.map((item, index) => {
+            const key = Object.keys(item)[0]
+            const value = item[key]
+            return (
+              <div
+                key={index}
+                className="border-b border-gray-700 mt-2 flex justify-between"
+              >
+                <div>
+                  <pre className="text-sm">{key}</pre>
+                  <pre className="text-md">{JSON.stringify(value, null, 2)}</pre>
+                </div>
+                <button
+                  className="text-blue-500 underline"
+                  onClick={() => setView({ key, value })}
+                >
+                  Edit
+                </button>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

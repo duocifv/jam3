@@ -29,7 +29,8 @@ export const client = {
     })
 
     if (!res.ok) {
-      return client.handleError(res)
+       client.handleError(res)
+       throw new Error("Failed to fetch")
     }
 
     return await res.json()
@@ -38,10 +39,10 @@ export const client = {
   // Helper function for error handling
   handleError: async (res: Response) => {
     if (res.status === 401) {
-    
       useAppStore.setState({ accessToken: "" })
       return res.status
     }
+    return res
   },
 
   // Specific method for GET requests

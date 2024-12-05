@@ -5,7 +5,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,}',
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/modules/**/*.{js,ts,jsx,tsx}',
-    './src/stories/*.{js,ts,jsx,tsx}',
+    './src/stories/**/*.{js,ts,jsx,tsx}',
     './.storybook/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {

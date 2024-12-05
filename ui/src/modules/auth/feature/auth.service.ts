@@ -1,6 +1,13 @@
 'use client'
 import { useAppStore } from '@/modules/shared/store/app.store'
-import { loginApi, logoutApi, profileApi, refreshToken, registerApi } from './auth.api'
+import {
+  forgotApi,
+  loginApi,
+  logoutApi,
+  profileApi,
+  refreshToken,
+  registerApi,
+} from './auth.api'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
 // Hàm xử Service (login)
@@ -8,7 +15,7 @@ export const loginService = () => {
   return useMutation({
     mutationFn: loginApi,
     onSuccess: (data) => {
-      console.log("123456123456", data)
+      console.log('123456123456', data)
       useAppStore.setState({ accessToken: data.accessToken })
       useAppStore.setState({ user: data.user, loggedIn: true })
     },
@@ -16,7 +23,7 @@ export const loginService = () => {
 }
 
 export const profileService = () => {
-  const accessToken = useAppStore(state => state.accessToken)
+  const accessToken = useAppStore((state) => state.accessToken)
   return useQuery({
     queryKey: ['profile'],
     queryFn: profileApi,
@@ -51,9 +58,21 @@ export const logoutService = async () => {
 export const refreshTokenService = async () => {
   return null
   const refresh = await refreshToken()
-  if(!refresh || refresh === 401) {
+  if (!refresh || refresh === 401) {
     useAppStore.setState({ user: null, loggedIn: false })
     return null
   }
   return refresh
+}
+
+export const forgotService = () => {
+  return useMutation({
+    mutationFn: forgotApi,
+    onSuccess: () => {
+      alert('successfully')
+    },
+    onError: () => {
+      alert('not available')
+    },
+  })
 }

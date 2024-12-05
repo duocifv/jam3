@@ -1,7 +1,17 @@
 {
   "auth_change": {
-    "old": "Mật khẩu cũ",
-    "new": "Mật khẩu mới",
-    "confirm": "Xác nhận mật khẩu"
+    "32423": "234234",
+    "54646": "456",
+    "ad": "ád",
+    "adsad": "ád",
+    "fghgfh": "fgh"
+  },
+  "auth_forgot": {
+    "2314": "2342",
+    "234234": "234"
+  },
+  "auth_profile": {
+    "234": "234234",
+    "fgfg": "gdfg"
   }
 }
