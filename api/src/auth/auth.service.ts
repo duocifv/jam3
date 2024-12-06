@@ -1,19 +1,32 @@
-const crypto = require("crypto");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const err = require("http-errors");
-const mailer = require("../config.js");
-const nodemailer = require("nodemailer");
-
-const {
-  findByUsername,
-  findByEmail,
-  findByUserAndEmail,
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+import {
   changeUserPass,
   createUser,
-  updatePassword,
+  findByEmail,
+  findByUserAndEmail,
+  findByUsername,
   findUserById,
-} = require("./auth.repository.js");
+  updatePassword,
+} from "./auth.repository";
+
+dotenv.config();
+
+const {
+  ACCESS_TOKEN_SECRET,
+  REFRESH_TOKEN_SECRET,
+  NODE_ENV,
+  CORS_ORIGIN,
+  EMAIL_USER,
+  EMAIL_PASS,
+  JWT_SECRET,
+} = process.env;
+
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET is not defined in environment variables.");
+}
 
 const transporter = nodemailer.createTransport({
   host: "uhf41-22158.azdigihost.com", // Máy chủ gửi email
@@ -29,21 +42,20 @@ const transporter = nodemailer.createTransport({
 });
 
 // Hàm xử lý đăng nhập
-exports.userLogin = async (username, password) => {
-  const user = await findByUsername(username, password);
+export const userLogin = async (username: string, password: string) => {
+  const user = await findByUsername(username);
   if (!user) {
-    throw new Error("Invalid credentials");
+    throw new Error("Tài khoản không đúng");
   }
-  const isMatch = await bcrypt.compare(password, user.user_pass);
+  const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    throw new Error("Username or password is incorrect");
+    throw new Error("Mật khẩu không đúng");
   }
   return user;
 };
 
-exports.userProfile = async (token) => {
-  const decoded = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET);
-  console.log("decoded decoded", decoded);
+export const userProfile = async (token: string) => {
+  const decoded: any = jwt.verify(token, REFRESH_TOKEN_SECRET as string);
   if (!decoded?.username) {
     throw new Error("username not initialized");
   }
@@ -51,13 +63,23 @@ exports.userProfile = async (token) => {
   return user;
 };
 
-exports.userRegister = async (body) => {
+export const userRegister = async (body: {
+  username: string;
+  password: string;
+  email: string;
+}) => {
+  if(!body) throw new Error("Email không đúng");
   const checkUser = await findByUserAndEmail(body);
   if (checkUser) {
     throw new Error("Tên người dùng hoặc email đã tồn tại!");
   }
-  const hashedPassword = await bcrypt.hash(body.user_pass, 10);
-  const newUser = await createUser({ ...body, hashedPassword });
+  const password = await bcrypt.hash(body.password, 10);
+  
+  const newUser = await createUser({
+    ...body,
+    password,
+    status: "active",
+  });
   if (!newUser) {
     throw new Error("Không thể đăng ký");
   }
@@ -65,24 +87,19 @@ exports.userRegister = async (body) => {
 };
 
 // Yêu cầu quên mật khẩu
-exports.forgotPassword = async (user_email) => {
-  const user = await findByEmail(user_email);
-
+export const forgotPasswordService = async (email: string) => {
+  if (!email) throw new Error("Email không tồn tại");
+  const user = await findByEmail(email);
   if (!user) {
-    console.log("Email not found");
-    throw new Error("Email not found")
+    throw new Error("Email không đúng");
   }
-  const token = jwt.sign(
-    { userId: user.dataValues.ID },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: "1h",
-    }
-  );
-  const resetLink = `http://localhost:3001/auth/reset/${token}`;
+  const token = jwt.sign({ userId: user.id }, JWT_SECRET, {
+    expiresIn: "1h",
+  });
+  const resetLink = `http://localhost:3001/auth/forgot-password/${token}`;
   const mailOptions = {
     from: "admin@duocnv.top",
-    to: user.dataValues.user_email,
+    to: user.email,
     subject: "Reset Mật Khẩu",
     text: `Vui lòng nhấp vào liên kết sau để reset mật khẩu của bạn: ${resetLink}`,
     html: `<b>Hello world? ${resetLink}</b>`, // html body
@@ -93,58 +110,60 @@ exports.forgotPassword = async (user_email) => {
         console.error("Email sending failed:", err);
         return;
       }
-      console.log("Email sent successfully:", info.response);
+      return info;
     });
   } catch (error) {
     console.error("Nodemailer Error:", error);
     throw new Error("Đã xảy ra lỗi khi gửi email");
   }
-  return { message: "Password reset email sent" };
+  return { message: "Đã gửi email đặt lại mật khẩu" };
 };
 
 // Đặt lại mật khẩu
-exports.resetPassword = async (token, password) => {
+export const resetPasswordService = async (token: string, password: string) => {
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded: any = jwt.verify(token, JWT_SECRET);
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await changeUserPass(decoded.userId, hashedPassword);
     if (!user) {
       throw new Error("Không tìm thấy User");
     }
-    return user;
+    return {
+      message: "Đã thay đổi thành công"
+    };
   } catch (error) {
-    throw new Error("Lỗi server Reset Password");
+    throw new Error("Lỗi không thể thay đổi mật khẩu");
   }
 };
 
 // Tạo Refresh Token
-exports.createRefreshToken = (user) => {
+export const createRefreshToken = (user: any) => {
   return jwt.sign(
-    { id: user.ID, user_login: user.user_login },
-    process.env.REFRESH_TOKEN_SECRET,
+    { id: user.id, username: user.username },
+    REFRESH_TOKEN_SECRET as string,
     { expiresIn: "7d" } // Thời gian sống của Refresh Token (7 ngày)
   );
 };
 
 // Refresh Token: Tạo lại Access Token từ Refresh Token
-exports.refreshAccessToken = async (refreshToken) => {
+export const refreshAccessToken = async (refreshToken: string) => {
   return new Promise((resolve, reject) => {
     jwt.verify(
       refreshToken,
-      process.env.REFRESH_TOKEN_SECRET,
-      (err, decoded) => {
+      REFRESH_TOKEN_SECRET as string,
+      (err, decoded: any) => {
         if (err) {
           return reject(err); // Token không hợp lệ
         }
 
         // Kiểm tra dữ liệu decoded
-        if (!decoded.ID || !decoded.user_login) {
+        if (!decoded.id || !decoded.username) {
           return reject(new Error("Invalid token payload"));
         }
 
         const accessToken = jwt.sign(
-          { id: decoded.ID, user_login: decoded.user_login },
-          process.env.ACCESS_TOKEN_SECRET,
+          { id: decoded.id, username: decoded.username },
+          ACCESS_TOKEN_SECRET as string,
           { expiresIn: "1h" }
         );
         resolve(accessToken);
@@ -154,21 +173,26 @@ exports.refreshAccessToken = async (refreshToken) => {
 };
 
 // Tạo Access Token
-exports.createAccessToken = (user) => {
+export const createAccessToken = (user: any) => {
   return jwt.sign(
-    { id: user.ID, user_login: user.user_login },
-    process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "1h" } // Thời gian sống của Access Token (1 giờ)
+    { id: user.id, username: user.username },
+    ACCESS_TOKEN_SECRET as string,
+    { expiresIn: "1h" }
   );
 };
 
-exports.changePassword = async (userId, oldPassword, newPassword) => {
+export const changePasswordUser = async (
+  userId: number,
+  oldPassword: string,
+  newPassword: string
+) => {
   try {
     const user = await findUserById(userId);
+
     if (!user) {
       throw new Error("Không tìm thấy user.");
     }
-    const isMatch = await bcrypt.compare(oldPassword, user.user_pass);
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
     if (!isMatch) {
       throw new Error("Mật khẩu cũ không chính xác.");
     }

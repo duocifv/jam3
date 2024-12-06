@@ -1,4 +1,4 @@
-const app = require('./src/app.js');
+import app from "./src/app";
 
 const POST = process.env.PORT || 3001;
 app.listen(POST, () => {
