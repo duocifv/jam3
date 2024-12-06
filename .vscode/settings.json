@@ -1,3 +1,9 @@
 {
-  "CodeGPT.apiKey": "CodeGPT Plus Beta"
+  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": null,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
