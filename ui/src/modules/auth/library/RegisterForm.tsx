@@ -2,14 +2,14 @@ import Button from '@/components/Button'
 import Input from '@/components/Input'
 import { useForm } from 'react-hook-form'
 import cn from '../stylesheet/FormRegister.module.css'
-import { useTranslation } from 'react-i18next'
 import { registerService } from '../feature/auth.service'
 import { AuthRegister } from '../feature/auth.types'
 import { decodeHtml } from '@/utils/decodeHtml'
-
+import { useKeyBox } from '@/utils/useKeyBox'
+import { Field } from '@/components/Field'
 
 const RegisterForm = () => {
-  const { t } = useTranslation()
+  const { auth_register: t } = useKeyBox()
   const {
     register,
     handleSubmit,
@@ -44,7 +44,7 @@ const RegisterForm = () => {
         </div>
         .
         <div>
-          <Input
+          <Field
             {...register('email', {
               required: 'Email is required',
               pattern: {
@@ -53,6 +53,7 @@ const RegisterForm = () => {
               },
             })}
             placeholder="Email"
+            copy={t.email}
           />
           <p>{errors.email?.message}</p>
         </div>
@@ -70,7 +71,7 @@ const RegisterForm = () => {
           />
           <p>{errors.lastName?.message}</p>
         </div>
-        <Button type="submit">{t('form.register')}</Button>
+        <Button type="submit">{t.button}</Button>
       </form>
     </div>
   )

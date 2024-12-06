@@ -7,7 +7,7 @@ export interface ButtonProps {
   media?: 'small' | 'medium' | 'large' 
   color?: 'primary' | 'secondary'
   active?: boolean
-  content: string | ReactNode
+  copy: string | ReactNode
   outlined?: boolean
   loading?: boolean
   disabled?: boolean
@@ -27,7 +27,7 @@ export const Button = ({
   iconStart,
   iconEnd,
   className,
-  content,
+  copy,
   ...rest
 }: ButtonProps) => {
   return (
@@ -45,7 +45,7 @@ export const Button = ({
       {...rest}
     >
       {iconStart && <span className="icon">{iconStart}</span>}
-      {content}
+      {copy}
       {iconEnd && <span className="icon">{iconEnd}</span>}
     </button>
   )

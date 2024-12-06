@@ -4,8 +4,10 @@ import { Button } from '@/stories/Button'
 import Text from '@/stories/text'
 import React, { useState } from 'react'
 import { forgotService } from '../feature/auth.service'
+import { useKeyBox } from '@/utils/useKeyBox'
 
-const ForgotForm = ({ label }) => {
+const ForgotForm = () => {
+  const { auth_forgot: t } = useKeyBox()
   const [value, setValue] = useState<string>()
   const dispatch = forgotService()
   const handleSend = () => {
@@ -14,12 +16,12 @@ const ForgotForm = ({ label }) => {
   return (
     <div>
       <Field
-        copy={<Text>{label.email}</Text>}
+        copy={<Text copy={t.email} />}
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
       <Button
-        content={<Text>{label.send}</Text>}
+        copy={<Text copy={t.button} />}
         color="primary"
         onClick={handleSend}
       />

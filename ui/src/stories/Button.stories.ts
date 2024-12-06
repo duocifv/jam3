@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    label: 'Button',
+    copy: 'Button',
     className: "text-lg p-4 border-1 w-40",
   },
 }

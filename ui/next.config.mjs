@@ -1,10 +1,10 @@
-import path from 'path';
-import fs from 'fs';
+import path from 'path'
+import fs from 'fs'
 
-const cacheDir = path.resolve('./db');
+const cacheDir = path.resolve('./db')
 
 if (fs.existsSync(cacheDir)) {
-  fs.rmSync(cacheDir, { recursive: true, force: true });
+  fs.rmSync(cacheDir, { recursive: true, force: true })
 }
 
 const nextConfig = {
@@ -13,6 +13,6 @@ const nextConfig = {
   },
   output: 'export',
   productionBrowserSourceMaps: false,
-};
+}
 
-export default nextConfig;
+export default nextConfig

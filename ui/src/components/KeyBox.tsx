@@ -11,22 +11,16 @@ const KeyBox = () => {
   const [items, setItems] = useState([])
   const [key, setKey] = useState<string>('')
   const [value, setValue] = useState<string>('')
+  const [image, setImage] = useState(null)
   const [refresh, setRefresh] = useState(false)
   const [editKey, setEditKey] = useState<string>('')
   const [editValue, setEditValue] = useState<string>('')
   const [edit, setEdit] = useState(false)
-  const [image, setImage] = useState(null)
   const [preview, setPreview] = useState(null)
-  const [select, setSelect] = useState()
   const pathname = usePathname()
   const segments = pathname.replace(/^\/|\/$/g, '').replaceAll('/', '_')
+  const [rows, setRows] = useState(1)
 
-  const handleChange = (e) => {
-    if(e.target.value === "text") {
-      setImage(null)
-    }
-    setSelect(e.target.value)
-  }
   useEffect(() => {
     fetch(endpoint, {
       method: 'GET',
@@ -57,19 +51,18 @@ const KeyBox = () => {
 
   // Tạo key-value mới
   const handleCreate = async () => {
-    
     let dataInput
     if (key && image) {
       dataInput = await handleUpload()
-    } 
+    }
 
     if (key && value) {
       dataInput = value
     }
-    console.log(dataInput, key,image, value)
+    console.log(dataInput, key, image, value)
 
-    if(!dataInput) {
-      return alert("Vui lòng nhập key và value")
+    if (!dataInput) {
+      return alert('Vui lòng nhập key và value')
     }
 
     const newItem = { [key]: dataInput }
@@ -125,10 +118,8 @@ const KeyBox = () => {
       .catch((error) => console.error('Error updating data:', error))
   }
 
-
-
   const handleUpload = async () => {
-   console.log("calll api")
+    console.log('calll api')
     const formData = new FormData()
     formData.append('image', image)
     try {
@@ -137,11 +128,9 @@ const KeyBox = () => {
         body: formData,
       })
       const data = await response.json()
-      console.log("calll api", data)
       if (data?.file) {
-        const fileString = JSON.stringify(data.file, null, 2);
-        console.log(fileString)
-        return fileString
+        //const fileString = JSON.stringify(data.file, null, 2)
+        return data.file
       } else {
         alert('Upload failed!')
       }
@@ -201,50 +190,23 @@ const KeyBox = () => {
             value={key}
             onChange={(e) => setKey(inputChange(e))}
           />
-           <label htmlFor="value">Value</label>
-          <div className="flex justify-between mb-2">
-            <select onChange={handleChange} value={select}>
-              <option value="text">Text</option>
-              <option value="image">Image</option>
-            </select>
-            <button
-              className="bg-blue-500 text-white px-4 py-2"
-              onClick={handleCreate}
-            >
-              Add
-            </button>
-            {/* <button
-              className="bg-blue-500 text-white px-4 py-2"
-              onClick={handleUpload}
-            >
-              Upload
-            </button> */}
-          </div>
-        <div className='mb-4'>
-        {select === 'text' && (
-            <input
+          <div className="flex justify-between">
+            <label htmlFor="value">Value</label>
+            <div>
+            Number rows: 
+            <input  
               type="text"
-              className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
+              className="border w-12 border-gray-600 rounded-md h-8 mb-4 px-3"
+              value={rows}
+              onChange={(e) => setRows(Number(e.target.value))}
             />
-          )}
-          {select === 'image' && (
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => {
-                const file = e.target.files[0]
-                if (file) {
-                  console.log('File selected:', file)
-                  setImage(file)
-                } else {
-                  console.error('No file selected!')
-                }
-              }}
-            />
-          )}
-        </div>
+            </div>
+          </div>
+          
+          {[...Array(rows)].map((item, index) => (
+           <Row key={index} value={value} setValue={setValue} image={image} setImage={setImage}/>
+          ))}
+
           {preview && (
             <div>
               <h3>Preview:</h3>
@@ -263,7 +225,6 @@ const KeyBox = () => {
             >
               Done
             </button>
-           
           </div>
         </div>
 
@@ -278,7 +239,9 @@ const KeyBox = () => {
               >
                 <div>
                   <pre className="text-sm">{key}</pre>
-                  <pre className="text-md">{JSON.stringify(value, null, 2)}</pre>
+                  <pre className="text-md">
+                    {JSON.stringify(value, null, 2)}
+                  </pre>
                 </div>
                 <button
                   className="text-blue-500 underline"
@@ -296,3 +259,48 @@ const KeyBox = () => {
 }
 
 export default KeyBox
+
+
+const Row = (p) => {
+  const [select, setSelect] = useState('text')
+  const handleChange = (e) => {
+    if (e.target.value === 'text') {
+      p.setImage(null)
+    }
+    setSelect(e.target.value)
+  }
+  return ( <div className="mb-4 flex overflow-hidden" >
+    <div className="flex justify-between mb-2">
+      <select onChange={handleChange} value={select}>
+        <option value="text">Text</option>
+        <option value="image">Image</option>
+      </select>
+    </div>
+    <div className="row">
+      {select === 'text' && (
+        <input
+          type="text"
+          className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
+          value={p.value}
+          onChange={(e) => p.setValue(e.target.value)}
+        />
+      )}
+      {select === 'image' && (
+        <input
+          type="file"
+          accept="image/*"
+          className="text-sm"
+          onChange={(e) => {
+            const file = e.target.files[0]
+            if (file) {
+              console.log('File selected:', file)
+              p.setImage(file)
+            } else {
+              console.error('No file selected!')
+            }
+          }}
+        />
+      )}
+    </div>
+  </div>)
+}

@@ -72,7 +72,6 @@ const server = http.createServer((req, res) => {
           const rawData = fs.readFileSync(filePath)
           existingData = JSON.parse(rawData)
         }
-        console.log("existingDataexistingDataexistingData", existingData)
 
         // Cập nhật dữ liệu (Ở đây bạn có thể thay đổi cách cập nhật dữ liệu tùy theo nhu cầu)
         const updatedData = {...existingData, ...items} // Hoặc bạn có thể thay thế hoàn toàn dữ liệu nếu cần

@@ -3,7 +3,11 @@ import Image, { ImageProps } from 'next/image'
 import clsx from 'clsx'
 import './style.css'
 
-const Picture: FC<ImageProps> = (p) => {
+interface PictureProps extends ImageProps {
+  className: string
+}
+
+const Picture: FC<PictureProps> = (p) => {
   return (
     <figure className={clsx('cn-picture', p.className)}>
       <Image {...p} />

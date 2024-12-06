@@ -8,7 +8,7 @@ const PanelAuth = () => {
     <div className="relative">
       <ButtonGroup align={'center'} gap={10}>
         <Button
-          label="コンテスト"
+          copy="コンテスト"
           color="primary"
           media="small"
           className="w-36 min-h-24 text-2xl"
@@ -25,7 +25,7 @@ const PanelAuth = () => {
           active
           className="text-lg p-4 border-1 w-40"
           color="secondary"
-          label="コンテスト"
+          copy="コンテスト"
           media="large"
           onClick={() => {}}
           iconStart={
@@ -39,7 +39,7 @@ const PanelAuth = () => {
           outlined
         />
         <Button
-          label="コンテスト"
+          copy="コンテスト"
           color="primary"
           media="small"
           className="w-36 min-h-24"
@@ -53,7 +53,7 @@ const PanelAuth = () => {
           }
         />
         <Button
-          label="コンテスト"
+          copy="コンテスト"
           color="primary"
           media="small"
           className="w-36 min-h-24"
@@ -67,7 +67,7 @@ const PanelAuth = () => {
           }
         />
         <Button
-          label="コンテスト"
+          copy="コンテスト"
           color="primary"
           media="small"
           className="w-36 min-h-24"
