@@ -17,10 +17,10 @@ dotenv.config();
 const {
   ACCESS_TOKEN_SECRET,
   REFRESH_TOKEN_SECRET,
-  NODE_ENV,
-  CORS_ORIGIN,
-  EMAIL_USER,
-  EMAIL_PASS,
+  SMTP_HOST,
+  SMTP_USER,
+  SMTP_PORT,
+  SMTP_PASS,
   JWT_SECRET,
 } = process.env;
 
@@ -28,18 +28,24 @@ if (!JWT_SECRET) {
   throw new Error("JWT_SECRET is not defined in environment variables.");
 }
 
+const host = SMTP_HOST as string;
+const port = Number(SMTP_PORT);
+const user =SMTP_USER as string;
+const pass = SMTP_PASS as string;
+
 const transporter = nodemailer.createTransport({
-  host: "uhf41-22158.azdigihost.com", // Máy chủ gửi email
-  port: 465, // Cổng SMTP
-  secure: true,
+  host,
+  port,
   tls: {
-    rejectUnauthorized: false, // Đảm bảo không có vấn đề về chứng chỉ
+    rejectUnauthorized: false,
   },
   auth: {
-    user: "admin@duocnv.top", // Email của bạn
-    pass: "Khanh132!!", // Mật khẩu email
+    user,
+    pass,
   },
-});
+  secure: port === 465,
+} as any);
+
 
 // Hàm xử lý đăng nhập
 export const userLogin = async (username: string, password: string) => {
@@ -68,13 +74,13 @@ export const userRegister = async (body: {
   password: string;
   email: string;
 }) => {
-  if(!body) throw new Error("Email không đúng");
+  if (!body) throw new Error("Email không đúng");
   const checkUser = await findByUserAndEmail(body);
   if (checkUser) {
     throw new Error("Tên người dùng hoặc email đã tồn tại!");
   }
   const password = await bcrypt.hash(body.password, 10);
-  
+
   const newUser = await createUser({
     ...body,
     password,
@@ -129,7 +135,7 @@ export const resetPasswordService = async (token: string, password: string) => {
       throw new Error("Không tìm thấy User");
     }
     return {
-      message: "Đã thay đổi thành công"
+      message: "Đã thay đổi thành công",
     };
   } catch (error) {
     throw new Error("Lỗi không thể thay đổi mật khẩu");
