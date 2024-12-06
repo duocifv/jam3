@@ -1,0 +1,35 @@
+{
+  "auth_change": {
+    "old": "Mật khẩu cũ",
+    "new": "Mật khẩu mới",
+    "confirm": "Xác nhận mật khẩu",
+    "adsad": "ád",
+    "fghgfh": "fgh",
+    "photo": {
+      "fileUrl": "/uploads/1733455692291.webp",
+      "size": 3972,
+      "width": 170,
+      "height": 238
+    },
+    "button": "Đổi mật khẩu"
+  },
+  "auth_forgot": {
+    "email": "Email",
+    "button": "Gửi"
+  },
+  "auth_profile": {
+    "username": "Tài khoản",
+    "password": "Mật khẩu"
+  },
+  "auth_login": {
+    "user": "Tài khoản",
+    "pass": "Mật khẩu",
+    "button": "Đăng nhập"
+  },
+  "auth_register": {
+    "user": "Tên Tài khoản",
+    "pass": "Mật khẩu",
+    "button": "Đăng ký",
+    "email": "Email"
+  }
+}

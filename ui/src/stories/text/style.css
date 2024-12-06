@@ -1,0 +1,9 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text {
+    font-size: 1.13rem;
+    line-height: 1.4;
+  }
+}

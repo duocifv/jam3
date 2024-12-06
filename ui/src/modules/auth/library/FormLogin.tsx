@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+'use client'
 import cn from '../stylesheet/FormLogin.module.css'
 import { loginService } from '../feature/auth.service'
 import { useForm } from 'react-hook-form'
-import { loginSchema, LoginSchema } from '../feature/auth.vaidator';
+import { loginSchema, LoginSchema } from '../feature/auth.vaidator'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useKeyBox } from '@/utils/useKeyBox'
 
 
 const FormLogin = () => {
+  const { auth_login: t } = useKeyBox()
   const login = loginService()
-  const { t } = useTranslation()
 
   const {
     register,
@@ -19,13 +19,11 @@ const FormLogin = () => {
     resolver: zodResolver(loginSchema),
   })
   const onSubmit = (data: LoginSchema) => {
-    console.log('Dữ liệu đăng nhập:', data);
     login.mutate(data)
-  };
+  }
 
   return (
     <div className={cn.login}>
-      <h1>{t('login.username')}</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-sm mx-auto p-4 border rounded "
@@ -35,7 +33,7 @@ const FormLogin = () => {
             htmlFor="email"
             className="block mb-2 text-sm font-medium text-gray-700"
           >
-            {t('login.username')}
+            {t.user}
           </label>
           <input
             type="text"
@@ -46,7 +44,9 @@ const FormLogin = () => {
             }`}
           />
           {errors.username && (
-            <p className="mt-1 text-sm text-red-500">{errors.username.message}</p>
+            <p className="mt-1 text-sm text-red-500">
+              {errors.username.message}
+            </p>
           )}
         </div>
 
@@ -55,7 +55,7 @@ const FormLogin = () => {
             htmlFor="password"
             className="block mb-2 text-sm font-medium text-gray-700"
           >
-            {t('form.password')}
+            {t.pass}
           </label>
           <input
             type="password"
@@ -72,12 +72,14 @@ const FormLogin = () => {
           )}
         </div>
 
-        <button
-          type="submit"
-          className="w-full px-4 py-2 text-white bg-green-600 rounded hover:bg-green-800"
-        >
-          {t('form.button')}
-        </button>
+        {t?.button && (
+          <button
+            type="submit"
+            className="w-full px-4 py-2 text-white bg-green-600 rounded hover:bg-green-800"
+          >
+            {t.button}
+          </button>
+        )}
       </form>
     </div>
   )

@@ -23,6 +23,10 @@ export const getAuthCategories = () => {
       slug: 'forgot',
       name: 'forgot',
     },
+    {
+      slug: 'change',
+      name: 'change password',
+    },
   ]
   return data
 }

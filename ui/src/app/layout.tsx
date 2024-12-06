@@ -7,6 +7,7 @@ import HeaderLayout from '@/modules/shared/library/Header'
 
 
 import '@/styles/tailwind.css'
+import KeyBox from '@/components/KeyBox'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,6 +31,7 @@ export default function RootLayout({
         <ProviderClient>
           <HeaderLayout />
           <div className="min-h-[100vh] max-w-[1200px] mx-auto flex">
+            <KeyBox />
             <Sidebar />
             <div className="bg-[#fff] p-8 min-w-[840px]">{children}</div>
           </div>

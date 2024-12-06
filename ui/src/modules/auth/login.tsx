@@ -1,8 +1,7 @@
-'use client'
 import React from 'react'
 import FormLogin from './library/FormLogin'
 
-const Login = () => {
+const Login = async () => {
   return <FormLogin />
 }
 
