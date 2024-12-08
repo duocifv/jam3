@@ -42,3 +42,7 @@ body {
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #68aee7; /* Màu của thumb khi hover */
 }
+
+.has-text-align-center {
+  text-align: center;
+}

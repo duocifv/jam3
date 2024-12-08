@@ -1,13 +1,10 @@
 import React from 'react'
-import { demoService } from './feature/demo.service'
+import CategoryPreviews from './library/CategoryPreviews'
 
 const Demo = async () => {
-  const data = await demoService()
   return (
     <div>
-      {data?.map((item, index) => (
-        <div key={index} dangerouslySetInnerHTML={{ __html: item }} />
-      ))}
+      <CategoryPreviews />
     </div>
   )
 }
