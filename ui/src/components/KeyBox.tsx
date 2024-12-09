@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-const endpoint = 'http://localhost:3002/key'
+const endpoint = 'https://cms.duocnv.top/wp-json/custom-data-json/v1'
 
 type Item = { key: string; value: string }
 
@@ -11,6 +11,7 @@ const KeyBox = () => {
   const [items, setItems] = useState([])
   const [key, setKey] = useState<string>('')
   const [value, setValue] = useState<string>('')
+  const [values, setValues] = useState<object>({})
   const [image, setImage] = useState(null)
   const [refresh, setRefresh] = useState(false)
   const [editKey, setEditKey] = useState<string>('')
@@ -20,20 +21,23 @@ const KeyBox = () => {
   const pathname = usePathname()
   const segments = pathname.replace(/^\/|\/$/g, '').replaceAll('/', '_')
   const [rows, setRows] = useState(1)
-
+  const [loading, setLoading] = useState(false)
+  console.log("values", values)
   useEffect(() => {
-    fetch(endpoint, {
+    fetch(`${endpoint}/list/${segments}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
       .then(async (response) => {
         if (response.ok) {
-          const data = await response?.json()
-          if (!data?.[segments]) return setItems([])
-          const result = Object.keys(data?.[segments]).map((key) => ({
-            [key]: data?.[segments][key],
+          const { data } = await response?.json()
+          if (!data) return setItems([])
+          const text = JSON.parse(data)
+          const result = Object.keys(text?.data).map((key) => ({
+            [key]: text?.data[key],
           }))
           setItems(result)
+          console.log('result', result)
         } else {
           console.error(`Error: ${response.status} - ${await response.text()}`)
         }
@@ -51,22 +55,25 @@ const KeyBox = () => {
 
   // Tạo key-value mới
   const handleCreate = async () => {
+    setLoading(true)
     let dataInput
     if (key && image) {
       dataInput = await handleUpload()
     }
 
-    if (key && value) {
-      dataInput = value
+    if (key && value || key && values ) {
+      dataInput = rows === 1 ? value : values
     }
-    console.log(dataInput, key, image, value)
-
+    
+    
+   
     if (!dataInput) {
       return alert('Vui lòng nhập key và value')
     }
 
     const newItem = { [key]: dataInput }
     const newItems = [...items, newItem]
+    console.log("newItems", newItems)
 
     const data = newItems.reduce((acc, obj) => {
       const [key, value] = Object.entries(obj)[0]
@@ -74,12 +81,21 @@ const KeyBox = () => {
       return acc
     }, {})
 
-    fetch(endpoint, {
-      method: 'POST',
+    let urlParam = 'update'
+    if (!items) {
+      urlParam = 'add'
+    }
+
+    fetch(`${endpoint}/${urlParam}/${segments}`, {
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ [segments]: data }),
+      body: JSON.stringify({
+        data: data,
+      }),
     })
       .then(async (response) => {
+        setLoading(false)
+        alert('Đã tạo xong')
         return await response.json()
       })
       .then(() => {
@@ -102,10 +118,10 @@ const KeyBox = () => {
       acc[key] = value
       return acc
     }, {})
-    fetch(endpoint, {
-      method: 'POST',
+    fetch(`${endpoint}/update/${segments}`, {
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ [segments]: { ...result } }),
+      body: JSON.stringify({ data: { ...result } }),
     })
       .then(async (response) => {
         return await response.json()
@@ -119,7 +135,6 @@ const KeyBox = () => {
   }
 
   const handleUpload = async () => {
-    console.log('calll api')
     const formData = new FormData()
     formData.append('image', image)
     try {
@@ -129,7 +144,6 @@ const KeyBox = () => {
       })
       const data = await response.json()
       if (data?.file) {
-        //const fileString = JSON.stringify(data.file, null, 2)
         return data.file
       } else {
         alert('Upload failed!')
@@ -150,7 +164,7 @@ const KeyBox = () => {
       >
         Edit
       </button>
-      <div className={`p-4 min-h-full ${edit && 'hidden'}`}>
+      <div className={`p-4 min-h-full ${edit ? 'hidden' : ''} max-h-full overflow-y-scroll`}>
         {view && (
           <div className="absolute inset-0 bg-gray-200 z-50 p-4">
             <button
@@ -193,18 +207,33 @@ const KeyBox = () => {
           <div className="flex justify-between">
             <label htmlFor="value">Value</label>
             <div>
-            Number rows: 
-            <input  
-              type="text"
-              className="border w-12 border-gray-600 rounded-md h-8 mb-4 px-3"
-              value={rows}
-              onChange={(e) => setRows(Number(e.target.value))}
-            />
+              Number rows:
+              <input
+                type="text"
+                className="border w-12 border-gray-600 rounded-md h-8 mb-4 px-3"
+                value={rows}
+                onChange={(e) => setRows(Number(e.target.value))}
+              />
             </div>
           </div>
-          
-          {[...Array(rows)].map((item, index) => (
-           <Row key={index} value={value} setValue={setValue} image={image} setImage={setImage}/>
+          {rows === 1 && ( <input
+              type="text"
+              className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />)
+          }
+         
+          {rows > 1 && [...Array(rows)].map((item, index) => (
+            <Row
+              key={index}
+              setValues={setValues}
+              image={image}
+              items={items}
+              keys={key}
+              setImage={setImage}
+              loading={loading}
+            />
           ))}
 
           {preview && (
@@ -220,10 +249,10 @@ const KeyBox = () => {
 
           <div className="flex justify-between">
             <button
-              className="bg-blue-500 text-white px-4 py-2 w-full"
+              className={`bg-blue-500 text-white px-4 py-2 w-full ${loading && 'bg-gray-500'}`}
               onClick={handleCreate}
             >
-              Done
+              {loading ? 'Loading' : 'Done'}
             </button>
           </div>
         </div>
@@ -260,47 +289,69 @@ const KeyBox = () => {
 
 export default KeyBox
 
-
 const Row = (p) => {
   const [select, setSelect] = useState('text')
+  const [key, setKey] = useState<string>()
+  const [value, setValue] = useState<string>()
   const handleChange = (e) => {
     if (e.target.value === 'text') {
       p.setImage(null)
     }
     setSelect(e.target.value)
   }
-  return ( <div className="mb-4 flex overflow-hidden" >
-    <div className="flex justify-between mb-2">
-      <select onChange={handleChange} value={select}>
-        <option value="text">Text</option>
-        <option value="image">Image</option>
-      </select>
+  useEffect(()=> {
+    if(p.loading) {
+      setValue('')
+      setKey('')
+    }
+  },[p.loading])
+  const keyPrimary= p.items.find(item =>item[p.keys]) || {}
+  return (
+    <div className="mb-4 flex overflow-hidden">
+      <div className="flex justify-between mb-2">
+        <select onChange={handleChange} value={select}>
+          <option value="text">Text</option>
+          <option value="image">Image</option>
+        </select>
+      </div>
+      <div className="row">
+        {select === 'text' && (
+          <>
+            <input
+              type="text"
+              className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
+              value={key}
+              onChange={(e) => setKey(e.target.value)}
+            />
+            <input
+              type="text"
+              className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
+              value={value}
+              onChange={(e) => {
+                const { value } = e.target;
+                setValue(value)
+                p.setValues((prev) => ({...keyPrimary[p.keys], ...prev, [key]: value}));
+              }}
+            />
+          </>
+        )}
+        {select === 'image' && (
+          <input
+            type="file"
+            accept="image/*"
+            className="text-sm"
+            onChange={(e) => {
+              const file = e.target.files[0]
+              if (file) {
+                console.log('File selected:', file)
+                p.setImage(file)
+              } else {
+                console.error('No file selected!')
+              }
+            }}
+          />
+        )}
+      </div>
     </div>
-    <div className="row">
-      {select === 'text' && (
-        <input
-          type="text"
-          className="border border-gray-600 rounded-md h-8 mb-4 w-full px-3"
-          value={p.value}
-          onChange={(e) => p.setValue(e.target.value)}
-        />
-      )}
-      {select === 'image' && (
-        <input
-          type="file"
-          accept="image/*"
-          className="text-sm"
-          onChange={(e) => {
-            const file = e.target.files[0]
-            if (file) {
-              console.log('File selected:', file)
-              p.setImage(file)
-            } else {
-              console.error('No file selected!')
-            }
-          }}
-        />
-      )}
-    </div>
-  </div>)
+  )
 }

@@ -1,3 +1,4 @@
+import { client } from "@/utils/apiClient";
 import { query } from "@/utils/httpGraphql";
 import { gql } from "graphql-request";
 
@@ -18,5 +19,19 @@ export const getDemo = async () => {
     return htmlString
   } catch (error) {
     throw new Error("Lỗi không kết nối server được")
+  }
+}
+
+export const getProductsApi = async () => {
+  try {
+    const res = await fetch("https://cms.duocnv.top/wp-json/custom-data-json/v1/list/auth_forgot")
+    if(!res.ok) {
+      throw new Error("Error fetching")
+    }
+    const data = await res.json()
+    return data
+  } catch (error) {
+    console.log(error)
+    throw new Error("Error fetching connection")
   }
 }
