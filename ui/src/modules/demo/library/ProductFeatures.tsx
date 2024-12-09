@@ -1,23 +1,6 @@
 import React from 'react'
 import { productsService } from '../feature/demo.service'
 
-// const features = [
-//   { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-//   {
-//     name: 'Material',
-//     description:
-//       'Solid walnut base with rare earth magnets and powder coated steel card cover',
-//   },
-//   { name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-//   { name: 'Finish', description: 'Hand sanded and finished with natural oil' },
-//   { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-//   {
-//     name: 'Considerations',
-//     description:
-//       'Made from natural materials. Grain and color vary with each item.',
-//   },
-// ]
-
 const ProductFeatures = async () => {
   const { feature } = await productsService()
   console.log("feature", feature)
@@ -35,8 +18,8 @@ const ProductFeatures = async () => {
           )}
 
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-            {feature.features.map((feature) => (
-              <div key={feature.name} className="border-t border-gray-200 pt-4">
+            {feature.features.map((feature, index) => (
+              <div key={index} className="border-t border-gray-200 pt-4">
                 <dt className="font-medium text-gray-900">{feature.name}</dt>
                 <dd className="mt-2 text-sm text-gray-500">
                   {feature.description}
