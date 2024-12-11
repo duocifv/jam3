@@ -167,7 +167,7 @@ const ListBox = (p) => {
         const value = item[key]
         let valuesArray
         if (typeof value === 'object' && value !== null) {
-          const content = JSON.stringify(value, null, 1)
+          const content = JSON.stringify(value, null, 2)
           valuesArray = Object.entries(JSON.parse(content));
         }
         return (
