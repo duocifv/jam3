@@ -30,9 +30,10 @@ https://www.whatsmydns.net/#A/jam.x10.bz
 
 ----------------- CLOUDFLARE -----------------
 Build command:
-npm run pages:build
+npx next build
 Build output:
-.vercel/output/static
+out
 Root directory:
+ui
 Build comments:
 Enabled
