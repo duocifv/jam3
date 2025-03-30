@@ -31,5 +31,8 @@
     "pass": "Mật khẩu",
     "button": "Đăng ký",
     "email": "Email"
+  },
+  "demo": {
+    "title": "Collections"
   }
 }

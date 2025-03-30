@@ -23,3 +23,17 @@ ck_245c50964d2c8b2112fbcc434145d51cd0eef870
 cs_016e85f2cf5f461c6706da3c732815616936d989
 
 https://www.whatsmydns.net/#A/jam.x10.bz
+
+
+
+
+
+----------------- CLOUDFLARE -----------------
+Build command:
+npx next build
+Build output:
+out
+Root directory:
+ui
+Build comments:
+Enabled
